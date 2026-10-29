@@ -1,0 +1,52 @@
+{
+  "slug": "expandable-ledger",
+  "title": "Expandable ledger",
+  "commonName": "Expandable table rows",
+  "category": "Components & interactions",
+  "description": "Explain a transaction in place instead of navigating away from the ledger.",
+  "useCase": "Explain a transaction in place instead of navigating away from the ledger.",
+  "interaction": "Open a line item",
+  "tags": [
+    "ledger",
+    "table",
+    "disclosure",
+    "finance",
+    "transaction"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "Fictional ledger data. Totals and details are for presentation, not financial calculations.",
+  "surface": "#edf0f3",
+  "components": [
+    "table",
+    "disclosure"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "layout",
+    "rotate"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app",
+    "dashboard"
+  ],
+  "aka": [
+    "accordion rows",
+    "collapsible transaction details",
+    "inline row details",
+    "expense list accordion"
+  ],
+  "look": "Light warm-grey page with a single white rounded card listing expenses: lettered serif avatar tiles, sans names and dates, right-aligned amounts and chevrons.",
+  "motion": "Clicking a row grows its detail from 0fr to 1fr grid rows over 210 ms ease-out as the chevron turns 90°; opening one row closes the previous one.",
+  "adapt": "`.ledger-detail` animates `grid-template-rows` (0fr to 1fr, 210ms) when `open` matches the row index, and `.ledger-chevron` rotates alongside. Replace the `rows` array; keep the `data-keyboard` and `data-paused` rules that zero transitions."
+}

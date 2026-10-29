@@ -1,0 +1,59 @@
+{
+  "slug": "seat-picker",
+  "title": "An evening, together",
+  "commonName": "Seat selection map",
+  "category": "Components & interactions",
+  "description": "A small theatre plan answers every seat choice with a restrained lift and a live reservation total.",
+  "useCase": "Make a small venue's availability and seat selection legible without burying the experience in checkout chrome.",
+  "interaction": "Choose up to two available seats",
+  "tags": [
+    "seat",
+    "theatre",
+    "reservation",
+    "booking",
+    "selection",
+    "availability",
+    "checkout",
+    "microinteraction",
+    "editorial",
+    "burgundy",
+    "serif"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Selection changes color and check state without lift. Keyboard selections also update immediately.",
+  "limitations": "Local demonstration with fixed availability and a two-seat limit. Real booking requires server-side holds, live inventory, prices and checkout.",
+  "surface": "#521b32",
+  "components": [
+    "picker",
+    "form"
+  ],
+  "triggers": [
+    "press",
+    "hover"
+  ],
+  "techniques": [
+    "slide"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "theatre seat map",
+    "seat booking selector",
+    "cinema seat chooser",
+    "ticket seat selection",
+    "venue seating chart"
+  ],
+  "look": "Deep burgundy page with three rows of pale-pink outlined seat icons, muted slashed taken seats, a curved stage line and italic serif summary.",
+  "motion": "Pressing a free seat fills it pale pink and lifts it 3 px (180 ms expo ease-out); hovering previews the lift, and the total updates, capped at two seats.",
+  "adapt": "The lift is pure CSS: `.sf-seats-shape` transitions `transform` and `background-color`, applied by `aria-pressed=true` and hover. `toggle` enforces the two-seat cap; replace `rows`, `unavailable` and the $48 price with real inventory."
+}

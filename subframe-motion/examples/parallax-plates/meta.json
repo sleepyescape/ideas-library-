@@ -1,0 +1,85 @@
+{
+  "slug": "parallax-plates",
+  "title": "Parallax plates",
+  "commonName": "Parallax image carousel",
+  "category": "Animation & motion",
+  "description": "Photographic plates move through a continuous rail while bounded image crops shift within fully covered frames.",
+  "useCase": "Browse an editorial photo collection with depth provided by the photography and its relative motion.",
+  "interaction": "Drag or swipe the rail; use Previous, Next or keyboard arrows to center an image.",
+  "tags": [
+    "carousel",
+    "parallax",
+    "photography",
+    "drag",
+    "inertia",
+    "wrap",
+    "gallery",
+    "image coverage"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "concrete-geometries.webp",
+      "description": "Angular white concrete architecture",
+      "license": "Unsplash"
+    },
+    {
+      "fileName": "running-track.webp",
+      "description": "Red curved running lanes",
+      "license": "Unsplash"
+    },
+    {
+      "fileName": "coastal-break.webp",
+      "description": "Turquoise surf on ochre rocks",
+      "license": "Unsplash"
+    },
+    {
+      "fileName": "concrete-projections.webp",
+      "description": "Projecting concrete building forms",
+      "license": "Unsplash"
+    },
+    {
+      "fileName": "blue-tide.webp",
+      "description": "White foam across blue water",
+      "license": "Unsplash"
+    }
+  ],
+  "reducedMotion": "Dragging remains direct; navigation and release settle immediately without inertia. Host pause cancels the active animation and disables controls.",
+  "limitations": "Five local photographs; no video playback or data fetching. Crops use 130% image width with a bounded 13% frame-width shift. Photographs retain separate Unsplash terms.",
+  "surface": "#f 9f 9f 7",
+  "components": [
+    "gallery"
+  ],
+  "triggers": [
+    "drag",
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "parallax",
+    "physics",
+    "loop"
+  ],
+  "feel": [
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "draggable image carousel",
+    "infinite photo slider",
+    "momentum carousel",
+    "swipe gallery",
+    "parallax slider"
+  ],
+  "look": "Off-white page with a horizontal rail of varied-size photographs (surf, white concrete architecture, red running track), a small spaced-caps header and a monospace counter.",
+  "motion": "Dragging throws a wrapping rail with decaying inertia, then a 380 ms cubic ease-out centres the nearest plate; each photo shifts inside its frame against the motion.",
+  "adapt": "`render` positions each plate from `offset` via `wrap` and sets the image parallax (`-x * 0.065`, clamped to 13% of width); `coast` handles inertia decay and `settle` the 380 ms snap. Replace `PLATES` with your images and sizes."
+}

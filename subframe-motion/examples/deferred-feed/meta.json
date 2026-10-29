@@ -1,0 +1,57 @@
+{
+  "slug": "deferred-feed",
+  "title": "Deferred feed",
+  "commonName": "Unread updates feed",
+  "category": "Components & interactions",
+  "description": "New activity waits behind a compact unread indicator while the current reading position stays put.",
+  "useCase": "Accept live updates without pushing the content someone is reading out of view.",
+  "interaction": "Add a preview update, keep reading, or jump to the newest entry.",
+  "tags": [
+    "feed",
+    "unread",
+    "scroll-anchor",
+    "prepend",
+    "notifications",
+    "backlog",
+    "scroll"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Jump to newest scrolls immediately; unread counts and anchor preservation remain active.",
+  "limitations": "Four manually triggered local updates; no realtime backend.",
+  "surface": "#ededeb",
+  "components": [
+    "list",
+    "notification"
+  ],
+  "triggers": [
+    "state",
+    "scroll",
+    "press"
+  ],
+  "techniques": [
+    "fade",
+    "slide"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app",
+    "dashboard"
+  ],
+  "aka": [
+    "new posts pill",
+    "scroll anchoring feed",
+    "live activity feed",
+    "jump to latest button",
+    "new items indicator"
+  ],
+  "look": "Light warm-grey page with a white bordered activity card: plus-button header, timeline dots on a thin line, grey timestamps and circled initials.",
+  "motion": "Adding an update while scrolled down prepends it without shifting visible rows and fades a blue unread pill down 5 px over 180 ms; pressing it smooth-scrolls to the top.",
+  "adapt": "Scroll anchoring is manual: `add` records the distance from the bottom in `offset` and a `useLayoutEffect` restores it after the prepend, with `overflow-anchor:none` set; `jump` clears `unread`. Replace `labels` with real activity; the pill entrance is the `feed-w2` keyframes."
+}

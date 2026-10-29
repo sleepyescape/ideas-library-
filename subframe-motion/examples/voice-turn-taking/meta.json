@@ -1,0 +1,60 @@
+{
+  "slug": "voice-turn-taking",
+  "title": "Turn relay",
+  "commonName": "Voice agent status",
+  "category": "Components & interactions",
+  "description": "An illuminated connection follows the handoff between a typed message and an interruptible reply.",
+  "useCase": "Make conversation ownership visible while a voice or text assistant prepares and delivers a response.",
+  "interaction": "Send the prepared phrase or write your own, then interrupt a reply or send another message",
+  "tags": [
+    "voice",
+    "agent",
+    "conversation",
+    "turn taking",
+    "interruption",
+    "composer",
+    "status"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Stops waveform and thinking loops, removes handoff movement and makes visual state changes immediate. The explicitly initiated reply still progresses through its words.",
+  "limitations": "Silent local text simulation with three authored replies. No microphone, speech recognition, model connection or network request. Connect actual service events before representing a live voice conversation. Host pause and document hiding suspend the elapsed-time clock.",
+  "surface": "#dce5f0",
+  "components": [
+    "notification",
+    "text",
+    "input"
+  ],
+  "triggers": [
+    "state",
+    "loading",
+    "press"
+  ],
+  "techniques": [
+    "glow",
+    "slide",
+    "stagger",
+    "fade"
+  ],
+  "feel": [
+    "refined",
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "AI assistant status",
+    "voice assistant UI",
+    "chat thinking indicator",
+    "conversation handoff indicator",
+    "interruptible AI reply"
+  ],
+  "look": "Dark navy gradient card on pale blue with two round speaker nodes on a thin vertical line above a dark composer and pale-blue send key.",
+  "motion": "Sending slides a streak down the connector in 440 ms, lighting the assistant node; dots pulse while thinking, then reply words brighten 220 ms apart as level bars oscillate.",
+  "adapt": "`phase` drives the `connection` streak, node glow and `levels` bars via `data-phase` CSS; the interval effect holds thinking for 850 ms, then reveals words every 220 ms through `shown`. Swap `REPLIES` and that timer for real agent events; keep `interrupt`."
+}

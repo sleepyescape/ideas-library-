@@ -1,0 +1,52 @@
+{
+  "slug": "reservation-dialog",
+  "title": "Reservation disclosure",
+  "commonName": "Expandable booking card",
+  "category": "Components & interactions",
+  "description": "Expand a compact reservation into editable details within the same visual anchor.",
+  "useCase": "Expand a compact reservation into editable details within the same visual anchor.",
+  "interaction": "Open the reservation",
+  "tags": [
+    "reservation",
+    "disclosure",
+    "expand",
+    "booking"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "Inline disclosure, not a modal or real booking service; no focus trap is needed because surrounding content stays interactive.",
+  "surface": "#edf0f3",
+  "components": [
+    "disclosure",
+    "card",
+    "form"
+  ],
+  "triggers": [
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "layout",
+    "rotate"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "accordion card",
+    "inline expand details",
+    "collapsible summary card",
+    "grid rows height animation"
+  ],
+  "look": "Light sage-grey page with a single white rounded card: a small green-toned room illustration, dark title, muted date line and a sage plus icon.",
+  "motion": "Clicking the card expands its booking details downward by animating grid rows from 0fr to 1fr over 260 ms ease-out while the plus rotates 45° into a close mark.",
+  "adapt": "Expansion is the `booking-details` `grid-template-rows` transition (260ms `cubic-bezier(0.2, 0.8, 0.2, 1)`) toggled by `open`, with `inert` disabling collapsed controls; `plus` rotates over 240ms. Replace the room summary, guest stepper and price with your content."
+}

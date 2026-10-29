@@ -1,0 +1,58 @@
+{
+  "slug": "type-instrument",
+  "title": "Type instrument",
+  "commonName": "Variable font controls",
+  "category": "Components & interactions",
+  "description": "Four red faders sculpt an oversized black glyph on a yellow proofing field.",
+  "useCase": "Type specimen exploration and immediate visual parameter control.",
+  "interaction": "Move the faders, select a glyph, or reset the specimen",
+  "tags": [
+    "typography",
+    "faders",
+    "range",
+    "specimen",
+    "width",
+    "slant",
+    "controls"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Glyph changes are immediate. Faders always respond directly without tweening.",
+  "limitations": "Uses CSS scale/skew and system Georgia weights. Width and lean are transforms, not variable-font axes; available weights vary by platform.",
+  "surface": "#f9d900",
+  "components": [
+    "slider",
+    "text",
+    "editor"
+  ],
+  "triggers": [
+    "drag",
+    "state"
+  ],
+  "techniques": [
+    "blur",
+    "fade",
+    "scale"
+  ],
+  "feel": [
+    "bold",
+    "technical"
+  ],
+  "contexts": [
+    "editorial",
+    "app"
+  ],
+  "aka": [
+    "type tester",
+    "font specimen playground",
+    "glyph sliders",
+    "vertical fader controls"
+  ],
+  "look": "Bright yellow proofing field with one oversized black serif glyph on guide rules, an amber rack of four red-capped vertical faders and a glyph bar.",
+  "motion": "Faders reshape the glyph instantly via scaleX, skewX and scale, with weight snapping between 400 and 700; a chosen glyph fades and sharpens from 3 px blur over 220 ms.",
+  "adapt": "Faders in `controls` set `width`, `lean`, `weight` and `scale`, applied to the glyph `span` as an inline transform; `key={glyph}` remounts it to replay `sf-type-glyph`. Replace the three Georgia glyphs and ranges; for a variable font, map faders to its axes."
+}

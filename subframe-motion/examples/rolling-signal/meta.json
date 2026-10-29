@@ -1,0 +1,56 @@
+{
+  "slug": "rolling-signal",
+  "title": "Rolling signal",
+  "commonName": "Scrolling signal waveform",
+  "category": "Animation & motion",
+  "description": "A fine waveform retains recent signal history so it can be held and inspected.",
+  "useCase": "Inspect the recent history of a continuous signal.",
+  "interaction": "Hold the signal, then scrub its retained history.",
+  "tags": [
+    "waveform",
+    "history",
+    "signal",
+    "canvas",
+    "scrub",
+    "buffer"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The stream stops; the retained history remains inspectable.",
+  "limitations": "A generated signal with 900 retained samples; no microphone or stored audio.",
+  "surface": "#f7f5f1",
+  "components": [
+    "media",
+    "chart"
+  ],
+  "triggers": [
+    "ambient",
+    "press",
+    "drag"
+  ],
+  "techniques": [
+    "canvas",
+    "slide"
+  ],
+  "feel": [
+    "technical",
+    "subtle"
+  ],
+  "contexts": [
+    "dashboard",
+    "app"
+  ],
+  "aka": [
+    "live waveform",
+    "streaming signal chart",
+    "oscilloscope view",
+    "real-time audio meter"
+  ],
+  "look": "Warm off-white page with a fine maroon bar waveform over faint vertical gridlines, a monospace time axis, a solid maroon button and a grey slider.",
+  "motion": "New samples arrive at 30 per second, scrolling the bar waveform leftward in steps; pressing hold freezes the stream so the history slider can scrub up to 650 samples back.",
+  "adapt": "`setInterval` at 30 Hz appends `sample` values to the 900-entry `history` buffer, and `draw` paints the last 180 (`count`) shifted by `offset`. Replace `sample` with a live feed and keep the `held` and reduced-motion gating."
+}

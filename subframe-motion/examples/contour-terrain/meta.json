@@ -1,0 +1,57 @@
+{
+  "slug": "contour-terrain",
+  "title": "Contour terrain",
+  "commonName": "Topographic contour shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Slowly shifting elevation bands carve warm paper into a layered topographic relief.",
+  "useCase": "Outdoor identities, geography stories, architecture portfolios, or an editorial cover with dimensional texture.",
+  "interaction": "Play or pause the material study.",
+  "tags": [
+    "contour",
+    "terrain",
+    "topographic",
+    "map",
+    "paper",
+    "relief",
+    "orange",
+    "editorial",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Displays one stable, representative frame. Responds immediately when the system preference changes.",
+  "limitations": "Requires WebGL 1; a static CSS composition remains visible when WebGL is unavailable or lost. A generative relief, not geographic data. Contour edges redraw in the fragment shader.",
+  "surface": "#c34520",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "gradient"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "topographic map background",
+    "animated contour lines",
+    "topo lines hero",
+    "elevation map shader"
+  ],
+  "look": "Burnt-orange field of cream contour lines ringing a pale peak, faint crosshair grid marks, a cream monospace label bar and a serif headline on rust.",
+  "motion": "The terrain drifts on slow sine offsets (periods about 37 and 48 s), so contour bands continuously creep and reshape; a pause button stops the loop.",
+  "adapt": "All motion is the `terrain` function in `FRAGMENT`: tune its `u_time` multipliers for drift speed, the Gaussian hills for shape and `altitude * 15.0` for band count; `orange` and `sand` set the palette. Replace the overlay copy."
+}

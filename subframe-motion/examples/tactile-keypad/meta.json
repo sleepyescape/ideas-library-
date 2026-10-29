@@ -1,0 +1,62 @@
+{
+  "slug": "tactile-keypad",
+  "title": "Tactile keypad",
+  "commonName": "Tactile keyboard keys",
+  "category": "Components & interactions",
+  "description": "Four physical keys crop, desaturate and rotate an aerial court photograph; Shift reverses the rotation.",
+  "useCase": "Make infrequent creative shortcuts discoverable through a small, functioning material control.",
+  "interaction": "Press C, M and R or the keycaps. Hold Shift with R to rotate backward. Enable sound explicitly if desired.",
+  "tags": [
+    "keypad",
+    "keyboard",
+    "chord",
+    "material",
+    "press",
+    "audio",
+    "image-editing"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "tennis-court.webp",
+      "description": "Two green tennis courts seen from above",
+      "license": "Unsplash"
+    }
+  ],
+  "reducedMotion": "Keys change depth immediately; image edits do not animate.",
+  "limitations": "Local image transformations only. Optional switch sound is synthesized with Web Audio after explicit opt-in.",
+  "surface": "#b94822",
+  "components": [
+    "button",
+    "image"
+  ],
+  "triggers": [
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "slide"
+  ],
+  "feel": [
+    "playful",
+    "technical"
+  ],
+  "contexts": [
+    "app",
+    "landing"
+  ],
+  "aka": [
+    "mechanical keycaps",
+    "skeuomorphic key press",
+    "keyboard shortcut pad",
+    "macro pad"
+  ],
+  "look": "Burnt-orange background with an aerial tennis-court photo in a dark bezel beside a cream plastic keypad of four chunky keys, one charcoal.",
+  "motion": "Clicking a keycap or pressing C, M or R sinks it 5 px with a collapsing side shadow; release lifts it in 80 ms ease-out; photo edits are instant.",
+  "adapt": "Key travel is the `tk-key` `data-down` CSS rule (5 px drop, shadow collapse, 80 ms ease-out release), set by `press` and `release`; `clickSound` is optional Web Audio. Replace `KEYS`, the tennis-court image and the `crop`, `mono` and `turn` edits."
+}

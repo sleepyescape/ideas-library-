@@ -1,0 +1,52 @@
+{
+  "slug": "review-disclosure",
+  "title": "Approval review",
+  "commonName": "Approval confirmation dialog",
+  "category": "Components & interactions",
+  "description": "Show exactly what an approval will include before confirming it.",
+  "useCase": "Show exactly what an approval will include before confirming it.",
+  "interaction": "Choose which files to share",
+  "tags": [
+    "approval",
+    "review",
+    "files",
+    "disclosure",
+    "confirmation"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "Prepares a local confirmation only; no files are shared and no public link is created.",
+  "surface": "#edf0f3",
+  "components": [
+    "disclosure",
+    "dialog"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "layout",
+    "rotate"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "share confirmation",
+    "expandable file list",
+    "review before sharing",
+    "collapsible checklist"
+  ],
+  "look": "Pale lavender-grey page with a white rounded, softly shadowed card: lilac icon tile, small grey labels, purple checkboxes and a full-width muted purple button.",
+  "motion": "Clicking the toggle expands the file list from zero height over 200 ms with an ease-out curve while its chevron rotates 90° in 180 ms; checkboxes update the button count.",
+  "adapt": "The expand is the `.review-files` grid switching `gridTemplateRows` between `0fr` and `1fr` (a 200 ms CSS transition); `inert` keeps hidden checkboxes unfocusable. Replace the file names, `checks` defaults and the `approve` button's action with a real share call."
+}

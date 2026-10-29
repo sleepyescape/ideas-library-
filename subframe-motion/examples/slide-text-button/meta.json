@@ -1,0 +1,56 @@
+{
+  "slug": "slide-text-button",
+  "title": "A second line",
+  "commonName": "Text roll hover button",
+  "category": "Components & interactions",
+  "description": "A second label rolls into view as you approach the action.",
+  "useCase": "Pair a short expressive call to action with a concrete label on an occasional marketing action.",
+  "interaction": "Hover, then join the reading list",
+  "tags": [
+    "button",
+    "hover",
+    "text",
+    "rollover",
+    "CSS",
+    "vertical slide",
+    "call to action"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Kokonut UI",
+    "url": "https://kokonutui.com/docs/components/slide-text-button",
+    "code": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/slide-text-button.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The first label stays in place; the button still updates its subscribed state.",
+  "limitations": "Hover text is a fine-pointer enhancement. The accessible action label remains clear on touch and keyboard.",
+  "surface": "#e9e5dd",
+  "components": [
+    "button"
+  ],
+  "triggers": [
+    "hover"
+  ],
+  "techniques": [
+    "roll",
+    "slide",
+    "fade"
+  ],
+  "feel": [
+    "refined",
+    "subtle"
+  ],
+  "contexts": [
+    "landing"
+  ],
+  "aka": [
+    "CTA hover",
+    "label swap button",
+    "sliding label hover",
+    "vertical text swap"
+  ],
+  "look": "Warm greige page with one wide dark olive-green rounded button holding a single line of white sans-serif text.",
+  "motion": "On fine-pointer hover the label track slides up 100% (300 ms ease-in-out) inside the clipped button, fading the first label out as a second label below fades in.",
+  "adapt": "The rollover is pure CSS: hover moves `.sf-slide-track` to `translateY(-100%)` over 300 ms `cubic-bezier(.645,.045,.355,1)` while the two `.sf-slide-face` layers swap opacity, gated by `(hover:hover) and (pointer:fine)`. Replace `text`, `hoverText` and the `subscribed` toggle."
+}

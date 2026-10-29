@@ -1,0 +1,61 @@
+{
+  "slug": "filmstrip-scrubber",
+  "title": "Night signal",
+  "commonName": "Video frame scrubber",
+  "category": "Components & interactions",
+  "description": "An acid-yellow playhead scrubs a nocturnal scene one frame at a time.",
+  "useCase": "Give an editor or creative review tool a direct relationship between a thumbnail timeline and its current visual frame.",
+  "interaction": "Drag the filmstrip, step frames, or play the sequence",
+  "tags": [
+    "filmstrip",
+    "timeline",
+    "scrubber",
+    "frame",
+    "playback",
+    "video",
+    "editor",
+    "SVG",
+    "cinematic",
+    "acid yellow",
+    "dark",
+    "native range",
+    "keyboard"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Autoplay is unavailable; the scrubber and previous/next controls jump directly to the requested frame. The preference updates live.",
+  "limitations": "The 73-frame SVG composition is deterministic artwork, not a video decoder. Connect a media timeline and generated thumbnails for actual footage.",
+  "surface": "#0b0e0d",
+  "components": [
+    "media",
+    "editor",
+    "slider"
+  ],
+  "triggers": [
+    "drag",
+    "press"
+  ],
+  "techniques": [
+    "parallax",
+    "slide"
+  ],
+  "feel": [
+    "technical"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "thumbnail timeline",
+    "filmstrip seek bar",
+    "frame-by-frame stepper",
+    "video editor playhead"
+  ],
+  "look": "Near-black editor showing a flat teal silhouette night scene with a pale moon above a seven-thumbnail strip, acid-yellow playhead and monospace timecode.",
+  "motion": "Dragging the strip's range thumb or stepping frames redraws the SVG scene, its moon, structure and figure sliding left at different rates; play advances 73 frames at 24 fps, looping.",
+  "adapt": "`frame` drives `NightScene`, whose layers offset by `travel`; playback is the 24 fps `tick` loop and scrubbing is the native range over `sf-film-strip`. Swap `NightScene` and the thumbnail frames for real video frames, keeping `step` and the reduced-motion branch."
+}

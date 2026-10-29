@@ -1,0 +1,64 @@
+{
+  "slug": "camera-wheel",
+  "title": "Exposure wheel",
+  "commonName": "Exposure dial control",
+  "category": "Components & interactions",
+  "description": "A knurled exposure ring changes the brightness of an architectural photograph in precise one-third-stop increments.",
+  "useCase": "Compact relative scrubbing controls for photographic adjustments, with a fixed index and immediate visual feedback.",
+  "interaction": "Drag the wheel or adjust exposure with arrow keys.",
+  "tags": [
+    "camera",
+    "exposure",
+    "scrub",
+    "wheel",
+    "numeric",
+    "photography",
+    "material",
+    "EV",
+    "relative drag"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "concrete-projections.webp",
+      "description": "Brutalist concrete office building",
+      "license": "Unsplash"
+    }
+  ],
+  "reducedMotion": "The wheel, index and photograph respond immediately to all input; no inertial or automatic motion runs.",
+  "limitations": "The sample JPEG-derived WebP is multiplied with CSS brightness using 2^EV. This is a display approximation, not linear RAW exposure processing; clipped image detail cannot be recovered. Sample photograph is separately licensed under Unsplash.",
+  "surface": "#b64e35",
+  "components": [
+    "slider",
+    "image"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "slide"
+  ],
+  "feel": [
+    "technical",
+    "refined"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "scrubbing ruler slider",
+    "camera dial input",
+    "horizontal scrub wheel",
+    "photo brightness control",
+    "tick ruler slider"
+  ],
+  "look": "Dark graphite camera body with a black-and-white architectural photo and a knurled tick-scale wheel with an amber index, on a flat burnt-orange background.",
+  "motion": "Dragging the wheel horizontally slides its knurl and tick scale under a fixed amber index, snapping to one-third stops while the photo's brightness follows 2^EV; arrow keys step instantly.",
+  "adapt": "Drag mapping is in `onPointerMove` (54 px per stop; `limit` snaps to thirds and clamps ±3), and `ev` drives the strip offsets and the `brightness` filter. Replace the image `src` and point `ev` at your own setting."
+}

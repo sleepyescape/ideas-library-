@@ -1,0 +1,54 @@
+{
+  "slug": "truchet-ribbon",
+  "title": "Truchet ribbon",
+  "commonName": "Truchet tile pattern shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Broad honey-colored ribbons join through a wine-red field of curved tiles.",
+  "useCase": "A seamless connected pattern with consistent endpoints across randomized tile orientations.",
+  "interaction": "Adjust ribbon width.",
+  "tags": [
+    "native webgl",
+    "truchet",
+    "tiles",
+    "connected paths",
+    "pattern",
+    "print"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The elapsed-time clock stops. Parameter controls immediately update the static composition.",
+  "limitations": "Requires WebGL 1; a static CSS swatch appears if unavailable or after context loss. Deterministic tile orientations; ribbon width changes continuously without random topology jumps.",
+  "surface": "#5b1225",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient",
+    "state"
+  ],
+  "techniques": [
+    "shader"
+  ],
+  "feel": [
+    "bold",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "animated pattern background",
+    "procedural tile pattern",
+    "retro curved tiles",
+    "generative wallpaper"
+  ],
+  "look": "Thick honey-yellow ribbons with a thin inset rust outline form interlocking rings and S-curves across a flat wine-red field.",
+  "motion": "The tile field drifts slowly leftward on the shader clock; a range slider thickens or thins the ribbons in real time, and a button pauses the drift.",
+  "adapt": "The pattern lives in the `FRAGMENT` shader: tune the tile scale and `u_time` drift multiplier in `main`, the `width` range driven by `u_control`, and the `bg` and `yellow` colours. Keep the canvas lifecycle, fallback and reduced-motion handling."
+}

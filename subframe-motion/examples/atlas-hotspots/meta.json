@@ -1,0 +1,65 @@
+{
+  "slug": "atlas-hotspots",
+  "title": "Inside the image",
+  "commonName": "Image hotspots",
+  "category": "Components & interactions",
+  "description": "Image markers and a compact index share one selection, revealing details without losing the whole picture.",
+  "useCase": "Explain an artwork, product detail or architectural feature through precisely placed points and a linked list.",
+  "interaction": "Choose a point on the print or a detail in the index",
+  "tags": [
+    "hotspots",
+    "image",
+    "annotation",
+    "synchronized",
+    "selection",
+    "art",
+    "product",
+    "linked list"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "suruga-wind.webp",
+      "description": "Ejiri in Suruga Province, Hokusai",
+      "license": "CC0-1.0"
+    }
+  ],
+  "reducedMotion": "Selection changes immediately; the connecting ring does not travel between points.",
+  "limitations": "Hotspot coordinates assume the supplied uncropped image. Replace coordinates when replacing the image. Host pause disables selection.",
+  "surface": "#f7f8f5",
+  "components": [
+    "tooltip",
+    "image"
+  ],
+  "triggers": [
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "slide",
+    "scale"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "image annotations",
+    "interactive image points",
+    "product hotspots",
+    "clickable image markers",
+    "linked image callouts"
+  ],
+  "look": "Off-white page with a Japanese woodblock landscape print marked by numbered white circular pins, beside a large dark serif title and ruled numbered list.",
+  "motion": "Choosing a pin or list item glides a white ring to that point in 250 ms ease-out; the chosen pin darkens and scales to 112% in 180 ms.",
+  "adapt": "`selected` drives both the `pin` buttons and the `crosshair`. A full-size positioning layer translates to the selected percentage coordinates over 250 ms, carrying a fixed-size ring without animating layout. Replace `details` (names, percentage `x` and `y` coordinates, text) together with the image, since coordinates assume the uncropped artwork."
+}

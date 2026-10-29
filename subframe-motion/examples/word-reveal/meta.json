@@ -1,0 +1,58 @@
+{
+  "slug": "word-reveal",
+  "title": "Word by word",
+  "commonName": "Split text reveal",
+  "category": "Animation & motion",
+  "description": "A measured word-by-word reveal that lets a short headline land.",
+  "useCase": "Introduce a short piece of editorial or launch copy. Avoid delaying paragraphs or essential instructions.",
+  "interaction": "Replay the entrance",
+  "tags": [
+    "text",
+    "stagger",
+    "mask",
+    "headline",
+    "entrance"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Motion Primitives",
+    "url": "https://motion-primitives.com/docs/text-effect",
+    "code": "https://github.com/ibelick/motion-primitives/blob/120f64f6ca60348e251f929e9c81f11ccbe45eda/components/core/text-effect.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "The complete headline is immediately visible, without movement.",
+  "limitations": "Word splitting is tuned for this English headline. Recheck wrapping and segmentation for other languages.",
+  "surface": "#ece7f0",
+  "components": [
+    "text"
+  ],
+  "triggers": [
+    "enter"
+  ],
+  "techniques": [
+    "split-text",
+    "stagger",
+    "mask",
+    "slide"
+  ],
+  "feel": [
+    "refined",
+    "subtle"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "staggered headline entrance",
+    "masked text reveal",
+    "text slide-up on load",
+    "word stagger animation"
+  ],
+  "look": "Pale sage-green page with a two-line, tightly tracked dark olive sans-serif headline, left-aligned at centre, and a small replay control bottom right.",
+  "motion": "On mount each word slides up out of its own overflow mask while fading in, 0.52 s each with a strong ease-out, staggered 75 ms; replay restarts it.",
+  "adapt": "The stagger is `staggerChildren: 0.075` on the `motion.h2` variants; each word's `motion.span` rises from `y: \"100%\"` inside an `overflow: \"hidden\"` wrapper over 0.52 s with ease `[0.22, 1, 0.36, 1]`. Replace `lines` with your copy and keep the heading's `aria-label`."
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "signature-draw",
+  "title": "Reed in one line",
+  "commonName": "SVG line drawing animation",
+  "category": "Animation & motion",
+  "description": "A continuous heron emblem draws in oxblood ink across saffron stock, leaving a quiet printed impression underneath.",
+  "useCase": "Reveal an authored identity, illustration or sign-off through the order of its pen stroke.",
+  "interaction": "Replay the emblem",
+  "tags": [
+    "stroke",
+    "drawing",
+    "signature",
+    "svg",
+    "ink",
+    "identity",
+    "logo",
+    "line-art",
+    "finite"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Replay shows the complete emblem immediately; host pause freezes an in-progress stroke and resumes from that position.",
+  "limitations": "An independently authored stylized bird identity with a fixed path, not handwriting recognition, a captured human signature or a drawing input. The paper impression and shadows are authored CSS/SVG treatments.",
+  "surface": "#bf3324",
+  "components": [
+    "scene"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "path"
+  ],
+  "feel": [
+    "refined",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "logo draw animation",
+    "line art reveal",
+    "stroke dashoffset animation",
+    "handwritten signature reveal",
+    "one-line drawing"
+  ],
+  "look": "Tilted saffron paper square on a vermilion-red field, with a fine oxblood single-line heron illustration, a faint offset impression and a large lowercase serif wordmark.",
+  "motion": "The emblem starts complete; pressing replay redraws it as one stroke via stroke-dashoffset over 2.1 s ease-in-out, and the eye dot appears about a quarter through.",
+  "adapt": "Drawing is `@keyframes sd-heron-ink`, animating `stroke-dashoffset` from 100 on the `.sd-ink` path (`pathLength` 100), re-triggered by bumping `key={run}`. Swap `heron` for your path, keep `pathLength`, and tune `2100ms cubic-bezier(.37,.12,.28,1)`; replace the wordmark."
+}

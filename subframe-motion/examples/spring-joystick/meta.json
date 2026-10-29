@@ -1,0 +1,56 @@
+{
+  "slug": "spring-joystick",
+  "title": "Gimbal control",
+  "commonName": "Spring joystick control",
+  "category": "Components & interactions",
+  "description": "A tactile grip moves a pan-and-tilt viewfinder and returns to neutral on release.",
+  "useCase": "Move a virtual camera target with momentary two-axis input and a clear neutral position.",
+  "interaction": "Drag or hold arrow keys; release to return to center.",
+  "tags": [
+    "joystick",
+    "gimbal",
+    "pan and tilt",
+    "pointer capture",
+    "momentary input",
+    "spring return",
+    "tactile UI"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "No idle animation; reduced motion and keyboard input update immediately.",
+  "limitations": "Position demonstration only; does not control a real camera. ",
+  "surface": "#d5dadc",
+  "components": [
+    "slider"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "spring",
+    "3d",
+    "parallax"
+  ],
+  "feel": [
+    "technical",
+    "playful"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "virtual joystick",
+    "XY pad",
+    "thumbstick control",
+    "pan and tilt pad",
+    "skeuomorphic joystick"
+  ],
+  "look": "Silver hardware panel with screws, a dark grid viewfinder with crosshair, monospace readouts, and an orange ribbed grip in a stepped black well.",
+  "motion": "Dragging pushes the grip within a circular limit, tilting it in 3D as nested rings and crosshair follow; release eases to centre with 450 ms overshoot; arrow keys move instantly.",
+  "adapt": "Pointer mapping and the unit-circle clamp are `move` and `limit`; layer travel is in inline transforms (`point.x * 27`, tilt `13` deg, fold scales `[0.13, 0.3, 0.5]`), and the return is `450ms cubic-bezier(.2,1.25,.3,1)`. Wire `point` to your target and replace the viewfinder."
+}

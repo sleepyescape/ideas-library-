@@ -1,0 +1,54 @@
+{
+  "slug": "inertial-launcher",
+  "title": "Pull and release",
+  "commonName": "Drag-and-release physics ball",
+  "category": "Animation & motion",
+  "description": "A satin sphere and its ground shadow turn a bounded pull into a finite rebound.",
+  "useCase": "Playful direct manipulation and a tangible release response.",
+  "interaction": "Pull the ball, then release",
+  "tags": [
+    "inertia",
+    "ball",
+    "drag",
+    "release",
+    "rebound",
+    "physical",
+    "gesture"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Releasing returns directly to rest with no flight.",
+  "limitations": "Authored bounded rebound keyframes, not a general physics engine.",
+  "surface": "#f7f6f3",
+  "components": [
+    "scene"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "physics",
+    "spring",
+    "scale"
+  ],
+  "feel": [
+    "playful"
+  ],
+  "contexts": [
+    "landing"
+  ],
+  "aka": [
+    "slingshot ball",
+    "bouncy ball toy",
+    "squash and stretch ball",
+    "pull to launch"
+  ],
+  "look": "Plain warm off-white canvas with a single satin coral-red sphere, soft specular highlight and a blurred contact shadow beneath.",
+  "motion": "Drag pulls the ball up to 65 px; release flings it opposite the pull through a 1.1 s keyframed hop and smaller rebound with squash-and-stretch, its shadow fading with height.",
+  "adapt": "The flight is the `frames` array played by `animate` over 1100 ms on both `ball` and `shadow`; tune the `at` offsets, `sx`/`sy` squash, the 1.35 throw multiplier and `height`. The ±65 px pull clamp lives in `onPointerMove`; restyle `.sf-launch-ball`."
+}

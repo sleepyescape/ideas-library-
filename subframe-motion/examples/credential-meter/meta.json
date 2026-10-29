@@ -1,0 +1,54 @@
+{
+  "slug": "credential-meter",
+  "title": "Credential meter",
+  "commonName": "Password strength meter",
+  "category": "Components & interactions",
+  "description": "Four quiet segments track which password requirements are satisfied.",
+  "useCase": "Show the remaining requirements while a user chooses a credential.",
+  "interaction": "Type a password and toggle its visibility.",
+  "tags": [
+    "password",
+    "rules",
+    "validation",
+    "segmented",
+    "meter",
+    "form",
+    "input"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Requirement states update instantly; the meter has no animated travel.",
+  "limitations": "A local policy checklist, not a password strength estimate or authentication system.",
+  "surface": "#121514",
+  "components": [
+    "input",
+    "progress",
+    "form"
+  ],
+  "triggers": [
+    "keyboard",
+    "state"
+  ],
+  "techniques": [
+    "fade"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "password requirements checklist",
+    "password rules indicator",
+    "segmented strength bar",
+    "password validation"
+  ],
+  "look": "Near-black green-tinted page with a dark rounded password field, four thin grey meter segments, a two-column requirements list and a divider above status text.",
+  "motion": "Typing fills one of four meter segments per satisfied rule, left to right, fading each to mint green over 180 ms while matching rule labels brighten and gain a check.",
+  "adapt": "Policy is the `rules` array (label plus `met` test) and `count` drives the `.meter i` segments via `data-met`; the only motion is a 0.18 s colour transition in CSS. Replace the rules with your policy and wire `value` to your form."
+}

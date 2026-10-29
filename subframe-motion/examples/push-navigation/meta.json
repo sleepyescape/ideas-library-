@@ -1,0 +1,55 @@
+{
+  "slug": "push-navigation",
+  "title": "Push navigation",
+  "commonName": "Push menu drawer",
+  "category": "Components & interactions",
+  "description": "A cobalt record sleeve moves aside to expose a quiet collection index behind it.",
+  "useCase": "Reveal navigation while preserving the spatial identity of the current content.",
+  "interaction": "Open the index and choose a collection.",
+  "tags": [
+    "navigation",
+    "drawer",
+    "push",
+    "disclosure",
+    "CSS transform"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The foreground plate changes position immediately, retaining all navigation.",
+  "limitations": "An isolated collection selector, not a router or full-page template. The background navigation is inert while closed.",
+  "surface": "#153ce6",
+  "components": [
+    "navigation",
+    "sheet",
+    "menu"
+  ],
+  "triggers": [
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "slide",
+    "scale"
+  ],
+  "feel": [
+    "refined",
+    "bold"
+  ],
+  "contexts": [
+    "editorial",
+    "app"
+  ],
+  "aka": [
+    "off-canvas menu",
+    "slide-out navigation",
+    "push sidebar",
+    "hamburger menu reveal"
+  ],
+  "look": "Saturated cobalt-blue full-bleed plate holding an off-white record sleeve with heavy navy sans-serif title and blue looping ring artwork, plus an outlined pill button.",
+  "motion": "The toggle slides the blue plate 54% right, scales it to 88% and rounds its corners over 380 ms ease-out, exposing the list behind; choosing an item slides it back.",
+  "adapt": "The push is one transform on `.pn-plate`: `translateX(54%) scale(.88)` under `[data-open=true]` with a `.38s cubic-bezier(.22,1,.36,1)` transition; `.pn-drawer` sits beneath, `inert` while closed. Replace `collections`, the sleeve art and titles with your routes."
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "chart-range-brush",
+  "title": "Chart range brush",
+  "commonName": "Time series range slider",
+  "category": "Components & interactions",
+  "description": "Independent endpoints select listening days on one fixed-scale minimap.",
+  "useCase": "Inspect a date interval without shifting the opposite endpoint or losing the full series.",
+  "interaction": "Drag either minimap handle, or use arrow keys, Home/End and PageUp/PageDown. Escape cancels the drag.",
+  "tags": [
+    "chart",
+    "brush",
+    "range",
+    "dual-handle",
+    "fixed-domain",
+    "time-series",
+    "minimap",
+    "pointer-capture"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Finite transitions become immediate under reduced motion and keyboard input. Host pause disables controls; any owned drag is cancelled.",
+  "limitations": "Illustrative 31-day series. Minimum interval spans two inclusive days; endpoints cannot cross. No window panning, zoom or real listening data.",
+  "surface": "#dde5ee",
+  "components": [
+    "chart",
+    "slider"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "slide",
+    "gradient"
+  ],
+  "feel": [
+    "technical",
+    "subtle"
+  ],
+  "contexts": [
+    "dashboard",
+    "app"
+  ],
+  "aka": [
+    "date range brush",
+    "dual handle minimap",
+    "chart window selector",
+    "timeline range picker"
+  ],
+  "look": "Pale blue-grey page with a white rounded card holding a large total, a steel-blue bar chart and a minimap track with two grip handles.",
+  "motion": "Dragging either minimap handle snaps it day by day while the selected window, highlighted bars, total and dates update directly; Escape mid-drag restores the previous range.",
+  "adapt": "Range logic is `update` (clamps so endpoints never cross) and `finish` (restores `origin` on cancel); handle drags map pointer x to whole days through `grab`. Replace `HOURS`, the hard-coded `30` index range and the October labels with your series and dates."
+}

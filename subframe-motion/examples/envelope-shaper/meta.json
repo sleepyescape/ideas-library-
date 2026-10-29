@@ -1,0 +1,64 @@
+{
+  "category": "Components & interactions",
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "contexts": [
+    "app",
+    "dashboard"
+  ],
+  "slug": "envelope-shaper",
+  "title": "Give the note its shape",
+  "commonName": "ADSR envelope editor",
+  "description": "Three draggable breakpoints author attack, decay, sustain and release for a held synthesized note.",
+  "useCase": "Connect an editable amplitude curve to the audible lifecycle of a synthesizer or sound-design instrument.",
+  "interaction": "Drag envelope nodes, then hold the play key to hear the result. Arrows adjust times; up/down on the decay node changes sustain. Releasing the key starts the release ramp.",
+  "tags": [
+    "audio",
+    "ADSR",
+    "envelope",
+    "synthesizer",
+    "attack",
+    "decay",
+    "sustain",
+    "release",
+    "Web Audio",
+    "curve"
+  ],
+  "reducedMotion": "The authored curve stays static while editing. Reduced motion removes the playback cursor and live meter motion, retaining the stage label. Host pause, hidden document and unmount dispose audio.",
+  "limitations": "One native triangle oscillator with a modest fixed peak gain, linear envelope stages and no MIDI. Browser audio permission and output availability apply. The sustain span is a schematic 0.6 seconds; the actual note holds for as long as the key is held. Changes affect the next note.",
+  "surface": "#333a3c",
+  "components": [
+    "editor",
+    "media",
+    "slider",
+    "button"
+  ],
+  "triggers": [
+    "drag",
+    "press",
+    "keyboard",
+    "state"
+  ],
+  "techniques": [
+    "path",
+    "slide"
+  ],
+  "feel": [
+    "refined",
+    "technical"
+  ],
+  "aka": [
+    "amplitude envelope",
+    "sound envelope",
+    "direct ADSR editing",
+    "held note",
+    "synth envelope"
+  ],
+  "look": "Pale aluminum instrument housing, a recessed dark-green display, fine amber envelope line and a tactile hold-to-play key.",
+  "motion": "The curve reshapes directly under three handles. Audio follows attack and decay into held sustain; release continues from the actual current amplitude, including release during attack. A cursor and meter track playback.",
+  "adapt": "`envelopeGain` computes the linear held-note amplitude; `release` cancels future ramps and schedules from that current value. `INITIAL` sets the starting envelope. `DEFAULT_CONFIG` and the `config` prop control display time, pitch, segment floor and cursor."
+}

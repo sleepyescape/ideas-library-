@@ -1,0 +1,57 @@
+{
+  "slug": "mark-focus",
+  "title": "Mark focus",
+  "commonName": "Logo zoom transition",
+  "category": "Animation & motion",
+  "description": "An architectural monogram moves from a complete lockup to a precisely framed close-up.",
+  "useCase": "Direct attention from an identity system to its defining shape.",
+  "interaction": "Enter or leave the mark.",
+  "tags": [
+    "logo",
+    "reframe",
+    "zoom",
+    "interruptible",
+    "transform",
+    "identity"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The framing change resolves immediately for keyboard and reduced-motion users.",
+  "limitations": "Independent fictional identity artwork. A bounded 2D transform study, not a camera or arbitrary element focus manager.",
+  "surface": "#e02d23",
+  "components": [
+    "image",
+    "text"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "scale",
+    "rotate",
+    "fade",
+    "slide"
+  ],
+  "feel": [
+    "bold",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "zoom into logo",
+    "brand mark reveal",
+    "monogram close-up",
+    "logo reframe animation"
+  ],
+  "look": "Flat vermilion page with a heavy black stacked sans wordmark at left, a large black geometric monogram at right and a ruled text button.",
+  "motion": "Clicking eases the monogram to centre with exponential smoothing while it scales to 3.9× and turns 45°; the wordmark fades and slides left, and clicking again reverses mid-flight.",
+  "adapt": "`tick` eases `value` toward `target` at rate 7, and `draw` maps it to the mark's position, scale (2.9) and 45° rotation plus the wordmark fade. Replace the `mf-mark` SVG path and `mf-wordmark` text with your own identity."
+}

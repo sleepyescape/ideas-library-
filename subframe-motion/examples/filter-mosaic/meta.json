@@ -1,0 +1,86 @@
+{
+  "slug": "filter-mosaic",
+  "title": "Filter mosaic",
+  "commonName": "Animated filter grid",
+  "category": "Components & interactions",
+  "description": "A tiled collection of textile patterns and places rearranges around the selected category.",
+  "useCase": "Filter a visual collection without losing the identity of items that remain.",
+  "interaction": "Choose a category and select a tile.",
+  "tags": [
+    "filter",
+    "grid",
+    "FLIP",
+    "layout",
+    "image collection"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "concrete-projections.webp",
+      "description": "Brutalist concrete office building",
+      "license": "Unsplash"
+    },
+    {
+      "fileName": "oak-damask.webp",
+      "description": "Oak",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "plum-garden.webp",
+      "description": "Plum Garden at Kameido (Kameido Umeyashiki), from the series \"One Hundred Famous Views of Edo (Meisho Edo hyakkei)\"",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "running-track.webp",
+      "description": "Curving red running track with white lane lines",
+      "license": "Unsplash"
+    },
+    {
+      "fileName": "tulip-print.webp",
+      "description": "Tulip",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "windrush-print.webp",
+      "description": "Windrush",
+      "license": "CC0-1.0"
+    }
+  ],
+  "reducedMotion": "The layout and selection change immediately; categories and image labels remain available.",
+  "limitations": "Six local works in three preset categories. The layout uses measured FLIP transforms rather than a general masonry engine.",
+  "surface": "#efede6",
+  "components": [
+    "gallery"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "layout",
+    "fade"
+  ],
+  "feel": [
+    "refined",
+    "subtle"
+  ],
+  "contexts": [
+    "editorial",
+    "app"
+  ],
+  "aka": [
+    "filterable image grid",
+    "portfolio category filter",
+    "masonry filter",
+    "FLIP grid filter",
+    "category filter gallery"
+  ],
+  "look": "White page with pill filter chips over a mixed-width grid of image tiles: botanical textile prints, concrete architecture, a red running track, a woodblock print.",
+  "motion": "Choosing a filter chip reflows the grid; surviving tiles FLIP from their old rectangles to new ones over 280 ms ease-out, newly shown tiles fade in over 180 ms.",
+  "adapt": "`select` records each `data-tile` rectangle before `setFilter`; a `useLayoutEffect` then inverts the delta with `el.animate` (280 ms `cubic-bezier(.22,1,.36,1)`) and fades new tiles over 180 ms. Replace `tiles` (`file`, `name`, `kind`) and filter values; `fm-wide` sets which tiles span two columns."
+}

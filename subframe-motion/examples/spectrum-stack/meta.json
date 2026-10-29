@@ -1,0 +1,52 @@
+{
+  "slug": "spectrum-stack",
+  "title": "Spectrum stack",
+  "commonName": "Audio spectrum analyzer",
+  "category": "Components & interactions",
+  "description": "Fine logarithmic frequency bands reveal the harmonics of an adjustable synthesized tone.",
+  "useCase": "Show where energy is concentrated; make a filter adjustment legible.",
+  "interaction": "Enable sound and change oscillator frequency.",
+  "tags": [
+    "audio",
+    "fft",
+    "spectrum",
+    "frequency",
+    "analyser",
+    "synthesizer"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Bars update without interpolated motion at four samples per second; sound remains opt-in.",
+  "limitations": "Uses a native oscillator and AnalyserNode. Idle bands are an analytical preview, not live microphone data.",
+  "surface": "#456c9c",
+  "components": [
+    "media",
+    "chart"
+  ],
+  "triggers": [
+    "state",
+    "press"
+  ],
+  "techniques": [
+    "scale"
+  ],
+  "feel": [
+    "technical"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "audio visualizer",
+    "equalizer bars",
+    "FFT frequency bars",
+    "sound frequency meter"
+  ],
+  "look": "Muted steel-blue panel with forty thin cream vertical bars on a faint grid, a large light-weight frequency readout, log-scale labels, a slider and cream button.",
+  "motion": "With sound enabled, 40 log-spaced bars scale to AnalyserNode levels sampled every 33 ms with 70 ms linear transitions; before that, the slider redraws an analytical harmonic preview.",
+  "adapt": "`toggle` routes a sawtooth `OscillatorNode` through an `AnalyserNode` (`fftSize` 2048); a `setInterval` effect maps bins to 40 log bands in `levels`, and `previewBands` draws the idle state. Swap the oscillator for a media or microphone source; keep `stop` and `closeContext`."
+}

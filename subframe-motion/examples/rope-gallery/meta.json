@@ -1,0 +1,81 @@
+{
+  "slug": "rope-gallery",
+  "title": "Specimen fan",
+  "commonName": "Fanned card carousel",
+  "category": "Animation & motion",
+  "description": "Botanical plates fan around one brass binding, bringing the selected specimen upright for inspection.",
+  "useCase": "Give a small visual collection a tactile, direct-manipulation browsing surface.",
+  "interaction": "Drag or select a specimen. Use the arrows, Left, Right, Home and End to browse.",
+  "tags": [
+    "carousel",
+    "specimen",
+    "fan",
+    "radial layout",
+    "shared pivot",
+    "physical paper",
+    "drag",
+    "spring",
+    "botanical"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "botanical-cabbage-rose.webp",
+      "description": "Cabbage Rose (Rosa Centifolia Simplex)",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "botanical-iris.webp",
+      "description": "Gold-banded Iris",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "botanical-turban-lily.webp",
+      "description": "Lillium Pomponium (Turban Lily), plate 7 from Les Liliacées",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "botanical-crocus.webp",
+      "description": "Les Liliacées:  Crocus Sativus",
+      "license": "CC0-1.0"
+    }
+  ],
+  "reducedMotion": "Selection changes are immediate; direct dragging remains available. Host pause freezes spring interpolation.",
+  "limitations": "Four bounded specimen plates with a shared pivot; the cards stay bound and do not detach or open a lightbox.",
+  "surface": "#183b32",
+  "components": [
+    "gallery",
+    "card"
+  ],
+  "triggers": [
+    "drag",
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "rotate",
+    "spring"
+  ],
+  "feel": [
+    "refined",
+    "playful"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "card fan slider",
+    "rotating card stack",
+    "swipeable card deck",
+    "radial image carousel"
+  ],
+  "look": "Four cream paper cards bearing botanical illustrations fan from a brass rivet over a deep green gradient, with italic serif captions and minimal arrow controls.",
+  "motion": "Cards rotate about a shared bottom pivot by distance from the selection; horizontal drag turns the fan directly, then a damped spring settles it on the nearest or clicked plate.",
+  "adapt": "The spring lives in `tick` (stiffness 210, damping 26), and `paint` rotates each `sf-plate` by `distance * spread` about the pivot; drag sensitivity is `dx / 95`. Replace `specimens` with your own images and titles; `choose` handles selection."
+}

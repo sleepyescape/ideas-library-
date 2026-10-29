@@ -1,0 +1,52 @@
+{
+  "slug": "command-launcher",
+  "title": "Command launcher",
+  "commonName": "Command palette",
+  "category": "Components & interactions",
+  "description": "Filter actions and navigate results immediately from the keyboard.",
+  "useCase": "Filter actions and navigate results immediately from the keyboard.",
+  "interaction": "Search for a command",
+  "tags": [
+    "command",
+    "palette",
+    "keyboard",
+    "search",
+    "combobox"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "Local action selection only. No global keyboard shortcut is registered by the gallery example.",
+  "surface": "#edf0f3",
+  "components": [
+    "menu",
+    "input"
+  ],
+  "triggers": [
+    "keyboard",
+    "hover"
+  ],
+  "techniques": [
+    "layout"
+  ],
+  "feel": [
+    "subtle",
+    "technical"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "cmd+k menu",
+    "quick action search",
+    "keyboard command menu",
+    "searchable action list"
+  ],
+  "look": "Charcoal page with a graphite rounded panel: search field, four icon-led action rows with letter keycaps, the first highlighted, and a small hint footer.",
+  "motion": "No transitions: typing filters the actions instantly, arrow keys or pointer movement jump the highlight between rows, Enter or click shows the choice in the footer, Escape clears.",
+  "adapt": "Filtering is `list` (substring match on `query`), the highlight is `index` reflected in `aria-selected` and `aria-activedescendant`, and `onKeyDown` handles arrows, Enter and Escape. Replace `commands` and `setChosen` with real actions and add a global shortcut to open it."
+}

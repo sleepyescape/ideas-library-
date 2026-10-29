@@ -1,0 +1,53 @@
+{
+  "slug": "gravity-letters",
+  "title": "Let it fall",
+  "commonName": "Falling letters animation",
+  "category": "Animation & motion",
+  "description": "Weighted letter tiles drop into a shallow tray and return to their original line.",
+  "useCase": "Add a rare, playful typographic moment to a campaign or a creative empty state.",
+  "interaction": "Drop or reset the letters",
+  "tags": [
+    "gravity",
+    "typography",
+    "fall",
+    "tiles",
+    "playful"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live reduced-motion preferences remove interpolation and decorative playback. All content and native controls remain available. Keyboard changes settle immediately.",
+  "limitations": "A choreographed drop with authored end poses. This does not simulate arbitrary letter collisions or physics.",
+  "surface": "#e7bb45",
+  "components": [
+    "text"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "split-text",
+    "spring",
+    "stagger",
+    "rotate"
+  ],
+  "feel": [
+    "playful"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "gravity text drop",
+    "bouncing letter blocks",
+    "tumbling letters",
+    "dropping letter tiles"
+  ],
+  "look": "Mustard-yellow field with four red block tiles bearing cream bold serif capitals, resting tilted on a brown shelf, and a small text button below.",
+  "motion": "Pressing the button drops the tiles onto the shelf 35 ms apart with a 0.65 s bounce curve and authored tilts; pressing again lifts them back with 0.35 s ease-out.",
+  "adapt": "Each tile's inline `transform` drops it to the tray floor and rotates it by `[-13, 8, -6, 15]`, staggered by `transitionDelay`; the bounce is the 0.65 s transition on `.letters span`, the return `cubic-bezier(.22,1,.36,1)`. Replace `\"DROP\"` and its angles together."
+}

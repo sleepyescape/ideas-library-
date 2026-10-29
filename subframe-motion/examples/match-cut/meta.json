@@ -1,0 +1,55 @@
+{
+  "slug": "match-cut",
+  "title": "Same circle, new world",
+  "commonName": "Match cut scene transition",
+  "category": "Animation & motion",
+  "description": "Citrus, vinyl and a wheel share one circular anchor and uninterrupted angular motion through a timed match cut.",
+  "useCase": "Connect distinct subjects in a concise brand or product sequence.",
+  "interaction": "Cut to the next scene",
+  "tags": [
+    "match cut",
+    "continuity",
+    "scene",
+    "film",
+    "composition",
+    "angular velocity",
+    "circle"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Reduced motion and keyboard activation change scene immediately. Keyboard activation also settles an interrupted pointer transition.",
+  "limitations": "Three original SVG subjects and a finite scene transition; no video rendering, timeline editor or audio.",
+  "surface": "#f4eada",
+  "components": [
+    "scene",
+    "navigation"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "rotate",
+    "blur"
+  ],
+  "feel": [
+    "bold",
+    "playful"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "graphic match transition",
+    "spin transition",
+    "shape continuity cut",
+    "cinematic scene change"
+  ],
+  "look": "Flat illustrated orange slice centred on a warm cream background, with a small sans label, three dots and a circular outlined arrow button below.",
+  "motion": "Pressing next spins the disc 360° over 680 ms (cubic ease-in-out) with blur peaking mid-turn, where the artwork and background cut to the next subject at top speed.",
+  "adapt": "`next` runs a `requestAnimationFrame` `tick` (680 ms) that writes `rotate` and `blur` straight to `disc` and swaps `scene` at `t >= 0.5`. Replace `SCENES`, the three SVG subjects (keep a shared centre and outline) and the `data-scene` backgrounds."
+}

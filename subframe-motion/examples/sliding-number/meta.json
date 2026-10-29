@@ -1,0 +1,61 @@
+{
+  "slug": "sliding-number",
+  "title": "Digits on a roll",
+  "commonName": "Odometer digit counter",
+  "category": "Components & interactions",
+  "description": "Individual digits take the shortest path around a spring-driven number wheel.",
+  "useCase": "Show occasional changes in a small metric, score or count.",
+  "interaction": "Update the idea count",
+  "tags": [
+    "number",
+    "counter",
+    "odometer",
+    "digit",
+    "spring",
+    "metric",
+    "click",
+    "data"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Motion Primitives",
+    "url": "https://motion-primitives.com/docs/sliding-number",
+    "code": "https://github.com/ibelick/motion-primitives/blob/120f64f6ca60348e251f929e9c81f11ccbe45eda/components/core/sliding-number.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "Digits change immediately to their target. Only the target count is exposed to assistive technology.",
+  "limitations": "This compact sample is a three-digit integer counter. Add explicit sign, decimal and digit-count handling for other data.",
+  "surface": "#e3e9e9",
+  "components": [
+    "number"
+  ],
+  "triggers": [
+    "state",
+    "press"
+  ],
+  "techniques": [
+    "roll",
+    "spring"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "dashboard",
+    "app"
+  ],
+  "aka": [
+    "rolling number",
+    "animated counter",
+    "number ticker",
+    "slot machine digits",
+    "digit roller"
+  ],
+  "look": "Large regular-weight slate-teal numerals with a small grey unit label on a pale blue-grey page, above a hairline rule and a small refresh icon.",
+  "motion": "Pressing refresh changes the count and each digit column rolls vertically through intermediate numerals on a firm, non-bouncy spring (stiffness 280, damping 22, mass 0.3).",
+  "adapt": "`Digit` drives a `useSpring` (stiffness 280, damping 22, mass 0.3) per place and `NumberRow` wraps each numeral's `y` with `useTransform`; `canAnimate` falls back to `jump`. Replace `values` and the `[100, 10, 1]` place list for other digit counts."
+}

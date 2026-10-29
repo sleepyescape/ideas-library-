@@ -1,0 +1,80 @@
+{
+  "slug": "photo-lightbox",
+  "title": "Photo lightbox",
+  "commonName": "Image lightbox with zoom",
+  "category": "Components & interactions",
+  "description": "An austere photographic index opens a dark, contained viewer with thumbnails, bounded zoom and pan.",
+  "useCase": "Inspect a photograph closely without losing its collection context.",
+  "interaction": "Open a photograph; browse, enlarge and drag. Arrow keys browse or pan the enlarged image.",
+  "tags": [
+    "photography",
+    "lightbox",
+    "gallery",
+    "zoom",
+    "pan",
+    "focus",
+    "dialog"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "concrete-geometries.webp",
+      "description": "Angular white concrete architecture",
+      "license": "Unsplash"
+    },
+    {
+      "fileName": "coastal-break.webp",
+      "description": "Turquoise surf on ochre rocks",
+      "license": "Unsplash"
+    },
+    {
+      "fileName": "running-track.webp",
+      "description": "Red curved running lanes",
+      "license": "Unsplash"
+    },
+    {
+      "fileName": "tennis-court.webp",
+      "description": "Green tennis courts from above",
+      "license": "Unsplash"
+    }
+  ],
+  "reducedMotion": "The viewer opens immediately and fit-to-image changes skip interpolation.",
+  "limitations": "The viewer is scoped to its component bounds, not a page-level modal. Photographs have separate Unsplash terms.",
+  "surface": "#f7f7f4",
+  "components": [
+    "dialog",
+    "gallery",
+    "image"
+  ],
+  "triggers": [
+    "press",
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "scale"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "app",
+    "editorial"
+  ],
+  "aka": [
+    "image viewer modal",
+    "photo zoom and pan",
+    "fullscreen gallery viewer",
+    "image modal with thumbnails",
+    "click to enlarge photo"
+  ],
+  "look": "Off-white page with a row of four tall, staggered-height photographs (architecture, surf, running track, tennis courts), each with a small caption and arrow.",
+  "motion": "Selecting a photo opens a dark viewer instantly; enlarging jumps the image to 1.7× for drag or arrow-key panning within clamped bounds, and fitting eases it back over 240 ms.",
+  "adapt": "Zoom and pan are one inline `transform` on the viewer image (`scale(${zoom ? 1.7 : 1})` plus `pan`), bounded by `clampPan`; fitting eases via the `.pl-view img` transition `.24s cubic-bezier(.2,.8,.2,1)`. Replace `PHOTOS`; the dialog is scoped to the component, not the page."
+}

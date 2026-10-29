@@ -1,0 +1,59 @@
+{
+  "slug": "halftone-sculpture",
+  "title": "Halftone sculpture",
+  "commonName": "Halftone dot shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A turning organic relief is translated into cobalt ink dots on uncoated paper.",
+  "useCase": "Art publications, exhibition identities, editorial portfolios, and print-led motion branding.",
+  "interaction": "Play or pause the material study.",
+  "tags": [
+    "halftone",
+    "sculpture",
+    "ink",
+    "dots",
+    "print",
+    "cobalt",
+    "relief",
+    "editorial",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Displays one stable, representative frame. Responds immediately when the system preference changes.",
+  "limitations": "Requires WebGL 1; a static CSS composition remains visible when WebGL is unavailable or lost. An analytic relief with moving light, not a full 3D mesh. Fine ink dots may alias when the canvas is downscaled.",
+  "surface": "#f0eee5",
+  "components": [
+    "background",
+    "scene"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "noise",
+    "rotate"
+  ],
+  "feel": [
+    "refined",
+    "calm"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "halftone effect",
+    "dot screen shader",
+    "print halftone animation",
+    "halftone 3D shape"
+  ],
+  "look": "Warm uncoated off-white paper with a cobalt-blue halftone dot blob, a heavy blue sans headline bottom-left, small spaced monospace labels and a serif numeral.",
+  "motion": "The three-lobed relief slowly rotates (about 84 s per turn) while the light swings side to side every 29 s, so halftone dots continuously grow and shrink with the shading.",
+  "adapt": "Everything is in `FRAGMENT`: `heightAt` defines the rotating relief (`u_time * .075`), `lamp` the moving light, `spacing` the dot pitch and `inkRadius` the dot size. Swap `paper` and the ink colour, and replace the overlay copy."
+}

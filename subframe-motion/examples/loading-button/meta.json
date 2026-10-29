@@ -1,0 +1,63 @@
+{
+  "slug": "loading-button",
+  "title": "An action in progress",
+  "commonName": "Async loading button",
+  "category": "Components & interactions",
+  "description": "A stable button moves through saving, success and error without changing its footprint.",
+  "useCase": "Keep an asynchronous action understandable from the first click through its outcome.",
+  "interaction": "Save changes, then try the error state",
+  "tags": [
+    "button",
+    "click",
+    "async",
+    "loading",
+    "spinner",
+    "success",
+    "error",
+    "crossfade",
+    "spring"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Interior",
+    "url": "https://www.interior.dev/docs/loading-button",
+    "code": "https://github.com/ddoemonn/interior/blob/314800833bf01e23e6ae74c2a17fbdaac3688c84/components/interior/loading-button.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "Status labels crossfade without traveling or blurring, and the spinner remains still.",
+  "limitations": "The demo uses a 1.2-second simulated save; connect useAsyncAction to your real action.",
+  "surface": "#eeede8",
+  "components": [
+    "button",
+    "progress"
+  ],
+  "triggers": [
+    "press",
+    "loading",
+    "state"
+  ],
+  "techniques": [
+    "fade",
+    "blur",
+    "spring"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "submit button loading state",
+    "save button spinner",
+    "button success state",
+    "stateful button",
+    "async action feedback"
+  ],
+  "look": "Warm light-grey page with one white rounded bordered button with a soft shadow, and a small checkbox caption below.",
+  "motion": "Clicking spring-crossfades overlapping faces (opacity, 3 px rise, blur) from label to spinner to a green check or red alert at a fixed width, resetting after 1.4 s.",
+  "adapt": "`useAsyncAction` owns the run-id state machine (`resetAfter` defaults to 1400); each face in `faces` overlaps in one grid cell and animates `opacity`, `y` and `filter` with the `CROSSFADE` spring. Pass your real save to `action` and relabel `faces`."
+}

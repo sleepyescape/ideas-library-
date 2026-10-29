@@ -1,0 +1,101 @@
+{
+  "category": "Animation & motion",
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "slug": "justified-image-layout",
+  "title": "Into color",
+  "commonName": "Justified image gallery reflow",
+  "description": "Whole paintings keep their proportions as an expanding collection repacks into aligned rows.",
+  "useCase": "Build image collections where original aspect ratios and visual continuity matter more than uniform crops.",
+  "interaction": "Add a study, then remove it. Existing artworks change rows while keeping their identities and proportions.",
+  "tags": [
+    "justified gallery",
+    "aspect ratio",
+    "row packing",
+    "image layout",
+    "FLIP",
+    "WAAPI",
+    "collection",
+    "reflow"
+  ],
+  "assets": [
+    {
+      "fileName": "color-study-8991.webp",
+      "description": "Improvisation No. 30 (Cannons)",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "color-study-8980.webp",
+      "description": "Landscape with Two Poplars",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "color-study-8987.webp",
+      "description": "Painting with Green Center",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "color-study-8983.webp",
+      "description": "Painting with Troika",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "color-study-129849.webp",
+      "description": "Houses at Murnau",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "color-study-16568.webp",
+      "description": "Water Lilies",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "color-study-87088.webp",
+      "description": "Water Lily Pond",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "color-study-64818.webp",
+      "description": "Stacks of Wheat (End of Summer)",
+      "license": "CC0-1.0"
+    }
+  ],
+  "reducedMotion": "Packing updates immediately. Keyboard actions and host pause finish at the target layout without travel.",
+  "limitations": "Eight local public-domain paintings, bounded exhaustive row partitioning and authored 532 px gallery width inside a responsive 600×375 stage. This is not virtualized for large collections.",
+  "surface": "#fbfaf7",
+  "components": [
+    "gallery",
+    "image"
+  ],
+  "triggers": [
+    "press",
+    "keyboard",
+    "state"
+  ],
+  "techniques": [
+    "layout",
+    "scale",
+    "fade"
+  ],
+  "feel": [
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "app"
+  ],
+  "aka": [
+    "uncropped image grid",
+    "justified photo gallery",
+    "aspect preserving image layout",
+    "animated row packing",
+    "art gallery reflow"
+  ],
+  "look": "A warm-white curatorial wall of saturated paintings in two flush rows, with a single round plus control centered beneath the artwork.",
+  "motion": "A bounded row-partition search finds aspect-correct boxes. Existing images animate from their currently rendered transform to the new row, and the added study fades into place. Interrupted reflows retain the current visual pose.",
+  "adapt": "Replace the image dimensions, titles and IDs in `WORKS`; `pack` scores candidate row partitions against `targetHeight` and a fixed stage bound. `gutter` and `lastRow` change the packing, while `layoutMs` controls the next transform transition."
+}

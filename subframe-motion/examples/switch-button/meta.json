@@ -1,0 +1,61 @@
+{
+  "slug": "switch-button",
+  "title": "Change the light",
+  "commonName": "Theme toggle button",
+  "category": "Components & interactions",
+  "description": "A turning sun, a crossfade and a passing highlight make a theme change feel considered.",
+  "useCase": "Connect the light and dark states of an appearance control.",
+  "interaction": "Toggle the example's appearance",
+  "tags": [
+    "button",
+    "theme",
+    "toggle",
+    "click",
+    "hover",
+    "sun",
+    "rotation",
+    "shine",
+    "CSS"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Kokonut UI",
+    "url": "https://kokonutui.com/docs/components/switch-button",
+    "code": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/switch-button.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The labels and colors still change; icon rotation and the moving highlight are removed.",
+  "limitations": "The theme change is scoped to this preview. Connect its local state to your application's appearance setting.",
+  "surface": "#e9e9e7",
+  "components": [
+    "toggle",
+    "button"
+  ],
+  "triggers": [
+    "press",
+    "hover",
+    "state"
+  ],
+  "techniques": [
+    "rotate",
+    "fade",
+    "glow"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "dark mode toggle",
+    "light dark switch",
+    "appearance toggle",
+    "day night button"
+  ],
+  "look": "A single off-white rounded button with a soft top-to-bottom gradient, a gold outline sun icon and a grey label, centred on pale grey.",
+  "motion": "Hover spins the sun 360° (700 ms) and sweeps a highlight across (500 ms); toggling crossfades the label and page colour over 250 ms and turns the sun 180°.",
+  "adapt": "All motion is CSS in the inline style block: `.sf-theme-sun` rotation with `cubic-bezier(.645,.045,.355,1)`, the `.sf-theme-label` crossfade and `.sf-theme-shine` sweep, keyed off `data-dark`. Replace the local `dark` state with your app's appearance setting."
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "cursor-exhibition",
+  "title": "Loose impressions",
+  "commonName": "Cursor image trail",
+  "category": "Animation & motion",
+  "description": "A trail of small relief prints follows movement through an exhibition field with three prints visible at rest.",
+  "useCase": "Let a portfolio reveal a visual collection through exploration without taking over the page.",
+  "interaction": "Move through the field or place a print",
+  "tags": [
+    "cursor",
+    "trail",
+    "art",
+    "portfolio",
+    "pointer"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live reduced-motion preferences remove interpolation and decorative playback. All content and native controls remain available. Keyboard changes settle immediately.",
+  "limitations": "Original demonstration content; adapt labels and state to the host product.",
+  "surface": "#e9e7e1",
+  "components": [
+    "cursor",
+    "gallery"
+  ],
+  "triggers": [
+    "pointer",
+    "press"
+  ],
+  "techniques": [
+    "scale",
+    "fade"
+  ],
+  "feel": [
+    "playful",
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "mouse trail images",
+    "image trail on hover",
+    "cursor follow photos",
+    "portfolio hover trail",
+    "pointer print trail"
+  ],
+  "look": "Warm stone-grey page with a large muted olive serif headline, tilted cream-matted abstract prints with soft shadows, and a thin-ruled text button along the bottom.",
+  "motion": "Mouse movement drops a tilted print after every 7% of travel; each pops in from 0.85 scale over 300 ms ease-out, older prints fade, and six remain at most.",
+  "adapt": "`place` adds a print when the pointer moves 7% from `last`, keeps six via `slice(-5)` and derives each `angle` from its `id`; entry is the `sf-impression-in` keyframes. Replace the `.impression` CSS artwork with real images and rewrite the `.word` headline."
+}

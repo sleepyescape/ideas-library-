@@ -1,0 +1,56 @@
+{
+  "slug": "project-index",
+  "title": "Objects in practice",
+  "commonName": "Hover image preview list",
+  "category": "Animation & motion",
+  "description": "A quiet project list selects dimensional still lifes beside a separate image window.",
+  "useCase": "Let a small studio index remain scannable while showing a rich preview for the focused project.",
+  "interaction": "Hover, focus or choose a project.",
+  "tags": [
+    "portfolio",
+    "hover",
+    "index",
+    "image reveal",
+    "keyboard",
+    "preview",
+    "selection"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Preview changes and keyboard navigation settle immediately under reduced motion; host pause disables selections.",
+  "limitations": "Three original CSS still lifes with no navigation or external images. Adapt the selected project state to actual product content.",
+  "surface": "#ecebe 7",
+  "components": [
+    "list",
+    "image"
+  ],
+  "triggers": [
+    "hover",
+    "keyboard",
+    "press"
+  ],
+  "techniques": [
+    "slide"
+  ],
+  "feel": [
+    "refined",
+    "subtle"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "portfolio project list",
+    "image reveal on hover",
+    "work index with preview",
+    "hover to preview project"
+  ],
+  "look": "Warm off-white page with a hairline-divided serif project list beside a shadowed taupe panel showing a soft sculpted object; the active title is rust.",
+  "motion": "Hovering, focusing or clicking a title slides a vertical reel of stills inside the fixed preview window to that project in 240 ms with ease-out; keyboard input switches instantly.",
+  "adapt": "The window holds a `.reel` translated by `selected` (`translateY`), with the `.24s cubic-bezier(.2,.85,.25,1)` transition in the inline style. Replace `names` and the CSS-drawn `.still` shapes with real project titles and images."
+}

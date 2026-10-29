@@ -1,0 +1,70 @@
+{
+  "category": "Animation & motion",
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "slug": "foreground-occlusion-wipe",
+  "title": "Behind the shutter",
+  "commonName": "Foreground occlusion scene transition",
+  "description": "A near-black shutter snaps horizontally across a still photograph, concealing a scene change during a brief fully covered interval.",
+  "useCase": "Give a photographic scene change spatial continuity through an opaque foreground object.",
+  "interaction": "Advance the architectural study. Another press queues one extra crossing; pause freezes the current frame.",
+  "tags": [
+    "foreground occlusion",
+    "scene transition",
+    "shutter",
+    "wipe",
+    "camera",
+    "image reveal",
+    "covered swap"
+  ],
+  "assets": [
+    {
+      "fileName": "shutter-concrete-geometries.webp",
+      "description": "Angular white concrete architecture",
+      "license": "Unsplash"
+    },
+    {
+      "fileName": "shutter-concrete-projections.webp",
+      "description": "Projecting concrete office building",
+      "license": "Unsplash"
+    }
+  ],
+  "reducedMotion": "Pressing the next control switches scenes immediately. Keyboard actions also skip the traversal. Host pause freezes elapsed time and resumes from that point.",
+  "limitations": "Two local photographs and an independently authored CSS shutter. This is a directed photographic transition, not extracted depth geometry or a physically simulated camera.",
+  "surface": "#111213",
+  "components": [
+    "scene",
+    "image",
+    "gallery"
+  ],
+  "triggers": [
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "slide",
+    "mask"
+  ],
+  "feel": [
+    "refined",
+    "calm"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "foreground wipe",
+    "hidden scene cut",
+    "architectural shutter transition",
+    "occluder scene swap",
+    "camera shutter transition"
+  ],
+  "look": "Full-bleed concrete architecture with one restrained serif scene title. A near-black mechanical curtain with restrained seams passes horizontally across the photograph.",
+  "motion": "Two fast horizontal strokes share 220 ms of travel with a 40 ms covered hold by default. The photograph remains still and changes only under full coverage. At most one extra advance is queued; host pause and document hiding freeze the cycle.",
+  "adapt": "Replace `SCENES` with local photographs. `Take` snapshots the timing and direction per crossing. `crossingMs`, `occluderWidth`, `coveredHoldMs` and `direction` affect the next advance; keep the full-coverage swap invariant in `tick`."
+}

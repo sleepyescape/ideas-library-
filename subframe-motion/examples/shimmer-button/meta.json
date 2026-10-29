@@ -1,0 +1,58 @@
+{
+  "slug": "shimmer-button",
+  "title": "Shimmer button",
+  "commonName": "Shimmer border button",
+  "category": "Components & interactions",
+  "description": "A thin spark travels around a rounded button while the label stays still.",
+  "useCase": "Give one occasional call to action a subtle idle highlight.",
+  "interaction": "Click the button or pause the shimmer",
+  "tags": [
+    "button",
+    "call to action",
+    "conic gradient",
+    "shimmer",
+    "idle loop",
+    "hover",
+    "click"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Magic UI",
+    "url": "https://magicui.design/docs/components/shimmer-button",
+    "code": "https://github.com/magicuidesign/magicui/blob/85f97fd27b053339af74ba9dd4ca428ee25989fb/apps/www/registry/magicui/shimmer-button.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The border holds still; the button continues to toggle its local saved state.",
+  "limitations": "Uses CSS container query units. The waitlist action is local preview feedback; connect your own handler.",
+  "surface": "#252826",
+  "components": [
+    "button"
+  ],
+  "triggers": [
+    "ambient",
+    "press"
+  ],
+  "techniques": [
+    "glow",
+    "gradient",
+    "loop"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "app"
+  ],
+  "aka": [
+    "shiny CTA button",
+    "animated gradient border button",
+    "spark outline button",
+    "glowing waitlist button"
+  ],
+  "look": "Dark charcoal-green page with a single pill button in muted dark green, a soft inner highlight and a thin pale-green light on its edge.",
+  "motion": "A blurred conic-gradient spark rotates once per 6 s with two holds while sliding across the button and back (3 s ease-in-out), lighting its 1 px edge.",
+  "adapt": "The light is `.mg-shimmer-light` (a 90deg conic wedge on `mg-shimmer-spin`) inside `.mg-shimmer-spark` (sliding on `mg-shimmer-slide`); `.mg-shimmer-backdrop` at `inset:1px` hides all but the rim. Recolour `#dbedc8`, tune durations, and wire the waitlist `onClick` to your handler."
+}

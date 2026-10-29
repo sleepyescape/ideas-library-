@@ -1,0 +1,53 @@
+{
+  "slug": "answer-stream",
+  "title": "Answer stream",
+  "commonName": "Streaming chat autoscroll",
+  "category": "Components & interactions",
+  "description": "A streaming response follows incoming text while preserving the reader’s position when they scroll away.",
+  "useCase": "Keep incoming responses visible without stealing reading position.",
+  "interaction": "Replay or stop the response; scroll up, then jump to the latest text.",
+  "tags": [
+    "stream",
+    "chat",
+    "autoscroll",
+    "conversation",
+    "reading-position",
+    "response"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Jump to latest is immediate; streamed text arrives without decorative motion.",
+  "limitations": "A scripted local response. No model, network request or markdown parser.",
+  "surface": "#e8ebf0",
+  "components": [
+    "text"
+  ],
+  "triggers": [
+    "loading",
+    "scroll",
+    "press"
+  ],
+  "techniques": [
+    "split-text"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "AI response streaming",
+    "stick-to-bottom scroll",
+    "typewriter chat reply",
+    "scroll to latest button",
+    "LLM output follow"
+  ],
+  "look": "Cool blue-grey page with a white rounded chat pane: arrow-mark header, large navy serif heading and body paragraphs, and a small status footer.",
+  "motion": "Replay streams three characters every 35 ms while the pane pins to the bottom; scrolling up stops following and shows a pill that smooth-scrolls back to the latest text.",
+  "adapt": "Streaming is a `setInterval` adding 3 to `count` every 35 ms; a `useLayoutEffect` pins `scrollTop` while `follow` is true, and `onScroll` clears it beyond 28 px from the bottom. Replace `BLOCKS` and the timer with your token stream."
+}

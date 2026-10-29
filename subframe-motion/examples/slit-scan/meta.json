@@ -1,0 +1,56 @@
+{
+  "slug": "slit-scan",
+  "title": "Slit scan",
+  "commonName": "Slit-scan image shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A porcelain frame stretches into an impossible ribbon as each image column samples a different instant.",
+  "useCase": "Create temporal distortion from a rigid animation while keeping the amount of time displacement explicit and controllable.",
+  "interaction": "Change time spread or pause the scan.",
+  "tags": [
+    "native webgl",
+    "slit scan",
+    "temporal sampling",
+    "time displacement",
+    "sculpture",
+    "loop"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The scene clock stops at a fixed pose. The time-spread control updates the static temporal composition directly.",
+  "limitations": "Each column evaluates an analytic rigid pose at its own timestamp. It does not capture camera/video history or require feedback textures. Requires WebGL 1; static SVG artwork covers unsupported or lost contexts and automatically yields when restored.",
+  "surface": "#073c3e",
+  "components": [
+    "background",
+    "scene"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "distortion",
+    "rotate"
+  ],
+  "feel": [
+    "refined",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "time displacement effect",
+    "temporal smear shader",
+    "time warp shader",
+    "stretched motion art"
+  ],
+  "look": "Thick porcelain-white rounded frame smeared into a warped, scalloped ribbon with a dark drop shadow on deep teal; a slim slider row below.",
+  "motion": "A square frame rotates and drifts continuously, each screen column rendering a different instant so it stretches into a ribbon; the Time spread slider sets offsets up to 15 s.",
+  "adapt": "In `fragment`, `sampleTime` adds `(uv.x-.5)*value*15.` to the clock, so `value` (slider / 100) sets the spread; the rigid pose (`angle`, offsets, `depth`) and the `box` frame are the subject to replace. Tune the `ceramic` and `background` colours; keep the context-loss handling."
+}

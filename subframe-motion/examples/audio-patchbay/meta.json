@@ -1,0 +1,60 @@
+{
+  "category": "Components & interactions",
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "contexts": [
+    "app",
+    "dashboard"
+  ],
+  "slug": "audio-patchbay",
+  "title": "Patch the signal",
+  "commonName": "Interactive audio patchbay",
+  "description": "Connect two generated sources through a filter or directly to an output, then audition the resulting route.",
+  "useCase": "Make audio routing topology editable and show which connections actually reach the output.",
+  "interaction": "Drag an output socket to an input, or select both with keyboard or touch. Listen opts into audio; connection chips remove cables.",
+  "tags": [
+    "audio",
+    "routing",
+    "patchbay",
+    "ports",
+    "cable",
+    "signal",
+    "web-audio",
+    "connection"
+  ],
+  "reducedMotion": "New-cable fades are removed for keyboard input and reduced motion. Audio remains explicit opt-in; host pause, tab hiding and unmount stop and close the owned audio context.",
+  "limitations": "Two quiet generated oscillators, one fixed low-pass filter, one output and at most three cables. No microphone, samples, node creation or arbitrary graphs. The output meter reads an AnalyserNode; audio quality is not a physical-device certification.",
+  "surface": "#202427",
+  "components": [
+    "media",
+    "editor",
+    "button"
+  ],
+  "triggers": [
+    "press",
+    "drag",
+    "keyboard",
+    "state"
+  ],
+  "techniques": [
+    "path",
+    "fade"
+  ],
+  "feel": [
+    "technical",
+    "refined"
+  ],
+  "aka": [
+    "modular audio routing",
+    "patch cable editor",
+    "connect audio nodes",
+    "signal chain editor"
+  ],
+  "look": "Graphite studio panel with steel socket rings, ivory and red cables, restrained module labels and a small measured output level.",
+  "motion": "A tentative cable follows the pointer; a valid drop creates a curved route with a 160 ms fade. The output level follows real generated audio only after Listen.",
+  "adapt": "`connect` enforces the bounded routing rules and `cables` is the topology. `listen` creates native audio nodes; `stop` disposes them. `DEFAULT_CONFIG` and the `config` prop expose source spacing, audition pitch, incompatible ports and cable timing."
+}

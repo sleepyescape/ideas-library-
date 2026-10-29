@@ -1,0 +1,55 @@
+{
+  "slug": "sequencer-grid",
+  "title": "Step sequencer",
+  "commonName": "Step sequencer",
+  "category": "Components & interactions",
+  "description": "Sixteen physical keys hold a pattern beneath a synchronized glass step display.",
+  "useCase": "Author and inspect a short step pattern with separate enabled and current-step feedback.",
+  "interaction": "Toggle keys and start or pause playback; reduced-motion playback advances one step at a time.",
+  "tags": [
+    "step sequencer",
+    "pattern",
+    "latching key",
+    "transport",
+    "tactile UI",
+    "playhead"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Reduced motion uses a static playhead with an explicit Next step action.",
+  "limitations": "Visual sequence only; no audio playback or synthesis. ",
+  "surface": "#949590",
+  "components": [
+    "media",
+    "toggle"
+  ],
+  "triggers": [
+    "press",
+    "state",
+    "ambient"
+  ],
+  "techniques": [
+    "glow",
+    "loop"
+  ],
+  "feel": [
+    "technical",
+    "refined"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "drum machine grid",
+    "beat pattern editor",
+    "rhythm grid",
+    "skeuomorphic hardware keys"
+  ],
+  "look": "Skeuomorphic graphite hardware panel on warm grey with a dark glass display, pale play key, and rows of charcoal and cream keys with amber lights.",
+  "motion": "Pressing a key latches it 1 px down and lights its amber strip; playback advances a glowing step marker across the sixteen keys and display every 250 ms, looping.",
+  "adapt": "Steps live in `steps` (from `initialPattern`) and `beat` advances in a 250 ms `setInterval`; key depth and lights are CSS on `sf-stepbank-face` and `sf-stepbank-light` via `aria-pressed` and `data-current`. Drive audio from `beat` and retune 250 for tempo."
+}

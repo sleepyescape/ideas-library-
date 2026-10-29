@@ -1,0 +1,59 @@
+{
+  "slug": "ripple-memory",
+  "title": "Ripple memory",
+  "commonName": "Water ripple shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A silver-green water surface remembers each disturbance as overlapping waves.",
+  "useCase": "Add persistent, propagating ripple interaction to a procedural reflective surface.",
+  "interaction": "Drag or press Enter on the water; adjust depth.",
+  "tags": [
+    "native webgl",
+    "water",
+    "wave equation",
+    "persistent state",
+    "ripple",
+    "reflection",
+    "pointer"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The simulation clock stops. Deliberate pointer or keyboard disturbances update a static surface.",
+  "limitations": "Requires WebGL 1; a static CSS swatch appears if unavailable or after context loss. A bounded 128×128 CPU height solver displayed with WebGL reflection; no arbitrary DOM refraction or GPU compute dependency.",
+  "surface": "#668385",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "drag",
+    "press",
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "physics",
+    "distortion"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "interactive water ripples",
+    "water surface simulation",
+    "liquid ripple background",
+    "pond ripple effect",
+    "wave simulation"
+  ],
+  "look": "Muted slate-teal liquid surface with glossy silver-green highlights and warped reflected vertical bands, distorted by overlapping ripple rings.",
+  "motion": "Pointer presses, drags and Enter add disturbances to a 128×128 CPU wave-equation height field whose ripples spread and slowly damp; an automatic drop lands every 2.4 s.",
+  "adapt": "Ripples come from `disturb` (Gaussian falloff 1200, amplitude 0.27) and `evolve`, a damped wave step (0.44 Laplacian, 0.996 decay) on the 128×128 `heights` grid uploaded as a texture; `FRAGMENT` shades it, `u_control` setting depth. Tune the 2.4 s auto-drop in `advance`."
+}

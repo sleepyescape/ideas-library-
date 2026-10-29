@@ -1,0 +1,55 @@
+{
+  "slug": "ascii-relief",
+  "title": "ASCII relief",
+  "commonName": "ASCII art shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A folded ring is rebuilt from a few precisely drawn glyphs instead of pixels.",
+  "useCase": "Turn tonal imagery into a scalable typographic treatment with controllable glyph density.",
+  "interaction": "Adjust character size.",
+  "tags": [
+    "native webgl",
+    "ascii",
+    "glyphs",
+    "luminance",
+    "text raster",
+    "typography"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The elapsed-time clock stops. Parameter controls immediately update the static composition.",
+  "limitations": "Requires WebGL 1; a static CSS swatch appears if unavailable or after context loss. A procedural four-glyph set rendered in GLSL; no font dependency, imported image, or DOM text conversion.",
+  "surface": "#f7f7f4",
+  "components": [
+    "background",
+    "text"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "rotate"
+  ],
+  "feel": [
+    "technical",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "ASCII render",
+    "text mode graphics",
+    "glyph halftone",
+    "character grid shader"
+  ],
+  "look": "Burgundy ASCII glyphs (dots, plus signs, hash bars and boxes) forming a shaded oval ring on warm off-white paper, set in a fixed character grid.",
+  "motion": "The ring slowly rocks back and forth (about ±9° on a 31 s sine) and its shading re-quantises into glyphs every frame; a character-size slider changes cell size.",
+  "adapt": "In `FRAGMENT`, `scene` returns the lit ring's brightness and `glyph` maps it to four 5×7 glyphs by threshold; cell size is `mix(5.,15.,u_control)`. Replace `scene` with your own luminance source, retune the `value` thresholds, and recolour `paper` and `ink`."
+}

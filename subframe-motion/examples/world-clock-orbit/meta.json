@@ -1,0 +1,59 @@
+{
+  "slug": "world-clock-orbit",
+  "title": "World clock orbit",
+  "commonName": "Time zone globe",
+  "category": "Components & interactions",
+  "description": "An oxblood coordinate globe turns toward three cities while their real local clocks stay aligned.",
+  "useCase": "Combine a location selector with accurate time-zone context for a distributed team.",
+  "interaction": "Select a city or drag the globe. Focus the globe and use arrow keys; Home returns to the selected city.",
+  "tags": [
+    "globe",
+    "timezone",
+    "clock",
+    "canvas",
+    "projection",
+    "drag",
+    "coordinates"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Selecting a city changes the camera instantly; direct drag remains available.",
+  "limitations": "A geographic coordinate sphere without a country-boundary dataset. Times come from Intl and the device clock.",
+  "surface": "#671d39",
+  "components": [
+    "chart",
+    "number",
+    "picker"
+  ],
+  "triggers": [
+    "press",
+    "drag"
+  ],
+  "techniques": [
+    "canvas",
+    "3d",
+    "rotate"
+  ],
+  "feel": [
+    "refined",
+    "technical"
+  ],
+  "contexts": [
+    "app",
+    "dashboard"
+  ],
+  "aka": [
+    "world clock widget",
+    "rotating globe selector",
+    "timezone picker",
+    "interactive wireframe globe",
+    "team time zones"
+  ],
+  "look": "Oxblood panel with a pale pink wireframe globe, cream and pink city dots with monospace codes, and a right column of large clock times.",
+  "motion": "Selecting a city turns the globe the short way to centre it (480 ms, cubic ease-out); dragging rotates it directly and the clocks update every second.",
+  "adapt": "`focusPlace` tweens `camera` toward `aim` in its `tick` (480 ms, `1 - (1 - f) ** 3`), using `normalize` for the shortest yaw; `project` and `draw` render the orthographic sphere. Replace `PLACES` with your cities and IANA zones."
+}

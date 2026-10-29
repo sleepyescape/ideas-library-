@@ -1,0 +1,59 @@
+{
+  "slug": "poster-sphere",
+  "title": "Engraved orbit",
+  "commonName": "Engraved 3D sphere shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Fine silver engravings wrap a polished navy sphere, revealing its curvature as the object rotates in a pale studio.",
+  "useCase": "Procedural material previews, interactive product studies and sculptural identity assets.",
+  "interaction": "Drag or use arrow keys to rotate; adjust engraving pitch and toggle automatic rotation.",
+  "tags": [
+    "webgl",
+    "glsl",
+    "sphere",
+    "engraving",
+    "material",
+    "reflection",
+    "drag",
+    "procedural"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Automatic rotation stops; manual rotation and pitch changes redraw immediately. Host pause stops the clock and cancels an unfinished drag.",
+  "limitations": "An analytic shader sphere with procedural engraved latitude lines and approximate studio lighting; no mesh model, environment map or exported 3D asset. Requires WebGL 1.",
+  "surface": "#d6e3ed",
+  "components": [
+    "scene"
+  ],
+  "triggers": [
+    "ambient",
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "shader",
+    "3d",
+    "rotate"
+  ],
+  "feel": [
+    "refined",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "draggable 3D sphere",
+    "WebGL sphere",
+    "rotating striped ball",
+    "procedural material sphere"
+  ],
+  "look": "Pale powder-blue studio with a glossy navy sphere wrapped in fine pale-silver contour lines, a soft floor shadow, and minimal navy controls.",
+  "motion": "The engraved sphere spins continuously about its vertical axis at 0.15 rad/s; dragging or arrow keys stop the spin and turn or tilt it directly, and pitch changes line density.",
+  "adapt": "Everything renders in the `FRAGMENT` shader: spin speed is `u_time*.15`, line count `(14.+u_ink*25.)`, and drag feeds `u_pointer` from `pointer`. Recolour `enamel` and `metal` for your material; keep `cancelDrag`, context-loss and reduced-motion handling."
+}

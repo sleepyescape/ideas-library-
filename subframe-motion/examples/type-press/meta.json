@@ -1,0 +1,57 @@
+{
+  "slug": "type-press",
+  "title": "Type under pressure",
+  "commonName": "Kinetic poster typography",
+  "category": "Animation & motion",
+  "description": "Heavy club typography compresses and releases like a sound system finding its voice.",
+  "useCase": "Create an expressive campaign headline or event poster where the type itself carries the identity.",
+  "interaction": "Print the next poster",
+  "tags": [
+    "kinetic typography",
+    "editorial",
+    "poster",
+    "music",
+    "club",
+    "compression",
+    "stagger",
+    "type",
+    "replay",
+    "CSS"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "New editions appear immediately. Keyboard activation also skips the letter motion.",
+  "limitations": "The two four-letter headlines are designed for this composition. Retune the type size and line height for longer copy.",
+  "surface": "#f13c25",
+  "components": [
+    "text"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "split-text",
+    "stagger",
+    "scale"
+  ],
+  "feel": [
+    "bold"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "per-letter headline animation",
+    "squash and stretch text",
+    "animated event poster",
+    "staggered letter reveal"
+  ],
+  "look": "Flat vermilion poster with huge tightly tracked black grotesque letters stacked in two lines between thick black rules and small monospace captions.",
+  "motion": "Pressing the button swaps the headline; top letters rise from narrow slivers and bottom letters drop from wide flat bars, staggered 35 ms over 760 ms ease-out.",
+  "adapt": "Letter motion is the `sf-typepress-set` and `sf-typepress-set-bottom` keyframes (760ms `cubic-bezier(.16,1,.3,1)`) with per-letter `animationDelay` steps of 35 ms; re-keying the `h3` by `edition` replays them. Replace the `words` pairs and poster copy, retuning type size for longer words."
+}

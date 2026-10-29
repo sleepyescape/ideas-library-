@@ -1,0 +1,57 @@
+{
+  "slug": "animated-grid-pattern",
+  "title": "Pieces taking shape",
+  "commonName": "Animated grid background",
+  "category": "Animation & motion",
+  "description": "Individual cells gently appear and disappear across a fine geometric field.",
+  "useCase": "Add quiet activity behind a short headline or product illustration.",
+  "interaction": "Play or pause the changing grid",
+  "tags": [
+    "grid",
+    "SVG",
+    "cells",
+    "opacity",
+    "background",
+    "loop",
+    "ambient",
+    "pattern"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Magic UI",
+    "url": "https://magicui.design/docs/components/animated-grid-pattern",
+    "code": "https://github.com/magicuidesign/magicui/blob/85f97fd27b053339af74ba9dd4ca428ee25989fb/apps/www/registry/magicui/animated-grid-pattern.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "A fixed set of faint cells remains visible with no relocation.",
+  "limitations": "Decorative; does not represent a live heatmap. Cell positions are deterministic and recalculate on container resize.",
+  "surface": "#e7e9ef",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "fade",
+    "stagger",
+    "loop"
+  ],
+  "feel": [
+    "calm",
+    "subtle"
+  ],
+  "contexts": [
+    "landing"
+  ],
+  "aka": [
+    "grid background pattern",
+    "flickering grid",
+    "hero grid background",
+    "animated squares backdrop"
+  ],
+  "look": "Pale cool-grey field with a fine light grid of square cells, a few cells tinted soft blue-grey, edges fading out through a radial mask.",
+  "motion": "Eighteen cells fade in and out on staggered 7 s ease-in-out loops, peaking at 0.3 opacity, each relocating to a new grid position after every cycle; a button pauses.",
+  "adapt": "Cells are 18 `rect` elements from `makeCells` over a `cellSize` (36) SVG `pattern`; each runs `mg-gridpattern-fade` (7 s, peak .3) offset by `--delay`, and `relocate` moves it on `onAnimationIteration`. Tune count, `cellSize`, the keyframe and the `mask-image` falloff."
+}

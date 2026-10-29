@@ -1,0 +1,55 @@
+{
+  "slug": "region-splice",
+  "title": "Region splice",
+  "commonName": "Waveform region selector",
+  "category": "Components & interactions",
+  "description": "Three waveform selections move and resize within shared bounds without colliding.",
+  "useCase": "Mark several passages in one recording while maintaining minimum durations and separation.",
+  "interaction": "Drag a region or its selected edges; use arrows, Shift, Home and End; toggle quarter-second snapping or reset.",
+  "tags": [
+    "audio",
+    "waveform",
+    "timeline",
+    "multi-region",
+    "resize",
+    "collision",
+    "pointer-capture",
+    "keyboard"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Editing tracks the pointer directly, without inertial or decorative animation.",
+  "limitations": "Deterministic synthetic waveform and three local selection regions. No audio decoding, playback, export or destructive clip edits.",
+  "surface": "#311d2c",
+  "components": [
+    "editor",
+    "media"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "slide"
+  ],
+  "feel": [
+    "technical"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "audio trimmer",
+    "waveform clip editor",
+    "audio range selection",
+    "multi-range slider",
+    "timeline region editor"
+  ],
+  "look": "Dark plum audio editor card with a pink waveform track, three translucent rounded region boxes (one highlighted with edge handles), monospace ruler and timing readouts.",
+  "motion": "Dragging a region or edge handle moves or resizes it 1:1 with the pointer, stopping at neighbours and a 4 s minimum, optionally snapping to 0.25 s; no easing.",
+  "adapt": "`shiftRegion` enforces bounds using `GAP`, `MINIMUM` and `LENGTH`; `start`, `move` and `end` handle pointer capture, snapping to quarter seconds when `snap` is on, and `key` maps arrows, Home and End. Replace `INITIAL` and the synthetic `PEAKS` waveform with decoded audio peaks."
+}

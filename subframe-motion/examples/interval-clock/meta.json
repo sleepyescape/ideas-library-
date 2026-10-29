@@ -1,0 +1,55 @@
+{
+  "slug": "interval-clock",
+  "title": "Interval clock",
+  "commonName": "Countdown timer dial",
+  "category": "Components & interactions",
+  "description": "A single enamel countdown dial depletes around an inset numeric readout, with tactile interval keys.",
+  "useCase": "Focus periods, rehearsal intervals and deliberate timed activities.",
+  "interaction": "Choose 1, 5 or 10 minutes; start, pause or reset.",
+  "tags": [
+    "clock",
+    "timer",
+    "countdown",
+    "interval",
+    "dial",
+    "svg",
+    "physical-ui"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The countdown and ring update in discrete seconds; decorative button transitions are removed.",
+  "limitations": "Local browser timer; no alarm, background notification or persisted session. Host pause freezes elapsed time.",
+  "surface": "#d7ded6",
+  "components": [
+    "number",
+    "progress"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "path"
+  ],
+  "feel": [
+    "refined",
+    "technical"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "pomodoro timer",
+    "focus timer",
+    "circular countdown",
+    "timer progress ring",
+    "kitchen timer"
+  ],
+  "look": "Sage-grey rounded console: a silver-bezel clock face with minute ticks and an orange ring around large numerals, beside segmented presets and an orange start key.",
+  "motion": "Pressing start counts down in whole-second steps: the orange ring and its end dot retreat counter-clockwise to twelve, the digits tick and a lamp lights; the key stays depressed.",
+  "adapt": "A 100 ms `setInterval` running `tick` updates `remaining`; `progress` sets the `sf-ic-progress` circle's `strokeDasharray` and the dot position, and presets call `reset`. Change the `[1, 5, 10]` presets and hook completion to your own alert."
+}

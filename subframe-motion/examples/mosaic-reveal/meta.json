@@ -1,0 +1,51 @@
+{
+  "slug": "mosaic-reveal",
+  "title": "Afterimage",
+  "commonName": "Pixel mosaic transition",
+  "category": "Animation & motion",
+  "description": "A mosaic of small tiles trades a relief print for its inverse.",
+  "useCase": "Transition between paired artworks or campaign states with a brief discontinuous reveal.",
+  "interaction": "Change the print",
+  "tags": [
+    "pixel",
+    "mosaic",
+    "transition",
+    "image",
+    "print"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live reduced-motion preferences remove interpolation and decorative playback. All content and native controls remain available. Keyboard changes settle immediately.",
+  "limitations": "Original demonstration content; adapt labels and state to the host product.",
+  "surface": "#202523",
+  "components": [
+    "image"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "stagger",
+    "mask"
+  ],
+  "feel": [
+    "bold"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "pixel dissolve",
+    "tile reveal transition",
+    "blocky image swap",
+    "pixelated wipe"
+  ],
+  "look": "Full-bleed flat vermilion print with thick charcoal curved stripes sweeping into a band, a yellow circle with crosshair, and a round refresh button.",
+  "motion": "Clicking the print swaps it for a rotated cobalt-and-amber inverse under a 10×8 grid of cream tiles that blink off in scattered order over roughly 0.3 s.",
+  "adapt": "The reveal is the `tiles` grid (80 cells re-keyed by `run`), each running `sf-mosaic-tile` (0.24 s, `steps(1,end)`) after a scattered `animationDelay`; tune grid size, delay spread and tile colour. Replace the two SVG prints inside `relief`."
+}

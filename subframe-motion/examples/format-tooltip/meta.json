@@ -1,0 +1,56 @@
+{
+  "slug": "format-tooltip",
+  "title": "Format tooltip",
+  "commonName": "Toolbar tooltip",
+  "category": "Components & interactions",
+  "description": "A shared tooltip moves between formatting controls after one initial hover delay.",
+  "useCase": "Teach a toolbar without making each neighboring control wait again.",
+  "interaction": "Hover across the group, focus controls with Tab, or toggle formatting.",
+  "tags": [
+    "tooltip",
+    "warm-delay",
+    "cold-delay",
+    "group",
+    "focus",
+    "hover",
+    "toolbar",
+    "formatting"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Hints change position immediately; timing, dismissal and formatting remain usable.",
+  "limitations": "One local four-button toolbar; this is not a portal-based positioning engine.",
+  "surface": "#e8ebe9",
+  "components": [
+    "tooltip",
+    "button"
+  ],
+  "triggers": [
+    "hover",
+    "keyboard",
+    "press"
+  ],
+  "techniques": [
+    "slide",
+    "fade"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "shared tooltip",
+    "tooltip warm-up delay",
+    "sliding tooltip",
+    "formatting toolbar hints"
+  ],
+  "look": "Light grey-green page with a white document card of dark serif text and a pale rounded toolbar of four serif formatting glyph buttons.",
+  "motion": "First hover waits 400 ms before the tooltip fades in and rises 4 px; moving across the group while warm, it glides between buttons over 160 ms without re-waiting.",
+  "adapt": "Delay logic lives in `show` and `hide`: a 400 ms cold delay, with `warmUntil` extended 800 ms on show and 650 ms on leave; `.tip` slides by `(tip ?? 0) * 48` px. Replace `names` and adjust the 48 px step."
+}

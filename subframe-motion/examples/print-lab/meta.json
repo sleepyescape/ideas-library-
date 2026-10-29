@@ -1,0 +1,57 @@
+{
+  "slug": "print-lab",
+  "title": "Print lab",
+  "commonName": "Image filter editor",
+  "category": "Components & interactions",
+  "description": "A working image proofing bench develops color treatments into a downloadable contact strip.",
+  "useCase": "Preview image treatments and keep comparable snapshots without switching between tools.",
+  "interaction": "Choose a treatment, adjust its mix, and print a proof",
+  "tags": [
+    "image",
+    "filter",
+    "capture",
+    "canvas",
+    "Canvas2D",
+    "duotone",
+    "proof",
+    "compositing",
+    "snapshot"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Proofs appear immediately; processing, capture, and downloads still work.",
+  "limitations": "Includes original procedural artwork and optional local image input. Four in-memory PNG proofs, no camera or storage. Images crop to560×400. Canvas2D processing, not AI filtering.",
+  "surface": "#e9ebea",
+  "components": [
+    "editor",
+    "image"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "canvas",
+    "fade",
+    "slide"
+  ],
+  "feel": [
+    "technical"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "duotone photo filter",
+    "photo proof strip",
+    "image treatment preview",
+    "canvas photo filter"
+  ],
+  "look": "Grey workbench with a red-orange still life of folded pale-blue metal and a yellow sphere, a narrow proof strip, underlined tabs and red button.",
+  "motion": "Treatment and mix changes re-render the canvas instantly; printing captures a PNG proof whose thumbnail drops into the strip from −12 px and −3°, fading in over 0.32 s.",
+  "adapt": "Filtering is a per-pixel luminance duotone in the `stock`/`strength` effect, mixing `ink` and `paper` colours; `print` stores up to four `toDataURL` proofs animated by the `sf-proof-delivery` keyframes. Replace `drawStillLife` with your default image and edit `stocks` and their ink pairs."
+}

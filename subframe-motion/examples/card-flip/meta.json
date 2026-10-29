@@ -1,0 +1,62 @@
+{
+  "slug": "card-flip",
+  "title": "The other side",
+  "commonName": "3D card flip",
+  "category": "Components & interactions",
+  "description": "A quiet front turns to reveal a little more, with details following the card's movement.",
+  "useCase": "Present an optional second layer of information on a compact exploratory card.",
+  "interaction": "Hover or tap the card; keyboard users can press Enter",
+  "tags": [
+    "card",
+    "hover",
+    "click",
+    "flip",
+    "3D",
+    "perspective",
+    "stagger",
+    "CSS",
+    "pulse"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Kokonut UI",
+    "url": "https://kokonutui.com/docs/components/card-flip",
+    "code": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/card-flip.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The two faces switch without rotation. Decorative pulses and stagger travel stop.",
+  "limitations": "Keep essential information outside a hover-only reveal. This version also supports a native button's touch and keyboard activation.",
+  "surface": "#efebe5",
+  "components": [
+    "card"
+  ],
+  "triggers": [
+    "hover",
+    "press",
+    "ambient"
+  ],
+  "techniques": [
+    "rotate",
+    "3d",
+    "stagger",
+    "glow"
+  ],
+  "feel": [
+    "refined",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "app"
+  ],
+  "aka": [
+    "flip card on hover",
+    "double-sided card",
+    "card back reveal",
+    "rotate to reveal details"
+  ],
+  "look": "Warm beige page with a single rounded cream card, a soft blurred amber glow at its centre, a dark bold title and bronze double arrow.",
+  "motion": "Hover or tap flips the card in 3D over 500 ms ease-in-out; back lines slide and fade in 50 ms apart; front glow discs pulse in a 3 s loop.",
+  "adapt": "The flip is `sf-flip-card` toggled by `data-flipped` (`rotateY` with a 500 ms transition and `backface-visibility`); back items use inline `transitionDelay`, front pulses use the `sf-flip-scale` keyframes. Replace the front title and the three feature strings; keep the button for touch and keyboard."
+}

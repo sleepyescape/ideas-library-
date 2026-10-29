@@ -1,0 +1,58 @@
+{
+  "slug": "curtain-index",
+  "title": "Curtain index",
+  "commonName": "Fullscreen menu overlay",
+  "category": "Components & interactions",
+  "description": "A full-area curtain opens into an oversized editorial index, with a short stagger between entries.",
+  "useCase": "Occasional portfolio or publication navigation with a strong typographic identity.",
+  "interaction": "Open Index, select a section, or close with Escape",
+  "tags": [
+    "menu",
+    "navigation",
+    "curtain",
+    "stagger",
+    "editorial",
+    "reveal",
+    "typography"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The menu opens and closes immediately, including keyboard-triggered changes.",
+  "limitations": "Local section selection, not a router. The curtain is contained in its parent and does not act as a page-wide modal.",
+  "surface": "#f355d9",
+  "components": [
+    "menu",
+    "navigation"
+  ],
+  "triggers": [
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "scale",
+    "stagger",
+    "slide",
+    "morph"
+  ],
+  "feel": [
+    "bold",
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "hamburger menu overlay",
+    "staggered nav reveal",
+    "full-screen navigation",
+    "curtain drop menu"
+  ],
+  "look": "Deep plum full-bleed panel listing three oversized pink italic serif section names between hairline rules, with a small text toggle and thin X icon.",
+  "motion": "Opening drops a plum curtain from the top (scaleY, 380 ms ease-in-out) while the hamburger morphs to an X and entries fade and slide down, staggered 35 ms apart.",
+  "adapt": "The curtain is `.ci-curtain` (`scaleY` on a .38s transition), entries delay by `transition-delay:calc(100ms + var(--order)*35ms)`, and `.ci-toggle b` bars rotate into the X; all key off `data-open`. Replace `sections` and the ellipse artwork, and route in `close`."
+}

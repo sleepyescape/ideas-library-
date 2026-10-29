@@ -1,0 +1,57 @@
+{
+  "slug": "tension-fabric",
+  "title": "Tension fabric",
+  "commonName": "Cloth physics simulation",
+  "category": "Animation & motion",
+  "description": "Plum and green threads hang from a pinned edge and pull against their neighbors.",
+  "useCase": "Interactive woven materials, cloth studies and responsive mesh surfaces.",
+  "interaction": "Drag a thread, pluck the cloth, adjust wind, or pause",
+  "tags": [
+    "canvas",
+    "cloth",
+    "verlet",
+    "constraints",
+    "weave",
+    "fabric",
+    "physics",
+    "drag"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Continuous simulation stops. Pluck and direct manipulation produce static changes.",
+  "limitations": "A bounded 2D position-constraint solver; no 3D collisions, tearing, textile texture asset, or export.",
+  "surface": "#291b37",
+  "components": [
+    "scene"
+  ],
+  "triggers": [
+    "drag",
+    "ambient",
+    "press"
+  ],
+  "techniques": [
+    "physics",
+    "canvas"
+  ],
+  "feel": [
+    "playful"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "verlet cloth",
+    "draggable fabric",
+    "hanging cloth",
+    "woven mesh physics",
+    "fabric in wind"
+  ],
+  "look": "Dark plum field with a hanging checkered weave of olive-green and mauve threads pinned along its top edge, with outlined buttons and a slider below.",
+  "motion": "A Verlet cloth pinned at its top row sags under gravity and sways in sine wind; dragging pulls the nearest thread, and the pluck button kicks the middle up-right.",
+  "adapt": "The solver is `step` (Verlet integration, six constraint passes) and `draw` paints the weave; tune `cols`, `rows`, gravity `0.055`, damping `0.965` and the `wind` ref; `action` handles pluck and reset. Recolour the plum and green fills in `draw`."
+}

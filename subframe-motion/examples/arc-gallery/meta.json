@@ -1,0 +1,81 @@
+{
+  "slug": "arc-gallery",
+  "title": "Arc gallery",
+  "commonName": "Circular image carousel",
+  "category": "Animation & motion",
+  "description": "Botanical plates travel around a circular rail, with a single specimen held upright at its apex.",
+  "useCase": "Browse a small collection with a continuous draggable arc and a legible selected item.",
+  "interaction": "Drag the plates or use the previous and next controls.",
+  "tags": [
+    "gallery",
+    "arc",
+    "drag",
+    "spring",
+    "botanical"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "fern-diptych.webp",
+      "description": "Untitled (Fern Study), c. 1850, from the Hatton Fern Album",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "oak-damask.webp",
+      "description": "Oak",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "plum-garden.webp",
+      "description": "Plum Garden at Kameido (Kameido Umeyashiki), from the series \"One Hundred Famous Views of Edo (Meisho Edo hyakkei)\"",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "tulip-print.webp",
+      "description": "Tulip",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "windrush-print.webp",
+      "description": "Windrush",
+      "license": "CC0-1.0"
+    }
+  ],
+  "reducedMotion": "Navigation changes the selected plate immediately, without spring interpolation.",
+  "limitations": "Five repeated plates wrap around one circular rail; this is not a free-position canvas.",
+  "surface": "#f2efe7",
+  "components": [
+    "gallery"
+  ],
+  "triggers": [
+    "drag",
+    "press"
+  ],
+  "techniques": [
+    "spring",
+    "rotate",
+    "fade"
+  ],
+  "feel": [
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "arc carousel",
+    "curved card slider",
+    "rotating image wheel",
+    "fanned card carousel",
+    "draggable photo carousel"
+  ],
+  "look": "Off-white page with five white-matted botanical prints fanned along a downward-curving arc, a small letterspaced header and an italic serif caption between arrows.",
+  "motion": "Dragging or arrow buttons rotate the cards around a circular rail, tilting and fading them with distance; release snaps to the nearest card, nudged by flick velocity, on a spring.",
+  "adapt": "Card placement is computed in `paint` (arc spacing `0.49` rad per card, tilt `angle * 25`) and the spring in `tick` (stiffness `155`, damping `21`); `choose` sets the target index. Replace the `cards` image and title pairs."
+}

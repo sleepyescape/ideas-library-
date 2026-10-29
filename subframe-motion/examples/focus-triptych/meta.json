@@ -1,0 +1,59 @@
+{
+  "slug": "focus-triptych",
+  "title": "Three vessels",
+  "commonName": "Focus blur product gallery",
+  "category": "Animation & motion",
+  "description": "Three individually drawn ceramic forms reveal mineral grain, glazed rims and wheel marks as the selection moves into focus.",
+  "useCase": "Give a compact object comparison a clear focal point while leaving every alternative visible.",
+  "interaction": "Hover, focus or select a vessel.",
+  "tags": [
+    "focus",
+    "blur",
+    "product",
+    "gallery",
+    "selection",
+    "ceramic",
+    "material",
+    "SVG"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Focus and opacity states change immediately for keyboard use and reduced motion. Host pause disables selection.",
+  "limitations": "Original SVG material illustrations with stylized lighting and static procedural grain, not photographs or physically based ceramic rendering.",
+  "surface": "#d 9d 5c 6",
+  "components": [
+    "gallery",
+    "picker"
+  ],
+  "triggers": [
+    "hover",
+    "keyboard",
+    "press"
+  ],
+  "techniques": [
+    "blur",
+    "fade"
+  ],
+  "feel": [
+    "refined",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "depth of field hover",
+    "blur siblings on hover",
+    "dim others on hover",
+    "product selector",
+    "focus on hover"
+  ],
+  "look": "Warm beige studio wall and shelf holding three illustrated ceramic vessels in sage, cream and terracotta, with serif names beneath and the unselected pots blurred.",
+  "motion": "Hovering, focusing or clicking a vessel sharpens it while the other two blur 1.15 px and fade to 62% opacity over 240 ms; its name gains an underline.",
+  "adapt": "Focus is pure CSS: `button:not([aria-pressed=true]) .object` sets `blur(1.15px)` and `opacity:.62` with a 240 ms transition, keyed by `selected`. Replace the `vessels` data and `Vessel` SVG drawing with product images."
+}

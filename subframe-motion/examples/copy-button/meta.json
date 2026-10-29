@@ -1,0 +1,63 @@
+{
+  "slug": "copy-button",
+  "title": "Copy, confirmed",
+  "commonName": "Copy to clipboard button",
+  "category": "Components & interactions",
+  "description": "A copy icon draws into a check, while its label quietly confirms the action.",
+  "useCase": "Confirm that a share link, token or command has actually reached the clipboard.",
+  "interaction": "Copy the example link",
+  "tags": [
+    "button",
+    "clipboard",
+    "copy",
+    "click",
+    "checkmark",
+    "SVG",
+    "path drawing",
+    "confirmation"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Interior",
+    "url": "https://www.interior.dev/docs/copy-button",
+    "code": "https://github.com/ddoemonn/interior/blob/314800833bf01e23e6ae74c2a17fbdaac3688c84/components/interior/copy-button.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "The checkmark and status appear immediately, with no scaling, travel or blur.",
+  "limitations": "Clipboard permissions can be denied; the component reports failure and keeps the example link visible.",
+  "surface": "#eceef0",
+  "components": [
+    "button"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "path",
+    "fade",
+    "blur",
+    "spring"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "app",
+    "landing"
+  ],
+  "aka": [
+    "copy link button",
+    "clipboard confirmation",
+    "copied checkmark",
+    "copy code button",
+    "click to copy"
+  ],
+  "look": "Cool light-grey page with a grey monospace URL above a single white rounded button holding a small line icon and label.",
+  "motion": "Clicking fades and shrinks the copy icon as a checkmark draws in 0.26 s; labels crossfade on springs with a 3 px blur and offset, reverting after 2 s.",
+  "adapt": "`useCopyToClipboard` (with `writeFallback`) owns status and the 2000 ms `timeout`; the checkmark animates `pathLength` with `DRAW`, icons and `labels` crossfade with `CROSSFADE`. Replace the example URL and `labels`; keep the error state and live announcement."
+}

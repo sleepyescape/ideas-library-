@@ -1,0 +1,83 @@
+{
+  "slug": "thumbnail-index",
+  "title": "Thumbnail index",
+  "commonName": "Thumbnail image gallery",
+  "category": "Components & interactions",
+  "description": "A visible five-image dock selects full-frame architectural photographs with a precise white selection edge.",
+  "useCase": "Browse a short visual sequence while seeing every available image and the current selection.",
+  "interaction": "Choose a thumbnail. Up, Down, Home and End move the focused selection.",
+  "tags": [
+    "thumbnail",
+    "index",
+    "image selection",
+    "image gallery",
+    "roving focus",
+    "crossfade",
+    "navigation"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "cathedral-columns.webp",
+      "description": "Chartres Cathedral, West Facade; Royal Portal, Central Bay",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "concrete-geometries.webp",
+      "description": "Modern brutalist architecture with geometric shapes",
+      "license": "Unsplash"
+    },
+    {
+      "fileName": "concrete-projections.webp",
+      "description": "Brutalist concrete office building",
+      "license": "Unsplash"
+    },
+    {
+      "fileName": "montmartre.webp",
+      "description": "Montmartre",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "paris-street.webp",
+      "description": "Rue de la Montagne-Sainte-Geneviève near the Intersection of Rue LaPlace (Rue de la Montagne-Sainte-Geneviève prés de carrefour de la rue LaPlace)",
+      "license": "CC0-1.0"
+    }
+  ],
+  "reducedMotion": "Images switch immediately for reduced motion and keyboard selection; host pause disables the thumbnail buttons.",
+  "limitations": "The five-image collection intentionally fits without internal scrolling. Longer collections need an explicit scroll or paging strategy. Image rights are separate from the original code.",
+  "surface": "#242820",
+  "components": [
+    "gallery",
+    "image"
+  ],
+  "triggers": [
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "fade",
+    "scale"
+  ],
+  "feel": [
+    "refined",
+    "subtle"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "thumbnail strip",
+    "crossfade slideshow",
+    "photo viewer with thumbnails",
+    "vertical thumbnail rail"
+  ],
+  "look": "Full-bleed architectural photograph with a large white sans caption bottom-left and a dark rounded vertical rail of five numbered thumbnails, the selected one white-framed.",
+  "motion": "Choosing a thumbnail crossfades the full image over 260 ms while it settles from 1.025 to 1 scale with a 420 ms ease-out; keyboard selection switches instantly.",
+  "adapt": "Each `archive` image is stacked as a `.ti-image` whose opacity and `scale` follow `current` through CSS transitions (260 ms fade, 420 ms `cubic-bezier(.22,1,.36,1)`); `choose` handles selection. Replace `archive` with your images and labels; keep the roving `tabIndex`."
+}

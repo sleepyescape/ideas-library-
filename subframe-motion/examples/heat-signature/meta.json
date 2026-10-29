@@ -1,0 +1,56 @@
+{
+  "slug": "heat-signature",
+  "title": "Heat signature",
+  "commonName": "Thermal heatmap shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Heat moves through a soft-edged cross in violet, vermilion, and hot white.",
+  "useCase": "A compact thermal identity, focus indicator, or generative art accent.",
+  "interaction": "Adjust hotspot",
+  "tags": [
+    "thermal",
+    "heatmap",
+    "heat",
+    "gradient",
+    "silhouette",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "A representative frame remains still. Live system preference changes immediately stop the loop; the range control continues to update the still image.",
+  "limitations": "Requires WebGL 1. A static CSS fallback appears when unavailable or after context loss. Decorative heat map, not a thermal camera or numerical heat-diffusion solver.",
+  "surface": "#120e21",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient",
+    "state"
+  ],
+  "techniques": [
+    "shader",
+    "gradient",
+    "glow"
+  ],
+  "feel": [
+    "bold",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "thermal camera effect",
+    "infrared glow shape",
+    "heat map gradient logo",
+    "hotspot gradient mark"
+  ],
+  "look": "Rounded plus-shaped mark tilted on a near-black violet field, glowing from deep violet through vermilion to a white-hot yellow core.",
+  "motion": "A heat hotspot inside the rounded cross drifts up and down on a ~21 s sine while faint bands shift; the range slider moves it sideways.",
+  "adapt": "The effect is the `FRAGMENT` shader: `shape` is the cross's distance field, `center` the hotspot path, `hot` its falloff and `material` the violet-to-white ramp. Swap `shape` for your mark; keep the WebGL lifecycle and reduced-motion branch."
+}

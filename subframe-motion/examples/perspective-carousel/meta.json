@@ -1,0 +1,51 @@
+{
+  "slug": "perspective-carousel",
+  "title": "Turntable studies",
+  "commonName": "3D ring carousel",
+  "category": "Animation & motion",
+  "description": "A ring of framed compositions rotates through a spatial collection.",
+  "useCase": "Browse a short visual collection while preserving the placement of neighbouring items.",
+  "interaction": "Turn the collection",
+  "tags": [
+    "carousel",
+    "3D",
+    "ring",
+    "gallery",
+    "perspective"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live reduced-motion preferences remove interpolation and decorative playback. All content and native controls remain available. Keyboard changes settle immediately.",
+  "limitations": "Original demonstration content; adapt labels and state to the host product.",
+  "surface": "#e4e8ea",
+  "components": [
+    "gallery"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "3d",
+    "rotate"
+  ],
+  "feel": [
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "cylinder carousel",
+    "rotating 3D gallery",
+    "CSS 3D carousel",
+    "carousel with perspective"
+  ],
+  "look": "Pale grey-blue page with cream-framed muted terracotta, teal and ochre art panels on a 3D ring, glassy serif glyphs, and round outlined arrow buttons.",
+  "motion": "Arrow buttons rotate the six-panel ring 60° around its vertical axis in perspective over 0.7 s with a soft ease-out, side panels receding at an angle.",
+  "adapt": "Each `panel` sits at a 60° `rotateY` step and `translateZ(220px)`; `ring` turns by `index` with a 0.7 s `cubic-bezier(.2,.8,.2,1)` transition under `perspective:850px`. Replace `colors` and glyphs with images, retuning 60° and 220px for other counts."
+}

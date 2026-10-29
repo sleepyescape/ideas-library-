@@ -1,0 +1,54 @@
+{
+  "slug": "activity-stamp",
+  "title": "Activity stamp",
+  "commonName": "Habit tracker grid",
+  "category": "Components & interactions",
+  "description": "A red ink stamp marks each day in a four-week practice grid and keeps the total in sync.",
+  "useCase": "Reversible daily completion with compact progress feedback.",
+  "interaction": "Mark days; use arrows to move through the grid.",
+  "tags": [
+    "habit",
+    "calendar",
+    "stamp",
+    "toggle",
+    "grid",
+    "completion",
+    "keyboard"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Stamps appear immediately with no scale pulse.",
+  "limitations": "A local 28-day practice grid, not a dated calendar or persisted habit service.",
+  "surface": "#ffffff",
+  "components": [
+    "toggle",
+    "picker"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "scale",
+    "fade"
+  ],
+  "feel": [
+    "subtle",
+    "playful"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "streak calendar",
+    "daily check-in grid",
+    "stamp to complete",
+    "attendance tracker"
+  ],
+  "look": "White panel with a monospace seven-column four-week grid where completed days are glossy red ink circles, plus a red serif tally and thin grey rules.",
+  "motion": "Marking a day stamps a red circle down from 1.22× scale and 60% opacity to full size over 180 ms ease-out; unmarking and keyboard toggles change instantly.",
+  "adapt": "The stamp is `@keyframes sf-as-press` (`scale(1.22)` to `scale(1)`, `180ms cubic-bezier(.2,.9,.3,1)`), applied through `data-stamp` to the day just marked in `toggle`. Replace `seed` and the 28-cell range with real dates, and persist `days`."
+}

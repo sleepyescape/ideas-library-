@@ -1,0 +1,56 @@
+{
+  "slug": "octave-keys",
+  "title": "Octave keys",
+  "commonName": "Piano keyboard",
+  "category": "Components & interactions",
+  "description": "A one-octave instrument pairs independently raised key faces with opt-in synthesized notes.",
+  "useCase": "Playable instrument previews and audio interfaces with immediate press feedback.",
+  "interaction": "Enable sound, then press a key",
+  "tags": [
+    "piano",
+    "keyboard",
+    "audio",
+    "synthesizer",
+    "polyphonic",
+    "press",
+    "instrument"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Key travel settles instantly. Sound stays explicitly opt-in.",
+  "limitations": "Web Audio triangle oscillators, not sampled piano audio. Browser audio activation requires a user gesture.",
+  "surface": "#f1f2ed",
+  "components": [
+    "media",
+    "button"
+  ],
+  "triggers": [
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "slide",
+    "fade"
+  ],
+  "feel": [
+    "refined",
+    "playful"
+  ],
+  "contexts": [
+    "app",
+    "landing"
+  ],
+  "aka": [
+    "playable piano keys",
+    "web audio synthesizer",
+    "skeuomorphic instrument",
+    "musical keyboard component"
+  ],
+  "look": "Off-white skeuomorphic keyboard case with an inset keybed of glossy white keys and dark olive sharps, small grey note letters and a toggle button.",
+  "motion": "Pressing a key drops its face 3 px over 110 ms ease-out and fades in an inner shadow; with sound on, each held key plays a triangle-wave note.",
+  "adapt": "Key travel is CSS: `.sf-octave-key-face` transitions `transform 110ms cubic-bezier(.22,1,.36,1)` to `translateY(3px)` when `data-pressed` is true. Audio lives in `start` and `stop` (triangle oscillator, 15 ms attack, `setTargetAtTime` release); swap `keys` or the waveform for your instrument."
+}

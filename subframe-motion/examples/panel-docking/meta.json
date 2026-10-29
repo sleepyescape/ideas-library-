@@ -1,0 +1,61 @@
+{
+  "category": "Components & interactions",
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "contexts": [
+    "app",
+    "dashboard"
+  ],
+  "slug": "panel-docking",
+  "title": "Dock, detach, return",
+  "commonName": "Dockable inspector panel",
+  "description": "A floating shape inspector previews edge docking and returns to its previous position without losing its properties.",
+  "useCase": "Reclaim canvas space while keeping inspector state and keyboard focus intact.",
+  "interaction": "Drag the title to an allowed edge, use the dock buttons, or move with arrow keys. Detach restores the prior floating position.",
+  "tags": [
+    "panel",
+    "docking",
+    "inspector",
+    "workspace",
+    "drag",
+    "layout",
+    "floating",
+    "properties"
+  ],
+  "reducedMotion": "Panel transforms settle immediately for keyboard input, reduced motion and inactive hosts. Host pause and pointer cancellation restore the pre-drag state.",
+  "limitations": "One inspector and one original lightning icon. Docking is local component state, not a general window manager. The inspector changes corner radius, fill and outline; editor configuration controls docking behavior separately.",
+  "surface": "#e7e9e5",
+  "components": [
+    "editor",
+    "card",
+    "slider",
+    "toggle"
+  ],
+  "triggers": [
+    "drag",
+    "press",
+    "keyboard",
+    "state"
+  ],
+  "techniques": [
+    "slide",
+    "layout"
+  ],
+  "feel": [
+    "refined",
+    "technical"
+  ],
+  "aka": [
+    "floating properties panel",
+    "drag to dock",
+    "workspace inspector",
+    "detachable panel"
+  ],
+  "look": "Neutral dotted drafting canvas, a yellow or vermilion lightning icon, and one compact white inspector with a title grip and edge-dock buttons.",
+  "motion": "The inspector tracks the title drag directly; a pale target marks an eligible edge. Release settles its transform over 180 ms, while the canvas reserves the docked width. Detach restores the last free position.",
+  "adapt": "`mode`, `position` and `lastFree` keep docking separate from `radius`, `fill` and `stroke`. `cancel` restores the drag snapshot. Override `DEFAULT_CONFIG` through the `config` prop; inputs remain mounted across dock transitions."
+}

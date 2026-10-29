@@ -1,0 +1,59 @@
+{
+  "slug": "airmail-note",
+  "title": "Folded note",
+  "commonName": "Fold-to-send form",
+  "category": "Components & interactions",
+  "description": "A private note folds into a sealed paper billet, retaining its contents when opened again.",
+  "useCase": "Give a short local draft a tactile completion state while keeping validation and editing reversible.",
+  "interaction": "Enter a recipient email and note, seal the draft, then open it again; cancel while folding",
+  "tags": [
+    "form",
+    "mail",
+    "private note",
+    "paper",
+    "fold",
+    "validation",
+    "confirmation",
+    "choreography"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Valid submission moves directly to the sealed state without 3D folding or rotation. Reopening retains the same fields and restores text focus.",
+  "limitations": "Local draft only; no message is sent or stored persistently. Host pause and document hiding suspend the finite fold sequence. A production send action requires a real submission handler and successful response before claiming delivery.",
+  "surface": "#303332",
+  "components": [
+    "form",
+    "input"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "3d",
+    "rotate",
+    "stagger"
+  ],
+  "feel": [
+    "playful",
+    "refined"
+  ],
+  "contexts": [
+    "app",
+    "landing"
+  ],
+  "aka": [
+    "paper fold animation",
+    "letter folding submit",
+    "envelope send animation",
+    "origami form submit",
+    "contact form success"
+  ],
+  "look": "Dark charcoal page with a vermilion letter form in three creased panels: italic serif label, large serif note, monospace caption and maroon button.",
+  "motion": "Submitting folds the top panel down, then the bottom panel up (360 ms each, cubic-bezier(.32,.72,0,1)), then the billet tucks to a tilted 0.9 scale; cancel or open restores the form.",
+  "adapt": "A `phase` state machine (`top`, `bottom`, `tuck`, `sealed`) advances on timers from `LENGTH`; `data-phase` CSS runs `sf-note-top` and `sf-note-bottom` on the `.fold-model` flaps, then `sf-note-tuck` on `.paper`. Wire `onSubmit` to your real send; `remaining` keeps timers pause-safe."
+}

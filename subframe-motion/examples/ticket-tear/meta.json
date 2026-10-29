@@ -1,0 +1,64 @@
+{
+  "slug": "ticket-tear",
+  "title": "Off the grid",
+  "commonName": "Tear-off ticket animation",
+  "category": "Components & interactions",
+  "description": "A cobalt-and-orange admission ticket tears along its perforation, leaving a stamped keepsake.",
+  "useCase": "Make an occasional admission, reveal or redemption feel tangible without slowing down a frequent action.",
+  "interaction": "Pull the stub right, or select Tear ticket",
+  "tags": [
+    "ticket",
+    "tear",
+    "drag",
+    "confirmation",
+    "redeem",
+    "admission",
+    "gesture",
+    "perforation",
+    "cobalt",
+    "orange",
+    "brutalist",
+    "typography"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The stub disappears and the admission stamp appears immediately. Drag distance still determines intent, with a single-click alternative.",
+  "limitations": "Admission is local demo state. Use an authoritative server response before showing a successful real-world redemption; this gesture is not a security or payment mechanism.",
+  "surface": "#263cda",
+  "components": [
+    "card",
+    "button"
+  ],
+  "triggers": [
+    "drag",
+    "press"
+  ],
+  "techniques": [
+    "slide",
+    "rotate",
+    "fade",
+    "scale"
+  ],
+  "feel": [
+    "bold",
+    "playful"
+  ],
+  "contexts": [
+    "app",
+    "landing"
+  ],
+  "aka": [
+    "swipe to redeem",
+    "pull to confirm",
+    "event ticket redeem",
+    "tear-off coupon",
+    "drag to admit"
+  ],
+  "look": "Saturated cobalt page with an orange admission ticket in heavy, tightly tracked cobalt type, a barcode, monospace details and a dashed perforated stub.",
+  "motion": "Dragging the stub right slides and tilts it; releasing past 65 px flings it down-right as it fades, while a tilted stamp scales in (240 ms); shorter pulls snap back.",
+  "adapt": "The drag lives in the stub's `onPointerDown`, `onPointerMove` and `onPointerUp`: `pull` (clamped to 125) drives `translateX(${pull * 0.65}px)` plus rotation, and `pullRef.current >= 65` commits. Tune the `.sf-ticket-stub` and `.sf-ticket-stamp` transitions; replace the copy and gate `setAdmitted` on a server response."
+}

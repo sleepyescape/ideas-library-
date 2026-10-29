@@ -1,0 +1,72 @@
+{
+  "slug": "archive-folder",
+  "title": "Archive folder",
+  "commonName": "Folder open animation",
+  "category": "Components & interactions",
+  "description": "A warm paper folder opens into a small fan of weather prints.",
+  "useCase": "Expose a small document collection while keeping its containing folder visible.",
+  "interaction": "Open the folder and select a print.",
+  "tags": [
+    "folder",
+    "document",
+    "fan",
+    "CSS 3D",
+    "disclosure"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "fuji-storm.webp",
+      "description": "Shower Below the Summit (Sanka hakuu), from the series \"Thirty-Six Views of Mount Fuji (Fugaku sanjurokkei)\"",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "plum-garden.webp",
+      "description": "Plum Garden at Kameido (Kameido Umeyashiki), from the series \"One Hundred Famous Views of Edo (Meisho Edo hyakkei)\"",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "suruga-wind.webp",
+      "description": "Ejiri in Suruga Province (Sunshu Ejiri), from the series \"Thirty-six Views of Mount Fuji (Fugaku sanjurokkei)\"",
+      "license": "CC0-1.0"
+    }
+  ],
+  "reducedMotion": "The cover and document fan change pose immediately.",
+  "limitations": "Three local sample prints; file selection opens an inline preview and does not read the filesystem.",
+  "surface": "#e94f29",
+  "components": [
+    "disclosure",
+    "card",
+    "gallery"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "3d",
+    "rotate",
+    "slide"
+  ],
+  "feel": [
+    "playful",
+    "refined"
+  ],
+  "contexts": [
+    "app",
+    "editorial"
+  ],
+  "aka": [
+    "file folder reveal",
+    "document fan out",
+    "skeuomorphic folder",
+    "photo stack fan"
+  ],
+  "look": "Mustard-gold paper folder with a darker back tab and the edge of cream prints peeking out, centred on a flat vermilion background.",
+  "motion": "Clicking the front cover folds it 46° toward the viewer over 420 ms as three prints fan up and out with slight rotation over 480 ms, both strongly eased out.",
+  "adapt": "The cover hinge is the `af-cover` `rotateX(-46deg)` transition (420 ms) keyed off `data-open`, and each `af-document` gets an inline fan `transform` from its index (86 px spread, 9° tilt, 480 ms). Replace `files` with your documents; keep `useCalm`."
+}

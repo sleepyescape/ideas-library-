@@ -1,0 +1,58 @@
+{
+  "slug": "anamorphic-registration",
+  "title": "One exact viewpoint",
+  "commonName": "Anamorphic perspective alignment",
+  "category": "Animation & motion",
+  "description": "White fragments painted across three black depth planes resolve into one divided ring at a precise viewpoint.",
+  "useCase": "Reveal a geometric identity through spatial alignment, or explain how a viewpoint unifies separated artwork.",
+  "interaction": "Drag the planes or use the Viewpoint range, then press Align to reach the registration point.",
+  "tags": [
+    "anamorphic",
+    "perspective",
+    "registration",
+    "optical alignment",
+    "depth planes",
+    "SVG",
+    "geometry"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Viewpoint changes remain direct; Align and near-target release snap immediately without camera travel.",
+  "limitations": "Three original planar fragments with a horizontal analytic camera orbit. SVG represents perspective geometry; the small edge extrusion is illustrative, with no full 3D lighting, imported model, or free camera.",
+  "surface": "#d9d7ce",
+  "components": [
+    "scene",
+    "slider",
+    "button"
+  ],
+  "triggers": [
+    "drag",
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "3d",
+    "path"
+  ],
+  "feel": [
+    "refined",
+    "technical"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "anamorphic logo reveal",
+    "perspective illusion",
+    "fragment alignment",
+    "viewpoint registration"
+  ],
+  "look": "Three matte-black blades carry a sharp white divided ring against warm grey, with red registration crosshairs and a red alignment control.",
+  "motion": "Direct dragging changes the camera yaw and projects each fragment at its own depth. At zero degrees, the silhouettes meet into one mark. Align eases from the current pose; interruption continues from the visible angle.",
+  "adapt": "`project` inverse-maps the desired registered silhouette onto the depth planes and then applies camera yaw. Replace `OUTLINE`, `COUNTER`, and `CUT` with original paths; adjust `PLANES`, `planeSeparation`, `viewRange`, `snapRadius`, and `snapTime` to change the reveal."
+}

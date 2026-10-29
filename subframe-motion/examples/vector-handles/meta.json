@@ -1,0 +1,54 @@
+{
+  "slug": "vector-handles",
+  "title": "Vector handles",
+  "commonName": "Bezier curve editor",
+  "category": "Components & interactions",
+  "description": "Two generous control points reshape a cubic path without hiding its construction.",
+  "useCase": "Path shaping, motion trajectory editing, and teaching tangent relationships.",
+  "interaction": "Drag a handle or move it with arrow keys",
+  "tags": [
+    "bezier",
+    "vector",
+    "path",
+    "handles",
+    "curve",
+    "editor",
+    "svg"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Input follows immediately; press decoration has no transition.",
+  "limitations": "Single cubic segment with fixed endpoints, not a complete path editor or easing-time solver.",
+  "surface": "#eef0ef",
+  "components": [
+    "editor"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "path",
+    "morph"
+  ],
+  "feel": [
+    "technical",
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "easing curve editor",
+    "control point handles",
+    "pen tool handles",
+    "draggable SVG path"
+  ],
+  "look": "Pale grey page with a white dotted-grid card holding a dark green cubic curve, square endpoints, ring handles on dashed tangents and monospace coordinates.",
+  "motion": "Dragging either ring handle reshapes the cubic path and dashed tangents live, the handle dot scaling 1.15× while pressed; arrow keys nudge it 2 units, or 10 with Shift.",
+  "adapt": "`points` holds the two control points in a 0–100 `viewBox`, clamped by `update` and written into the cubic `d` string; endpoints stay fixed at `M10 75` and `90 25`. Wire `points` to your easing or path data, keeping pointer capture and arrow-key handling."
+}

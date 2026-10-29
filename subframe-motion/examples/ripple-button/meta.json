@@ -1,0 +1,53 @@
+{
+  "slug": "ripple-button",
+  "title": "A ripple on touch",
+  "commonName": "Ripple effect button",
+  "category": "Components & interactions",
+  "description": "A soft circle expands from the exact point where the button is pressed.",
+  "useCase": "Provide visible confirmation on an occasional touch-friendly action.",
+  "interaction": "Click at different points on the button",
+  "tags": [
+    "button",
+    "click",
+    "touch",
+    "ripple",
+    "pointer origin",
+    "feedback"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Magic UI",
+    "url": "https://magicui.design/docs/components/ripple-button",
+    "code": "https://github.com/magicuidesign/magicui/blob/85f97fd27b053339af74ba9dd4ca428ee25989fb/apps/www/registry/magicui/ripple-button.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The click updates its text feedback without the expanding ripple.",
+  "limitations": "The action only increments a local preview count. Ripples are bounded to eight and remove themselves when their animation ends.",
+  "surface": "#ece2d6",
+  "components": [
+    "button"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "scale",
+    "fade"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "material ripple",
+    "click ripple",
+    "tap feedback circle",
+    "ink splash button"
+  ],
+  "look": "Warm beige page with a single centred caramel-brown rounded button with a darker border and dark sans-serif label.",
+  "motion": "Each click spawns a pale circle at the pointer that scales from 0 to 2× while fading out over 650 ms ease-out; keyboard activation and reduced motion skip the ripple.",
+  "adapt": "`handleClick` sizes and positions each `Ripple` from the click point (keeping the last eight) and `onAnimationEnd` removes it; the `mg-button-ripple` keyframe sets scale and fade over 650ms. Replace the label, colours and the `count` demo action."
+}

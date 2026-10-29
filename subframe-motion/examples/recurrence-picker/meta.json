@@ -1,0 +1,57 @@
+{
+  "slug": "recurrence-picker",
+  "title": "Recurrence picker",
+  "commonName": "Weekly recurrence picker",
+  "category": "Components & interactions",
+  "description": "Pressed day keys author a weekly rule and illuminate its next three weeks.",
+  "useCase": "Configure a repeat schedule with a compact preview of the dates it will affect.",
+  "interaction": "Select weekdays, choose a weekly interval and toggle repeating. The 21-day strip follows the rule.",
+  "tags": [
+    "schedule",
+    "recurrence",
+    "weekdays",
+    "toggle",
+    "multi-select",
+    "calendar",
+    "pressed-state",
+    "tactile"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Finite transitions become immediate under reduced motion and keyboard input. Host pause disables controls; any owned drag is cancelled.",
+  "limitations": "Local illustrative schedule anchored to Monday, October 12, 2026; no timezone, DST or recurrence-service integration. Empty day sets are allowed with an explicit accessible prompt.",
+  "surface": "#bfc4c5",
+  "components": [
+    "picker",
+    "toggle"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "slide",
+    "gradient"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "repeat schedule settings",
+    "weekday selector",
+    "day of week toggles",
+    "recurring event rule",
+    "calendar repeat picker"
+  ],
+  "look": "Off-white card on cool grey: sage switch, a recessed tray of raised day keys with selected ones burnt orange, and a row of date tiles.",
+  "motion": "Pressed day keys sink 3 px and settle 1 px low in orange (160 ms ease-out); the switch thumb slides in 180 ms; matching date tiles recolour in 150 ms.",
+  "adapt": "Selection state is `days`, `interval` and `enabled`, and the 21 `.occurrences` tiles derive `data-on` from them; press depth and timing are the `.days button` rules in the inline style. Replace `DAYS`, the hard-coded start date and the summary text with your scheduler."
+}

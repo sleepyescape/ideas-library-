@@ -1,0 +1,54 @@
+{
+  "slug": "folio-stack",
+  "title": "Folio stack",
+  "commonName": "Sticky scroll card stack",
+  "category": "Animation & motion",
+  "description": "Three graphic folios pin and recede as the next cover enters the reading area.",
+  "useCase": "Present a short sequence with spatial continuity and native scrolling.",
+  "interaction": "Scroll through the folios.",
+  "tags": [
+    "sticky",
+    "stack",
+    "native scroll",
+    "editorial",
+    "scale",
+    "depth"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Sticky positioning remains; scale, dimming and smooth programmatic scrolling are removed.",
+  "limitations": "Three authored covers inside a bounded scroll area; not a virtualized list or page scroll controller.",
+  "surface": "#262a30",
+  "components": [
+    "card"
+  ],
+  "triggers": [
+    "scroll",
+    "press"
+  ],
+  "techniques": [
+    "scale"
+  ],
+  "feel": [
+    "bold",
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "stacking cards on scroll",
+    "sticky card deck",
+    "scroll stacked sections",
+    "pinned cards scroll",
+    "card stack scroll effect"
+  ],
+  "look": "Dark slate page with stacked full-width poster cards in red, off-white and cobalt, heavy sans titles, small monospace captions and geometric line art.",
+  "motion": "Covers pin with CSS sticky in 12 px steps; as the next one scrolls over, the pinned cover scales to 0.91 and dims 20%, and an arrow button smooth-scrolls onward.",
+  "adapt": "Stacking is CSS: `.fs-slot` is `position:sticky` with `top` offset by index; the recede effect is the `update` handler mapping the next card's distance to `depth`, then `scale` and `brightness`. Replace `names`, `colors`, `inks` and the SVG covers."
+}

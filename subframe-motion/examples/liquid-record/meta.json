@@ -1,0 +1,56 @@
+{
+  "slug": "liquid-record",
+  "title": "Liquid record",
+  "commonName": "Liquid vinyl record",
+  "category": "Animation & motion",
+  "description": "Pink lacquer grooves turn and ripple around a small record label.",
+  "useCase": "Music artwork, material experiments, and motion states for a media interface.",
+  "interaction": "Change ripple intensity or pause the record motion",
+  "tags": [
+    "svg",
+    "vector deformation",
+    "vinyl",
+    "record",
+    "liquid",
+    "material"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Both rotation and vector ripple updates stop. Ripple intensity remains adjustable.",
+  "limitations": "Visual record motion only; no audio, track playback or audio-reactive analysis.",
+  "surface": "#350a29",
+  "components": [
+    "scene",
+    "media"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "distortion",
+    "morph",
+    "rotate"
+  ],
+  "feel": [
+    "calm",
+    "playful"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "spinning vinyl animation",
+    "wobbly record",
+    "melting vinyl",
+    "warping record illustration",
+    "music artwork animation"
+  ],
+  "look": "Deep plum field with a large wobbly pink vinyl record, fine magenta grooves and pale label, beside a two-line pink serif headline.",
+  "motion": "Each frame the disc's paths are re-plotted with drifting sine displacement so 48 grooves wobble like liquid; the label marks spin every 14 s and a slider sets ripple strength.",
+  "adapt": "Deformation is `ripplePoint` (sine-cosine offsets scaled by `amount`), applied by `groovePath` to every `data-radius` path in a `requestAnimationFrame` loop; the label spin is `sf-liquid-spin` (14 s linear). Tune `ripple` (0–38) and the frequencies; replace the headline and palette."
+}

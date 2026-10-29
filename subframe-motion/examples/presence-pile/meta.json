@@ -1,0 +1,51 @@
+{
+  "slug": "presence-pile",
+  "title": "Presence pile",
+  "commonName": "Avatar stack",
+  "category": "Components & interactions",
+  "description": "Reveal who is present while keeping collaboration chrome compact.",
+  "useCase": "Reveal who is present while keeping collaboration chrome compact.",
+  "interaction": "Inspect or add a collaborator",
+  "tags": [
+    "presence",
+    "avatar",
+    "collaboration",
+    "expand"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "Illustrative local collaborators. Avatar artwork is CSS generated; no external images or live presence service.",
+  "surface": "#edf0f3",
+  "components": [
+    "disclosure",
+    "tooltip"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "slide",
+    "fade"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "avatar group",
+    "facepile",
+    "collaborator avatars",
+    "who's online indicator",
+    "expanding avatar group"
+  ],
+  "look": "Warm off-white page with four pastel circular avatars bearing minimal faces and status dots, a pale round toggle, and a small white name card.",
+  "motion": "Selecting an avatar or the plus button fans the overlapping avatars apart with a 240 ms ease-out translate, and a name-and-status card fades in while settling 5 px downward.",
+  "adapt": "The fan-out is the inline `translateX` on each `people` button (`i * 10` px; 40 px for `more`) eased by a 240 ms transition; the card toggles via `data-open`. Replace the `people` array (`name`, `role`, `color`) with live presence data."
+}

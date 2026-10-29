@@ -1,0 +1,50 @@
+{
+  "slug": "layered-menu",
+  "title": "Layered menu",
+  "commonName": "Nested drill-down menu",
+  "category": "Components & interactions",
+  "description": "A compact archive navigation slides between category and subcategory panels without multiplying popovers.",
+  "useCase": "Navigate a small hierarchy inside one continuous disclosure surface.",
+  "interaction": "Open a category, drill into a group and choose a collection.",
+  "tags": [
+    "navigation",
+    "hierarchy",
+    "nested disclosure",
+    "panel transition"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Hierarchy changes are immediate, preserving the same focus and back actions.",
+  "limitations": "A two-level local collection selector. It uses disclosure buttons rather than application-menu semantics.",
+  "surface": "#edece6",
+  "components": [
+    "menu",
+    "navigation"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "slide"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app",
+    "editorial"
+  ],
+  "aka": [
+    "multi-level dropdown",
+    "sliding submenu",
+    "nested navigation panel",
+    "hierarchical dropdown"
+  ],
+  "look": "Pale grey page with a thin top nav of two text dropdowns and a white rounded panel listing categories with grey glyphs, subtitles and arrows.",
+  "motion": "Choosing a category slides a two-page track left in 240 ms with a strong ease-out to show subcategories; the back button reverses it; the panel opens without animation.",
+  "adapt": "The drill-down is `lm-track` (two `lm-page` panes at 200% width) toggled by `data-deep` with a 240 ms transform transition; `level` picks the subgroup and focus moves in `useLayoutEffect`. Replace `groups` with your hierarchy; keep `inert` on the hidden pane and `data-still`."
+}

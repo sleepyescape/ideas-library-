@@ -1,0 +1,52 @@
+{
+  "slug": "ribbon-marquee",
+  "title": "Between the lines",
+  "commonName": "Curved text marquee",
+  "category": "Animation & motion",
+  "description": "A curved ribbon of text can be dragged by hand or advanced with a range.",
+  "useCase": "Create a distinctive, directly controllable typographic brand accent.",
+  "interaction": "Drag or move the ribbon",
+  "tags": [
+    "text path",
+    "curved",
+    "drag",
+    "ribbon",
+    "typography"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live reduced-motion preferences remove interpolation and decorative playback. All content and native controls remain available. Keyboard changes settle immediately.",
+  "limitations": "Original demonstration content; adapt labels and state to the host product.",
+  "surface": "#ef855d",
+  "components": [
+    "text"
+  ],
+  "triggers": [
+    "drag"
+  ],
+  "techniques": [
+    "path",
+    "slide"
+  ],
+  "feel": [
+    "playful",
+    "bold"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "text on a path",
+    "wavy text ribbon",
+    "draggable text banner",
+    "curved ticker"
+  ],
+  "look": "Flat coral-orange field crossed by a thick wavy violet ribbon carrying white Georgia serif text, with a drop shadow and a violet range slider beneath.",
+  "motion": "Dragging across the ribbon or moving the slider slides the text along the curved path one-to-one, clamped at both ends; it never scrolls on its own.",
+  "adapt": "Position is the `offset` state, applied as the `textPath` `startOffset` and clamped to `-300` to `60` in `onPointerMove` and the range input; the curve is the `path` in `defs`. Replace the repeated phrase, ribbon stroke colour and curve."
+}

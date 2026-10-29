@@ -1,0 +1,58 @@
+{
+  "slug": "incremental-list",
+  "title": "Incremental list",
+  "commonName": "Load more list with retry",
+  "category": "Components & interactions",
+  "description": "An archive loads more records in place, with a recoverable failed batch.",
+  "useCase": "Browse a collection without replacing the current page or losing the reading position.",
+  "interaction": "Load the next batch, retry the first failed request, and reach the final record.",
+  "tags": [
+    "pagination",
+    "append",
+    "load-more",
+    "retry",
+    "error",
+    "recovery",
+    "scroll",
+    "list"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "New rows appear without entrance motion; all load and retry states remain visible.",
+  "limitations": "Nine local records with an intentional first-request failure; no network pagination.",
+  "surface": "#f3f2ee",
+  "components": [
+    "list",
+    "button"
+  ],
+  "triggers": [
+    "press",
+    "loading",
+    "enter"
+  ],
+  "techniques": [
+    "fade",
+    "slide"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app",
+    "editorial"
+  ],
+  "aka": [
+    "load more button",
+    "paginated list",
+    "append results",
+    "retry failed request",
+    "show more rows"
+  ],
+  "look": "Warm off-white page with a serif heading, a ruled list of publication rows with small red, black and grey geometric covers, and a text button.",
+  "motion": "Pressing load more shows a 600 ms loading status; the first request fails, then retrying appends three rows that fade and rise 4 px over 180 ms.",
+  "adapt": "`phase` (idle, loading, error) and `count` drive the list, the `setTimeout` effect stands in for a fetch (first call fails via `failed`), and rows enter with `load-w2`. Replace `records` and the timeout with your paginated request."
+}

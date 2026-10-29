@@ -1,0 +1,59 @@
+{
+  "slug": "cyanotype-bloom",
+  "title": "Cyanotype bloom",
+  "commonName": "Growing botanical shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A branching botanical contact print develops from pale paper into deep cobalt as exposure increases.",
+  "useCase": "Explore a direct material-development reveal for print, photography and generative artwork.",
+  "interaction": "Develop the print with the exposure slider",
+  "tags": [
+    "cyanotype",
+    "botanical",
+    "contact print",
+    "exposure",
+    "development",
+    "grain",
+    "native webgl",
+    "svg"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "There is no autonomous animation loop. Exposure directly redraws the paper field and botanical reveal.",
+  "limitations": "Stylized exposure preview, not a photographic chemistry simulation. Original vector specimens over a native WebGL1 paper field; remount after context loss.",
+  "surface": "#143b79",
+  "components": [
+    "image",
+    "background"
+  ],
+  "triggers": [
+    "state",
+    "drag"
+  ],
+  "techniques": [
+    "shader",
+    "mask",
+    "noise"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "sun print effect",
+    "photo development reveal",
+    "exposure slider reveal",
+    "fern silhouette reveal"
+  ],
+  "look": "Grainy cream paper giving way to deep cobalt blue along a soft ragged edge, with three pale fern fronds fanned at centre.",
+  "motion": "Moving the exposure slider raises a noise-edged development front from bottom to top, turning paper to cobalt, while a gradient mask reveals the fern silhouettes upward; no autonomous loop.",
+  "adapt": "The paper-to-blue front is `wet` in `FRAGMENT`, driven by `u_control`; fern fronds come from `specimenPath` via `SPECIMENS`, revealed by the `${maskId}-development` gradient mask and `Math.pow(control, 0.38)` opacity. Swap `SPECIMENS` for your own SVG paths and tune `paper` and `blue`."
+}

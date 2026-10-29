@@ -1,0 +1,62 @@
+{
+  "slug": "mixing-desk",
+  "title": "Make space",
+  "commonName": "Audio mixer faders",
+  "category": "Components & interactions",
+  "description": "Three oversized digital channels turn level, mute and solo into a graphic rhythm surface.",
+  "useCase": "Expose the relationship between independent channels and a final composition in an audio tool or a layered visual editor.",
+  "interaction": "Drag levels, mute channels, or isolate a solo",
+  "tags": [
+    "audio",
+    "mixer",
+    "fader",
+    "volume",
+    "range",
+    "slider",
+    "mute",
+    "solo",
+    "meter",
+    "lime",
+    "graphic",
+    "digital",
+    "control"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Meter animation becomes a stable representative level while volume, mute and solo remain usable.",
+  "limitations": "Visual control demo with synthetic meters and no sound. Wire levels to actual gain and meter values to an analyser; percentages are not a calibrated decibel scale.",
+  "surface": "#c2f431",
+  "components": [
+    "slider",
+    "media"
+  ],
+  "triggers": [
+    "drag",
+    "ambient",
+    "press"
+  ],
+  "techniques": [
+    "scale",
+    "loop"
+  ],
+  "feel": [
+    "bold",
+    "technical"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "volume faders",
+    "channel strips",
+    "vertical level meters",
+    "mute and solo controls"
+  ],
+  "look": "Acid-lime page with three near-black fader wells striped by lime meter bars, small white rectangular handles, outlined square toggle buttons and plain sans-serif labels.",
+  "motion": "Striped meters pulse within each fader's level on staggered 750–970 ms linear loops; dragging a fader sets its fill and handle position directly, and mute or solo hides meters.",
+  "adapt": "Meters are `.sf-mix-signal` scaled by the `sf-mix-level` keyframes inside `.sf-mix-fill`, whose `scaleY` follows `levels`; `silent` derives from `muted` and `solo`. Replace `channels` and drive `levels` and meter scale from real gain and analyser values."
+}

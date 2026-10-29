@@ -1,0 +1,54 @@
+{
+  "slug": "mirror-chamber",
+  "title": "Mirror chamber",
+  "commonName": "Kaleidoscope shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A folded white motif reflects into a changing peacock-blue radial composition.",
+  "useCase": "Generate symmetry from a single authored motif with an editable reflection count.",
+  "interaction": "Adjust reflections.",
+  "tags": [
+    "native webgl",
+    "kaleidoscope",
+    "polar fold",
+    "mirror",
+    "radial",
+    "symmetry"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The elapsed-time clock stops. Parameter controls immediately update the static composition.",
+  "limitations": "Requires WebGL 1; a static CSS swatch appears if unavailable or after context loss. Reflects included procedural geometry only; no external image or arbitrary page sampling.",
+  "surface": "#153e58",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "rotate"
+  ],
+  "feel": [
+    "calm",
+    "playful"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "kaleidoscope background",
+    "radial symmetry pattern",
+    "mandala animation",
+    "mirrored pattern shader"
+  ],
+  "look": "Flat peacock-blue field with six cream petal shapes, each with a leaf-shaped cut-out, ringed around a thin orange star outline and orange dot.",
+  "motion": "Mirrored wedges rotate slowly while the motif turns inside them, producing a continuously shifting kaleidoscope; the Reflections slider steps between 3 and 10 sectors.",
+  "adapt": "The fold lives in `FRAGMENT`: `sectors` (from `u_control`) sets the wedge count, `u_time*.04` spins the fold and `rot(.5+u_time*.055)` turns the motif. Redraw the motif masks and swap `blue`, `white` and `orange`; keep the fallback and reduced-motion branch."
+}

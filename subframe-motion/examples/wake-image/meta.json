@@ -1,0 +1,61 @@
+{
+  "slug": "wake-image",
+  "title": "Wake image",
+  "commonName": "Water ripple image effect",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A deep-blue sea photograph bends under short-lived wave fronts left by a moving pointer.",
+  "useCase": "Add a local refractive wake to a still image without a simulation package.",
+  "interaction": "Move across the water and adjust the wake strength.",
+  "tags": [
+    "image",
+    "refraction",
+    "pointer trail",
+    "wave",
+    "WebGL"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "coastal-break.webp",
+      "description": "Aerial photography of ocean",
+      "license": "Unsplash"
+    }
+  ],
+  "reducedMotion": "The photograph remains still; the distortion strength resolves to zero.",
+  "limitations": "Twelve analytic pointer marks form the wake; this is not a fluid solver. WebGL 1 is optional, with the original photograph retained underneath.",
+  "surface": "#053752",
+  "components": [
+    "image",
+    "cursor"
+  ],
+  "triggers": [
+    "pointer"
+  ],
+  "techniques": [
+    "shader",
+    "distortion"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "ripple hover effect",
+    "liquid cursor trail",
+    "water distortion on hover",
+    "image refraction trail"
+  ],
+  "look": "Full-bleed aerial photograph of turquoise surf breaking over rust-red rocks, with white letterspaced caps header, a white range slider and a translucent pill button.",
+  "motion": "Pointer movement (or touch drag) drops up to twelve marks that each emit an expanding ring wave, refracting the photo for 2.6 s as it fades; a slider scales strength.",
+  "adapt": "The wake is the `fragment` shader: each of `marks[12]` emits a ring with `front=age*.16` decaying by `exp(-age*1.9)` over `2.6` s; `move` writes marks every `18` ms. Tune `strength` and replace `coastal-break.webp` in both the `img` and `image.src`."
+}

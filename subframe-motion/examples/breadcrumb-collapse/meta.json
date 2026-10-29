@@ -1,0 +1,55 @@
+{
+  "slug": "breadcrumb-collapse",
+  "title": "Breadcrumb expansion",
+  "commonName": "Collapsible breadcrumbs",
+  "category": "Components & interactions",
+  "description": "Hidden ancestors unfold inline, keeping the current document anchored in a readable path.",
+  "useCase": "Reveal and navigate a compact project hierarchy without a detached parent menu.",
+  "interaction": "Expand the ellipsis, choose an ancestor, and open its child to return. Escape collapses the trail.",
+  "tags": [
+    "breadcrumb",
+    "navigation",
+    "inline-expansion",
+    "hierarchy",
+    "folder",
+    "measured-layout",
+    "focus-return"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Finite transitions become immediate under reduced motion and keyboard input. Host pause disables controls; any owned drag is cancelled.",
+  "limitations": "Four local hierarchy levels with one child each; no filesystem or router integration. The original SVG cover is illustrative content.",
+  "surface": "#d8e0e6",
+  "components": [
+    "navigation",
+    "disclosure"
+  ],
+  "triggers": [
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "layout",
+    "fade",
+    "slide"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "breadcrumb overflow",
+    "truncated breadcrumb trail",
+    "ellipsis breadcrumb",
+    "expandable file path"
+  ],
+  "look": "Pale blue-grey page with a white rounded card: a breadcrumb bar with folder icon, slash separators and ellipsis chip, above a tilted orange cover thumbnail.",
+  "motion": "Clicking the ellipsis widens the hidden-ancestors slot to its measured width over 280 ms ease-out as folder names fade and slide in; navigating swaps the content with a short slide-fade.",
+  "adapt": "Expansion is the `parent-wrap` width transition to `parentWidth` (measured from `scrollWidth` in `useLayoutEffect`) plus the `parents` fade and offset; content swaps replay `sf-path-content`. Replace `PATH` and the file detail with your hierarchy; keep the focus return in `collapse`."
+}

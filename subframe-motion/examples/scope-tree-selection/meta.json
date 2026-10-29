@@ -1,0 +1,60 @@
+{
+  "category": "Components & interactions",
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "contexts": [
+    "app",
+    "dashboard"
+  ],
+  "slug": "scope-tree-selection",
+  "title": "Select a whole branch",
+  "commonName": "Tri-state file selection",
+  "description": "Folder checkboxes include eligible descendants while partial selections and unavailable files stay explicit.",
+  "useCase": "Choose a nested export scope without losing track of partially included folders.",
+  "interaction": "Select a folder or file, expand Typography, and watch ancestor counts reconcile.",
+  "tags": [
+    "checkbox",
+    "tree",
+    "tri-state",
+    "indeterminate",
+    "selection",
+    "export",
+    "hierarchy",
+    "disabled"
+  ],
+  "reducedMotion": "Checkbox marks and disclosure arrows update immediately for keyboard input, reduced motion and inactive hosts. Inactive hosts disable every input.",
+  "limitations": "Six local fixture files; selection does not create or download an archive. Folder-depth and unavailable-file configuration rebuild the fixture.",
+  "surface": "#142132",
+  "components": [
+    "list",
+    "toggle",
+    "disclosure"
+  ],
+  "triggers": [
+    "press",
+    "keyboard",
+    "state"
+  ],
+  "techniques": [
+    "scale",
+    "fade",
+    "rotate"
+  ],
+  "feel": [
+    "subtle",
+    "technical"
+  ],
+  "aka": [
+    "indeterminate checkbox tree",
+    "nested bulk selection",
+    "folder selection",
+    "select descendants"
+  ],
+  "look": "Ink-blue file panel with mint checks, narrow connector elbows, quiet branch counts and a persistent export tally.",
+  "motion": "A pointer toggle settles the check mark over 140 ms; a partial mark resolves into a check while ancestor counts update immediately. Disclosure arrows rotate without delaying selection.",
+  "adapt": "The `fixture` function builds a bounded tree and `leafIds` derives descendants. `Selection` changes eligible IDs only. Tune the exported `DEFAULT_CONFIG` and the `config` prop; changing `depth` or `disabledLeaves` remounts the fixture."
+}

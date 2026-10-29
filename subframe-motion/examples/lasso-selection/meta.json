@@ -1,0 +1,54 @@
+{
+  "slug": "lasso-selection",
+  "title": "Marquee selection",
+  "commonName": "Drag-to-select rectangle",
+  "category": "Components & interactions",
+  "description": "A bounded selection rectangle gathers nearby objects with immediate feedback.",
+  "useCase": "Selecting groups on a design surface or timeline.",
+  "interaction": "Drag empty space; Shift adds to the selection",
+  "tags": [
+    "selection",
+    "marquee",
+    "lasso",
+    "multiselect",
+    "canvas",
+    "bounds",
+    "editor"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Selection follows input directly; no decorative travel.",
+  "limitations": "Axis-aligned intersection selection over four fixed shapes, not a freehand polygon lasso or editable canvas.",
+  "surface": "#eef0ed",
+  "components": [
+    "editor"
+  ],
+  "triggers": [
+    "drag",
+    "press"
+  ],
+  "techniques": [
+    "morph"
+  ],
+  "feel": [
+    "subtle",
+    "technical"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "rubber band selection",
+    "box select",
+    "drag to multi-select",
+    "canvas marquee tool",
+    "lasso select"
+  ],
+  "look": "Off-white dotted canvas on a pale sage page with four muted pastel shapes; the selected circle wears a thin green outline and corner handle.",
+  "motion": "Dragging on empty canvas draws a translucent green rectangle from the press point that tracks the pointer, selecting every shape it intersects live; Shift-drag adds to the existing selection.",
+  "adapt": "Hit-testing lives in the board's `onPointerDown` and `onPointerMove`: percentage coordinates, an axis-aligned overlap test against `objects`, and `onPointerCancel` restoring `previous`. Replace `objects` with your items' bounds and restyle `.sf-lassoselect-marquee`."
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "icon-morph",
+  "title": "Icons between states",
+  "commonName": "Animated icon morph",
+  "category": "Components & interactions",
+  "description": "A menu, a playback symbol and an add action keep their identity while changing shape.",
+  "useCase": "Connect the two states of an occasional icon action with continuous SVG geometry.",
+  "interaction": "Toggle each icon",
+  "tags": [
+    "icon",
+    "SVG",
+    "path morph",
+    "click",
+    "toggle",
+    "menu",
+    "play pause",
+    "spring"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Interior",
+    "url": "https://www.interior.dev/docs/icon-morph",
+    "code": "https://github.com/ddoemonn/interior/blob/314800833bf01e23e6ae74c2a17fbdaac3688c84/components/interior/icon-morph.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "Paths update immediately and rotation is removed.",
+  "limitations": "These controls demonstrate local states. Connect their state to a real menu, player or item action in your application.",
+  "surface": "#e9edef",
+  "components": [
+    "button",
+    "toggle"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "morph",
+    "spring",
+    "rotate"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "hamburger to close animation",
+    "play pause toggle",
+    "plus to minus icon",
+    "SVG path morph",
+    "menu icon transition"
+  ],
+  "look": "Light blue-grey page with three white rounded-square icon buttons in a row showing dark grey menu, play and plus glyphs.",
+  "motion": "Pressing springs each icon's path data to its pair: menu crosses into close while turning 90°, play splits into pause bars, plus flattens to minus with a half turn.",
+  "adapt": "`useIconMorph` picks shapes from `iconMorphPresets` and `normalize` pads them to equal path counts, collapsing spares to the centre; each `motion.path` animates `d` and the wrapper `rotate` with the `CELL` spring. Add your own `MorphShape` pairs with matching point counts per slot."
+}

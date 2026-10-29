@@ -1,0 +1,59 @@
+{
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "components": [
+    "scene",
+    "button"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard",
+    "press"
+  ],
+  "feel": [
+    "refined",
+    "technical"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "slug": "wrap-a-mark",
+  "title": "Wrap a mark",
+  "commonName": "Curved-surface graphic placement shader",
+  "description": "A cream geometric mark follows an unbranded cobalt canister as its surface placement changes and the vessel turns.",
+  "useCase": "Explore one packaging mark's placement without opening a full branding editor.",
+  "interaction": "Drag directly on the canister, use arrow keys to place the mark, and turn the vessel to inspect its side.",
+  "tags": [
+    "decal",
+    "packaging",
+    "mark",
+    "cylinder",
+    "UV",
+    "placement",
+    "native webgl"
+  ],
+  "reducedMotion": "Placement and inspection turn update directly, with no settling or automatic orbit.",
+  "limitations": "One procedural cylinder and original geometric mark. Placement is cylindrical surface-coordinate mapping, not a general projected-decal engine. No source assets, fonts or textures. WebGL 1 with original SVG fallback and context restoration.",
+  "surface": "#e9e6dd",
+  "techniques": [
+    "shader",
+    "3d",
+    "rotate"
+  ],
+  "aka": [
+    "cylinder decal",
+    "package personalization",
+    "curved logo placement",
+    "surface UV drag"
+  ],
+  "look": "A matte cobalt canister with a quiet lid seam and cream geometric mark on warm stone; a red placement pin appears only during drag.",
+  "motion": "Pointer rays intersect the cylinder to update surface angle and height. The mark remains attached to those coordinates as Turn changes the viewing angle; back surfaces stay occluded.",
+  "adapt": "`DEFAULT_CONFIG` and the `config` prop expose mark scale, rotation and edge softness. `mark` defines the original graphic; `u_markAngle`/`u_markY` store surface placement, and `u_orbit` rotates the coordinate frame independently."
+}

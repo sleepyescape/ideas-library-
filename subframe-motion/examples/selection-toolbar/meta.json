@@ -1,0 +1,54 @@
+{
+  "slug": "selection-toolbar",
+  "title": "Selection toolbar",
+  "commonName": "Text selection toolbar",
+  "category": "Components & interactions",
+  "description": "Keep formatting controls anchored to the words being edited.",
+  "useCase": "Keep formatting controls anchored to the words being edited.",
+  "interaction": "Format the selected phrase",
+  "tags": [
+    "toolbar",
+    "selection",
+    "text",
+    "formatting"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "Formats one predefined phrase. Native text selection also opens the toolbar; this is not a full rich-text editor.",
+  "surface": "#edf0f3",
+  "components": [
+    "tooltip",
+    "text"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "fade",
+    "scale",
+    "slide"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "app",
+    "editorial"
+  ],
+  "aka": [
+    "floating formatting toolbar",
+    "bubble menu",
+    "rich text toolbar",
+    "highlight menu"
+  ],
+  "look": "Pale sage-grey page with a cream rounded card of large olive serif text, one phrase highlighted, and a dark olive floating toolbar above.",
+  "motion": "Selecting text or pressing the format button fades the toolbar in while it rises 5 px and scales from 0.96 (180 ms ease-out); bold, italic and highlight toggle instantly.",
+  "adapt": "The toolbar is CSS on `.toolbar` keyed by `data-open` (fade plus `translate(-50%, 5px) scale(0.96)` to rest, 180ms ease-out), opened by the paragraph's `onMouseUp`. It sits at a fixed spot; anchor it to the selection range and replace the demo phrase."
+}

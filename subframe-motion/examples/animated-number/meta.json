@@ -1,0 +1,55 @@
+{
+  "slug": "animated-number",
+  "title": "A number in motion",
+  "commonName": "Animated number counter",
+  "category": "Components & interactions",
+  "description": "A spring-driven value that makes a change in quantity easy to follow.",
+  "useCase": "Connect two values in a pricing calculator, progress readout or occasional metric update.",
+  "interaction": "Adjust the value",
+  "tags": [
+    "counter",
+    "metric",
+    "spring",
+    "number",
+    "data"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Motion Primitives",
+    "url": "https://motion-primitives.com/docs/animated-number",
+    "code": "https://github.com/ibelick/motion-primitives/blob/120f64f6ca60348e251f929e9c81f11ccbe45eda/components/core/animated-number.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "The displayed value updates immediately to its target.",
+  "limitations": "Do not announce every animation frame to assistive technology or animate a rapidly updating live feed.",
+  "surface": "#e9edf0",
+  "components": [
+    "number"
+  ],
+  "triggers": [
+    "state",
+    "press"
+  ],
+  "techniques": [
+    "spring"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "dashboard",
+    "app"
+  ],
+  "aka": [
+    "count-up number",
+    "number tween",
+    "spring counter",
+    "KPI value transition"
+  ],
+  "look": "Warm off-white page with a small olive-dot caption, a large dark tightly tracked tabular numeral, a thin rule and a small refresh icon button.",
+  "motion": "Pressing the refresh button sets a new target and the figure counts to it through a Motion spring (stiffness 180, damping 26, mass 0.7), rounded and comma-formatted each frame.",
+  "adapt": "The value is `useSpring` (`stiffness: 180, damping: 26, mass: 0.7`) mapped through `useTransform` and `numberFormat` into a `motion.span`; `spring.jump` skips the tween under reduced motion. Replace the `values` array and `setIndex` button with your metric source."
+}

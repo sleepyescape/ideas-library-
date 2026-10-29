@@ -1,0 +1,51 @@
+{
+  "slug": "upload-queue",
+  "title": "Upload queue",
+  "commonName": "File upload progress list",
+  "category": "Components & interactions",
+  "description": "Make parallel file progress and cancellation readable in a small space.",
+  "useCase": "Make parallel file progress and cancellation readable in a small space.",
+  "interaction": "Start, cancel, or retry an upload",
+  "tags": [
+    "upload",
+    "progress",
+    "queue",
+    "files",
+    "cancel"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "Explicit simulated upload preview; no files or data leave the browser. Host pause stops the timer; reduced motion keeps values updating without tweening.",
+  "surface": "#edf0f3",
+  "components": [
+    "progress",
+    "list"
+  ],
+  "triggers": [
+    "loading",
+    "press"
+  ],
+  "techniques": [
+    "scale"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "multi-file uploader",
+    "upload progress bars",
+    "attachment upload panel",
+    "file transfer queue"
+  ],
+  "look": "White rounded card on a pale blue-grey page listing three files with pastel file-type tiles, thin sage progress bars, small percentages and remove crosses.",
+  "motion": "Pressing preview ticks every 400 ms, advancing each file at its own rate; each bar's fill scales horizontally with a 400 ms linear transition, and finished rows show a check.",
+  "adapt": "Simulated progress is the `setInterval` effect gated by `play` (`400` ms ticks, step `4 + i * 2`); each bar is a `scaleX` on `.progress i` with `transition: transform 400ms linear`. Replace `names` and the timer with real upload progress."
+}

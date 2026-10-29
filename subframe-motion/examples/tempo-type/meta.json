@@ -1,0 +1,55 @@
+{
+  "slug": "tempo-type",
+  "title": "Tempo type",
+  "commonName": "Kinetic typography",
+  "category": "Animation & motion",
+  "description": "A yellow type specimen lifts, compresses or holds to an adjustable sixteen-beat cadence.",
+  "useCase": "Visual rehearsal of rhythmic motion through typography.",
+  "interaction": "Choose a pattern, start, and change BPM.",
+  "tags": [
+    "kinetic-type",
+    "tempo",
+    "beat",
+    "rhythm",
+    "squash",
+    "stretch",
+    "metronome"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Typography and beat position stay still; mode and tempo controls remain available.",
+  "limitations": "A visual 40–160 BPM clock, not sample-accurate audio playback.",
+  "surface": "#ffe319",
+  "components": [
+    "text"
+  ],
+  "triggers": [
+    "ambient",
+    "press"
+  ],
+  "techniques": [
+    "scale",
+    "loop"
+  ],
+  "feel": [
+    "bold",
+    "playful"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "beat-synced text",
+    "squash and stretch type",
+    "metronome text pulse",
+    "rhythmic headline"
+  ],
+  "look": "Saturated yellow field with one huge heavy black tightly tracked sans-serif word, monospace mode tabs, a sixteen-step beat rail and a tempo stepper.",
+  "motion": "Once started, a 40–160 BPM clock pulses the word each beat with a decaying envelope (tall stretch, wide squash or dim, per mode) as a dot steps through sixteen ticks.",
+  "adapt": "The beat loop is `draw`: `beats` advances from `bpm`, `envelope` decays quadratically over the first `0.57` of each beat, and `mode` maps it to a non-uniform scale (`0.23`, `0.22`) or opacity. Replace `modes`, which also supplies the displayed word."
+}

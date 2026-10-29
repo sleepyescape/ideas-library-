@@ -1,0 +1,57 @@
+{
+  "slug": "aurora-curtain",
+  "title": "Aurora curtain",
+  "commonName": "Aurora background shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Soft green filaments rise from a luminous, slowly folding hem as activity changes the curtain’s shape.",
+  "useCase": "Shape a nocturnal atmospheric backdrop without changing its framing.",
+  "interaction": "Adjust activity; pause or resume the curtain",
+  "tags": [
+    "aurora",
+    "northern lights",
+    "curtain",
+    "filaments",
+    "night",
+    "activity",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Ambient motion stops; activity still redraws the curtain geometry and light immediately.",
+  "limitations": "Original stylized emission field, not a physical aurora simulation. Native WebGL1 with static fallback; remount after context loss.",
+  "surface": "#071b1c",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient",
+    "state"
+  ],
+  "techniques": [
+    "shader",
+    "noise",
+    "glow"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "northern lights background",
+    "aurora borealis effect",
+    "night sky glow",
+    "animated light curtain"
+  ],
+  "look": "Deep blue-black night sky with faint stars and layered glowing green curtains of fine vertical filaments rising from wavy luminous hems.",
+  "motion": "Three noise-driven curtain layers slowly bend and fold while their filaments shimmer; the activity slider speeds the drift, deepens folds, and lengthens and brightens the rays.",
+  "adapt": "The curtain is the `FRAGMENT` shader: three `layer` passes build `hem`, `veil` and `lip` from `noise`, and `u_control` scales speed, folds, height and brightness. Retint via `tint`; keep `sg-aurora-curtain-fallback`, context-loss and reduced-motion handling."
+}

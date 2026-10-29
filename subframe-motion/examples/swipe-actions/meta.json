@@ -1,0 +1,51 @@
+{
+  "slug": "swipe-actions",
+  "title": "Swipe to archive",
+  "commonName": "Swipe-to-archive list item",
+  "category": "Components & interactions",
+  "description": "Expose a destructive or secondary action through a deliberate horizontal gesture.",
+  "useCase": "Expose a destructive or secondary action through a deliberate horizontal gesture.",
+  "interaction": "Reveal message actions",
+  "tags": [
+    "swipe",
+    "archive",
+    "gesture",
+    "undo",
+    "inbox"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "Local archive state. A reveal button and archive button provide a complete keyboard alternative.",
+  "surface": "#edf0f3",
+  "components": [
+    "list"
+  ],
+  "triggers": [
+    "drag",
+    "press"
+  ],
+  "techniques": [
+    "slide",
+    "fade"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "swipe to delete",
+    "swipeable list row",
+    "email swipe gesture",
+    "slide to reveal action"
+  ],
+  "look": "Pale blue-grey page with a white rounded inbox card holding one message row with a beige initials avatar, grey preview text and chevron.",
+  "motion": "Dragging the row left reveals a green archive action; release snaps it open at 64 px or closed, and past 75 px it slides off and fades (220 ms ease-out).",
+  "adapt": "Gesture logic is in the `mail-row` pointer handlers (-100 clamp, -75 archive and -30 snap thresholds, -64 open offset); settling is its 220 ms transition. Replace the sender and subject, wire `setArchived` to a real action, and keep the reveal and Undo buttons."
+}

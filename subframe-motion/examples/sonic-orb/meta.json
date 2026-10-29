@@ -1,0 +1,60 @@
+{
+  "slug": "sonic-orb",
+  "title": "Sonic orb",
+  "commonName": "Voice assistant orb",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A luminous blue membrane gathers fine contours while listening and emits expanding ripples while speaking.",
+  "useCase": "Distinguish voice-agent input and output states through the shape and direction of motion.",
+  "interaction": "Select Idle, Listen or Speak, then adjust energy.",
+  "tags": [
+    "webgl",
+    "voice",
+    "avatar",
+    "orb",
+    "listening",
+    "speaking",
+    "membrane",
+    "shader",
+    "energy"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The shader clock stops. State and energy changes redraw immediately with distinct static silhouettes.",
+  "limitations": "Manual state and energy preview; no microphone, transcription or real audio amplitude. Requires native WebGL.",
+  "surface": "#f0f4f6",
+  "components": [
+    "media",
+    "scene"
+  ],
+  "triggers": [
+    "state",
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "morph",
+    "distortion"
+  ],
+  "feel": [
+    "refined"
+  ],
+  "contexts": [
+    "app",
+    "landing"
+  ],
+  "aka": [
+    "AI voice orb",
+    "voice agent avatar",
+    "listening speaking indicator",
+    "assistant voice animation",
+    "voice activity sphere"
+  ],
+  "look": "Pale blue-grey page with a glossy cobalt sphere banded by wavy navy contours inside a blue halo, above three state buttons and a slider.",
+  "motion": "Contour bands drift continuously; listening adds faint inward rings and a slight edge wobble, speaking pulses the edge and emits outward ripples, with energy scaling both and states easing smoothly.",
+  "adapt": "All motion is in `FRAG`: `listening` and `speaking` weights derive from `uState`, `edge` sets the silhouette, `intake` the inward rings and `ripple` the outward waves. Drive `state` and `energy` from your real voice pipeline (e.g. mic level) instead of the buttons."
+}

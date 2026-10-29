@@ -1,0 +1,58 @@
+{
+  "slug": "chromatic-sampler",
+  "title": "Chromatic sampler",
+  "commonName": "Sound pad buttons",
+  "category": "Components & interactions",
+  "description": "Six graphic pads invert their ink, depress on contact and play six distinct synthesized notes.",
+  "useCase": "Immediate musical feedback for playable brand identities, creative toys and compact sample pads.",
+  "interaction": "Press a pad, use keys 1–6, or toggle sound.",
+  "tags": [
+    "audio",
+    "web-audio",
+    "sampler",
+    "synthesizer",
+    "sound",
+    "graphic",
+    "pad",
+    "press",
+    "keyboard"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Graphic ink inversion remains immediate; press displacement is removed. Audio still plays after a user gesture.",
+  "limitations": "Sound is armed initially and starts on the first pad gesture, subject to browser audio support. Six synthesized pitches, not recorded samples or a sequencer.",
+  "surface": "#f7f7f2",
+  "components": [
+    "button",
+    "media"
+  ],
+  "triggers": [
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "slide"
+  ],
+  "feel": [
+    "playful",
+    "bold"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "drum pad grid",
+    "soundboard",
+    "synth pad buttons",
+    "playable colour tiles",
+    "sample pad launcher"
+  ],
+  "look": "Six flat saturated colour tiles in a black-gridded two-row layout, each with a bold geometric glyph, small note label and name, under an off-white header.",
+  "motion": "Pressing a pad or keys 1–6 nudges its face 5 px down-right in 110 ms and inverts its colours for 180 ms while Web Audio plays a short synthesized note.",
+  "adapt": "Pad data lives in `PADS` (name, note, `hz`, colours, `wave`); `play` starts an oscillator with an 8 ms attack and 0.44 s exponential decay and holds `pressed` for 180 ms. The press offset is `translate(5px,5px)` on `.sf-cs-face`; replace glyphs and names."
+}

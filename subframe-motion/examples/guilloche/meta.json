@@ -1,0 +1,55 @@
+{
+  "slug": "guilloche",
+  "title": "Guilloché",
+  "commonName": "Guilloché pattern shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Fine engraved rosettes breathe inside a deep green edition print.",
+  "useCase": "Membership credentials, limited-edition launches, cultural invitations, or a distinctive mark of provenance.",
+  "interaction": "Play or pause the material study.",
+  "tags": [
+    "guilloche",
+    "engraving",
+    "security print",
+    "rosette",
+    "luxury",
+    "emerald",
+    "editorial",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Displays one stable, representative frame. Responds immediately when the system preference changes.",
+  "limitations": "Requires WebGL 1; a static CSS composition remains visible when WebGL is unavailable or lost. Fine linework may show moiré at small scales; inspect at the intended display size.",
+  "surface": "#073b2c",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "shader"
+  ],
+  "feel": [
+    "refined",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "security print pattern",
+    "engraved rosette",
+    "banknote line pattern",
+    "certificate background"
+  ],
+  "look": "Deep emerald textured paper with a double hairline frame, a pale-green engraved rosette ring at right, monospace caps and a cream serif headline at left.",
+  "motion": "Two angular petal waves in the rosette drift slowly in opposite directions on the shader clock, so the fine engraved lines continuously undulate; a button pauses.",
+  "adapt": "The rosette is the `FRAGMENT` shader: `petals` sets the 12- and 19-lobe waves and their `u_time` speeds, `phase` the line density, `medallion` the ring bounds, `paper` and `ink` the colours. Replace the print typography; keep the canvas lifecycle and fallback."
+}

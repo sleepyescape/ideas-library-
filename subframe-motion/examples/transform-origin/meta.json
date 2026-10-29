@@ -1,0 +1,53 @@
+{
+  "slug": "transform-origin",
+  "title": "Move the pivot",
+  "commonName": "Transform origin rotation",
+  "category": "Components & interactions",
+  "description": "Nine origin positions change how the same sheet rotates through space.",
+  "useCase": "Choosing a meaningful pivot for a rotating component or layered animation.",
+  "interaction": "Choose a pivot and rotate the sheet",
+  "tags": [
+    "pivot",
+    "origin",
+    "rotation",
+    "transform",
+    "anchor",
+    "editor"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Changes settle immediately; keyboard activation is immediate.",
+  "limitations": "Nine preset anchors and one rotation, not a freeform transform gizmo.",
+  "surface": "#e5e9f0",
+  "components": [
+    "editor",
+    "picker"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "rotate"
+  ],
+  "feel": [
+    "technical",
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "anchor point picker",
+    "nine-point origin grid",
+    "rotation pivot control",
+    "reference point selector"
+  ],
+  "look": "Pale blue-grey canvas with a blue gradient notebook card over a dashed outline, an orange pivot pin, a white nine-dot grid and a pill button.",
+  "motion": "A toggle rotates the sheet −20° or back around the selected anchor over 400 ms, ease-out; picking another anchor moves the pin and re-pivots the sheet instantly.",
+  "adapt": "The sheet's inline `transformOrigin` is derived from the `origin` index (`x`, `y` in 50% steps) and `turned` toggles a −20° rotate; easing lives in `sf-pivot-sheet` as `transition:transform 400ms cubic-bezier(.2,.8,.2,1)`. Replace the notebook sheet with your element."
+}

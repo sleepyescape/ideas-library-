@@ -1,0 +1,56 @@
+{
+  "slug": "walnut-cut",
+  "title": "Walnut cut",
+  "commonName": "Wood grain shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Warm walnut changes from end-grain rings to lengthwise growth as the cut turns.",
+  "useCase": "Compare directional material grain through an adjustable cut plane.",
+  "interaction": "Adjust cut angle.",
+  "tags": [
+    "native webgl",
+    "wood",
+    "grain",
+    "cut plane",
+    "growth rings",
+    "material"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The elapsed-time clock stops. Parameter controls immediately update the static composition.",
+  "limitations": "Requires WebGL 1; a static CSS swatch appears if unavailable or after context loss. Procedural growth-ring approximation with pores; no scanned wood texture or species-accurate anatomy.",
+  "surface": "#62301b",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "state",
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "noise",
+    "glow"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "wood texture background",
+    "tree ring pattern",
+    "procedural timber material",
+    "end grain texture"
+  ],
+  "look": "Full-bleed warm orange-brown walnut surface with dark wavy concentric growth rings around an off-centre pith, fine vertical fibre streaks and pores.",
+  "motion": "A soft warm sheen drifts side to side across the wood on a roughly 35 s sine; the cut-angle slider tilts the slicing plane, stretching end-grain rings into lengthwise stripes.",
+  "adapt": "The `FRAGMENT` shader does everything: `grain` tilts the sampling plane by `u_control` and returns ring radius, `fract(r*24.)` sets ring density, and `reflection` is the moving sheen. Recolour the earlywood and latewood tones in `col`; keep the context-loss and reduced-motion handling."
+}

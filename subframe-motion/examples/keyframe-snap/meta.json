@@ -1,0 +1,59 @@
+{
+  "slug": "keyframe-snap",
+  "title": "Letter arrival editor",
+  "commonName": "Keyframe timeline editor",
+  "category": "Components & interactions",
+  "description": "Magnetic keyframes set when three original letterforms arrive, with a scrubber and a live preview of the edited timing.",
+  "useCase": "Synchronizing independent text or graphic entrances with an immediately inspectable animation consequence.",
+  "interaction": "Align the arrival diamonds, scrub the ruler, then preview the animation",
+  "tags": [
+    "keyframe",
+    "timeline",
+    "snap",
+    "magnetic",
+    "alignment",
+    "tracks",
+    "editor",
+    "typography",
+    "kinetic",
+    "scrub",
+    "sequence"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Scrubbing shows discrete arrived/not-arrived letter states without translation; Preview becomes an End frame action. A live preference change cancels playback.",
+  "limitations": "Three authored letterform arrivals in a 1.6-second local composition. Each entrance lasts 300 ms and ends at its diamond; no general animation engine or export. Host pause freezes and resumes the current time.",
+  "surface": "#d5cfdf",
+  "components": [
+    "editor",
+    "text"
+  ],
+  "triggers": [
+    "drag",
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "slide",
+    "stagger"
+  ],
+  "feel": [
+    "technical"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "animation timeline",
+    "snapping keyframes",
+    "timeline scrubber",
+    "motion sequencer"
+  ],
+  "look": "Violet band with large pale block letters above a dark aubergine timeline: three tracks with purple bars, diamond keyframes, a monospace ruler and white playhead.",
+  "motion": "Letters rise into place with cubic ease-out during the 0.3 s before their keyframes; dragged diamonds snap together within 0.045 s; a button plays the 1.6 s timeline.",
+  "adapt": "Letter motion is computed in render from `time` and `frames` (cubic ease-out over 0.3 s per letter); `update` applies the 0.045 magnetic snap (Alt bypasses) and a `requestAnimationFrame` loop plays to `END`. Replace `outlines` and `letters` with your tracks."
+}

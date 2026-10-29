@@ -1,0 +1,54 @@
+{
+  "slug": "cursor-adapter",
+  "title": "Cursor adapter",
+  "commonName": "Morphing custom cursor",
+  "category": "Components & interactions",
+  "description": "A small ink cursor stretches into the exact width of a title in a sharp yellow publishing index.",
+  "useCase": "Give editorial links a scoped pointer treatment that identifies the actual actionable text.",
+  "interaction": "Move across titles and choose a book.",
+  "tags": [
+    "cursor",
+    "hover",
+    "context",
+    "editorial",
+    "canvas"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The native cursor and focus states remain; the auxiliary cursor and trail are disabled.",
+  "limitations": "The custom pointer enhancement is mouse-only and scoped to this component. Native controls remain usable on touch.",
+  "surface": "#eee72b",
+  "components": [
+    "cursor",
+    "list"
+  ],
+  "triggers": [
+    "pointer",
+    "hover"
+  ],
+  "techniques": [
+    "canvas",
+    "morph"
+  ],
+  "feel": [
+    "refined",
+    "subtle"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "cursor snaps to link",
+    "hover underline cursor",
+    "magnetic link cursor",
+    "contextual cursor"
+  ],
+  "look": "Saturated lemon-yellow page with a stacked list of large black sans-serif titles, faint arrow glyphs at right, and a thin ruled footer.",
+  "motion": "A small black ink bar trails the mouse with exponential smoothing, shedding fading dots; over a title it glides beneath the text and stretches to the title's exact width.",
+  "adapt": "The cursor is painted on the overlay `canvas` in `paint`: `head` eases toward `target` (the hovered `button[data-book]` span) with `1 - Math.exp(-dt / 65)`, and `trail` dots last 230 ms. Replace `titles` and footer copy; tag other targets with `data-book`."
+}

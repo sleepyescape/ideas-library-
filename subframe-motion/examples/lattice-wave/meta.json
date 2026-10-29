@@ -1,0 +1,55 @@
+{
+  "slug": "lattice-wave",
+  "title": "Lattice wave",
+  "commonName": "Wave grid animation",
+  "category": "Animation & motion",
+  "description": "A forest-green line lattice flexes over a violet field as its tension changes.",
+  "useCase": "A controllable woven or technical line texture.",
+  "interaction": "Adjust tension and pause the field.",
+  "tags": [
+    "canvas",
+    "lattice",
+    "grid",
+    "wave",
+    "sine",
+    "tension",
+    "geometry"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The mesh stays still; tension renders an immediate new static mesh.",
+  "limitations": "Canvas 2D line deformation, not a cloth solver.",
+  "surface": "#ad60e5",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "canvas",
+    "distortion"
+  ],
+  "feel": [
+    "technical",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "warping grid background",
+    "animated mesh lines",
+    "sine wave grid",
+    "distorted grid pattern",
+    "flowing wireframe grid"
+  ],
+  "look": "Dark green line grid with small square nodes on a vivid violet field, a bold sans label above, a thin slider and monospace readout below.",
+  "motion": "Grid nodes sway continuously in two slow crossing sine waves, damped so the outer frame stays straight; a tension slider scales the amplitude and a button pauses it.",
+  "adapt": "Everything is drawn in `draw`: `point` displaces each node with sines of `clock`, `amp` scales with `tension`, and `cols`/`rows` set density. Tune the 1700 divisor in `tick` for speed and recolour via `strokeStyle` and the section background."
+}

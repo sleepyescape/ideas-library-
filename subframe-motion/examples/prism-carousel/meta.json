@@ -1,0 +1,75 @@
+{
+  "slug": "prism-carousel",
+  "title": "Prism carousel",
+  "commonName": "Refraction image carousel",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "An architectural photo strip bends through a clear optical edge, then expands a selected image into an undistorted inspection view.",
+  "useCase": "Give a compact visual collection a material transition while preserving a clear enlarged image.",
+  "interaction": "Drag or step through images, then choose Inspect.",
+  "tags": [
+    "carousel",
+    "refraction",
+    "chromatic dispersion",
+    "WebGL",
+    "drag",
+    "focus"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "cathedral-columns.webp",
+      "description": "Chartres Cathedral, West Facade; Royal Portal, Central Bay",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "concrete-geometries.webp",
+      "description": "Modern brutalist architecture with geometric shapes",
+      "license": "Unsplash"
+    },
+    {
+      "fileName": "concrete-projections.webp",
+      "description": "Brutalist concrete office building",
+      "license": "Unsplash"
+    }
+  ],
+  "reducedMotion": "Stepping and inspection settle immediately; the stationary optical treatment remains.",
+  "limitations": "Native WebGL 1 and three local images. The lens is an artistic UV refraction, not a physically traced glass object; a flat image is the fallback.",
+  "surface": "#eaebea",
+  "components": [
+    "gallery",
+    "image"
+  ],
+  "triggers": [
+    "drag",
+    "press"
+  ],
+  "techniques": [
+    "shader",
+    "distortion",
+    "spring"
+  ],
+  "feel": [
+    "bold",
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "curved image slider",
+    "lens distortion carousel",
+    "chromatic aberration slider",
+    "cylindrical photo carousel",
+    "draggable image strip"
+  ],
+  "look": "Light gray stage with a strip of architectural photos bent and stretched toward the edges with RGB fringing, an italic serif caption and arrow buttons.",
+  "motion": "Dragging or stepping slides the strip through a refracting edge lens, snapping to the nearest print on a damped spring; Inspect relaxes the lens and crossfades to the enlarged print.",
+  "adapt": "Motion runs in `tick`: a spring (155 stiffness, `Math.exp(-22 * dt)` damping) moves `position` toward `target`, and `focus` eases with a 0.11 s constant; the `prism` shader's `rim` term sets lens strength. Replace `prints`; the atlas assumes three images."
+}

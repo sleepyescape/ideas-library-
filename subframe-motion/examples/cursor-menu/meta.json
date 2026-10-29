@@ -1,0 +1,57 @@
+{
+  "slug": "cursor-menu",
+  "title": "Artwork context menu",
+  "commonName": "Right-click context menu",
+  "category": "Components & interactions",
+  "description": "A bounded context menu rotates, inverts and duplicates the artwork it belongs to.",
+  "useCase": "Provide local commands whose consequences are visible on the selected asset.",
+  "interaction": "Right-click or tap an artwork, use the three-dot button, or press Shift+F10. Rotate, invert ink or duplicate; each copy remains independently editable.",
+  "tags": [
+    "context-menu",
+    "artwork",
+    "pointer-origin",
+    "roving-focus",
+    "duplicate",
+    "rotate",
+    "invert",
+    "keyboard",
+    "bounds"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Finite transitions become immediate under reduced motion and keyboard input. Host pause disables controls; any owned drag is cancelled.",
+  "limitations": "Original SVG artwork and at most two local objects; no filesystem writes or clipboard actions. Rotation and ink inversion apply to the selected object only.",
+  "surface": "#d9dce2",
+  "components": [
+    "menu"
+  ],
+  "triggers": [
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "scale",
+    "fade",
+    "rotate"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "popup actions menu",
+    "overflow menu",
+    "kebab menu",
+    "shortcut menu",
+    "asset actions menu"
+  ],
+  "look": "Cool grey page with a pale file window whose dotted artboard holds a cream square printed with bold cobalt geometric shapes.",
+  "motion": "Clicking or right-clicking the artwork opens a menu at the pointer that fades and scales up from 0.97 in 150 ms; rotation eases 90° in 280 ms, copies slide in.",
+  "adapt": "The menu is placed by `open`, which maps pointer coordinates into the 600-unit stage and clamps them, and animates with `sf-context-menu` (150 ms); rotation is the `Stamp` transform with a 280 ms transition. Replace `Stamp` and the three `menuitem` actions with your own."
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "address-check",
+  "title": "Address check",
+  "commonName": "Async input validation",
+  "category": "Components & interactions",
+  "description": "A project-address field moves from checking to an inline validation result.",
+  "useCase": "Resolve an address choice while preserving the user’s typing flow.",
+  "interaction": "Edit the address, then blur or select Check address.",
+  "tags": [
+    "validation",
+    "async",
+    "debounce",
+    "cancellation",
+    "inline",
+    "form",
+    "availability"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "State icons and borders change immediately; validation remains functional.",
+  "limitations": "Uses a local list of reserved names and a syntax rule; it does not check a real domain or service.",
+  "surface": "#fafafa",
+  "components": [
+    "input"
+  ],
+  "triggers": [
+    "state",
+    "keyboard",
+    "loading"
+  ],
+  "techniques": [
+    "gradient"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "username availability check",
+    "inline field validation",
+    "debounced validation",
+    "subdomain checker"
+  ],
+  "look": "Near-white page with a small dark-green square icon, a white rounded text field with a grey suffix, grey helper text and a full-width near-black button.",
+  "motion": "After blur or submit, edits show a checking state that a 450 ms debounce resolves to available, taken or invalid; errors shift the field border to red over 150 ms.",
+  "adapt": "Validation is the `useEffect` on `value` and `touched`: a 450 ms `setTimeout`, cleared on every edit, sets `status`, which CSS reads through `data-invalid` and `data-state`. Replace the regex and reserved-name list with your availability request, and abort stale requests."
+}

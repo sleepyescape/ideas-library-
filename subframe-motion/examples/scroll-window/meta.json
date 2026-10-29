@@ -1,0 +1,66 @@
+{
+  "slug": "scroll-window",
+  "title": "Tidal aperture",
+  "commonName": "Scroll-driven image reveal",
+  "category": "Animation & motion",
+  "description": "Five offset photographic windows widen and align into a single coastal panorama.",
+  "useCase": "Turn a small photographic fragment into a full image through a reversible reveal.",
+  "interaction": "Scroll, drag upward, scrub the aperture slider or choose Open view.",
+  "tags": [
+    "scroll",
+    "aperture",
+    "clip path",
+    "segmented reveal",
+    "photography",
+    "native scroll",
+    "range input",
+    "direct manipulation"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "blue-tide.webp",
+      "description": "Aerial view photography of ocean",
+      "license": "Unsplash"
+    }
+  ],
+  "reducedMotion": "Programmatic opening is immediate and image zoom is removed; direct scrolling and scrubbing remain available.",
+  "limitations": "One local image and a bounded internal scroll area; no global scroll controller or video playback.",
+  "surface": "#ed592f",
+  "components": [
+    "image"
+  ],
+  "triggers": [
+    "scroll",
+    "drag",
+    "press"
+  ],
+  "techniques": [
+    "mask",
+    "stagger",
+    "scale"
+  ],
+  "feel": [
+    "bold",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "scroll expand image",
+    "clip-path scroll reveal",
+    "sliced photo reveal",
+    "scroll scrubbed hero image",
+    "image strips align on scroll"
+  ],
+  "look": "Saturated vermilion field with a heavy dark-brown sans wordmark beside a stepped column of aerial surf photo slices; thin slider and outlined button below.",
+  "motion": "Scroll, drag or slider progress reversibly widens five stacked clip-path bands, centre first with smoothstep easing, into one full-bleed photo while it zooms out and the title lifts and fades.",
+  "adapt": "Geometry lives in `draw`: each `.ta-window` gets a `clipPath` inset from `amount`, sized by `apertureWidth` and staggered by distance from the centre window; `.ta-track` height sets the scroll length. Replace the photo and `.ta-title` wordmark; `seek` routes the slider, drag and button."
+}

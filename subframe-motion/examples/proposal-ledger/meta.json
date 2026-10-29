@@ -1,0 +1,57 @@
+{
+  "slug": "proposal-ledger",
+  "title": "Proposal ledger",
+  "commonName": "Change approval table",
+  "category": "Components & interactions",
+  "description": "Proposed settings move into the current column when accepted, with explicit applied and kept states.",
+  "useCase": "Review an agent's field edits individually and apply only undecided changes.",
+  "interaction": "Accept or reject each field, undo a decision, or apply the remaining changes.",
+  "tags": [
+    "approval",
+    "diff",
+    "agent-ui",
+    "review",
+    "table",
+    "accept-reject",
+    "undo",
+    "value-transition"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Finite transitions become immediate under reduced motion and keyboard input. Host pause disables controls; any owned drag is cancelled.",
+  "limitations": "Three local release settings; acceptance only updates this example's in-memory state. Wire confirmed decisions to application data in an integration.",
+  "surface": "#e6e9ed",
+  "components": [
+    "table"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "slide",
+    "fade"
+  ],
+  "feel": [
+    "subtle",
+    "technical"
+  ],
+  "contexts": [
+    "app",
+    "dashboard"
+  ],
+  "aka": [
+    "accept reject changes",
+    "AI suggestion review",
+    "diff review table",
+    "approve proposed edits",
+    "change review panel"
+  ],
+  "look": "Cool grey page with a white rounded three-row table: muted values, arrows to chip-styled proposals, cross and green check buttons, dark green footer button.",
+  "motion": "Accepting a row slides its proposed chip left into the current column (260 ms ease-out) while the old value fades and the row tints green; rejecting fades the proposal right.",
+  "adapt": "All motion is CSS keyed on each `change` row's `data-state`: `.new` shifts `translateX(-107px)` on accept while `.old` and `.direction` fade, over 260 ms `cubic-bezier(.22,1,.36,1)`. Replace `CHANGES` with real proposed edits and persist `decisions` set by `decide`."
+}

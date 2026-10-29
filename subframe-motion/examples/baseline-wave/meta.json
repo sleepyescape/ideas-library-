@@ -1,0 +1,54 @@
+{
+  "slug": "baseline-wave",
+  "title": "Frequency study",
+  "commonName": "Sine wave text",
+  "category": "Animation & motion",
+  "description": "Individual letters travel along a controllable sine wave.",
+  "useCase": "Build an expressive typographic mark whose motion suggests sound or rhythm.",
+  "interaction": "Adjust the phase",
+  "tags": [
+    "typography",
+    "wave",
+    "sine",
+    "scrub",
+    "identity"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live reduced-motion preferences remove interpolation and decorative playback. All content and native controls remain available. Keyboard changes settle immediately.",
+  "limitations": "Original demonstration content; adapt labels and state to the host product.",
+  "surface": "#c8ef51",
+  "components": [
+    "text",
+    "slider"
+  ],
+  "triggers": [
+    "drag",
+    "state"
+  ],
+  "techniques": [
+    "split-text",
+    "rotate"
+  ],
+  "feel": [
+    "playful",
+    "bold"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "wavy text",
+    "wave letters",
+    "text on a wave",
+    "per-letter wave offset"
+  ],
+  "look": "Acid lime-green field with heavy royal-blue sans capitals tilted along a curve over five faint staff lines, plus a range slider with monospace label.",
+  "motion": "Dragging the phase slider moves each letter along a sine wave, up to 32 px vertically and 11° of tilt with per-letter offsets, eased over 120 ms.",
+  "adapt": "Each letter's `translateY` and `rotate` come from `Math.sin` and `Math.cos` of `i * 0.62 + phase / 12` (amplitudes 32 px and 11°); the `.wave span` transition eases it. Replace the split word, and drive `phase` from audio, scroll or time if needed."
+}

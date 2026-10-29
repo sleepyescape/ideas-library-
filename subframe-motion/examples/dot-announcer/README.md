@@ -1,0 +1,54 @@
+# Dot announcer
+
+![preview](preview.webp)
+
+> A vermilion dot display changes its illuminated glyph and status with a short column-by-column handoff.
+
+- **Common name:** LED dot matrix display
+- **Category:** Components & interactions
+- **Live demo:** https://www.subframe.com/motion/dot-announcer
+- **Source:** Subframe (original, MIT)
+- **Dependencies:** none
+
+## Use case
+
+Compact status that communicates across a room or at small sizes.
+
+## Interaction
+
+Choose Available, Quiet or Complete.
+
+## Look
+
+Vermilion plastic device on a red field, framing a dark maroon grid of round dots with cream lit dots forming an icon and letters.
+
+## Motion
+
+Choosing a state recolours each dot over 180 ms with a 7 ms-per-column delay, so the new icon and three-letter word sweep in left to right.
+
+## How to adapt
+
+Each `circle` gets an inline fill transition with `transitionDelay` of `x * 7` ms; lit dots come from `PATTERNS` (9×9 icons) and the 5×7 `GLYPHS` font. Replace `PATTERNS`, `LABELS` and the three-letter words inside `lit`, adding letters to `GLYPHS` as needed.
+
+## Reduced motion
+
+Dots change state immediately with no delayed transition.
+
+## Limitations
+
+Three local display states; no connected device or broadcast service.
+
+## Taxonomy
+
+- **Components:** notification, text
+- **Triggers:** state, press
+- **Techniques:** stagger, fade
+- **Feel:** technical, playful
+- **Contexts:** app, dashboard
+- **Tags:** matrix, led, dot, status, glyph, pixel
+- **Also known as:** pixel status display, LED sign, dot matrix text, retro LED panel
+- **Surface color:** `#bc2d16`
+
+## Code
+
+See [`component.tsx`](component.tsx).

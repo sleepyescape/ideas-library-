@@ -1,0 +1,53 @@
+{
+  "slug": "resizable-inspector",
+  "title": "Resizable inspector",
+  "commonName": "Resizable split pane",
+  "category": "Components & interactions",
+  "description": "Resize an editing surface while its adjacent controls remain useful.",
+  "useCase": "Resize an editing surface while its adjacent controls remain useful.",
+  "interaction": "Resize the inspector",
+  "tags": [
+    "resize",
+    "split pane",
+    "inspector",
+    "drag",
+    "editor"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "Canvas width is interactive; neighboring inspector values are static.",
+  "surface": "#edf0f3",
+  "components": [
+    "sheet",
+    "editor"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "layout"
+  ],
+  "feel": [
+    "technical",
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "draggable divider",
+    "resizable panel",
+    "split view resize handle",
+    "adjustable sidebar width",
+    "pane splitter"
+  ],
+  "look": "Cool blue-grey page with a rounded editor window: dotted canvas with a tilted slate-blue shape, pill drag handle and a compact property inspector.",
+  "motion": "Dragging the divider resizes the canvas 1:1 with the pointer, clamped to 38–72% of the width (arrow keys step 2%); the inspector flexes and the size readout updates.",
+  "adapt": "Resizing is the `update` function converting `clientX` into `split` (clamped 38–72) on the `.divider` separator, with pointer capture and arrow, Home and End keys. Replace the `.artboard` object and the `.inspector` fields with your panes."
+}

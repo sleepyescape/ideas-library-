@@ -1,0 +1,56 @@
+{
+  "slug": "orientation-cube",
+  "title": "Orientation cube",
+  "commonName": "Draggable 3D cube",
+  "category": "Components & interactions",
+  "description": "A ceramic orange cube orbits under the pointer and snaps to named faces.",
+  "useCase": "Spatial orientation controls and small product or object inspectors.",
+  "interaction": "Drag the cube, use arrow keys, or choose a face",
+  "tags": [
+    "css-3d",
+    "cube",
+    "orbit",
+    "drag",
+    "perspective",
+    "orientation",
+    "snap"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Face changes settle immediately. Direct pointer and keyboard rotation remain available.",
+  "limitations": "CSS six-face object, not a mesh renderer or twisty-puzzle simulator.",
+  "surface": "#f5f7fa",
+  "components": [
+    "scene",
+    "editor"
+  ],
+  "triggers": [
+    "drag",
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "3d",
+    "rotate"
+  ],
+  "feel": [
+    "technical",
+    "playful"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "view cube navigator",
+    "CSS 3D cube",
+    "orbit control",
+    "3D orientation gizmo"
+  ],
+  "look": "Pale grey-blue page with a matte orange cube whose faces carry thin outlined shapes and labels, a soft floor shadow and three white buttons.",
+  "motion": "Dragging orbits the cube directly at 0.65° per pixel, pitch clamped to ±90°; face buttons turn it to that face by the shortest path over 500 ms, ease-out.",
+  "adapt": "The cube is CSS `preserve-3d`: `angle` drives `rotateX(${angle.x}deg) rotateY(${angle.y}deg)` on `sf-orientation-cube`, eased by `transition:transform 500ms cubic-bezier(.22,1,.36,1)` unless `data-instant` is set. Replace the `CUBE_FACES` artwork and the `faces` snap targets; drag sensitivity is the 0.65 factor."
+}

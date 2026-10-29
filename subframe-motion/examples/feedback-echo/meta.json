@@ -1,0 +1,56 @@
+{
+  "slug": "feedback-echo",
+  "title": "Feedback echo",
+  "commonName": "Feedback trail shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A precise luminous orbit leaves a retained echo that slowly stretches and fades.",
+  "useCase": "Art-direct trails from actual previous frames with a controlled decay rate.",
+  "interaction": "Adjust persistence.",
+  "tags": [
+    "native webgl",
+    "feedback",
+    "framebuffer",
+    "afterimage",
+    "persistent state",
+    "trail"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "A representative retained-history composition stays still. Persistence changes render one frame.",
+  "limitations": "Requires WebGL 1; a static CSS swatch appears if unavailable or after context loss. One retained RGBA8 framebuffer texture with frame-rate-adjusted decay; feedback history resets on resize and remount.",
+  "surface": "#09282c",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "glow",
+    "gradient"
+  ],
+  "feel": [
+    "calm",
+    "technical"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "motion trail effect",
+    "afterimage shader",
+    "framebuffer feedback",
+    "ghosting trails",
+    "echo trail background"
+  ],
+  "look": "Near-black teal field with one glowing teal elliptical ring crossed by a fine diagonal line, faint ghosted afterimages trailing inside it.",
+  "motion": "A thin ring and bar drift, rotate and shift gold to teal; each frame redraws the last slightly contracted, shifted left and dimmed, leaving trailing echoes; a slider sets persistence.",
+  "adapt": "The `FRAGMENT` shader draws the orbit and blends the previous frame from `u_state`, which `draw` refreshes via `copyTexSubImage2D`. Swap the `ring` and `bar` shapes, tune decay and zoom there and `controlRef` (0.73); keep context-loss and reduced-motion handling."
+}

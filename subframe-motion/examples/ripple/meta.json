@@ -1,0 +1,56 @@
+{
+  "slug": "ripple",
+  "title": "Quiet ripples",
+  "commonName": "Pulse ripple animation",
+  "category": "Animation & motion",
+  "description": "Concentric pulses give a simple focal point a sense of presence.",
+  "useCase": "Suggest discovery or connection in an illustration. Pair actual loading or connection status with text.",
+  "interaction": "Play to watch the rings expand",
+  "tags": [
+    "ripple",
+    "pulse",
+    "CSS",
+    "loop",
+    "illustration"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Magic UI",
+    "url": "https://magicui.design/docs/components/ripple",
+    "code": "https://github.com/magicuidesign/magicui/blob/85f97fd27b053339af74ba9dd4ca428ee25989fb/apps/www/registry/magicui/ripple.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The rings remain on a representative static frame.",
+  "limitations": "This is a decorative ambient pulse, not a click-position ripple or progress indicator.",
+  "surface": "#eceee9",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "scale",
+    "stagger",
+    "loop"
+  ],
+  "feel": [
+    "calm",
+    "subtle"
+  ],
+  "contexts": [
+    "landing",
+    "app"
+  ],
+  "aka": [
+    "pulsing rings",
+    "radar pulse",
+    "sonar ripple background",
+    "concentric circles pulse",
+    "breathing rings"
+  ],
+  "look": "Near-black olive-tinted field with seven faint concentric hairline rings fading toward the bottom around a small dark green-grey disc with a pulse-line icon.",
+  "motion": "Seven concentric rings breathe in a continuous loop, each scaling to 1.075 and back over 3.5 s with ease-in-out, staggered outward by 0.13 s; a text button pauses them.",
+  "adapt": "The pulse is the `mg-quiet-ripple` keyframe (scale 1 to 1.075, 3.5 s ease-in-out) on each `mg-quiet-ring`; tune ring count, the `size` step, the 0.13 s `animationDelay` and per-ring opacity. Replace the centre disc's pulse-line SVG with your icon."
+}

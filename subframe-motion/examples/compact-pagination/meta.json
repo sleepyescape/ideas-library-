@@ -1,0 +1,51 @@
+{
+  "slug": "compact-pagination",
+  "title": "Windowed pagination",
+  "commonName": "Sliding pagination",
+  "category": "Components & interactions",
+  "description": "Keep the active page centered as a long page list advances.",
+  "useCase": "Keep the active page centered as a long page list advances.",
+  "interaction": "Change the page",
+  "tags": [
+    "pagination",
+    "windowing",
+    "navigation",
+    "document"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "Twenty local page states with a sliding visible window. No content is fetched.",
+  "surface": "#edf0f3",
+  "components": [
+    "navigation"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "slide",
+    "rotate"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app",
+    "dashboard"
+  ],
+  "aka": [
+    "animated pagination",
+    "page number carousel",
+    "paginator",
+    "pager control"
+  ],
+  "look": "Cool light-grey background, a white document sheet with skeleton lines and a tilted pale-blue numbered tile, above a white rounded bar of page numbers.",
+  "motion": "Changing page slides the number strip sideways over 250 ms ease-out, keeping the current page centred until the ends; the preview tile re-tilts a few degrees in 230 ms.",
+  "adapt": "The strip offset is the inline `translateX` on `page-numbers`, computed from `start` (a five-slot window, 32 px per button) with a 250 ms CSS transition; `page-art` rotation is decorative. Replace the hard-coded 20-page total (also the 640 px strip width) and the `page-sheet` mock."
+}

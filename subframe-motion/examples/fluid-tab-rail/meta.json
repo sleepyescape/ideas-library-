@@ -1,0 +1,57 @@
+{
+  "slug": "fluid-tab-rail",
+  "title": "Fluid tab rail",
+  "commonName": "Liquid tab indicator",
+  "category": "Components & interactions",
+  "description": "A deep-blue navigation rail swells around the focused control while a pale disc follows its silhouette.",
+  "useCase": "Connect hover preview, keyboard focus and selected workspace state with one coherent navigation shape.",
+  "interaction": "Hover or select a mode. Arrow keys, Home and End select immediately.",
+  "tags": [
+    "tabs",
+    "navigation",
+    "svg",
+    "morph",
+    "roving-focus",
+    "hull",
+    "hover"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The rail and disc move directly to the target with no interpolated motion.",
+  "limitations": "Four local modes with symbolic previews; connect the selected index to real panels in a product.",
+  "surface": "#0e2029",
+  "components": [
+    "tabs",
+    "navigation"
+  ],
+  "triggers": [
+    "hover",
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "morph",
+    "slide"
+  ],
+  "feel": [
+    "refined",
+    "playful"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "gooey tab bar",
+    "morphing nav indicator",
+    "blob tab selector",
+    "animated tab bar",
+    "metaball navigation"
+  ],
+  "look": "Dark navy page with a centred line icon and large sans-serif label above a slate pill-shaped icon rail whose bulge cradles a pale mint disc.",
+  "motion": "Hovering a tab glides a pale disc there (exponential smoothing, 65 ms constant) while a Gaussian bulge in the SVG rail follows; leaving glides it back, keyboard moves are instant.",
+  "adapt": "The disc `point` eases in a `requestAnimationFrame` loop (`Math.exp(-dt / 65)`) and the rail `hull` is rebuilt each frame from the Gaussian `profile` (spread 32, height 13). Replace `LABELS` and `SYMBOLS`; the 68 px tab pitch and count of four are hard-coded."
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "reaction-palette",
+  "title": "Reaction palette",
+  "commonName": "Emoji reaction picker",
+  "category": "Components & interactions",
+  "description": "Choose a reaction without covering the message being discussed.",
+  "useCase": "Choose a reaction without covering the message being discussed.",
+  "interaction": "Choose a reaction",
+  "tags": [
+    "reaction",
+    "palette",
+    "popover",
+    "message",
+    "feedback"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "Original typographic reaction symbols, not an emoji asset set. Selection remains local.",
+  "surface": "#edf0f3",
+  "components": [
+    "picker",
+    "tooltip"
+  ],
+  "triggers": [
+    "press",
+    "hover"
+  ],
+  "techniques": [
+    "scale",
+    "fade",
+    "stagger",
+    "slide"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "message reactions",
+    "reaction bar",
+    "emoji popover",
+    "react to message"
+  ],
+  "look": "Pale lilac background with a white chat bubble, a small pill reaction button and a white rounded pill of five muted-colour typographic symbols.",
+  "motion": "Clicking fades in the palette as it settles from 96% scale and 5 px up in 180 ms; symbols rise in 18 ms apart and lift 3 px on hover.",
+  "adapt": "The open state is `reaction-options` toggled by `data-open` (opacity plus translate and scale, 180 ms), with per-button `transitionDelay` of `i * 18` ms. Replace `reactions`, `labels` and the `quote` bubble; keep the `inert` popover and focus return to `trigger`."
+}

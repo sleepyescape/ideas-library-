@@ -1,0 +1,52 @@
+{
+  "slug": "dimensional-type",
+  "title": "Cast type",
+  "commonName": "3D extruded text",
+  "category": "Animation & motion",
+  "description": "A solid typographic object turns to show its extruded edges.",
+  "useCase": "Give a wordmark dimensional weight without downloading a model or font.",
+  "interaction": "Turn the wordmark",
+  "tags": [
+    "typography",
+    "3D",
+    "extrusion",
+    "rotation",
+    "wordmark"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live reduced-motion preferences remove interpolation and decorative playback. All content and native controls remain available. Keyboard changes settle immediately.",
+  "limitations": "Original demonstration content; adapt labels and state to the host product.",
+  "surface": "#e4473c",
+  "components": [
+    "text"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "3d",
+    "rotate"
+  ],
+  "feel": [
+    "bold"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "CSS 3D text",
+    "layered text extrusion",
+    "rotating 3D wordmark",
+    "text depth effect"
+  ],
+  "look": "Heavy pale-pink serif letters with deep, darker extruded sides float over a saturated coral-red radial gradient, with a single slider below.",
+  "motion": "Dragging the slider turns the wordmark around its vertical axis between -48° and 48° with a 0.2 s ease-out, revealing 18 stacked layers as extruded edges.",
+  "adapt": "Depth is 18 stacked `b` copies inside `cast`, each offset by `translateZ` and darkened via `hsl`; the turn is `rotateY` on `object` with a 0.2 s ease-out transition driven by `angle`. Replace the `OH` wordmark, font and colours; keep the `data-still` reduced-motion switch."
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "skeleton-handoff",
+  "title": "Skeleton handoff",
+  "commonName": "Skeleton loader",
+  "category": "Components & interactions",
+  "description": "A publication preview uses a delayed, shape-matched placeholder for slower responses.",
+  "useCase": "Avoid placeholder flashes on fast responses while keeping slower content spatially predictable.",
+  "interaction": "Reload the publication and compare fast and slow responses.",
+  "tags": [
+    "skeleton",
+    "loading",
+    "delayed-placeholder",
+    "crossfade",
+    "layout",
+    "async"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Placeholder and content swap instantly without fading; timing and layout remain stable.",
+  "limitations": "Simulated local responses: 65 ms fast and 850 ms slow. The slow placeholder lasts 710 ms; this is not a general request cache or minimum-dwell abstraction.",
+  "surface": "#24477b",
+  "components": [
+    "progress",
+    "card"
+  ],
+  "triggers": [
+    "loading",
+    "press"
+  ],
+  "techniques": [
+    "fade"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "skeleton screen",
+    "loading placeholder",
+    "content placeholder",
+    "delayed loading state",
+    "flash-free loading"
+  ],
+  "look": "Deep blue page with a publication card: pale sage cover with a big serif letter and arc beside a white two-line serif title.",
+  "motion": "Reloading waits 140 ms before cross-fading to shape-matched placeholder blocks, so the 65 ms fast response skips them; the 850 ms response fades new content in over 0.2 s.",
+  "adapt": "The handoff is two timers in the loading effect: `setSkeleton` after 140 ms and completion after 65 or 850 ms; `[data-skeleton=true]` swaps `.cover`/`.copy` for `.bones` by opacity. Replace the timers with your request lifecycle and reshape `bones` to your layout."
+}

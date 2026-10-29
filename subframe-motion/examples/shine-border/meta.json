@@ -1,0 +1,58 @@
+{
+  "slug": "shine-border",
+  "title": "Shifting border",
+  "commonName": "Animated gradient border",
+  "category": "Animation & motion",
+  "description": "A softly colored gradient shifts around the edge of a quiet card.",
+  "useCase": "Accent a featured card, release note or short editorial message.",
+  "interaction": "Play or pause the border",
+  "tags": [
+    "border",
+    "gradient",
+    "mask",
+    "ambient",
+    "card",
+    "idle loop"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Magic UI",
+    "url": "https://magicui.design/docs/components/shine-border",
+    "code": "https://github.com/magicuidesign/magicui/blob/85f97fd27b053339af74ba9dd4ca428ee25989fb/apps/www/registry/magicui/shine-border.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The border becomes a stationary gradient.",
+  "limitations": "CSS mask-composite support is required for the border effect. Background-position animation repaints; keep the accent small.",
+  "surface": "#eee9e4",
+  "components": [
+    "card"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "gradient",
+    "mask",
+    "glow",
+    "loop"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "app"
+  ],
+  "aka": [
+    "glowing card border",
+    "shimmering outline",
+    "moving border highlight",
+    "featured card accent",
+    "gradient stroke animation"
+  ],
+  "look": "Blank off-white rounded card on a warm greige page, its thin border tinted with soft peach, mauve and lavender that fades to grey.",
+  "motion": "A 300% radial gradient masked to a 1.5 px border ring pans diagonally back and forth via background-position, completing an 8 s linear loop, so colour drifts around the edge.",
+  "adapt": "The effect is `.mg-shine-border`: a `radial-gradient` at `background-size:300% 300%`, clipped to its padding ring by `mask-composite:exclude` and animated by `@keyframes mg-shine-position` over `8s`. Change the gradient stops and `padding:1.5px` (border width); put content inside `.mg-shine-card`."
+}

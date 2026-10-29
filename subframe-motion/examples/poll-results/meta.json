@@ -1,0 +1,61 @@
+{
+  "slug": "poll-results",
+  "title": "The results are in",
+  "commonName": "Animated poll results",
+  "category": "Components & interactions",
+  "description": "A choice turns into a small chart, with result fills and percentages moving together.",
+  "useCase": "Reveal poll results after a vote while keeping the chosen option visible.",
+  "interaction": "Choose a destination",
+  "tags": [
+    "poll",
+    "vote",
+    "click",
+    "data",
+    "bar chart",
+    "spring",
+    "clip-path",
+    "percentage",
+    "reveal"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Interior",
+    "url": "https://www.interior.dev/docs/poll-results",
+    "code": "https://github.com/ddoemonn/interior/blob/314800833bf01e23e6ae74c2a17fbdaac3688c84/components/interior/poll-results.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "Bars and percentages jump to their final values; the winner check appears without scaling.",
+  "limitations": "Votes are local illustrative data. Replace them with server results and preserve the one-vote guard.",
+  "surface": "#eeeede",
+  "components": [
+    "chart",
+    "button"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "spring",
+    "mask",
+    "fade"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "vote results bars",
+    "survey results reveal",
+    "poll percentage fill",
+    "voting widget"
+  ],
+  "look": "Pale olive-cream page with a narrow stack of three off-white rounded option rows, grey and sage fill bars, monospace percentages and olive captions.",
+  "motion": "Voting springs each row's clip-path fill to its share while the percentage counts up with it and fades in; once settled, the winner's check pops in with a stiff spring.",
+  "adapt": "`usePollResults` derives shares, winner and the one-vote guard; each `Row` animates a `motionValue` with the `FILL` spring into a `clipPath` inset and writes the percentage via `useMotionValueEvent`. Replace `OPTIONS` with server results; tune `FILL` and `POP`."
+}

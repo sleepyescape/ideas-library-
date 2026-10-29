@@ -1,0 +1,61 @@
+{
+  "slug": "spring-accordion",
+  "title": "An accordion with room to breathe",
+  "commonName": "Animated accordion",
+  "category": "Components & interactions",
+  "description": "An interruptible height transition that keeps related answers together.",
+  "useCase": "Reveal short answers, feature details or a compact process without taking the user to a new page.",
+  "interaction": "Open a different section",
+  "tags": [
+    "accordion",
+    "FAQ",
+    "disclosure",
+    "expand",
+    "collapse",
+    "click",
+    "height",
+    "spring"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Motion Primitives",
+    "url": "https://motion-primitives.com/docs/accordion",
+    "code": "https://github.com/ibelick/motion-primitives/blob/120f64f6ca60348e251f929e9c81f11ccbe45eda/components/core/accordion.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "Sections open immediately. Keyboard activation also skips the height transition.",
+  "limitations": "A height animation requires layout. Keep each answer short; check long content on slower devices.",
+  "surface": "#eeeae2",
+  "components": [
+    "disclosure"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "layout",
+    "spring",
+    "rotate",
+    "fade"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "app"
+  ],
+  "aka": [
+    "FAQ accordion",
+    "expand collapse panel",
+    "collapsible sections",
+    "smooth height transition"
+  ],
+  "look": "Warm off-white page with a narrow stack of hairline-divided rows: plain sans-serif headings, plus icons at right, and one open row showing grey body text.",
+  "motion": "Clicking a heading springs its panel from zero to auto height with a fade (0.3 s, no bounce) as the open one collapses; the plus turns 45° into a cross.",
+  "adapt": "Each panel is a `motion.div` inside `AnimatePresence` animating `height` from 0 to `\"auto\"` with `{ type: \"spring\", duration: 0.3, bounce: 0 }`; the icon is a `motion.span` rotating to 45. Replace `items` with your content; `expanded` allows one open section at a time."
+}

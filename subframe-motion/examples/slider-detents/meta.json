@@ -1,0 +1,60 @@
+{
+  "slug": "slider-detents",
+  "title": "A setting that settles",
+  "commonName": "Snapping range slider",
+  "category": "Components & interactions",
+  "description": "A slider gently catches at meaningful settings and springs into position.",
+  "useCase": "Give a continuous control a few useful stops without hiding the values in between.",
+  "interaction": "Drag the slider; use arrow keys or Shift + arrows",
+  "tags": [
+    "slider",
+    "drag",
+    "detents",
+    "snap",
+    "spring",
+    "range",
+    "keyboard",
+    "settings"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Interior",
+    "url": "https://www.interior.dev/docs/slider-detents",
+    "code": "https://github.com/ddoemonn/interior/blob/314800833bf01e23e6ae74c2a17fbdaac3688c84/components/interior/slider-detents.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "The thumb goes directly to each value without spring travel or scale. Keyboard changes are also immediate.",
+  "limitations": "This is a single-thumb horizontal control. Review value labels and detent spacing when adapting its range.",
+  "surface": "#e8eceb",
+  "components": [
+    "slider"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "spring",
+    "scale"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "slider with snap points",
+    "magnetic slider stops",
+    "range slider tick marks",
+    "stepped slider",
+    "notched slider"
+  ],
+  "look": "Pale sage-grey page with a label and value readout above a slim dark-green filled track, white-ringed rounded-square thumb and three small tick marks.",
+  "motion": "Dragging snaps to detents within 4.5% of the range; fill and thumb follow on a spring (stiffness 520, damping 34) and the held thumb grows to 1.08.",
+  "adapt": "`useSliderDetents` holds the snapping (`pull` defaults to 4.5% of range) and full keyboard map; the motion is `useSpring` with `CARRIAGE` feeding `x` via `useMotionTemplate`, plus the `GRAB` scale. Replace `DETENTS` with your stops and labels."
+}

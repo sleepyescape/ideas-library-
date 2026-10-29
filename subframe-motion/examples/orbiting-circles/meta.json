@@ -1,0 +1,54 @@
+{
+  "slug": "orbiting-circles",
+  "title": "Connected in orbit",
+  "commonName": "Orbiting circles diagram",
+  "category": "Animation & motion",
+  "description": "Three labels circle one idea while staying upright.",
+  "useCase": "Illustrate a small set of related tools, stages or capabilities.",
+  "interaction": "Play or pause the orbit",
+  "tags": [
+    "orbit",
+    "rotation",
+    "counter rotation",
+    "diagram",
+    "relationship",
+    "loop"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Magic UI",
+    "url": "https://magicui.design/docs/components/orbiting-circles",
+    "code": "https://github.com/magicuidesign/magicui/blob/85f97fd27b053339af74ba9dd4ca428ee25989fb/apps/www/registry/magicui/orbiting-circles.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "All labels remain at fixed, evenly spaced positions.",
+  "limitations": "This is an illustrative diagram, not interactive navigation. Keep labels short and preserve the accessible description.",
+  "surface": "#e1e8ea",
+  "components": [
+    "scene"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "rotate",
+    "loop"
+  ],
+  "feel": [
+    "calm",
+    "subtle"
+  ],
+  "contexts": [
+    "landing"
+  ],
+  "aka": [
+    "integrations orbit",
+    "icons orbiting a logo",
+    "revolving satellite labels",
+    "solar system animation"
+  ],
+  "look": "Pale blue-grey field with a dark slate rounded-square hub, solid and dashed concentric rings, and three small white circle labels on the outer ring.",
+  "motion": "Three labels revolve around the hub once every 24 s at constant linear speed, counter-rotating so their text stays upright; a button pauses the orbit.",
+  "adapt": "The orbit is the `mg-orbit-travel` keyframes (`rotate(var(--angle)) translateY(86px)` then counter-rotate) at `24s linear infinite`; each item's start `--angle` is `i * 120 + 60`. Replace `items` and the centre label, changing `86px` in both places to set the radius."
+}

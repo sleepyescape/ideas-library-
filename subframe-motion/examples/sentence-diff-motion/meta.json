@@ -1,0 +1,57 @@
+{
+  "slug": "sentence-diff-motion",
+  "title": "Keep the words that survived",
+  "commonName": "Animated sentence revision",
+  "category": "Animation & motion",
+  "description": "A print-yellow copy proof moves surviving words into a new sentence while red edit marks distinguish additions and removals.",
+  "useCase": "Preview short copy revisions while keeping unchanged words recognizable.",
+  "interaction": "Choose Original, More room, or New direction; another revision interrupts the current movement.",
+  "tags": [
+    "text",
+    "revision",
+    "diff",
+    "copy editing",
+    "word identity",
+    "FLIP",
+    "WAAPI"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Revision changes update immediately with the same edit marks. Preference changes cancel active transitions; final copy is announced once.",
+  "limitations": "Three fixed, two-line revisions with deterministic token identities. Not a text input, arbitrary document differ, or rich-text editor.",
+  "surface": "#f3df3d",
+  "components": [
+    "text",
+    "button"
+  ],
+  "triggers": [
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "layout",
+    "slide",
+    "fade"
+  ],
+  "feel": [
+    "bold",
+    "refined"
+  ],
+  "contexts": [
+    "app",
+    "editorial"
+  ],
+  "aka": [
+    "word diff animation",
+    "copy revision preview",
+    "stable word transition",
+    "animated text changes"
+  ],
+  "look": "Saturated yellow proof with oversized ink-black words, fine red insertion underlines, a red deletion rail, and three numbered revision controls.",
+  "motion": "Surviving words move from their current rendered positions into measured target boxes. Removed words rise and fade; inserted words enter after the deletion lead. Rapid reversals retain the current visual pose.",
+  "adapt": "Change the short sentence pairs in `COPY`; `matchWords` assigns stable word identities using a longest-common-subsequence pass. `REVISIONS` retains those identities between the authored variants. `moveMs`, `exitLeadMs`, and `departurePx` apply to the next revision; `markChanges` updates the proof marks live."
+}

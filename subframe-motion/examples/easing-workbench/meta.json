@@ -1,0 +1,54 @@
+{
+  "slug": "easing-workbench",
+  "title": "Easing workbench",
+  "commonName": "Cubic bezier easing editor",
+  "category": "Animation & motion",
+  "description": "Two editable curve handles connect time to a moving white marker on a cobalt timing instrument.",
+  "useCase": "Authoring and inspecting CSS timing curves with a synchronized, seekable motion preview.",
+  "interaction": "Drag the handles, scrub time, play the motion, or copy the CSS curve",
+  "tags": [
+    "easing",
+    "bezier",
+    "curve",
+    "timing",
+    "editor",
+    "scrub",
+    "svg"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Playback becomes explicit quarter-step advancement; manual scrubbing and curve editing remain available.",
+  "limitations": "Both control-point coordinates are bounded to 0–1. It covers CSS cubic timing curves without overshoot; not a spring simulator.",
+  "surface": "#183cd8",
+  "components": [
+    "editor",
+    "slider"
+  ],
+  "triggers": [
+    "drag",
+    "press"
+  ],
+  "techniques": [
+    "path",
+    "slide"
+  ],
+  "feel": [
+    "technical"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "easing curve playground",
+    "timing function editor",
+    "cubic-bezier generator",
+    "animation curve tool"
+  ],
+  "look": "Cobalt-blue panel with a white bezier curve on a faint grid, hollow white handles, a side track with a large white marker and monospace controls.",
+  "motion": "Play runs time linearly over the duration (1200 ms default) while a bead rides the curve and a side marker tracks the eased value; handle drags reshape it live.",
+  "adapt": "`valueAtTime` solves the curve by bisection on x and `screenPoint` maps 0–1 values into the graph; `tick` advances `progressRef` by elapsed time over `duration`. Change the `START` handles and feed `curve` (the CSS string) to your own animation."
+}

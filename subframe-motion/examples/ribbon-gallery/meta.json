@@ -1,0 +1,76 @@
+{
+  "slug": "ribbon-gallery",
+  "title": "Ribbon gallery",
+  "commonName": "Ribbon image transition",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A woodblock print separates into narrow, twisting ribbons before the next edition becomes whole.",
+  "useCase": "Give a finite art or image transition a dimensional material gesture while preserving a readable resting image.",
+  "interaction": "Drag left across the print or select the next and previous controls.",
+  "tags": [
+    "gallery",
+    "ribbon",
+    "mesh",
+    "texture",
+    "webgl",
+    "vertex",
+    "deformation",
+    "art"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "suruga-wind.webp",
+      "description": "Wind-swept travelers beneath Mount Fuji",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "fuji-storm.webp",
+      "description": "Mount Fuji beneath a storm",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "plum-garden.webp",
+      "description": "Flowering plum branch with a red sky",
+      "license": "CC0-1.0"
+    }
+  ],
+  "reducedMotion": "Prints change instantly without ribbon deformation. Keyboard navigation is immediate.",
+  "limitations": "Native WebGL 1 with a static image fallback if unsupported or context is lost. Supplied art images are CC0.",
+  "surface": "#181716",
+  "components": [
+    "gallery",
+    "image"
+  ],
+  "triggers": [
+    "drag",
+    "press"
+  ],
+  "techniques": [
+    "shader",
+    "distortion",
+    "3d"
+  ],
+  "feel": [
+    "refined",
+    "bold"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "WebGL image slider",
+    "image transition shader",
+    "distortion slideshow",
+    "twisting strips transition"
+  ],
+  "look": "Near-black gallery with a centred Japanese woodblock print, small spaced monospace labels, a cream serif title and two outlined circular arrow buttons.",
+  "motion": "Arrows or a leftward drag split the print into 26 ribbons that ripple and twist in perspective as a wavy wipe reveals the next image, smoothstep-eased over 650 ms.",
+  "adapt": "Ribbon deformation is the `VERTEX` shader (amplitudes `.16` and `.38`, scaled by `envelope`) over 26 `bands`; `FRAGMENT` draws the wipe and `transition` runs the 650 ms smoothstep tween. Replace `PRINTS` with your images; drags past 0.12 progress complete."
+}

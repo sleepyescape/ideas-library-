@@ -1,0 +1,56 @@
+{
+  "slug": "fracture-reveal",
+  "title": "Fault line",
+  "commonName": "Shatter transition",
+  "category": "Animation & motion",
+  "description": "A fractured stone surface opens into a vivid mineral field.",
+  "useCase": "Reveal an unexpected colour or alternate material through a single deliberate action.",
+  "interaction": "Break apart or restore",
+  "tags": [
+    "shatter",
+    "fracture",
+    "polygon",
+    "material",
+    "transition"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live reduced-motion preferences remove interpolation and decorative playback. All content and native controls remain available. Keyboard changes settle immediately.",
+  "limitations": "Original demonstration content; adapt labels and state to the host product.",
+  "surface": "#777367",
+  "components": [
+    "image",
+    "background"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "mask",
+    "rotate",
+    "slide",
+    "stagger"
+  ],
+  "feel": [
+    "bold",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "shattered glass reveal",
+    "break apart transition",
+    "polygon shatter effect",
+    "cracked surface reveal",
+    "explode into pieces"
+  ],
+  "look": "Dark slate surface split into seven angular charcoal shards, with acid-lime and teal mineral stripes glinting through thin cracks and a small outlined button.",
+  "motion": "Pressing pushes seven clip-path shards apart, rotating them and shrinking to 0.8 over 0.7 s ease-out with a 25 ms stagger, exposing the striped mineral; pressing again reassembles them.",
+  "adapt": "Shard outlines are the `pieces` polygon strings; the open pose is each shard's inline `transform` (index-based offsets, `(i - 3) * 8` degree rotation, `scale(.8)`) staggered by `transitionDelay` and eased by `.7s cubic-bezier(.22,.8,.2,1)`. Replace `.mineral` with the content to reveal."
+}

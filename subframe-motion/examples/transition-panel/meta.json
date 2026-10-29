@@ -1,0 +1,61 @@
+{
+  "slug": "transition-panel",
+  "title": "A change of chapter",
+  "commonName": "Sliding content panel",
+  "category": "Components & interactions",
+  "description": "A directional crossfade connects one small piece of content to the next.",
+  "useCase": "Move between onboarding steps, short stories or explanatory cards while keeping navigation in place.",
+  "interaction": "Move to the next chapter",
+  "tags": [
+    "panel",
+    "carousel",
+    "onboarding",
+    "click",
+    "crossfade",
+    "direction",
+    "slide",
+    "content swap"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Motion Primitives",
+    "url": "https://motion-primitives.com/docs/transition-panel",
+    "code": "https://github.com/ibelick/motion-primitives/blob/120f64f6ca60348e251f929e9c81f11ccbe45eda/components/core/transition-panel.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "Chapters change immediately without translation or blur; keyboard changes are also immediate.",
+  "limitations": "Uses three bounded text panels. For longer or focusable content, review height and focus behavior.",
+  "surface": "#f1ede8",
+  "components": [
+    "card",
+    "navigation"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "slide",
+    "fade",
+    "blur"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "app",
+    "landing"
+  ],
+  "aka": [
+    "onboarding carousel",
+    "directional crossfade",
+    "step content transition",
+    "animated panel swap"
+  ],
+  "look": "Warm off-white page with a small soft-orange circle, a dark grey sans-serif headline and paragraph, a hairline rule, a step counter and arrow buttons.",
+  "motion": "Pressing an arrow slides the outgoing chapter 18 px away while it fades and blurs, as the next enters from the opposite side over 0.24 s with a quick ease-out.",
+  "adapt": "The transition is the `variants` on `motion.div` inside `AnimatePresence` (`popLayout`), with `custom` carrying `direction`; tune the 18 px offset, `blur(2px)`, 0.24 s duration and ease. Replace `chapters` with your steps, keeping the `canAnimate` gating for reduced motion and keyboard."
+}

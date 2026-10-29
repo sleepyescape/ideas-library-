@@ -1,0 +1,57 @@
+{
+  "slug": "voice-audition",
+  "title": "Voice audition",
+  "commonName": "Voice picker",
+  "category": "Components & interactions",
+  "description": "A sculpted three-voice tray separates narrator selection from tactile playback controls.",
+  "useCase": "Compare the same line across available system voices before choosing a narrator.",
+  "interaction": "Select a narrator or press its play key to audition the shared phrase.",
+  "tags": [
+    "voice",
+    "audition",
+    "speech",
+    "narrator",
+    "audio",
+    "neumorphic",
+    "playback",
+    "selection"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Playback state stays legible through a static pressed key; animated bars stop. Real speech still plays on request.",
+  "limitations": "Uses up to three available system voices, preferring different available English locales. Voice names, quality, availability and word-boundary events vary by browser/device. Bars indicate playback, not measured amplitude.",
+  "surface": "#e4e8eb",
+  "components": [
+    "picker",
+    "media"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "loop",
+    "stagger"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "text-to-speech voice selector",
+    "voice preview list",
+    "TTS voice chooser",
+    "narrator selection",
+    "speech sample player"
+  ],
+  "look": "Soft neumorphic grey-blue tray of three rounded voice rows with raised circular play keys; the selected row sits inset with a blue indicator dot.",
+  "motion": "Pressing a play key sinks it 1 px into an inset shadow; five blue bars pulse in a staggered 700 ms loop and the spoken word highlights on boundary events.",
+  "adapt": "Playback is `preview`, which speaks `LINE` with `SpeechSynthesisUtterance` and sets `word` from `onboundary`; the bars are `.sf-va-levels` animated by `@keyframes sf-va-level` with `animationDelay` offsets. Replace `LINE` and the voice choice in `load`; bars are decorative, not amplitude."
+}

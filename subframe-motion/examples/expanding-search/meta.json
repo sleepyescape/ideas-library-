@@ -1,0 +1,55 @@
+{
+  "slug": "expanding-search",
+  "title": "Archive search",
+  "commonName": "Expanding search combobox",
+  "category": "Components & interactions",
+  "description": "A compact archive tab expands into a searchable document picker and retains your selection.",
+  "useCase": "Fit local document search and selection into a compact toolbar.",
+  "interaction": "Open search, filter documents and select a result.",
+  "tags": [
+    "search",
+    "combobox",
+    "document picker",
+    "progressive disclosure",
+    "archive",
+    "keyboard navigation"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Keyboard, reduced-motion and paused-host transitions are immediate.",
+  "limitations": "Local sample data only; no remote search or document navigation. Selecting changes the compact title; it does not open a full document.",
+  "surface": "#e5e2db",
+  "components": [
+    "input",
+    "picker"
+  ],
+  "triggers": [
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "mask",
+    "slide",
+    "fade"
+  ],
+  "feel": [
+    "refined",
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "collapsible search field",
+    "autocomplete dropdown",
+    "search to select",
+    "document finder"
+  ],
+  "look": "Warm stone-grey page with a compact off-white paper strip led by a vermilion index tab holding a search icon, set in plain sans-serif.",
+  "motion": "Clicking the tab unclips the paper to a full panel as the drawer slides into place (320 ms ease-out); the field fades in and the results slide down.",
+  "adapt": "Open and closed states are CSS keyed on `data-open`: `.sf-index-paper` animates `clip-path` from `inset(0 130px 218px 0)` and `.sf-index-drawer` its `transform`, both 320ms ease-out. Replace `documents`; keep the combobox roles, `aria-activedescendant` and `data-instant`."
+}

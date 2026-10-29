@@ -1,0 +1,55 @@
+{
+  "slug": "spoken-article",
+  "title": "Spoken article",
+  "commonName": "Text-to-speech reader",
+  "category": "Components & interactions",
+  "description": "A cobalt reading card follows a short essay sentence by sentence using the browser’s own voice.",
+  "useCase": "Offer a spoken version of editorial content with visible position and intentional playback.",
+  "interaction": "Listen, pause, select a sentence or change the speaking rate.",
+  "tags": [
+    "speech",
+    "text-to-speech",
+    "article",
+    "playback",
+    "native",
+    "audio",
+    "editorial"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Sentence state changes are immediate; speech plays only after an explicit request.",
+  "limitations": "Available voices and boundary events vary by browser and device. Resume uses the last reported word boundary; speech is not a rendered audio asset.",
+  "surface": "#f8f9fc",
+  "components": [
+    "media",
+    "text"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "glow"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "editorial"
+  ],
+  "aka": [
+    "read aloud button",
+    "listen to article",
+    "audio article player",
+    "sentence highlight reader",
+    "speech synthesis player"
+  ],
+  "look": "Near-white page in cobalt blue: italic serif headline, three serif sentences, a solid cobalt play button, a thin segmented progress line and rate label.",
+  "motion": "Pressing play speaks the article with the browser's speech synthesis; the spoken sentence gets a pale blue highlight and underline, and a three-segment progress line fills, both switching instantly.",
+  "adapt": "Playback is `speak`, which creates one `SpeechSynthesisUtterance` per sentence, records `onboundary` offsets for resume and advances on `onend`; the highlight is `.sa-copy button[aria-current=true]`. Replace `SENTENCES` and the headline; the rate cycle sits in the `sa-rate` handler."
+}

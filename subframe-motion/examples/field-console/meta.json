@@ -1,0 +1,57 @@
+{
+  "slug": "field-console",
+  "title": "Field console",
+  "commonName": "XY pad controller",
+  "category": "Components & interactions",
+  "description": "A full-width field of fine contours bends under a direct drag, with one orange trace revealing its motion.",
+  "useCase": "Expressive two-axis controls for synthesis, motion studies and procedural visual modulation.",
+  "interaction": "Drag the wave field or hold arrow keys; adjust flow, spread and grain.",
+  "tags": [
+    "xy",
+    "waveform",
+    "canvas",
+    "contour",
+    "field",
+    "controller",
+    "instrument",
+    "modulation"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The wave clock stops and release returns immediately; manual XY and parameter changes still redraw.",
+  "limitations": "Procedural visual waves, without audio synthesis, frequency analysis or device communication.",
+  "surface": "#172125",
+  "components": [
+    "slider",
+    "media"
+  ],
+  "triggers": [
+    "drag",
+    "ambient",
+    "keyboard"
+  ],
+  "techniques": [
+    "canvas"
+  ],
+  "feel": [
+    "technical",
+    "calm"
+  ],
+  "contexts": [
+    "app",
+    "landing"
+  ],
+  "aka": [
+    "two-axis control pad",
+    "waveform modulation pad",
+    "animated contour lines",
+    "synth performance pad"
+  ],
+  "look": "Dark slate-teal field of pale stacked wave contours with one orange trace, above a control bar holding a round pause button and three orange sliders.",
+  "motion": "Wave lines drift continuously at a flow-set speed; the dragged XY point sets frequency (right is higher) and amplitude (up is taller), easing back to centre on release.",
+  "adapt": "`render` draws 28 canvas polylines from `frequency`, `amp` and `flow`, `spread` and `grain` in `parameters`; `update` writes the XY `target` and `1 - Math.exp(-dt * 20)` eases `current` toward it. Recolour the `#ff784c` trace and remap `target` to your own controls."
+}

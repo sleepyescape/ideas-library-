@@ -1,0 +1,60 @@
+{
+  "slug": "magnifying-dock",
+  "title": "A dock with a little gravity",
+  "commonName": "Dock magnification effect",
+  "category": "Components & interactions",
+  "description": "Nearby tools grow gently as the pointer passes across a compact dock.",
+  "useCase": "Add pointer feedback to a small set of creative tools with recognizable icons.",
+  "interaction": "Move across the tools, then select one",
+  "tags": [
+    "dock",
+    "toolbar",
+    "hover",
+    "pointer",
+    "magnification",
+    "spring",
+    "icon",
+    "selection"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Motion Primitives",
+    "url": "https://motion-primitives.com/docs/dock",
+    "code": "https://github.com/ibelick/motion-primitives/blob/120f64f6ca60348e251f929e9c81f11ccbe45eda/components/core/dock.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "Tools stay at their original size. Touch and keyboard use stationary native buttons.",
+  "limitations": "Fixed-size buttons translate and scale together; the backing surface scales independently. Motion values avoid React renders per animation frame, but spring evaluation still runs in JavaScript. Large docks need overflow handling and performance testing.",
+  "surface": "#e7e9e6",
+  "components": [
+    "navigation",
+    "button"
+  ],
+  "triggers": [
+    "pointer",
+    "press"
+  ],
+  "techniques": [
+    "scale",
+    "spring"
+  ],
+  "feel": [
+    "subtle",
+    "playful"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "macOS-style dock",
+    "fisheye toolbar",
+    "magnifying icon bar",
+    "hover zoom toolbar"
+  ],
+  "look": "Light grey page with a translucent off-white dock holding four pastel rounded-square tool icons in sage, tan, blue-grey and lilac, captioned above.",
+  "motion": "As the mouse moves along the dock, each tool springs from 44 to 64 px according to its distance from the pointer within 115 px; leaving springs them back.",
+  "adapt": "The `sizesAt` function maps distance within 115 px to a visual size from 44 to 64 px. Each `DockItem` uses that result to translate and scale a fixed 44 px button, packing neighboring tools without animating layout. `useSpring` smooths pointer position and emphasis; `shellScale` sizes the backing surface independently. Replace the `tools` labels, colours and icon paths; keep mouse-only magnification and stationary keyboard/touch behavior."
+}

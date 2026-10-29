@@ -1,0 +1,54 @@
+{
+  "slug": "magnetic-field",
+  "title": "Magnetic field",
+  "commonName": "Magnetic field lines shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Fine white field lines bend between a pair of quiet cobalt poles.",
+  "useCase": "Science, research, or a precise generative identity built from directional flow.",
+  "interaction": "Adjust separation",
+  "tags": [
+    "magnetic",
+    "vector field",
+    "field lines",
+    "physics",
+    "technical",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "A representative frame remains still. Live system preference changes immediately stop the loop; the range control continues to update the still image.",
+  "limitations": "Requires WebGL 1. A static CSS fallback appears when unavailable or after context loss. Qualitative two-pole illustration, not a calibrated electromagnetic field solver.",
+  "surface": "#152b69",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient",
+    "state"
+  ],
+  "techniques": [
+    "shader"
+  ],
+  "feel": [
+    "technical",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "dipole field lines",
+    "physics field background",
+    "vector field lines",
+    "science hero background"
+  ],
+  "look": "Deep navy field with fine pale-blue curved field lines looping between a bright red-orange dot and a pale grey-white dot, flat and diagrammatic.",
+  "motion": "The two poles bob vertically in opposition on a slow 33-second sine, so the field lines continuously bend between them; the separation slider moves the poles apart or together.",
+  "adapt": "Pole positions `a` and `b` (spaced by `sep`, bobbing with `u_time*.19`) and line density `11.0` live in `main` of `FRAGMENT`; the base colour is `c` and `red` marks one pole. `controlRef` feeds `u_control`; keep the context-loss fallback."
+}

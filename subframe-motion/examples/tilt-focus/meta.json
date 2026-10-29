@@ -1,0 +1,60 @@
+{
+  "slug": "tilt-focus",
+  "title": "Tilt focus",
+  "commonName": "Tilt-shift blur effect",
+  "category": "Components & interactions",
+  "description": "A sharply focused strip cuts through a blurred concrete elevation, with an adjustable tilt and depth.",
+  "useCase": "Explore an image focal plane through direct manipulation and precise controls.",
+  "interaction": "Drag the focal plane and adjust blur or tilt.",
+  "tags": [
+    "image",
+    "focus",
+    "blur",
+    "mask",
+    "direct manipulation"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "concrete-projections.webp",
+      "description": "Brutalist concrete office building",
+      "license": "Unsplash"
+    }
+  ],
+  "reducedMotion": "The focal plane responds directly to controls without interpolated movement.",
+  "limitations": "A CSS mask over one photograph approximates a focal plane; it does not reconstruct optical depth.",
+  "surface": "#e5e1da",
+  "components": [
+    "image",
+    "editor"
+  ],
+  "triggers": [
+    "drag",
+    "state"
+  ],
+  "techniques": [
+    "blur",
+    "mask"
+  ],
+  "feel": [
+    "technical"
+  ],
+  "contexts": [
+    "app",
+    "editorial"
+  ],
+  "aka": [
+    "selective focus",
+    "depth of field blur",
+    "miniature photo effect",
+    "focus band mask"
+  ],
+  "look": "Blurred greyscale photo of a concrete cantilever with one sharp horizontal band under a thin red guide line; pale footer with two red sliders.",
+  "motion": "Dragging on the photo moves a sharp masked band directly with the pointer, no easing; sliders set its position and blur radius, and a button angles the band.",
+  "adapt": "Two stacked `img` layers do the work: `tf-soft` gets `blur(${aperture}px)` and `tf-sharp` is masked by the `mask` gradient around `focus` (±7% sharp, ±22% feather). Replace the `src` photo and `alt` text; tune the stop offsets and `aperture` range."
+}

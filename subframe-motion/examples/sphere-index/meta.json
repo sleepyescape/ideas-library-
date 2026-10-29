@@ -1,0 +1,90 @@
+{
+  "slug": "sphere-index",
+  "title": "Sphere index",
+  "commonName": "Spherical image gallery",
+  "category": "Animation & motion",
+  "description": "An image collection wraps over a dark spherical surface, then unfolds one selected work into a flat plate.",
+  "useCase": "Explore a compact image index spatially while keeping a readable inspection state.",
+  "interaction": "Orbit the sphere and open a work.",
+  "tags": [
+    "sphere",
+    "gallery",
+    "canvas",
+    "mesh warp",
+    "focus",
+    "drag"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "fern-diptych.webp",
+      "description": "Untitled (Fern Study), c. 1850, from the Hatton Fern Album",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "fuji-storm.webp",
+      "description": "Shower Below the Summit (Sanka hakuu), from the series \"Thirty-Six Views of Mount Fuji (Fugaku sanjurokkei)\"",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "mediterranean-clouds.webp",
+      "description": "Cloudy Sky, Mediterranean Sea",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "plum-garden.webp",
+      "description": "Plum Garden at Kameido (Kameido Umeyashiki), from the series \"One Hundred Famous Views of Edo (Meisho Edo hyakkei)\"",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "suruga-wind.webp",
+      "description": "Ejiri in Suruga Province (Sunshu Ejiri), from the series \"Thirty-six Views of Mount Fuji (Fugaku sanjurokkei)\"",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "tulip-print.webp",
+      "description": "Tulip",
+      "license": "CC0-1.0"
+    }
+  ],
+  "reducedMotion": "Orbit controls respond directly and selected images flatten immediately.",
+  "limitations": "Six unique works repeat across eighteen tessellated tiles. Canvas 2D projection approximates a sphere; this is not a WebGL scene or general panorama viewer.",
+  "surface": "#211920",
+  "components": [
+    "gallery",
+    "scene"
+  ],
+  "triggers": [
+    "drag",
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "3d",
+    "canvas",
+    "distortion",
+    "morph"
+  ],
+  "feel": [
+    "refined",
+    "bold"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "3D image globe",
+    "rotating photo sphere",
+    "draggable 3D gallery",
+    "globe of thumbnails"
+  ],
+  "look": "Near-black plum background with woodblock prints and botanical images warped into curved tiles on a sphere, small uppercase header and italic serif caption.",
+  "motion": "Dragging or arrow keys orbit the tiled sphere directly; opening a tile exponentially eases its mesh from curved to a flat centred plate while the other tiles fade out.",
+  "adapt": "One canvas effect does everything: `point` projects longitude and latitude with `yaw` and `pitch`, `triangle` affine-maps image triangles, and `tick` eases `amount` toward `target` (75 ms time constant) to flatten. Replace `works`; `tiles` sets the 18-tile layout."
+}

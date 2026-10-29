@@ -1,0 +1,79 @@
+{
+  "slug": "specimen-book",
+  "title": "Specimen book",
+  "commonName": "3D page turn book",
+  "category": "Animation & motion",
+  "description": "Four botanical engravings fill a clothbound volume with paired page faces, a shaded gutter and layered paper edges.",
+  "useCase": "Preview a small printed collection while preserving page order, image fidelity and the relationship between both faces of a leaf.",
+  "interaction": "Turn the spreads, go back or close the cover.",
+  "tags": [
+    "book",
+    "page turn",
+    "CSS 3D",
+    "paired leaves",
+    "botanical",
+    "editorial",
+    "publication",
+    "paper"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "botanical-turban-lily.webp",
+      "description": "Lillium Pomponium (Turban Lily), plate 7 from Les Liliacées",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "botanical-iris.webp",
+      "description": "Gold-banded Iris",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "botanical-crocus.webp",
+      "description": "Les Liliacées:  Crocus Sativus",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "botanical-cabbage-rose.webp",
+      "description": "Cabbage Rose (Rosa Centifolia Simplex)",
+      "license": "CC0-1.0"
+    }
+  ],
+  "reducedMotion": "Page and cover transforms settle immediately for reduced motion and keyboard actions. Host pause disables page controls and settles the current turn.",
+  "limitations": "Two rigid turning leaves and a fixed final plate; not flexible paper simulation or a document renderer. The original interface uses separately licensed CC0 museum imagery.",
+  "surface": "#c 7c 9bc",
+  "components": [
+    "gallery",
+    "scene"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "3d",
+    "rotate",
+    "slide"
+  ],
+  "feel": [
+    "refined",
+    "calm"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "page flip animation",
+    "flipbook viewer",
+    "book spread preview",
+    "digital catalogue"
+  ],
+  "look": "Pale sage-grey backdrop with an open dark-green clothbound book showing two hand-coloured botanical engravings on cream paper, round translucent arrow buttons beneath.",
+  "motion": "Arrow buttons swing a rigid leaf 180° around the spine in 3D over 640 ms ease-out; opening or closing also slides the book 83 px; keyboard turns are instant.",
+  "adapt": "Each `sb-leaf` turns by an inline `rotateY` with a 640 ms CSS transition; `turn` updates `leaf` and lifts the turning leaf's `zIndex` via `moving`. Replace `plates` and the cover artwork; keep `data-calm`, which disables transitions for reduced motion and keyboard."
+}

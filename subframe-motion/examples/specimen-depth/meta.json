@@ -1,0 +1,54 @@
+{
+  "slug": "specimen-depth",
+  "title": "Glasshouse",
+  "commonName": "Mouse parallax layers",
+  "category": "Animation & motion",
+  "description": "Layered botanical silhouettes shift at different depths behind a glass pane.",
+  "useCase": "Create a contained dimensional image for a botanical, architectural or material showcase.",
+  "interaction": "Move across the specimen or adjust depth",
+  "tags": [
+    "parallax",
+    "depth",
+    "layers",
+    "botanical",
+    "pointer"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Reduced motion disables pointer parallax. The depth range changes a meaningful static pose immediately for keyboard and touch users.",
+  "limitations": "Original demonstration content; adapt labels and state to the host product.",
+  "surface": "#b9c5ba",
+  "components": [
+    "image",
+    "scene"
+  ],
+  "triggers": [
+    "pointer",
+    "state"
+  ],
+  "techniques": [
+    "parallax"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "pointer parallax",
+    "layered depth illustration",
+    "hover depth effect",
+    "multi-plane parallax",
+    "parallax frame"
+  ],
+  "look": "Sage-green page with a deep green-framed glass case holding three overlapping translucent fern silhouettes, a diagonal glass glare and a depth slider below.",
+  "motion": "Moving the mouse shifts three fern layers by increasing amounts toward the pointer with a 300 ms ease-out; leaving returns a rest pose, and the slider scales the depth.",
+  "adapt": "Mouse-only `onPointerMove` sets `point`; each fern `g` translates by `point` × `depth` scaled per layer, with a fixed rotation and 300 ms transition. Replace the three fern layers with your artwork; tune `depth` and the resting `point`."
+}

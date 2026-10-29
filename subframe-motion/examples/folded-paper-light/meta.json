@@ -1,0 +1,57 @@
+{
+  "slug": "folded-paper-light",
+  "title": "Prismatic relief",
+  "commonName": "Faceted relief shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Raised ultramarine facets catch a moving light, revealing sharp ridges and shifting glints.",
+  "useCase": "Art-direct an abstract material study or sculptural brand texture.",
+  "interaction": "Rotate the light or pause its orbit",
+  "tags": [
+    "relief",
+    "facets",
+    "ultramarine",
+    "directional light",
+    "abstract",
+    "material",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Automatic light orbit stops. The light-angle control still redraws immediately.",
+  "limitations": "Analytically projected height-field relief, not paper deformation or a full 3D mesh. Native WebGL1 with no 3D dependency; static fallback after context loss until remount.",
+  "surface": "#090d20",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient",
+    "state"
+  ],
+  "techniques": [
+    "shader",
+    "glow",
+    "3d"
+  ],
+  "feel": [
+    "refined",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "pyramid tile texture",
+    "orbiting light material",
+    "faceted panel background",
+    "sculptural brand texture"
+  ],
+  "look": "Near-black field with a rectangular six-by-four panel of cobalt pyramids with off-centre peaks, shaded deep navy to pale sky-blue highlights.",
+  "motion": "A point light orbits the faceted panel about every 52 seconds, sweeping diffuse shading and specular glints across each pyramid face; the light slider offsets its angle.",
+  "adapt": "Facet geometry is `cellHit` (6×4 cells with hashed `peak` and height `h`) and lighting is in `main` of `FRAGMENT`; tune `angle` (orbit speed `u_time*.12`), `cobalt`, `bg` and the `spec` exponent. Keep the context-loss and reduced-motion handling."
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "stereo-field",
+  "title": "Stereo field",
+  "commonName": "Audio vectorscope",
+  "category": "Animation & motion",
+  "description": "A stereo vector plot connects phase and width controls to a continuous trace and correlation meter.",
+  "useCase": "Make mid/side stereo relationships visible in an audio control or signal-inspection tool.",
+  "interaction": "Adjust phase and width, inspect correlation, and pause or resume the trace.",
+  "tags": [
+    "audio",
+    "vectorscope",
+    "phase",
+    "mid-side",
+    "correlation",
+    "signal",
+    "svg"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The phase relationship remains visible as a static vector plot; controls still update the shape and correlation immediately.",
+  "limitations": "Synthetic two-channel sine signal only, with no audio capture or playback. Correlation describes the generated signal, not a connected audio source; a silent mid/side result reads zero.",
+  "surface": "#c9ced8",
+  "components": [
+    "media",
+    "chart",
+    "slider"
+  ],
+  "triggers": [
+    "ambient",
+    "state"
+  ],
+  "techniques": [
+    "path",
+    "morph",
+    "loop"
+  ],
+  "feel": [
+    "technical",
+    "refined"
+  ],
+  "contexts": [
+    "app",
+    "dashboard"
+  ],
+  "aka": [
+    "stereo phase meter",
+    "goniometer",
+    "lissajous plot",
+    "audio phase scope",
+    "stereo width meter"
+  ],
+  "look": "Pale blue-grey instrument card: a circular scope of rings, ticks and dashed axes with a violet ellipse, beside two sliders, monospace readouts and a meter.",
+  "motion": "A dark dot travels the violet Lissajous trace continuously (about 3.8 s per lap); phase and width sliders reshape the ellipse and move the correlation needle instantly.",
+  "adapt": "`signalPath` builds the trace from `phase` and `width`, `correlation` drives the meter, and the `tick` loop moves the `dot` at the `1.65` rate. Feed real left/right samples into `signalPath` instead of the synthetic `Math.sin` pair."
+}

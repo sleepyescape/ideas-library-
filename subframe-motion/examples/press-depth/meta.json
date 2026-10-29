@@ -1,0 +1,60 @@
+{
+  "slug": "press-depth",
+  "title": "A button with depth",
+  "commonName": "3D press button",
+  "category": "Components & interactions",
+  "description": "A raised button presses down from the point you touch, then returns with a spring.",
+  "useCase": "Give an occasional action a tactile response without moving its hit area.",
+  "interaction": "Press near different edges of the button",
+  "tags": [
+    "button",
+    "press",
+    "pointer",
+    "tilt",
+    "3D",
+    "spring",
+    "depth",
+    "keyboard"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Interior",
+    "url": "https://www.interior.dev/docs/press-depth",
+    "code": "https://github.com/ddoemonn/interior/blob/314800833bf01e23e6ae74c2a17fbdaac3688c84/components/interior/press-depth.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "The button stays stationary and uses color to show its pressed state.",
+  "limitations": "The example toggles a local saved state. Avoid adding this motion to high-frequency controls.",
+  "surface": "#e9eadf",
+  "components": [
+    "button"
+  ],
+  "triggers": [
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "spring",
+    "3d"
+  ],
+  "feel": [
+    "playful",
+    "refined"
+  ],
+  "contexts": [
+    "app",
+    "landing"
+  ],
+  "aka": [
+    "tactile push button",
+    "raised keycap button",
+    "tilt on press button",
+    "skeuomorphic button"
+  ],
+  "look": "Pale sage page with one wide off-white rounded button raised on a darker olive base, with a dark grey sans-serif label.",
+  "motion": "Pressing sinks the button face 5 px and tilts it up to 7° toward the touch point with a stiff spring, tinting it pale green; release springs it back.",
+  "adapt": "`usePressDepth` tracks press state and the normalised `origin`; the face is a `motion.span` animating `y`, `rotateX`, `rotateY` and `backgroundColor` with the `PRESS` spring (`stiffness: 520`, `damping: 34`). Replace the label and `saved` toggle; tune the 7° tilt and 5 px travel."
+}

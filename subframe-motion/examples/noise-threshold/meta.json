@@ -1,0 +1,58 @@
+{
+  "slug": "noise-threshold",
+  "title": "Noise threshold",
+  "commonName": "Noise dissolve transition",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Two bold primary-color prints exchange places through a continuous, seeded erosion field.",
+  "useCase": "Scrub or reverse an organic reveal at exact progress values without changing the underlying pattern.",
+  "interaction": "Scrub the reveal in either direction.",
+  "tags": [
+    "native webgl",
+    "noise",
+    "deterministic",
+    "threshold",
+    "reveal",
+    "scrub",
+    "reversible",
+    "mask"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The composition only updates on direct input; there is no autonomous motion or animated easing.",
+  "limitations": "A fixed five-octave value-noise field masks two original procedural compositions. No images or video are sampled. Requires WebGL 1; static SVG artwork appears during failure or context loss, and the renderer rebuilds on restoration.",
+  "surface": "#1346d3",
+  "components": [
+    "image",
+    "background"
+  ],
+  "triggers": [
+    "state",
+    "drag"
+  ],
+  "techniques": [
+    "shader",
+    "noise",
+    "mask"
+  ],
+  "feel": [
+    "bold"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "dissolve wipe",
+    "organic noise reveal",
+    "burn-away transition",
+    "scrubbable image transition"
+  ],
+  "look": "Flat primary-colour poster art: cobalt field with cream concentric rings and red stripes, broken by cloudy yellow patches with black shapes, above a cream slider.",
+  "motion": "Scrubbing the slider thresholds a fixed five-octave noise field, eroding the blue composition in cloudy patches into the yellow and black one; reversible, with no autonomous motion.",
+  "adapt": "The dissolve is `reveal` in `fragment`: a `smoothstep` around the seeded `noise` `threshold`, compared with `mix(-.1,1.1,value)`, edge softness `.028`. `front` and `back` are the two procedural compositions; swap them for texture samples or your own artwork."
+}

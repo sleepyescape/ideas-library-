@@ -1,0 +1,54 @@
+{
+  "slug": "reaction-lab",
+  "title": "Reaction lab",
+  "commonName": "Reaction-diffusion shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Oxblood colonies divide into a living two-chemical pattern on a pale field.",
+  "useCase": "Shape a persistent reaction-diffusion material through its growth parameter.",
+  "interaction": "Adjust growth.",
+  "tags": [
+    "native webgl",
+    "reaction diffusion",
+    "gray scott",
+    "simulation",
+    "persistent state",
+    "cellular"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The simulation clock stops. Adjusting growth advances a finite preview; it then remains still.",
+  "limitations": "Requires WebGL 1; a static CSS swatch appears if unavailable or after context loss. A 128×128 CPU Gray–Scott grid uploaded to WebGL; the control advances a finite preview while paused. Not a GPU compute solver.",
+  "surface": "#ece8dd",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "morph"
+  ],
+  "feel": [
+    "calm",
+    "technical"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "Gray-Scott simulation",
+    "Turing pattern background",
+    "organic pattern generator",
+    "living texture shader"
+  ],
+  "look": "Full-bleed two-tone pattern of deep oxblood ink and pale cream paper: rounded, soft-edged spots and branching worm shapes like Turing or coral markings.",
+  "motion": "The Gray-Scott simulation steps about 180 times per second, so oxblood colonies slowly grow, split and merge; dragging the growth slider raises feed and kill rates and advances 30 steps.",
+  "adapt": "`evolve` runs the Gray-Scott solver on a 128×128 grid (feed and kill derive from `controlRef`), `advance` paces it at 180 steps per second, and `FRAGMENT` maps chemical B to the `paper` and `pigment` colours. Retune those; keep the context-loss fallback."
+}

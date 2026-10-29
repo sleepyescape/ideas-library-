@@ -1,0 +1,53 @@
+{
+  "slug": "curve-lab",
+  "title": "Three ways to arrive",
+  "commonName": "Easing curves comparison",
+  "category": "Animation & motion",
+  "description": "Three identical objects traverse equal distances with distinctly different timing.",
+  "useCase": "Compare the feel of an easing choice before applying it to a real interaction.",
+  "interaction": "Send the objects across",
+  "tags": [
+    "easing",
+    "timing",
+    "comparison",
+    "motion study",
+    "curves"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live reduced-motion preferences remove interpolation and decorative playback. All content and native controls remain available. Keyboard changes settle immediately.",
+  "limitations": "Original demonstration content; adapt labels and state to the host product.",
+  "surface": "#f3f4f6",
+  "components": [
+    "editor"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "slide",
+    "spring"
+  ],
+  "feel": [
+    "technical",
+    "subtle"
+  ],
+  "contexts": [
+    "editorial",
+    "app"
+  ],
+  "aka": [
+    "timing function demo",
+    "ease-out vs linear",
+    "cubic-bezier preview",
+    "overshoot easing",
+    "motion curve study"
+  ],
+  "look": "Pale cool-grey page with three labelled rails, each starting with a small gradient token (light square, blue circle, slate square), and a white button below.",
+  "motion": "Pressing the button slides all three tokens across their rails together in 900 ms, one linear, one ease-out settle and one cubic-bezier overshoot; pressing again returns them.",
+  "adapt": "Each `runner` transitions `transform` over 900ms with its timing from the `curves` array (`linear`, `cubic-bezier(.2,.8,.2,1)`, `cubic-bezier(.2,1.45,.3,1)`); edit those strings to compare your own easings. Labels and token styles are demo content; keep the `data-still` override."
+}

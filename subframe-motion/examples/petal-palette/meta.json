@@ -1,0 +1,58 @@
+{
+  "slug": "petal-palette",
+  "title": "Painter’s palette",
+  "commonName": "Color picker",
+  "category": "Components & interactions",
+  "description": "Sculpted pigment daubs select a hue for a knife-painted swatch, with independent lightness and a usable hex value.",
+  "useCase": "Tactile color selection for creative tools, brush settings and themed interfaces.",
+  "interaction": "Choose a pigment, then adjust Lightness. Arrow keys move through the two rows; Home and End jump to the first and last pigment.",
+  "tags": [
+    "color",
+    "palette",
+    "picker",
+    "lightness",
+    "hsl",
+    "paint",
+    "material",
+    "tactile",
+    "radio-group"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Selection and swatch updates remain immediate. Reduced motion removes the small press deformation; keyboard and paused-host interactions skip transitions.",
+  "limitations": "Twelve preset HSL hues with fixed saturation per pigment; lightness ranges from 15 to 85 percent. The paint is illustrated SVG, not a physical or subtractive pigment-mixing model. No opacity or color-management controls.",
+  "surface": "#e4dfd4",
+  "components": [
+    "picker",
+    "slider"
+  ],
+  "triggers": [
+    "press",
+    "state",
+    "hover"
+  ],
+  "techniques": [
+    "scale"
+  ],
+  "feel": [
+    "playful",
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "swatch picker",
+    "paint palette selector",
+    "hue swatches with lightness slider",
+    "tactile colour swatches",
+    "pigment radio group"
+  ],
+  "look": "Skeuomorphic wooden palette on warm off-white with two rows of glossy paint daubs, a broad knife stroke, and a hex readout and gradient slider beneath.",
+  "motion": "Pressing a daub squashes it slightly over 120 ms and hover brightens it; selection and the lightness slider recolour the knife stroke and hex value instantly.",
+  "adapt": "Hues and saturations live in `PIGMENTS`, `color` converts HSL to the hex shown, and the press squash is the `sf-painter-daub` transition plus its `:active` scale. `PaintDaub` draws each blob; wire `setSelected` and `lightness` to your own colour state."
+}

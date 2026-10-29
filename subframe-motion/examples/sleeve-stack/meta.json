@@ -1,0 +1,63 @@
+{
+  "slug": "sleeve-stack",
+  "title": "Sounds with a shape",
+  "commonName": "Album cover carousel",
+  "category": "Components & interactions",
+  "description": "Three graphic record sleeves rotate through a compact, tactile collection.",
+  "useCase": "Let a small music, print or editorial collection retain its physical character while making one item the focus.",
+  "interaction": "Select a sleeve or browse with the arrow buttons",
+  "tags": [
+    "record",
+    "vinyl",
+    "collection",
+    "stack",
+    "fan",
+    "cards",
+    "carousel",
+    "selection",
+    "editorial",
+    "graphic design",
+    "red",
+    "cream",
+    "SVG"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Selection changes directly with no interpolated rotation or hover lift. Keyboard activation also skips transitions.",
+  "limitations": "A deliberately small three-item collection; use a list or grid for large inventories. The preview does not play music or navigate to product pages.",
+  "surface": "#f3ecdd",
+  "components": [
+    "gallery",
+    "card"
+  ],
+  "triggers": [
+    "press",
+    "hover"
+  ],
+  "techniques": [
+    "rotate",
+    "slide"
+  ],
+  "feel": [
+    "refined",
+    "playful"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "fanned card stack",
+    "record sleeve carousel",
+    "rotating card deck",
+    "stacked cards selector",
+    "vinyl collection browser"
+  ],
+  "look": "Cream page with three fanned square record sleeves in red, cream and black, tight bold sans titles and geometric line art, plus outlined arrow buttons.",
+  "motion": "Selecting a sleeve or pressing an arrow swings the three cards between front, right and left fan slots with a 280 ms expo ease-out; hovering lifts a cover 5 px.",
+  "adapt": "Fan geometry is computed per card from `position` (`shift`, `angle`, `zIndex`) and animated by the `.sf-sleeves-card` transform transition (280 ms, `transform-origin:50% 130%`). Replace `records` and `SleeveArt` with your covers."
+}

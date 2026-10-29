@@ -1,0 +1,59 @@
+{
+  "slug": "gradient-stop-editor",
+  "title": "Folded color proof",
+  "commonName": "Gradient stop editor",
+  "category": "Components & interactions",
+  "description": "Three movable color stops paint a sharply folded paper proof, making color placement and material shading visible together.",
+  "useCase": "Art directing a gradient against dimensional artwork rather than judging it only in a flat swatch.",
+  "interaction": "Drag a color stop or use its arrow keys, then edit the selected color",
+  "tags": [
+    "gradient",
+    "color",
+    "stops",
+    "multi-thumb",
+    "editor",
+    "drag",
+    "material",
+    "paper",
+    "fold",
+    "proof",
+    "svg"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Color and position edits are immediate; reduced motion removes the small selection lift transition.",
+  "limitations": "Three fixed editable stops, original SVG folded-paper geometry, and authored face lighting. No add/remove, CSS parser, color-space conversion, or physically based renderer. Coincident stops remain independently reachable with Tab.",
+  "surface": "#141417",
+  "components": [
+    "editor",
+    "slider",
+    "picker"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "gradient"
+  ],
+  "feel": [
+    "technical",
+    "refined"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "gradient editor",
+    "color stop slider",
+    "multi-thumb gradient slider",
+    "gradient builder"
+  ],
+  "look": "Near-black canvas with a zigzag folded-paper strip shaded vermilion to magenta to aubergine, above a gradient track with rounded swatch handles and monospace hex readout.",
+  "motion": "Dragging a stop handle or pressing arrow keys moves it along the track and repaints the folded proof's gradient live; the selected handle lifts 2 px over 120 ms.",
+  "adapt": "Stops live in `stops` (seeded from `initial`); `change` clamps positions and `sorted` feeds both the `gradient` track string and the SVG `linearGradient`. Replace `folds` and the face lighting with your artwork, or bind `gradient` to a real fill."
+}

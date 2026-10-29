@@ -1,0 +1,59 @@
+{
+  "slug": "cove-light",
+  "title": "Light weave",
+  "commonName": "Draggable light ribbon",
+  "category": "Animation & motion",
+  "description": "Coral and white light travels through a suspended woven loop whose curvature changes under a direct drag.",
+  "useCase": "Interactive light sculptures, expressive loading surfaces and procedural motion studies.",
+  "interaction": "Drag the loop or adjust Twist; pause to inspect the light.",
+  "tags": [
+    "light",
+    "ribbon",
+    "weave",
+    "canvas",
+    "projection",
+    "pulse",
+    "twist",
+    "drag"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Traveling light stops. Direct twist input still redraws the static geometry; host pause cancels a captured gesture and stops the clock.",
+  "limitations": "Depth-sorted Canvas 2D strands, not a physically simulated fabric or ray-traced light source. The closed band has a bounded twist and no external assets.",
+  "surface": "#140f13",
+  "components": [
+    "scene",
+    "background"
+  ],
+  "triggers": [
+    "ambient",
+    "drag"
+  ],
+  "techniques": [
+    "canvas",
+    "glow",
+    "3d",
+    "loop"
+  ],
+  "feel": [
+    "refined",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "twisted ribbon animation",
+    "glowing line loop",
+    "wireframe light sculpture",
+    "procedural ribbon hero"
+  ],
+  "look": "Fine cream and coral strands form a twisted, translucent wireframe loop on a near-black plum field, with a coral slider and round pause button.",
+  "motion": "Two bright pulses continuously circle the 32-strand loop, staggered per strand with soft glow; horizontal drag, arrow keys or the slider re-bend its twist between 0 and 180°.",
+  "adapt": "Geometry is built in `project` and `geometry` (32 lanes × 144 segments) and lit in `paint`, where the `pulse` term sets light speed (1.1) and sharpness (exponent 18) and `hot` picks coral lanes. Drag maps to `change`; keep `cancel` and the reduced-motion branch."
+}

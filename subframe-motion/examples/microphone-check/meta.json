@@ -1,0 +1,54 @@
+{
+  "slug": "microphone-check",
+  "title": "Microphone check",
+  "commonName": "Microphone level meter",
+  "category": "Components & interactions",
+  "description": "A compact audio preflight reveals available input devices and a measured level meter.",
+  "useCase": "Select a working input before entering a call.",
+  "interaction": "Enable the microphone, choose a device, then mute or disconnect.",
+  "tags": [
+    "microphone",
+    "permission",
+    "audio",
+    "device",
+    "meter",
+    "input"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The real level meter updates at four samples per second without tweening.",
+  "limitations": "Requires an explicit permission grant and an available input device. Audio stays local and is not recorded or sent.",
+  "surface": "#f0f3f5",
+  "components": [
+    "media",
+    "chart"
+  ],
+  "triggers": [
+    "state",
+    "press"
+  ],
+  "techniques": [
+    "glow"
+  ],
+  "feel": [
+    "subtle",
+    "technical"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "audio input level meter",
+    "mic test before call",
+    "VU meter",
+    "microphone permission prompt",
+    "audio device selector"
+  ],
+  "look": "White rounded card on a pale grey-blue page: microphone icon, device dropdown, a row of thin grey meter bars and a full-width navy button.",
+  "motion": "Once the microphone is enabled, 38 bars light from the left in proportion to the live RMS input level, sampled every 65 ms without tweening; muting zeroes it.",
+  "adapt": "Sampling is the `setInterval` effect reading `getFloatTimeDomainData` from the `analyser` (gain `* 5`, period `reduced ? 250 : 65`); `.meter` renders 38 `data-on` bars. Device access lives in `connect` and `release`; replace the copy and palette."
+}

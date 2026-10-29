@@ -1,0 +1,58 @@
+{
+  "slug": "magnetic-button",
+  "title": "Magnetic button",
+  "commonName": "Magnetic hover button",
+  "category": "Components & interactions",
+  "description": "A gentle pull toward the pointer, followed by a spring back to rest.",
+  "useCase": "Add a tactile response to an occasional, prominent action. Keep everyday navigation stationary.",
+  "interaction": "Move your pointer over the button",
+  "tags": [
+    "button",
+    "hover",
+    "spring",
+    "pointer",
+    "gesture"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Motion Primitives",
+    "url": "https://motion-primitives.com/docs/magnetic",
+    "code": "https://github.com/ibelick/motion-primitives/blob/120f64f6ca60348e251f929e9c81f11ccbe45eda/components/core/magnetic.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "The button remains stationary; its ordinary interaction still works.",
+  "limitations": "Pointer attraction is an enhancement for a mouse or trackpad. Touch and keyboard use the standard button.",
+  "surface": "#eeeae4",
+  "components": [
+    "button"
+  ],
+  "triggers": [
+    "pointer",
+    "hover",
+    "press"
+  ],
+  "techniques": [
+    "spring",
+    "scale"
+  ],
+  "feel": [
+    "refined",
+    "playful"
+  ],
+  "contexts": [
+    "landing",
+    "app"
+  ],
+  "aka": [
+    "magnetic CTA",
+    "cursor-attract button",
+    "sticky cursor hover",
+    "button follows cursor"
+  ],
+  "look": "Warm off-white page with a single dark charcoal pill button holding white sans-serif text and a thin arrow icon.",
+  "motion": "A mouse near the button pulls it toward the pointer (up to 28% of offset, zero beyond 160 px) on a spring; leaving springs it back; pressing scales to 0.97.",
+  "adapt": "Pull is computed in `move`: `strength` falls off over `160` px with a `0.28` cap, feeding `x` and `y`; `useSpring` (`stiffness: 180, damping: 18, mass: 0.3`) smooths it and `whileTap` scales to `0.97`. Replace the label, icon and `joined` toggle."
+}

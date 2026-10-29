@@ -1,0 +1,60 @@
+{
+  "slug": "light-position",
+  "title": "Embossed paper proof",
+  "commonName": "Embossed paper lighting",
+  "category": "Components & interactions",
+  "description": "A movable studio light reveals the shallow relief of a blind-embossed mark on blue paper.",
+  "useCase": "Interactive material proofs, print finishing previews, and direct two-dimensional light controls.",
+  "interaction": "Drag the light or move it with arrow keys",
+  "tags": [
+    "light",
+    "shadow",
+    "material",
+    "position",
+    "2d",
+    "vector",
+    "paper",
+    "emboss",
+    "relief",
+    "print",
+    "lighting"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Light, relief shading, and cast shadow follow input immediately; no idle animation or transition.",
+  "limitations": "SVG point-light diffuse shading over an authored height mask with an approximate projected card shadow. No arbitrary 3D scene, uploaded material, or physically based renderer.",
+  "surface": "#10272e",
+  "components": [
+    "card",
+    "slider"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "glow"
+  ],
+  "feel": [
+    "refined",
+    "technical"
+  ],
+  "contexts": [
+    "app",
+    "landing"
+  ],
+  "aka": [
+    "draggable light source",
+    "emboss effect",
+    "relief lighting demo",
+    "print finish preview",
+    "XY light control"
+  ],
+  "look": "Matte mid-blue paper card with a blind-embossed nested-arch mark and fine grain, floating on a dark teal-black ground beside a small sun handle.",
+  "motion": "Dragging the sun handle or pressing arrow keys moves an SVG point light; the embossed arches re-shade, a light pool follows and the card's blurred shadow shifts opposite, without easing.",
+  "adapt": "Lighting is the `relief` filter: `feDiffuseLighting` with an `fePointLight` at `light.x`/`light.y`, while `shadow` offsets the cast shadow by `0.047` per unit. Tune `surfaceScale`, `diffuseConstant` and `lightingColor`; replace the three arch `path` shapes and `#275381` paper with your mark."
+}

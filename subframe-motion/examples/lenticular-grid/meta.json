@@ -1,0 +1,55 @@
+{
+  "slug": "lenticular-grid",
+  "title": "Lenticular grid",
+  "commonName": "Lenticular flip shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Black-and-white interlaced artwork flips through narrow red-edged ribs.",
+  "useCase": "A tactile switching texture for print-led identities and collectible digital editions.",
+  "interaction": "Adjust view",
+  "tags": [
+    "lenticular",
+    "interlaced",
+    "optical",
+    "view switch",
+    "stripes",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "A representative frame remains still. Live system preference changes immediately stop the loop; the range control continues to update the still image.",
+  "limitations": "Requires WebGL 1. A static CSS fallback appears when unavailable or after context loss. A screen-space print illusion, not a physical lenticular display. Fine ribs may alias at small scales.",
+  "surface": "#e4e0d9",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient",
+    "state"
+  ],
+  "techniques": [
+    "shader",
+    "mask"
+  ],
+  "feel": [
+    "bold",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "lenticular print effect",
+    "interlaced image flip",
+    "ribbed stripe transition",
+    "two-image view switch"
+  ],
+  "look": "Full-bleed cream and near-black graphic of a sine wave and circle, sliced into narrow vertical ribs with thin red edges and cylindrical shading.",
+  "motion": "Each rib's soft threshold between a wave image and a circle image sweeps on an ~18 s sine, flipping the picture back and forth; the slider offsets the view.",
+  "adapt": "The effect is the `FRAGMENT` shader: `p.x*46.0` sets rib density, `view` the sweep speed and slider range, `ridge` the red edge, and `a` and `b` are the two images to replace. Keep the WebGL lifecycle and reduced-motion branch."
+}

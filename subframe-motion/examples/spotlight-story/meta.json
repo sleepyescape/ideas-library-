@@ -1,0 +1,62 @@
+{
+  "slug": "spotlight-story",
+  "title": "Ultraviolet ink pass",
+  "commonName": "Spotlight reveal effect",
+  "category": "Animation & motion",
+  "description": "A fluorescent underprint appears beneath a movable ultraviolet lens on an original event pass.",
+  "useCase": "Let people inspect a hidden print layer, material finish or registered alternate state without losing the original object.",
+  "interaction": "Move over the pass, drag the inspection lens, or reveal all the ink",
+  "tags": [
+    "ultraviolet",
+    "UV",
+    "ink",
+    "print",
+    "ticket",
+    "pass",
+    "spotlight",
+    "mask",
+    "reveal",
+    "inspection",
+    "guilloche"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Inspection follows pointer and keyboard input immediately, without inertia or automatic motion. Control color transitions are removed.",
+  "limitations": "Two independently authored SVG print layers and a feathered CSS mask; a visual ink demonstration, not fluorescence simulation, ticket validation or a security feature. No images, canvas or idle animation loop.",
+  "surface": "#312b2b",
+  "components": [
+    "image",
+    "card",
+    "cursor"
+  ],
+  "triggers": [
+    "pointer",
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "mask"
+  ],
+  "feel": [
+    "refined",
+    "playful"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "flashlight reveal",
+    "hidden layer reveal",
+    "mask reveal on hover",
+    "cursor spotlight",
+    "UV light effect"
+  ],
+  "look": "Dark charcoal page holding an orange notched ticket set in heavy dark-brown sans; a round lens shows a navy underprint with mint guilloche lines.",
+  "motion": "A 136 px lens follows the pointer or drag directly, unmasking the ultraviolet layer through a feathered radial gradient; arrow keys step it and a toggle reveals everything.",
+  "adapt": "The reveal is the `.sf-uv-hidden` layer's `maskImage` radial gradient centred on `point`, set by `locate`; tune its 62px/69px stops with the `.sf-uv-lens` size. Replace both `PassArtwork` variants (default and `ultraviolet`) with your base and hidden layers."
+}

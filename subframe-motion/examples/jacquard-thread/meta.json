@@ -1,0 +1,56 @@
+{
+  "slug": "jacquard-thread",
+  "title": "Jacquard thread",
+  "commonName": "Woven textile shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Cobalt and unbleached threads cross in a visible twill with a burnt-orange stripe.",
+  "useCase": "Control the width and construction of a woven material at thread scale.",
+  "interaction": "Adjust thread width.",
+  "tags": [
+    "native webgl",
+    "weave",
+    "warp",
+    "weft",
+    "twill",
+    "textile",
+    "material"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The elapsed-time clock stops. Parameter controls immediately update the static composition.",
+  "limitations": "Requires WebGL 1; a static CSS swatch appears if unavailable or after context loss. Analytic crossing shadows and thread profiles; no cloth physics or measured fibre-scattering model.",
+  "surface": "#e6e8df",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient",
+    "state"
+  ],
+  "techniques": [
+    "shader",
+    "glow"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "fabric texture background",
+    "twill weave pattern",
+    "procedural cloth material",
+    "denim weave texture"
+  ],
+  "look": "Full-bleed tilted twill weave of cobalt warp and unbleached cream weft threads, with evenly spaced burnt-orange warp stripes and fine fibre ridges.",
+  "motion": "The weave is static apart from a faint sheen on each thread that brightens and dims on a roughly 31-second sine; the thread-width slider thickens or thins threads.",
+  "adapt": "The weave is all in `main` of `FRAGMENT`: `rot(-.16)` and `29.` set angle and density, `over` sets the twill step, `selvedge` places the orange stripes and `lamp` drives the sheen. `controlRef` feeds `u_control` (thread `width`); recolour `warp`, `weft` and `col`."
+}

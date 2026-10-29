@@ -1,0 +1,57 @@
+{
+  "slug": "dichroic-film",
+  "title": "Dichroic film",
+  "commonName": "Iridescent film shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A thin translucent membrane rolls through olive, cobalt, and rose interference.",
+  "useCase": "Give packaging, cosmetics, and experimental identities a distinctive thin-film finish.",
+  "interaction": "Adjust thickness",
+  "tags": [
+    "iridescent",
+    "thin film",
+    "soap",
+    "interference",
+    "membrane",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "A representative frame remains still. Live system preference changes immediately stop the loop; the range control continues to update the still image.",
+  "limitations": "Requires WebGL 1. A static CSS fallback appears when unavailable or after context loss. An authored thin-film palette model, not measured spectral material data.",
+  "surface": "#20242b",
+  "components": [
+    "scene",
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "gradient",
+    "glow"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "soap bubble shader",
+    "iridescent sphere",
+    "holographic orb",
+    "thin-film interference",
+    "oil slick bubble"
+  ],
+  "look": "Glossy iridescent sphere banded with teal, magenta, olive and deep blue rings, a white softbox highlight and thin green rim on near-black.",
+  "motion": "Interference bands slowly roll across the bubble as a sine term in the film thickness advances with time; a thickness slider shifts the whole colour sequence.",
+  "adapt": "All colour comes from the `FRAGMENT` shader: `thickness` drives the cosine `interference` palette (`vec3(17.0,22.0,29.0)` sets hue spacing), `u_time*.12` sets drift speed, and `radius` sizes the sphere. Keep the WebGL lifecycle and reduced-motion branch."
+}

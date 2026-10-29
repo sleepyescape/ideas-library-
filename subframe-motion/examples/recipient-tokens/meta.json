@@ -1,0 +1,52 @@
+{
+  "slug": "recipient-tokens",
+  "title": "Recipient tokens",
+  "commonName": "Recipient chips input",
+  "category": "Components & interactions",
+  "description": "Turn addresses into removable recipients without breaking typing flow.",
+  "useCase": "Turn addresses into removable recipients without breaking typing flow.",
+  "interaction": "Add or remove a recipient",
+  "tags": [
+    "tokens",
+    "recipient",
+    "input",
+    "tags",
+    "keyboard"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "Accepts display names, not email validation; up to five recipients. No message is sent.",
+  "surface": "#edf0f3",
+  "components": [
+    "input"
+  ],
+  "triggers": [
+    "enter",
+    "keyboard",
+    "press"
+  ],
+  "techniques": [
+    "scale",
+    "fade"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "tag input",
+    "email to field",
+    "multi-value token field",
+    "removable chips"
+  ],
+  "look": "Pale blue-grey page with a white rounded compose card: pale recipient chips with pastel initial avatars and remove crosses, a bold subject and grey body.",
+  "motion": "A committed recipient becomes a token that fades and scales in from 0.92 over 160 ms ease-out; removal has no exit animation, and keyboard-driven commits skip the entrance.",
+  "adapt": "Tokens enter with the `sf-recipient-tokens-recipientIn` keyframe (160ms ease-out on `.token`); `insert` trims, dedupes and caps at five, and Backspace on an empty field removes the last. Replace the `names` seed and add real address validation."
+}

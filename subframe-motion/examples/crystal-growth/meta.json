@@ -1,0 +1,56 @@
+{
+  "slug": "crystal-growth",
+  "title": "Crystal growth",
+  "commonName": "Crystal raymarching shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A smoky quartz cluster reveals sharp facets as its proportions change.",
+  "useCase": "Gemology, material collections, and sculptural product accents.",
+  "interaction": "Adjust growth",
+  "tags": [
+    "crystal",
+    "quartz",
+    "facets",
+    "raymarching",
+    "mineral",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "A representative frame remains still. Live system preference changes immediately stop the loop; the range control continues to update the still image.",
+  "limitations": "Requires WebGL 1. A static CSS fallback appears when unavailable or after context loss. Opaque stylized quartz; no crystal refraction or mineral growth simulation.",
+  "surface": "#c4c4c0",
+  "components": [
+    "scene"
+  ],
+  "triggers": [
+    "ambient",
+    "state"
+  ],
+  "techniques": [
+    "shader",
+    "3d",
+    "rotate"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "rotating quartz cluster",
+    "3D gemstone render",
+    "faceted crystal hero",
+    "raymarched mineral"
+  ],
+  "look": "Flat warm grey field with one matte sage-green cluster of pointed hexagonal quartz prisms, softly lit from the upper left with faint banding.",
+  "motion": "The raymarched cluster turns continuously about its vertical axis at 0.12 rad/s, about 52 s per turn; the growth slider lengthens or shortens all five prisms.",
+  "adapt": "The `FRAGMENT` shader raymarches `crystal`: five hexagonal prisms whose `height` adds `u_control*.4`, spun in `object` by `u_time*.12`. Tune `width`, the five-iteration loop and the shading colours in `c`; keep the context-loss and reduced-motion handling."
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "crease-reveal",
+  "title": "Crease reveal",
+  "commonName": "Paper fold shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "An acid-yellow poster compresses into a faceted paper object and unfolds again.",
+  "useCase": "Reveal the surface and volume of printed material through one reversible transformation.",
+  "interaction": "Crumple the paper or adjust the crease.",
+  "tags": [
+    "native webgl",
+    "paper",
+    "mesh deformation",
+    "facets",
+    "printed material"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Deliberate controls update a still mesh without interpolation.",
+  "limitations": "Requires WebGL 1; a static poster appears if unavailable. A deterministic faceted deformation, not a physically accurate self-colliding sheet.",
+  "surface": "#20241e",
+  "components": [
+    "scene",
+    "image"
+  ],
+  "triggers": [
+    "press",
+    "drag"
+  ],
+  "techniques": [
+    "shader",
+    "3d",
+    "morph"
+  ],
+  "feel": [
+    "bold",
+    "playful"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "crumpled paper effect",
+    "paper crumple animation",
+    "poster mesh deformation",
+    "low-poly paper"
+  ],
+  "look": "A faceted acid-yellow paper poster with heavy black sans type and a large arrow glyph, slightly crumpled, on a near-black olive background with yellow controls.",
+  "motion": "Pressing the button crumples the flat poster mesh into a faceted ball, or flattens it, easing exponentially (about 95 ms time constant); the crease slider sets the deformation directly.",
+  "adapt": "Deformation lives in `point`, blending the flat sheet and a noisy sphere by `amount` (`Math.pow(p, 0.78)`); `frame` eases `amount` toward `target` with a 95 ms constant. Redraw the 2D `paper` canvas with your artwork and keep `cr-fallback`."
+}

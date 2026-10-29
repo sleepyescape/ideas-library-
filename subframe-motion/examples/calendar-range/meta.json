@@ -1,0 +1,49 @@
+{
+  "slug": "calendar-range",
+  "title": "Calendar range",
+  "commonName": "Date range picker",
+  "category": "Components & interactions",
+  "description": "Select a short stay with a continuous, legible date range.",
+  "useCase": "Select a short stay with a continuous, legible date range.",
+  "interaction": "Choose arrival and departure dates",
+  "tags": [
+    "calendar",
+    "date range",
+    "booking",
+    "selection"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "A fixed November 2026 calendar; dates, locale, availability, and persistence belong to the host application.",
+  "surface": "#edf0f3",
+  "components": [
+    "picker"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "fade"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "booking calendar",
+    "check-in check-out picker",
+    "date range selector",
+    "stay dates calendar"
+  ],
+  "look": "Pale grey-green page with a white rounded calendar card: bold month heading, seven-column day grid, deep green endpoint chips and a mint band between.",
+  "motion": "Clicking a start then an end date fills the range: endpoints turn deep green and in-between days mint, each cell's background and text colour transitioning over 140 ms.",
+  "adapt": "Selection logic is `choose` (a click after a complete range, or before `from`, restarts it); cells get `first`, `middle` and `last` classes whose 140 ms background transition is the only motion. Replace the fixed 30-day November grid with real dates and availability."
+}

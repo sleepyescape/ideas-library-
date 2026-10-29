@@ -1,0 +1,57 @@
+{
+  "slug": "retro-grid",
+  "title": "A moving horizon",
+  "commonName": "Retro grid background",
+  "category": "Animation & motion",
+  "description": "A crisp perspective grid flows toward the viewer and fades before its lines compress at the horizon.",
+  "useCase": "Create a legible graphic spatial backdrop for an event, launch or identity.",
+  "interaction": "Play or pause the grid",
+  "tags": [
+    "grid",
+    "perspective",
+    "svg",
+    "retro",
+    "background",
+    "continuous",
+    "horizon"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Magic UI",
+    "url": "https://magicui.design/docs/components/retro-grid",
+    "code": "https://github.com/magicuidesign/magicui/blob/85f97fd27b053339af74ba9dd4ca428ee25989fb/apps/www/registry/magicui/retro-grid.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The grid remains on a static projected frame; play control is hidden.",
+  "limitations": "Finite SVG line projection; no camera,3D scene or WebGL dependency. Decorative backdrop rather than a navigation surface.",
+  "surface": "#0e1822",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "3d",
+    "loop",
+    "fade"
+  ],
+  "feel": [
+    "calm",
+    "technical"
+  ],
+  "contexts": [
+    "landing"
+  ],
+  "aka": [
+    "synthwave grid",
+    "perspective grid floor",
+    "80s grid background",
+    "infinite grid horizon",
+    "moving floor grid"
+  ],
+  "look": "Dark navy field with a thin warm-beige perspective grid receding to a horizon line beneath a faint amber glow; small round control button.",
+  "motion": "Horizontal lines stream toward the viewer along a 1/distance projection in a seamless loop (about 1.6 s per row), fading in from the horizon; radial lines stay fixed.",
+  "adapt": "Motion is the `tick`/`draw` loop: `phase` advances `0.62` per second and each row's y is `136 + 340 / distance`, with opacity ramping up from the horizon. Tune row count, `stroke` colour, the `fade` mask and the `#c68d5e` glow."
+}

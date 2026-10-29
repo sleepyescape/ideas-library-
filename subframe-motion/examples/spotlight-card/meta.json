@@ -1,0 +1,61 @@
+{
+  "slug": "spotlight-card",
+  "title": "A little light follows you",
+  "commonName": "Spotlight hover card",
+  "category": "Components & interactions",
+  "description": "A soft spring-driven light follows the pointer within a quiet card.",
+  "useCase": "Add a subtle pointer enhancement to a featured card without moving its readable content.",
+  "interaction": "Move your pointer across the card",
+  "tags": [
+    "spotlight",
+    "card",
+    "hover",
+    "pointer",
+    "radial gradient",
+    "spring",
+    "lighting"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Motion Primitives",
+    "url": "https://motion-primitives.com/docs/spotlight",
+    "code": "https://github.com/ibelick/motion-primitives/blob/120f64f6ca60348e251f929e9c81f11ccbe45eda/components/core/spotlight.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "The light stays centered and subdued. Touch receives the same static treatment.",
+  "limitations": "The light is decorative. Do not rely on hover to expose content or essential state.",
+  "surface": "#24292d",
+  "components": [
+    "card",
+    "cursor"
+  ],
+  "triggers": [
+    "pointer",
+    "hover"
+  ],
+  "techniques": [
+    "glow",
+    "spring",
+    "gradient"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "app"
+  ],
+  "aka": [
+    "mouse follow glow",
+    "cursor glow card",
+    "radial hover highlight",
+    "pointer light effect"
+  ],
+  "look": "Dark charcoal page with one rounded slate-green card carrying a faint dot grid, a soft pale-green glow near the top and a crosshair icon centred.",
+  "motion": "Mouse movement over the card pulls a soft radial light after the pointer on a spring and brightens it in 0.2 s; leaving springs it back to centre, dimmed.",
+  "adapt": "`x` and `y` are `useSpring` values (`stiffness: 160, damping: 26`) set in `onPointerMove` and reset to the card centre (`138`, `88`) on leave; the light is the `motion.div` radial gradient with hover opacity `0.75`. Replace the dot grid and icon with your content."
+}

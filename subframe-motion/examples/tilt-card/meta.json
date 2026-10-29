@@ -1,0 +1,65 @@
+{
+  "slug": "tilt-card",
+  "title": "A card with some depth",
+  "commonName": "3D tilt card",
+  "category": "Components & interactions",
+  "description": "Six translucent amber planes shift against a deep frame as a sculpture follows the pointer.",
+  "useCase": "Give a featured collectible or artwork depth through actual layered geometry.",
+  "interaction": "Move the pointer, drag, or use arrow keys to tilt",
+  "tags": [
+    "tilt",
+    "card",
+    "3D",
+    "perspective",
+    "hover",
+    "pointer",
+    "spring",
+    "parallax",
+    "amber",
+    "sculpture"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Motion Primitives",
+    "url": "https://motion-primitives.com/docs/tilt",
+    "code": "https://github.com/ibelick/motion-primitives/blob/120f64f6ca60348e251f929e9c81f11ccbe45eda/components/core/tilt.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "The artwork remains at a fixed viewing angle; pointer and keyboard tilting are disabled.",
+  "limitations": "Six original translucent planes and a deep frame projected into one SVG; not physically traced glass. Uses Motion for spring tracking.",
+  "surface": "#d4d2cc",
+  "components": [
+    "card",
+    "scene"
+  ],
+  "triggers": [
+    "pointer",
+    "drag"
+  ],
+  "techniques": [
+    "3d",
+    "spring",
+    "parallax"
+  ],
+  "feel": [
+    "refined",
+    "playful"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "hover tilt effect",
+    "parallax tilt",
+    "3D hover card",
+    "perspective card",
+    "tilt on mouse move"
+  ],
+  "look": "Warm grey background with a cream-rimmed deep shadow-box frame, dark slate interior and a stack of translucent glowing amber discs at its centre.",
+  "motion": "Pointer movement tilts the deep frame and six amber planes in projected 3D, up to 18° each way, on a spring (stiffness 230, damping 26); leaving springs back to rest.",
+  "adapt": "`useSpring` smooths the `x` and `y` motion values, and `draw` calls `geometry` on each change to rewrite SVG path `d` attributes (`box`, `planes`, `rim`). Tune the spring and the 36° range in `geometry`; replace its elliptical `planes` with your own layered shapes."
+}

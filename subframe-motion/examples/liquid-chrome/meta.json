@@ -1,0 +1,58 @@
+{
+  "slug": "liquid-chrome",
+  "title": "Liquid chrome",
+  "commonName": "Liquid metal chrome shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A sculpted metal loop turns through hard studio highlights and one red reflection.",
+  "useCase": "Experimental product launches, digital fashion, music identities, or a material-led hero that feels physical.",
+  "interaction": "Play or pause the material study.",
+  "tags": [
+    "chrome",
+    "liquid metal",
+    "raymarching",
+    "sculpture",
+    "reflective",
+    "monochrome",
+    "industrial",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Displays one stable, representative frame. Responds immediately when the system preference changes.",
+  "limitations": "Requires WebGL 1; a static CSS composition remains visible when WebGL is unavailable or lost. Raymarching is more GPU-intensive than the other textures. The reflections are authored light bands, not a physical environment map.",
+  "surface": "#141414",
+  "components": [
+    "scene",
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "3d",
+    "morph"
+  ],
+  "feel": [
+    "bold",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "chrome torus",
+    "raymarched metal ring",
+    "reflective 3D sculpture",
+    "metallic blob hero"
+  ],
+  "look": "Near-black poster with a glossy chrome ring of black and silver bands with red reflections, heavy cream sans-serif title, monospace caption and red side label.",
+  "motion": "A raymarched chrome torus slowly spins and tumbles while its rim and tube thickness undulate, so studio light bands and a red reflection slide across it; a button pauses it.",
+  "adapt": "The sculpture is the `object` distance function in `FRAGMENT` (spin `.12 * u_time`, `rim` and `tube` wobble); shading uses `studio`, `strip` and `red`, and the 68-step march sets GPU cost. Replace the title and labels; keep `sg-liquid-chrome-fallback`, context-loss and reduced-motion handling."
+}

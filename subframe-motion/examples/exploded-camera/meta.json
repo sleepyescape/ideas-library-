@@ -1,0 +1,56 @@
+{
+  "slug": "exploded-camera",
+  "title": "Inside the lens",
+  "commonName": "Exploded product view",
+  "category": "Animation & motion",
+  "description": "A graphite camera separates into a silver mount, an iris and a coated glass element along one continuous axis.",
+  "useCase": "Explain a layered product through a clear, reversible exploded illustration.",
+  "interaction": "Click the camera or the Explode view control to separate or assemble the optics.",
+  "tags": [
+    "3D",
+    "exploded view",
+    "product",
+    "assembly",
+    "lens",
+    "SVG",
+    "optics",
+    "camera",
+    "iris"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The optical assembly changes pose immediately for keyboard and reduced motion. Host pause disables both controls and settles the current pose.",
+  "limitations": "A stylized projected SVG assembly, not a physically accurate lens prescription, CAD model or manufacturing diagram. The view angle is authored and fixed.",
+  "surface": "#dce3e5",
+  "components": [
+    "scene"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "3d",
+    "slide"
+  ],
+  "feel": [
+    "refined",
+    "technical"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "product teardown animation",
+    "lens layers separating",
+    "assembly diagram",
+    "component breakdown illustration"
+  ],
+  "look": "Soft grey-white radial backdrop with a graphite compact camera in angled projection, silver lens mount, teal coated glass, soft floor shadow and a pill button.",
+  "motion": "Clicking slides the silver mount, iris and glass apart along the lens axis as the body shifts back, 600 ms with a strong ease-out; clicking again reassembles them.",
+  "adapt": "Parts are SVG groups with class `ec-part` animated by `transition:transform 600ms cubic-bezier(.22,1,.36,1)`; `opticalDepth` sets each element's distance along the projected axis via `basis`, and `plane` and `face` handle the fixed 35° projection. Replace the camera artwork and depth values."
+}

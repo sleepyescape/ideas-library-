@@ -1,0 +1,87 @@
+{
+  "slug": "orbit-atlas",
+  "title": "Orbit atlas",
+  "commonName": "Pan and zoom image canvas",
+  "category": "Components & interactions",
+  "description": "An open image archive can be panned, fitted, zoomed and brought into focus one work at a time.",
+  "useCase": "Explore a spatial collection and inspect an item without losing its surrounding arrangement.",
+  "interaction": "Drag the canvas, zoom or choose a work.",
+  "tags": [
+    "spatial canvas",
+    "pan",
+    "zoom",
+    "image collection",
+    "focus"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "fern-diptych.webp",
+      "description": "Untitled (Fern Study), c. 1850, from the Hatton Fern Album",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "fuji-storm.webp",
+      "description": "Shower Below the Summit (Sanka hakuu), from the series \"Thirty-Six Views of Mount Fuji (Fugaku sanjurokkei)\"",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "mediterranean-clouds.webp",
+      "description": "Cloudy Sky, Mediterranean Sea",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "paris-street.webp",
+      "description": "Rue de la Montagne-Sainte-Geneviève near the Intersection of Rue LaPlace (Rue de la Montagne-Sainte-Geneviève prés de carrefour de la rue LaPlace)",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "plum-garden.webp",
+      "description": "Plum Garden at Kameido (Kameido Umeyashiki), from the series \"One Hundred Famous Views of Edo (Meisho Edo hyakkei)\"",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "suruga-wind.webp",
+      "description": "Ejiri in Suruga Province (Sunshu Ejiri), from the series \"Thirty-six Views of Mount Fuji (Fugaku sanjurokkei)\"",
+      "license": "CC0-1.0"
+    }
+  ],
+  "reducedMotion": "The camera moves immediately between views; all pan, zoom and selection controls remain.",
+  "limitations": "Six works in a bounded board. It intentionally does not create an infinite or automatically populated canvas.",
+  "surface": "#f2f0e9",
+  "components": [
+    "gallery",
+    "editor"
+  ],
+  "triggers": [
+    "drag",
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "scale",
+    "slide"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "app"
+  ],
+  "aka": [
+    "zoomable moodboard",
+    "spatial image board",
+    "click to zoom gallery",
+    "draggable canvas gallery"
+  ],
+  "look": "Off-white board holding six white-bordered prints (woodblock landscapes, a fern cyanotype, sepia photographs) loosely arranged above a floating white zoom toolbar.",
+  "motion": "Clicking a work glides the board to centre and enlarge it over 0.32 s ease-out; dragging pans 1:1 without easing, and the zoom and fit buttons animate the same transform.",
+  "adapt": "The camera is `view` (x, y, zoom) applied to `oa-world` as translate plus scale with a 0.32 s `cubic-bezier(.22,1,.36,1)` transition; `focus`, `fit` and `bounded` set targets and limits. Replace `specimens` positions and images with your own layout."
+}

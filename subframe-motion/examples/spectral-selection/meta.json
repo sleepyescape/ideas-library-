@@ -1,0 +1,52 @@
+{
+  "slug": "spectral-selection",
+  "title": "Spectral selection",
+  "commonName": "Spectrogram selection",
+  "category": "Components & interactions",
+  "description": "A burnt-orange spectrogram reveals a swept tone and lets you isolate a time-and-frequency region.",
+  "useCase": "Select a sound feature occupying only a time/frequency region.",
+  "interaction": "Drag a region, move it with arrow keys, or resize it with Shift and arrows.",
+  "tags": [
+    "spectrogram",
+    "fft",
+    "selection",
+    "frequency",
+    "time",
+    "canvas"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Selection follows direct input without ambient or eased motion.",
+  "limitations": "Bounded Hann-windowed DFT of original synthesized samples. Selection is visual; no audio editing, playback or export.",
+  "surface": "#211c19",
+  "components": [
+    "media",
+    "editor"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "canvas"
+  ],
+  "feel": [
+    "technical"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "spectrogram marquee select",
+    "rubber band region select",
+    "audio spectral editor",
+    "frequency band selection"
+  ],
+  "look": "Dark espresso-brown panel with a burnt-orange spectrogram heatmap showing a rising diagonal chirp, a thin cream selection box and monospace axis labels.",
+  "motion": "Dragging across the spectrogram draws a cream rectangle that follows the pointer directly, dimming the outside and updating time and frequency readouts; arrows nudge it, Shift-arrows resize.",
+  "adapt": "`spectrum` computes a Hann-windowed DFT of a synthetic chirp once and paints it to the canvas; the selection is normalised `box` state set by `onPointerMove` and `keyboard`. Replace `spectrum` with your STFT data and adjust the 3.75 s and 512 Hz readout scales."
+}

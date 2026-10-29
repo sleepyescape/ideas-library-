@@ -1,0 +1,52 @@
+{
+  "slug": "attachment-composer",
+  "title": "Attachment composer",
+  "commonName": "Chat composer attachments",
+  "category": "Components & interactions",
+  "description": "Let attachments enter and leave a message without displacing the writing task.",
+  "useCase": "Let attachments enter and leave a message without displacing the writing task.",
+  "interaction": "Attach a file and send a note",
+  "tags": [
+    "composer",
+    "attachment",
+    "message",
+    "upload"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "Files remain local names only. The submit action prepares a local state and sends nothing.",
+  "surface": "#edf0f3",
+  "components": [
+    "input",
+    "picker"
+  ],
+  "triggers": [
+    "enter",
+    "press"
+  ],
+  "techniques": [
+    "fade",
+    "slide"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "message input with attachments",
+    "file chip upload",
+    "chat input box",
+    "AI prompt composer",
+    "attachment chips"
+  ],
+  "look": "White rounded composer card on light warm grey with a bordered file chip, system-font message text, a plus icon and a round blue send button.",
+  "motion": "Attaching a file through the plus button makes its chip rise 5 px and fade in over 200 ms (ease-out); removal and send happen instantly.",
+  "adapt": "The chip entrance is the `sf-attachment-composer-attachmentIn` keyframe on `.file` (200 ms); tune its offset and duration there. Replace the `files` and `text` seed state and the `onSubmit` handler, which only sets `sent`, with your upload and send logic."
+}

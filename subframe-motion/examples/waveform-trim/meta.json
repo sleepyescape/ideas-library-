@@ -1,0 +1,55 @@
+{
+  "slug": "waveform-trim",
+  "title": "Waveform trim",
+  "commonName": "Audio trim editor",
+  "category": "Components & interactions",
+  "description": "Fine audio samples and quiet regions make direct range trimming precise and legible.",
+  "useCase": "Select a precise excerpt without losing the surrounding recording.",
+  "interaction": "Drag trim handles or the selection; use arrows, Shift+arrows, Home or End",
+  "tags": [
+    "audio",
+    "trim",
+    "waveform",
+    "range",
+    "editor",
+    "pointer capture",
+    "direct manipulation"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "Synthetic amplitude data. Range changes are local; no audio decoding, destructive trim or export.",
+  "surface": "#eeeeeb",
+  "components": [
+    "media",
+    "editor",
+    "slider"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "slide"
+  ],
+  "feel": [
+    "technical",
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "audio range selector",
+    "clip trimmer",
+    "trim handles",
+    "waveform range slider"
+  ],
+  "look": "Light grey page with a white rounded card holding a fine vertical-bar waveform, a monospace time ruler, dark trim handles and monospace in/out readouts.",
+  "motion": "Dragging a dark handle or the selected region moves the trim range 1:1 with the pointer, darkening bars inside and greying those outside; arrow keys nudge 1% or 5%.",
+  "adapt": "Range state is `range` (percent), updated by `down`, `move`, `change` and `key` with a 5% minimum gap; `BARS` is synthetic amplitude data and 0.42 converts percent to seconds. Replace `BARS` with decoded peaks and wire `range` to playback or export."
+}

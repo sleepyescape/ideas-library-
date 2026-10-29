@@ -1,0 +1,61 @@
+{
+  "slug": "like-burst",
+  "title": "A little appreciation",
+  "commonName": "Like button heart burst",
+  "category": "Components & interactions",
+  "description": "A filled heart, a small burst and a rolling count make a reaction feel responsive.",
+  "useCase": "Provide immediate feedback for a low-stakes like, favorite or appreciation action.",
+  "interaction": "Like and unlike the example",
+  "tags": [
+    "like",
+    "favorite",
+    "heart",
+    "click",
+    "particles",
+    "burst",
+    "counter",
+    "optimistic state"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Interior",
+    "url": "https://www.interior.dev/docs/like-burst",
+    "code": "https://github.com/ddoemonn/interior/blob/314800833bf01e23e6ae74c2a17fbdaac3688c84/components/interior/like-burst.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "The heart and count update directly; particles, scaling and rolling digits are removed.",
+  "limitations": "The local demo does not save reactions to a server. The retained hook supports asynchronous commit and rollback.",
+  "surface": "#f2e9e7",
+  "components": [
+    "button",
+    "number"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "particles",
+    "spring",
+    "roll",
+    "scale"
+  ],
+  "feel": [
+    "playful",
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "favorite button animation",
+    "heart reaction",
+    "animated like counter",
+    "optimistic like toggle"
+  ],
+  "look": "Pale blush page with a single white rounded button holding an outline heart icon, a sans-serif label and a small count.",
+  "motion": "Liking springs a filled heart up from 55% scale over the crossfading outline, fires eight sparks radially for 440 ms, and rolls the count vertically; unliking reverses without sparks.",
+  "adapt": "State and debounced commit live in `useOptimisticLike` (`settle = 400`, optional `onCommit` with rollback); springs are `CELL` and `CROSSFADE`, sparks come from `SPARKS` with `EASE` over `0.44` s. Pass your `onCommit` and `initialCount`; replace the label."
+}

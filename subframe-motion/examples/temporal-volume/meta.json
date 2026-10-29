@@ -1,0 +1,59 @@
+{
+  "slug": "temporal-volume",
+  "title": "Temporal volume",
+  "commonName": "Video time volume",
+  "category": "Animation & motion",
+  "description": "An orbitable volume exposes a moving frame and the history along its edges.",
+  "useCase": "Compare motion across time without losing the current frame.",
+  "interaction": "Orbit, play or scrub.",
+  "tags": [
+    "canvas 2d",
+    "temporal volume",
+    "frame history",
+    "scrub",
+    "orbit",
+    "time"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Playback stops; direct orbit and frame selection remain available.",
+  "limitations": "Thirty-two original procedural frames at 16 fps. Orthographic Canvas 2D projections and edge samples, not a video decoder or volumetric renderer.",
+  "surface": "#161919",
+  "components": [
+    "media",
+    "scene",
+    "editor"
+  ],
+  "triggers": [
+    "drag",
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "canvas",
+    "3d",
+    "loop"
+  ],
+  "feel": [
+    "technical",
+    "bold"
+  ],
+  "contexts": [
+    "editorial",
+    "app"
+  ],
+  "aka": [
+    "video cube",
+    "slit-scan visualization",
+    "space-time cube",
+    "frame history 3D",
+    "3D video scrubber"
+  ],
+  "look": "Near-black stage with an off-white 3D box showing red ellipses and a black bar in front, pixel-history smears on its sides, and an orange scrubber.",
+  "motion": "Play steps a 32-frame loop at 16 fps on the front face while the sides rebuild from edge-pixel history; dragging or arrow keys orbit the box; a slider scrubs.",
+  "adapt": "`paintFrame` draws each procedural frame and `render` projects the six faces with `project`, sampling edge pixels into `side` and `top`; `orbit` clamps yaw and pitch, and `tick` advances every `62.5` ms. Replace `paintFrame` and the `frames` canvases with decoded video frames."
+}

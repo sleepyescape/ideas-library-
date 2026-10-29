@@ -1,0 +1,62 @@
+{
+  "slug": "wet-finish",
+  "title": "After the rain",
+  "commonName": "Paintable wet material and clearcoat shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Water brushed across deep green stone accumulates into a glossy region, revealing a sharp grazing reflection beside the same dry material.",
+  "useCase": "Show the difference between matte and coated finishes in a tactile material selector or product story.",
+  "interaction": "Drag to wet the stone. Arrow keys place the brush and Space or Enter paints; Dry surface clears it.",
+  "tags": [
+    "wet stone",
+    "clearcoat",
+    "roughness",
+    "material finish",
+    "brush",
+    "persistent mask",
+    "reflection",
+    "soapstone"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Direct painting remains available. Automatic drying freezes under reduced motion; Dry surface is an immediate deterministic reset.",
+  "limitations": "A procedural stone sample, screen-space brush mask and authored strip-light response, not a physically calibrated BRDF or fluid simulation. The bounded mask dries while active and visible. Requires WebGL 1; interaction disables with an explicit fallback and resumes after context restoration.",
+  "surface": "#24372e",
+  "components": [
+    "scene",
+    "cursor",
+    "button"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard",
+    "press"
+  ],
+  "techniques": [
+    "shader",
+    "mask",
+    "canvas"
+  ],
+  "feel": [
+    "refined",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "wetness painting",
+    "roughness painting",
+    "wet and dry material",
+    "clear coat reflection",
+    "paintable finish comparison"
+  ],
+  "look": "A large beveled mineral-green stone sample seen straight from above on dark green, thin light veins and subdued dark fractures; a brushed wet region catches a crisp white reflection with an irregular absorbent edge.",
+  "motion": "A persistent canvas mask records contiguous brush strokes. Wetness changes diffuse tint and a separate clearcoat highlight; wet roughness changes the highlight width. Drying fades the mask only while active and visible.",
+  "adapt": "`DEFAULT_CONFIG` and the `config` prop expose brush radius, dry and wet roughness, and drying time. `relief` defines the original stone field. `paint` updates the persistent `mask`; `step` advances drying, while `useSurface` uploads it as a texture and stops rendering when dry or paused."
+}

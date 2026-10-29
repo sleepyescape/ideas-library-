@@ -1,0 +1,55 @@
+{
+  "slug": "queue-reorder",
+  "title": "Queue reorder",
+  "commonName": "Drag-to-reorder list",
+  "category": "Components & interactions",
+  "description": "A lifted track follows the pointer while neighboring tracks move into their new slots before release.",
+  "useCase": "Reorder a short listening queue with immediate spatial feedback and equivalent keyboard controls.",
+  "interaction": "Drag a handle across rows or use Up/Down, Home and End. Escape cancels an in-progress drag.",
+  "tags": [
+    "drag",
+    "reorder",
+    "sortable",
+    "playlist",
+    "queue",
+    "live-layout",
+    "pointer-capture",
+    "keyboard",
+    "cancel"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Finite transitions become immediate under reduced motion and keyboard input. Host pause disables controls; any owned drag is cancelled.",
+  "limitations": "Fixed three-row queue and original vector covers; no playback, virtualized rows, auto-scroll or cross-list transfer.",
+  "surface": "#202122",
+  "components": [
+    "list"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "layout",
+    "slide"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "sortable list",
+    "drag and drop playlist",
+    "reorderable rows",
+    "drag handle sorting"
+  ],
+  "look": "Dark charcoal page with a rounded graphite card listing three tracks, each with square geometric cover art, white title, grey artist and a dotted grip.",
+  "motion": "Dragging a grip lifts its row to follow the pointer while neighbours slide into their new slots with a 220 ms ease-out; release settles it, Escape restores the original order.",
+  "adapt": "Rows sit at `translateY` multiples of `STEP` and animate via the `track` CSS transition (220ms `cubic-bezier(.22,1,.36,1)`); `gesture` holds the drag and `reorder` moves the item at `Math.round(y / STEP)`. Replace `TRACKS` and `Cover` with your items; keep `finish` for cancel."
+}

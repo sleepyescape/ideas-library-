@@ -1,0 +1,56 @@
+{
+  "slug": "ink-trail",
+  "title": "Ink trail",
+  "commonName": "Cursor brush trail",
+  "category": "Animation & motion",
+  "description": "A pointer leaves a bold, persistent brush trail across a yellow print surface.",
+  "useCase": "Playful drawing surfaces, creative annotations and expressive identity moments.",
+  "interaction": "Draw with a pointer, touch or arrow keys; clear to begin again",
+  "tags": [
+    "cursor",
+    "drawing",
+    "canvas",
+    "ink",
+    "trail",
+    "brush",
+    "gesture"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Direct input places persistent marks without ambient motion or animated travel.",
+  "limitations": "Bounded to the latest 900 marks; no pressure-sensitive stylus handling, undo or export.",
+  "surface": "#ffe000",
+  "components": [
+    "cursor",
+    "editor"
+  ],
+  "triggers": [
+    "pointer",
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "canvas"
+  ],
+  "feel": [
+    "playful",
+    "bold"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "mouse paint trail",
+    "drawing canvas",
+    "marker stroke effect",
+    "pointer brush"
+  ],
+  "look": "Flat bright yellow field with one thick black calligraphic brush stroke in a gentle S-curve and an underlined text button in the corner.",
+  "motion": "Moving the mouse, or dragging with touch or pen, stamps direction-rotated brush marks about every 3 px, leaving a persistent stroke; arrow keys extend it stepwise.",
+  "adapt": "Marks are interpolated in `point` and stored by `add` (capped at 900); `draw` stamps each `Mark` as a quadratic-curve blob, so tune its `size` and the `step` spacing. Replace the initial sine stroke and the yellow `#ffe000` surface."
+}

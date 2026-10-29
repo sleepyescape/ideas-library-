@@ -1,0 +1,55 @@
+{
+  "slug": "hold-to-confirm",
+  "title": "A deliberate hold",
+  "commonName": "Hold-to-confirm button",
+  "category": "Components & interactions",
+  "description": "A progress sweep makes the time needed for an important action visible.",
+  "useCase": "Add a deliberate confirmation gesture to an occasional action, with clear cancellation.",
+  "interaction": "Hold the button, or hold Space or Enter",
+  "tags": [
+    "archive",
+    "button",
+    "press and hold",
+    "confirmation",
+    "progress",
+    "clip-path",
+    "pointer",
+    "keyboard"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Interior",
+    "url": "https://www.interior.dev/docs/hold-to-confirm",
+    "code": "https://github.com/ddoemonn/interior/blob/314800833bf01e23e6ae74c2a17fbdaac3688c84/components/interior/hold-to-confirm.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "The timer still requires a deliberate hold; text reports progress and the fill changes only at completion.",
+  "limitations": "Demonstrates a local archive state. Pausing cancels any hold and disables confirmation until resumed. Reduced motion preserves the full hold time. Offer another confirmation method if a sustained press is unsuitable for your users.",
+  "surface": "#eeeae5",
+  "components": [
+    "button"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "mask"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "long press button",
+    "press and hold to delete",
+    "confirm destructive action"
+  ],
+  "look": "Warm off-white page with one white rounded button and a grey caption underneath.",
+  "motion": "Holding the button sweeps a dark fill left to right at constant speed for 1.6 s; releasing early drains it back 2.5× faster; completion confirms.",
+  "adapt": "Hold timing and cancellation live in `useHoldToConfirm` (the example passes `duration: 1600`); the fill is a `clipPath` inset driven by `animate` with linear easing. Replace the archive label and `onConfirm`; keep pointer-cancel and Escape handling."
+}

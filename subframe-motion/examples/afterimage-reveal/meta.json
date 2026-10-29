@@ -1,0 +1,62 @@
+{
+  "slug": "afterimage-reveal",
+  "title": "Afterimage reveal",
+  "commonName": "Brush reveal image effect",
+  "category": "Animation & motion",
+  "description": "A monochrome textile develops its original color under a soft brush, then slowly returns to grey.",
+  "useCase": "Reveal a second material or image through a persistent, fading pointer trail.",
+  "interaction": "Paint across the textile or develop all its color.",
+  "tags": [
+    "image reveal",
+    "brush",
+    "persistent trail",
+    "canvas",
+    "texture"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "oak-damask.webp",
+      "description": "Oak",
+      "license": "CC0-1.0"
+    }
+  ],
+  "reducedMotion": "The brush is disabled; the Develop color control reveals the complete image instantly.",
+  "limitations": "One same-size image is used for both layers. The fading mask resets when the container resizes.",
+  "surface": "#363e35",
+  "components": [
+    "image",
+    "cursor"
+  ],
+  "triggers": [
+    "pointer",
+    "press"
+  ],
+  "techniques": [
+    "mask",
+    "canvas",
+    "fade"
+  ],
+  "feel": [
+    "refined",
+    "calm"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "hover color reveal",
+    "grayscale to color trail",
+    "paint to reveal",
+    "fading mask trail"
+  ],
+  "look": "Full-bleed damask textile of turquoise oak leaves and flowers on olive silk, an italic cream serif title, small caption and a dark teal rectangular button.",
+  "motion": "Moving the pointer stamps soft circles into a mask that reveals colour over the greyscale textile, fading back with a 620 ms time constant; a button shows full colour instantly.",
+  "adapt": "`stamp` paints radial gradients into the offscreen `mask` (radius `w * 0.105`), `tick` fades it each frame via `destination-out` with time constant `620`, and `draw` composites colour over a `grayscale(1) contrast(1.1)` base. Swap `oak-damask.webp` in `photo.src`; keep the resize handling."
+}

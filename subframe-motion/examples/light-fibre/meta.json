@@ -1,0 +1,53 @@
+{
+  "slug": "light-fibre",
+  "title": "Light fibre",
+  "commonName": "Fiber optic light shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Fine amber fibres bend around one moving pulse of light.",
+  "useCase": "Network, sound, or optical technology identities that need a precise luminous texture.",
+  "interaction": "Adjust bend",
+  "tags": [
+    "fibre",
+    "optical",
+    "light",
+    "strands",
+    "signal",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "A representative frame remains still. Live system preference changes immediately stop the loop; the range control continues to update the still image.",
+  "limitations": "Requires WebGL 1. A static CSS fallback appears when unavailable or after context loss. Luminous curve rendering without blur post-processing; not a physical fibre-optics simulation.",
+  "surface": "#13161c",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "glow"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "landing"
+  ],
+  "aka": [
+    "glowing wave lines",
+    "flowing lines background",
+    "luminous strands hero",
+    "light pulse along lines"
+  ],
+  "look": "Near-black field with a band of thirty-six fine amber-to-rust lines undulating across it, brightened by one soft golden highlight.",
+  "motion": "Thirty-six sine-curved fibres undulate slowly while a Gaussian light pulse sweeps back and forth along them, brightening the strands it crosses; the bend slider scales wave amplitude.",
+  "adapt": "Everything is in `FRAGMENT`: 36 fibres in the loop, wave speed `u_time*.12`, pulse sweep `.48*sin(u_time*.24+f*.5)` and colour `mix(vec3(.30,.11,.025),vec3(1,.68,.25),f)`; `u_control` (the bend range) scales amplitude. Keep the canvas lifecycle, pause button and fallback."
+}

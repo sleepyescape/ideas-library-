@@ -1,0 +1,55 @@
+{
+  "slug": "precision-scrub",
+  "title": "Precision scrub",
+  "commonName": "Scrubbable number input",
+  "category": "Components & interactions",
+  "description": "A compact numerical field sets the spacing of a white typographic specimen on a deep plum proofing surface.",
+  "useCase": "Space-efficient numerical editing with direct scrubbing, precise entry, and reversible gestures.",
+  "interaction": "Drag the value, click to type, or use arrow keys; Shift accelerates and Alt refines",
+  "tags": [
+    "scrub",
+    "input",
+    "number",
+    "typography",
+    "tracking",
+    "precision",
+    "drag"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Values and typesetting update directly; the small boundary response settles immediately.",
+  "limitations": "A local letter-spacing control bounded from -3 to 12 pixels; no pointer lock or document editor integration.",
+  "surface": "#341f39",
+  "components": [
+    "slider",
+    "input"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard",
+    "press"
+  ],
+  "techniques": [
+    "slide"
+  ],
+  "feel": [
+    "technical",
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "drag to adjust value",
+    "number scrubber",
+    "draggable number field",
+    "letter-spacing control"
+  ],
+  "look": "Deep plum surface with a large off-white sans-serif specimen word between faint guide lines, above a small outlined monospace value chip and reset icon.",
+  "motion": "Dragging the chip scrubs letter-spacing live at 0.1 px per pixel (Shift faster, Alt finer); overshooting the -3 to 12 range nudges the chip, which eases back in 180 ms.",
+  "adapt": "Scrub math is in the chip's `onPointerMove` (multipliers `0.025`, `0.5`, `0.1`; 4 px dead zone) feeding `change`; the -3 to 12 bounds repeat in `clamp`, the drag and arrow keys. Replace `tracking` and the `letterSpacing` specimen with your own value."
+}

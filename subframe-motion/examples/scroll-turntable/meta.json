@@ -1,0 +1,55 @@
+{
+  "slug": "scroll-turntable",
+  "title": "Scroll turntable",
+  "commonName": "Scroll 360 product viewer",
+  "category": "Animation & motion",
+  "description": "A glazed studio vessel turns through a cached sequence of thirty-two views on a vermilion plinth.",
+  "useCase": "Scrub an object sequence by scrolling while retaining direct frame selection.",
+  "interaction": "Scroll through the object or select an individual view.",
+  "tags": [
+    "image sequence",
+    "scroll",
+    "frame scrub",
+    "canvas",
+    "product rotation"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Scrolling and the frame slider select the requested cached view directly; there is no automatic playback.",
+  "limitations": "The original vessel is drawn on demand and cached across 32 views at display density. It demonstrates indexed-frame playback, not a captured photographic sequence or a 3D model loader.",
+  "surface": "#e94c26",
+  "components": [
+    "image",
+    "scene"
+  ],
+  "triggers": [
+    "scroll",
+    "drag",
+    "press"
+  ],
+  "techniques": [
+    "canvas",
+    "rotate",
+    "3d"
+  ],
+  "feel": [
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "360 spin on scroll",
+    "image sequence scrubber",
+    "product rotation viewer",
+    "frame scrub animation"
+  ],
+  "look": "Vivid vermilion backdrop with a softly shaded cream stoneware jug and floor shadow, small dark captions, and a bottom bar with slider and arrows.",
+  "motion": "Scrolling inside the panel maps progress to one of 32 views so the jug turns stepwise with no easing; the slider and arrows seek frames and sync the scroll.",
+  "adapt": "The `onScroll` handler maps `scrollTop` across the 800% `.st-track` to `frame` (0–31), and `seek` syncs it back; a sticky `.st-pinned` canvas shows each view, drawn on demand and cached in `frames` (eight kept). Replace the procedural vessel with your own frame images."
+}

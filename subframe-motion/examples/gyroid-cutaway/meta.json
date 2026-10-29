@@ -1,0 +1,57 @@
+{
+  "slug": "gyroid-cutaway",
+  "title": "Gyroid cutaway",
+  "commonName": "Gyroid raymarching shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A saffron porous solid turns slowly, revealing continuous internal tunnels.",
+  "useCase": "Material innovation, generative manufacturing, and topology-led brand studies.",
+  "interaction": "Adjust wall thickness",
+  "tags": [
+    "gyroid",
+    "implicit surface",
+    "raymarching",
+    "porous",
+    "sculpture",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "A representative frame remains still. Live system preference changes immediately stop the loop; the range control continues to update the still image.",
+  "limitations": "Requires WebGL 1. A static CSS fallback appears when unavailable or after context loss. Approximate distance stepping, not an exact signed-distance field; inspect on target GPUs.",
+  "surface": "#777a80",
+  "components": [
+    "scene",
+    "background"
+  ],
+  "triggers": [
+    "ambient",
+    "drag"
+  ],
+  "techniques": [
+    "shader",
+    "3d",
+    "rotate"
+  ],
+  "feel": [
+    "technical",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "raymarched 3D shape",
+    "rotating lattice cube",
+    "porous 3D solid",
+    "minimal surface render"
+  ],
+  "look": "A softly lit saffron-orange porous cube of curving tunnels, rendered in 3D against a flat mid slate-grey background.",
+  "motion": "The raymarched gyroid cube turns continuously at 0.1 rad/s, roughly one revolution per minute; the wall-thickness slider thickens or opens its tunnels live.",
+  "adapt": "Shape and lighting live in `FRAGMENT`: `solid` sets spin (`u_time*.10`), gyroid scale (6.4), wall range (`.25+u_control*.35`) and cube size (.69); colour is `vec3(.91,.58,.055)`. Keep the `tick` loop, reduced-motion still and `sg-gyroid-cutaway-fallback`."
+}

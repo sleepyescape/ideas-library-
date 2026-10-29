@@ -1,0 +1,52 @@
+{
+  "slug": "tool-call-stack",
+  "title": "Tool call stack",
+  "commonName": "Agent tool call log",
+  "category": "Components & interactions",
+  "description": "Keep an agent’s work inspectable without exposing a wall of logs.",
+  "useCase": "Keep an agent’s work inspectable without exposing a wall of logs.",
+  "interaction": "Run the sequence and inspect a step",
+  "tags": [
+    "agent",
+    "tool call",
+    "disclosure",
+    "execution"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "Illustrative tool calls; no network request or booking is made.",
+  "surface": "#edf0f3",
+  "components": [
+    "disclosure",
+    "list"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "layout",
+    "rotate"
+  ],
+  "feel": [
+    "subtle",
+    "technical"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "AI agent steps",
+    "tool use timeline",
+    "collapsible run log",
+    "agent task checklist"
+  ],
+  "look": "Dark green-charcoal page with a lighter rounded card listing three steps with circular status badges, chevrons and a monospace code line under the open step.",
+  "motion": "Clicking a step expands its detail by easing grid rows from 0fr to 1fr over 220 ms as the chevron rotates 90°; the refresh button advances the running step.",
+  "adapt": "Expansion is the `.reveal` grid with `transition: grid-template-rows 220ms cubic-bezier(0.2, 0.8, 0.2, 1)` and inline `gridTemplateRows`; `step` sets each `.node` state. Replace `tasks` and drive `step` from real tool-call events instead of the advance button."
+}

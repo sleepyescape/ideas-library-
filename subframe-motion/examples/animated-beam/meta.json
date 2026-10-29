@@ -1,0 +1,59 @@
+{
+  "slug": "animated-beam",
+  "title": "Threads coming together",
+  "commonName": "Animated beam connections",
+  "category": "Animation & motion",
+  "description": "Moving highlights trace three measured paths into a shared destination.",
+  "useCase": "Explain aggregation, integrations or a simple flow of information.",
+  "interaction": "Play or pause the connections",
+  "tags": [
+    "beam",
+    "SVG",
+    "flow",
+    "connections",
+    "diagram",
+    "gradient",
+    "loop",
+    "resize"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Magic UI",
+    "url": "https://magicui.design/docs/components/animated-beam",
+    "code": "https://github.com/magicuidesign/magicui/blob/85f97fd27b053339af74ba9dd4ca428ee25989fb/apps/www/registry/magicui/animated-beam.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The SVG timeline freezes at a representative point; the full connection diagram remains visible.",
+  "limitations": "Uses native SVG animation and ResizeObserver. This illustrates connections; it does not track actual task completion.",
+  "surface": "#edf0e5",
+  "components": [
+    "chart"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "gradient",
+    "path",
+    "loop",
+    "stagger"
+  ],
+  "feel": [
+    "subtle",
+    "calm"
+  ],
+  "contexts": [
+    "landing"
+  ],
+  "aka": [
+    "integration diagram animation",
+    "connecting lines animation",
+    "data flow beams",
+    "hub and spoke diagram",
+    "SVG connector lines"
+  ],
+  "look": "Pale sage page with three small off-white rounded nodes on the left joined by thin grey curves to one larger dark olive rounded tile.",
+  "motion": "A short gold-to-green gradient highlight travels along each curved connector toward the target every 4 s with a strong ease-out spline, the three beams offset by 0.7 s, looping indefinitely.",
+  "adapt": "`updatePath` measures node centres into quadratic paths (re-run by `ResizeObserver`); each beam is a `linearGradient` whose `x1`/`x2` are driven by SVG `animate` (`dur` 4s, `begin` offset `i * 0.7`). Replace the node labels and the `#d6be80`/`#849f6a` stops."
+}

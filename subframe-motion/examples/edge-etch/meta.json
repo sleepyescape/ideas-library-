@@ -1,0 +1,56 @@
+{
+  "slug": "edge-etch",
+  "title": "Edge etch",
+  "commonName": "Edge detection shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A stacked ceramic silhouette resolves into crisp extracted edges on ultramarine.",
+  "useCase": "Turn local brightness changes into a tunable line-art treatment.",
+  "interaction": "Adjust sensitivity.",
+  "tags": [
+    "native webgl",
+    "sobel",
+    "edge detection",
+    "convolution",
+    "line art",
+    "postprocessing"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The elapsed-time clock stops. Parameter controls immediately update the static composition.",
+  "limitations": "Requires WebGL 1; a static CSS swatch appears if unavailable or after context loss. Nine procedural luminance samples per pixel; no imported photograph or semantic object tracing.",
+  "surface": "#123cc5",
+  "components": [
+    "background",
+    "image"
+  ],
+  "triggers": [
+    "ambient",
+    "state"
+  ],
+  "techniques": [
+    "shader",
+    "rotate"
+  ],
+  "feel": [
+    "calm",
+    "technical"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "sobel filter",
+    "line art shader",
+    "outline filter",
+    "contour extraction"
+  ],
+  "look": "Saturated ultramarine field with a centred stack of four pebble-like ellipses drawn as thin white outlines, flat with no fill or shading.",
+  "motion": "The stacked silhouette rocks up to 7° each way on a slow 29-second sine while a Sobel pass extracts its edges; the sensitivity slider moves the edge threshold.",
+  "adapt": "The Sobel kernel in the `FRAGMENT` shader's `main` samples `field`, a procedural stack of four ellipses swayed by `rot`; tune `threshold` and `bg`, or replace `field` with your own luminance source. Keep the context-loss and reduced-motion handling."
+}

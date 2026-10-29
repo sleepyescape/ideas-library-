@@ -1,0 +1,54 @@
+{
+  "slug": "julia-atlas",
+  "title": "Julia atlas",
+  "commonName": "Fractal shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "An intricate cyan fractal changes its connected islands as a complex parameter moves.",
+  "useCase": "Explore topology in a complex-plane image without a 3D engine.",
+  "interaction": "Adjust parameter.",
+  "tags": [
+    "native webgl",
+    "fractal",
+    "julia",
+    "complex plane",
+    "escape time",
+    "generative"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The elapsed-time clock stops. Parameter controls immediately update the static composition.",
+  "limitations": "Requires WebGL 1; a static CSS swatch appears if unavailable or after context loss. 88 escape iterations per pixel; a bounded visual study rather than an arbitrary-precision fractal explorer.",
+  "surface": "#061b29",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "morph"
+  ],
+  "feel": [
+    "technical",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "Julia set shader",
+    "animated fractal background",
+    "fractal generator",
+    "escape-time fractal"
+  ],
+  "look": "Pale icy-cyan lace-like fractal of spiral eyes and filigree islands, point-symmetric and centred on a near-black navy field.",
+  "motion": "The Julia set sways slowly, rotating about 3° and drifting its constant on 45–52 s sine cycles; the parameter slider shifts the constant, reshaping and reconnecting its islands.",
+  "adapt": "In `FRAGMENT`, `c` sets the Julia constant from `u_control` plus a slow `u_time` drift, `rot` adds the sway, and 88 iterations with `smoothCount` and `contours` shade it. Retune the `c` ranges and the cyan `col` mix; keep the fallback."
+}

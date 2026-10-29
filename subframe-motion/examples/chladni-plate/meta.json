@@ -1,0 +1,57 @@
+{
+  "slug": "chladni-plate",
+  "title": "Chladni plate",
+  "commonName": "Cymatics particle shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Granular dark nodes gather into the standing-wave patterns of a pale steel plate.",
+  "useCase": "Make resonance structure visible through discrete plate modes.",
+  "interaction": "Adjust mode.",
+  "tags": [
+    "native webgl",
+    "chladni",
+    "standing waves",
+    "resonance",
+    "nodal",
+    "granular"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The elapsed-time clock stops. Parameter controls immediately update the static composition.",
+  "limitations": "Requires WebGL 1; a static CSS swatch appears if unavailable or after context loss. Analytic nodal amplitude with deterministic grain, not a sand particle simulation or audio input.",
+  "surface": "#bacbd1",
+  "components": [
+    "background",
+    "scene"
+  ],
+  "triggers": [
+    "ambient",
+    "state"
+  ],
+  "techniques": [
+    "shader",
+    "particles",
+    "noise"
+  ],
+  "feel": [
+    "technical",
+    "calm"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "standing wave pattern",
+    "vibrating sand plate",
+    "resonance pattern",
+    "nodal line visual"
+  ],
+  "look": "Square pale steel plate on dusty blue-grey, speckled with dark grain that collects into crossing diagonal lines and rings, with a thin inset rim.",
+  "motion": "Dark grains thicken and thin along the standing-wave nodal lines in a slow pulse of about 9.5 s; the mode slider snaps the plate to discrete patterns; a button pauses.",
+  "adapt": "The pattern is the `FRAGMENT` shader: `u_control` picks integer `mode` and `b` for `wave`, `nodes` sets line sharpness and its `sin(u_time*.33)` pulse, and `salt` sets grain density. Recolour `bg` and `metal`; keep the canvas lifecycle and fallback."
+}

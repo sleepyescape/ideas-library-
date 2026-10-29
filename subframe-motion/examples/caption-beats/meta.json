@@ -1,0 +1,57 @@
+{
+  "slug": "caption-beats",
+  "title": "Say it with rhythm",
+  "commonName": "Karaoke caption highlight",
+  "category": "Animation & motion",
+  "description": "A warm highlight follows a two-line phrase along a continuous, deliberately paced timeline.",
+  "useCase": "Preview timed caption emphasis, lyric pacing or spoken-text motion before connecting media.",
+  "interaction": "Play or pause the phrase, or scrub to an exact time.",
+  "tags": [
+    "caption",
+    "typography",
+    "rhythm",
+    "highlight",
+    "timing",
+    "scrub",
+    "playback",
+    "text"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "No automatic playback; the play control advances one word per activation. Scrubbing still selects exact times without moving the highlight.",
+  "limitations": "A local 3.8-second timing study with authored word boundaries; no audio, transcription or alignment service.",
+  "surface": "#1c2735",
+  "components": [
+    "text",
+    "media"
+  ],
+  "triggers": [
+    "press",
+    "drag"
+  ],
+  "techniques": [
+    "slide",
+    "morph"
+  ],
+  "feel": [
+    "refined",
+    "bold"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "word-by-word captions",
+    "lyric highlight",
+    "timed subtitle emphasis",
+    "synced transcript highlight"
+  ],
+  "look": "Slate-navy page with a bold two-line sans-serif phrase in muted grey, one word on an amber rounded highlight, above a round play button and scrubber.",
+  "motion": "Playing runs a 3.8 s timeline; at each authored beat an amber block slides and resizes onto the next word (350 ms ease-out), whose text darkens; scrubbing snaps it instantly.",
+  "adapt": "Timing lives in `WORDS`, `BEATS` and `DURATION`; a `requestAnimationFrame` loop advances `time`. On each word change, measured bounds place `sf-cb-highlight` with translate; its fill scales horizontally between fixed rounded ends. The visible progress and thumb use transforms, while the semantic range input handles seeking. Replace the arrays and caption's `aria-label` with real word timings; preserve pointer and keyboard synchronization."
+}

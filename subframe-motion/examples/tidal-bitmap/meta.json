@@ -1,0 +1,56 @@
+{
+  "slug": "tidal-bitmap",
+  "title": "Tidal bitmap",
+  "commonName": "Interactive dither effect",
+  "category": "Animation & motion",
+  "description": "Two saturated inks form a pixel field that bends around the pointer and switches into a fractured signal.",
+  "useCase": "Interactive binary texture for an expressive visual surface.",
+  "interaction": "Move the pointer or arrow keys; change the field mode.",
+  "tags": [
+    "canvas",
+    "bitmap",
+    "dither",
+    "interference",
+    "pointer",
+    "two-ink",
+    "generative"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The field freezes; pointer and mode controls update a single static frame.",
+  "limitations": "Canvas 2D ordered dithering, not WebGL or a physical wave simulation.",
+  "surface": "#1925cd",
+  "components": [
+    "background",
+    "cursor"
+  ],
+  "triggers": [
+    "pointer",
+    "ambient"
+  ],
+  "techniques": [
+    "canvas",
+    "noise"
+  ],
+  "feel": [
+    "bold",
+    "technical"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "pixel dither background",
+    "Bayer dithering",
+    "bitmap pattern",
+    "two-tone pixel field"
+  ],
+  "look": "Cobalt-blue field of chunky red pixels forming dithered interference blobs in a diagonal lattice, above a blue footer with white wordmark and monospace controls.",
+  "motion": "Two sine waves drift through a 4×4 Bayer-dithered blue field whose red ink swells around the pointer; a mode toggle switches to blocky cells split at the pointer's height.",
+  "adapt": "`draw` computes each pixel's `field` (two sine terms minus `dist * 2.2` for pointer falloff) and compares it to the 4×4 Bayer `threshold`; the canvas renders at a third of CSS size, capped at 180×120. Swap the RGB values for your two inks."
+}

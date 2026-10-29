@@ -1,0 +1,85 @@
+{
+  "slug": "focus-rail",
+  "title": "Folded contact sheet",
+  "commonName": "Folding photo carousel",
+  "category": "Animation & motion",
+  "description": "An architectural contact sheet unfolds the selected photograph while its neighbors close into connected paper folds.",
+  "useCase": "Browse a short photographic collection while keeping every image spatially connected.",
+  "interaction": "Drag the photographs, choose one, or use the arrows. Left, Right, Home and End navigate directly.",
+  "tags": [
+    "carousel",
+    "accordion",
+    "photography",
+    "3D fold",
+    "continuous drag",
+    "image selection",
+    "paper",
+    "spring",
+    "roving focus"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "cathedral-columns.webp",
+      "description": "Chartres Cathedral, West Facade; Royal Portal, Central Bay",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "concrete-geometries.webp",
+      "description": "Modern brutalist architecture with geometric shapes",
+      "license": "Unsplash"
+    },
+    {
+      "fileName": "concrete-projections.webp",
+      "description": "Brutalist concrete office building",
+      "license": "Unsplash"
+    },
+    {
+      "fileName": "montmartre.webp",
+      "description": "Montmartre",
+      "license": "CC0-1.0"
+    },
+    {
+      "fileName": "paris-street.webp",
+      "description": "Rue de la Montagne-Sainte-Geneviève near the Intersection of Rue LaPlace (Rue de la Montagne-Sainte-Geneviève prés de carrefour de la rue LaPlace)",
+      "license": "CC0-1.0"
+    }
+  ],
+  "reducedMotion": "Selection changes are immediate; direct dragging remains available. Host pause freezes spring interpolation.",
+  "limitations": "Five local photographs with bounded selection; no wrapping, routing or separate lightbox.",
+  "surface": "#243cbd",
+  "components": [
+    "gallery"
+  ],
+  "triggers": [
+    "drag",
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "3d",
+    "spring",
+    "layout"
+  ],
+  "feel": [
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "accordion image slider",
+    "concertina gallery",
+    "folded paper photo strip",
+    "expanding panel gallery"
+  ],
+  "look": "Cobalt-blue field with a strip of architectural photographs, one open flat and the rest folded into zigzag paper pleats, serif caption and round arrow buttons.",
+  "motion": "Dragging, clicking or the arrow buttons drive a spring-smoothed focus position; photo widths follow it and each photo's two halves fold in 3D like a concertina, darkening as they close.",
+  "adapt": "The `paint` function divides `available` by distance weights to calculate each photo's projected width. Fixed-size `.fc-half` spans fold with `Math.acos(Math.min(1, width / flat))` and translate in 3D; their HTML width is not tweened. Geometry is measured on resize, while `tick` springs `position` toward `target` (`270`, `32`). Replace `photographs` and their captions."
+}

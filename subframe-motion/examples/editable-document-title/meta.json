@@ -1,0 +1,51 @@
+{
+  "slug": "editable-document-title",
+  "title": "Inline title edit",
+  "commonName": "Inline editable title",
+  "category": "Components & interactions",
+  "description": "Keep a document’s identity in place while editing, committing, or cancelling.",
+  "useCase": "Keep a document’s identity in place while editing, committing, or cancelling.",
+  "interaction": "Rename the collection",
+  "tags": [
+    "inline editing",
+    "document",
+    "commit",
+    "cancel"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "Local state only; no document is renamed outside the demo.",
+  "surface": "#edf0f3",
+  "components": [
+    "input",
+    "text"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "fade",
+    "slide"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "click to edit title",
+    "rename in place",
+    "editable heading",
+    "inline rename"
+  ],
+  "look": "Light grey page with a white rounded card: a tilted pale-green document icon, small grey label, dark sans-serif title with pencil glyph, sage caption.",
+  "motion": "Clicking the title swaps in a pre-selected text field while the action buttons fade down 3 px into place over 140 ms ease-out; saving swaps back and shows a confirmation.",
+  "adapt": "`editing` swaps the `title` button for the form; the effect focuses and selects the input, then returns focus to `titleButton`. The only animation is `sf-editable-document-title-editIn` on `edit-actions`; replace the collection label, count and `title`, and persist in `commit`."
+}

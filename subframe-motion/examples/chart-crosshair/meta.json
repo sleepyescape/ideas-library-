@@ -1,0 +1,55 @@
+{
+  "slug": "chart-crosshair",
+  "title": "Chart crosshair",
+  "commonName": "Chart crosshair tooltip",
+  "category": "Components & interactions",
+  "description": "Read an individual point accurately while retaining the shape of the series.",
+  "useCase": "Read an individual point accurately while retaining the shape of the series.",
+  "interaction": "Inspect a data point",
+  "tags": [
+    "chart",
+    "crosshair",
+    "tooltip",
+    "data",
+    "analytics"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live system preference disables decorative motion; all controls remain usable. Keyboard actions settle immediately.",
+  "limitations": "Twelve fixed weeks of sample data; keyboard arrows, Home, and End inspect the same points as the pointer.",
+  "surface": "#edf0f3",
+  "components": [
+    "chart",
+    "tooltip"
+  ],
+  "triggers": [
+    "pointer",
+    "keyboard",
+    "drag"
+  ],
+  "techniques": [
+    "path"
+  ],
+  "feel": [
+    "technical",
+    "subtle"
+  ],
+  "contexts": [
+    "dashboard",
+    "app"
+  ],
+  "aka": [
+    "line chart hover",
+    "chart scrubber",
+    "data point inspector",
+    "interactive line chart",
+    "hover value readout"
+  ],
+  "look": "White rounded card on pale sage: a large dark-green figure above a thin green line chart with faint area fill, dashed gridlines and crosshair.",
+  "motion": "Moving the pointer, dragging on touch, or pressing arrow, Home and End snaps a dashed crosshair and ringed marker to the nearest weekly point, updating the value instantly.",
+  "adapt": "`inspect` converts pointer x into the nearest `index` (points sit 26 units apart in a 310-wide `viewBox`), which positions the crosshair and marker; keys call `setIndex`. Replace `values`, the 134 multiplier and the axis dates with your series."
+}

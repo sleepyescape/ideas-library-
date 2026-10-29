@@ -1,0 +1,57 @@
+{
+  "slug": "moire-weave",
+  "title": "Moiré weave",
+  "commonName": "Moiré pattern shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Two drifting line screens fold into an acid and violet optical weave.",
+  "useCase": "Club posters, experimental sound festivals, motion identities, or an assertive editorial section.",
+  "interaction": "Play or pause the material study.",
+  "tags": [
+    "moire",
+    "interference",
+    "woven",
+    "optical",
+    "acid",
+    "violet",
+    "music",
+    "poster",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Displays one stable, representative frame. Responds immediately when the system preference changes.",
+  "limitations": "Requires WebGL 1; a static CSS composition remains visible when WebGL is unavailable or lost. Dense patterns are intentionally optical. Keep motion slow and offer pause; inspect for aliasing at the final size.",
+  "surface": "#5220c5",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "distortion"
+  ],
+  "feel": [
+    "bold"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "moiré interference background",
+    "op art animation",
+    "optical illusion pattern",
+    "line interference shader",
+    "rave poster background"
+  ],
+  "look": "Acid-lime and violet interference weave of fine diamond threads filling the frame, with a heavy lime sans-serif headline and monospace labels on violet blocks.",
+  "motion": "Two dense sine line screens slowly drift and bend against each other in a continuous loop, so the moiré bands shift, fold and change tilt; a button pauses it.",
+  "adapt": "The pattern is `FRAGMENT`: `waveA` and `waveB` (frequencies `143.0` and `139.0`) interfere, `fold` bends both and `tilt` varies the second screen's angle over `u_time`. Swap the violet and lime `vec3` colours and replace the poster copy in `.sg-moire-weave-title`; check aliasing at final size."
+}

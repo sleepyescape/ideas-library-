@@ -1,0 +1,56 @@
+{
+  "slug": "collage-board",
+  "title": "Collage board",
+  "commonName": "Draggable collage board",
+  "category": "Components & interactions",
+  "description": "Three original graphic studies can be moved into a persistent, overlapping composition.",
+  "useCase": "Freeform visual arrangement in a compact board.",
+  "interaction": "Drag a study, or focus it and use arrow keys.",
+  "tags": [
+    "collage",
+    "drag",
+    "composition",
+    "canvas",
+    "arrange",
+    "z-index",
+    "editorial"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Positions change directly; raised shadow feedback is removed.",
+  "limitations": "Three local SVG studies; no image import or saved composition.",
+  "surface": "#e1e2df",
+  "components": [
+    "gallery",
+    "editor"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "slide",
+    "layout"
+  ],
+  "feel": [
+    "playful"
+  ],
+  "contexts": [
+    "editorial",
+    "app"
+  ],
+  "aka": [
+    "moodboard",
+    "drag and drop canvas",
+    "freeform arrangement board",
+    "draggable cards",
+    "pinboard"
+  ],
+  "look": "Light grey board with three tilted, overlapping poster cards: black blob on off-white, black rings on yellow, and white italic serif letters on black.",
+  "motion": "Grabbing a card brings it to the front and deepens its shadow over 140 ms while it follows the pointer within the board; arrow keys nudge it 2.5%.",
+  "adapt": "Positions are normalised `pieces` updated by `move` (clamped to the board, bottom limit 0.88); `selected` sets `zIndex` and `data-dragging` triggers the deeper `box-shadow`. Replace the three inline SVG studies and `names`, and persist `pieces` if needed."
+}

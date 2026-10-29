@@ -1,0 +1,54 @@
+{
+  "slug": "score-follow",
+  "title": "Score follow",
+  "commonName": "Sheet music playhead",
+  "category": "Animation & motion",
+  "description": "A fine red playhead follows an original four-bar melody across a sharply engraved white score.",
+  "useCase": "Music practice, score previews, and notation synchronized with a controllable beat timeline.",
+  "interaction": "Play, change the tempo, or drag the score to seek",
+  "tags": [
+    "music",
+    "notation",
+    "score",
+    "playhead",
+    "timeline",
+    "tempo",
+    "svg"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The playhead advances between note positions instead of moving continuously. Playback starts only on request.",
+  "limitations": "Silent visual notation with an original fixed melody; not a MusicXML parser, audio scheduler, or notation engraving engine.",
+  "surface": "#f4f4f1",
+  "components": [
+    "media"
+  ],
+  "triggers": [
+    "press",
+    "drag"
+  ],
+  "techniques": [
+    "slide"
+  ],
+  "feel": [
+    "refined",
+    "technical"
+  ],
+  "contexts": [
+    "app",
+    "editorial"
+  ],
+  "aka": [
+    "music notation player",
+    "score cursor",
+    "sheet music follow along",
+    "note highlight playback"
+  ],
+  "look": "Light grey page with a white sheet of crisp black engraved notation on a five-line staff, red playhead accents and a round red play button.",
+  "motion": "Pressing play sweeps a thin red playhead linearly across four bars at the set tempo (88 BPM default), turning the current note red; dragging the score scrubs.",
+  "adapt": "Playback is the `requestAnimationFrame` `tick` advancing `cursor` by `tempo` beats per minute, mapped to x by `noteX`; the current note comes from `PHRASE` timing. Replace `PHRASE` (start beat, staff step, duration) and the 16-beat length with your own score."
+}

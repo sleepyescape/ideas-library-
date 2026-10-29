@@ -1,0 +1,56 @@
+{
+  "slug": "meteors",
+  "title": "Passing light",
+  "commonName": "Meteor shower background",
+  "category": "Animation & motion",
+  "description": "Thin streaks of light cross a quiet sky at different speeds.",
+  "useCase": "Create a small atmospheric illustration or a contemplative cover.",
+  "interaction": "Play or pause the passing lights",
+  "tags": [
+    "meteors",
+    "particles",
+    "streak",
+    "sky",
+    "background",
+    "loop",
+    "ambient"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Magic UI",
+    "url": "https://magicui.design/docs/components/meteors",
+    "code": "https://github.com/magicuidesign/magicui/blob/85f97fd27b053339af74ba9dd4ca428ee25989fb/apps/www/registry/magicui/meteors.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The streaks become small stationary stars.",
+  "limitations": "Decorative only; never conveys real progress or status. Nine deterministic streaks stay inside the example container.",
+  "surface": "#202d3c",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "particles",
+    "loop",
+    "fade"
+  ],
+  "feel": [
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "shooting stars background",
+    "falling stars animation",
+    "night sky hero",
+    "comet streaks"
+  ],
+  "look": "Flat dark slate-blue field crossed by a few thin pale-blue diagonal streaks, each a dot head trailing a fading tail.",
+  "motion": "Nine streaks fall from the top edge toward the lower right, each crossing 500 px linearly in 4–7 s on staggered infinite loops, fading over the final 30%.",
+  "adapt": "Motion is the `mg-meteor-fall` keyframes (`rotate(-145deg)` sets the angle, `translateX(-500px)` the travel); the `meteors` array sets count, `left`, `duration` and `delay` per streak. Restyle `.mg-meteors-meteor` and its `::after` tail; keep the pause button and reduced-motion rule."
+}

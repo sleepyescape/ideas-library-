@@ -1,0 +1,55 @@
+{
+  "slug": "transcript-follow",
+  "title": "Cue sheet",
+  "commonName": "Synced transcript player",
+  "category": "Components & interactions",
+  "description": "Timecoded phrases and a compact waveform share a playhead that follows every selected word.",
+  "useCase": "Review a voiceover through its words while retaining surrounding sentence context and precise time position.",
+  "interaction": "Play the silent timing preview, select a word or sentence timestamp, or scrub the waveform",
+  "tags": [
+    "transcript",
+    "audio",
+    "word timing",
+    "playback",
+    "cue sheet",
+    "seeking",
+    "waveform"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Removes decorative color transitions; word/time correspondence and user-requested playback remain available without scrolling or positional text animation.",
+  "limitations": "Silent, authored timing with a decorative waveform. Integrations must provide actual alignment data and audio amplitude information; the waveform does not represent a real recording. Host pause and document hiding suspend playback.",
+  "surface": "#d4d9d0",
+  "components": [
+    "media",
+    "text"
+  ],
+  "triggers": [
+    "press",
+    "drag"
+  ],
+  "techniques": [
+    "split-text"
+  ],
+  "feel": [
+    "subtle",
+    "technical"
+  ],
+  "contexts": [
+    "app",
+    "editorial"
+  ],
+  "aka": [
+    "karaoke word highlight",
+    "interactive transcript",
+    "podcast transcript player",
+    "click word to seek"
+  ],
+  "look": "Sage-grey page with an off-white card of large serif transcript lines, small monospace timestamps, one lime-highlighted word and a dark green waveform transport bar.",
+  "motion": "Playing advances a playhead across a bar waveform, filling bars lime, while a lime highlight steps word by word through the transcript and passed words darken over 150 ms.",
+  "adapt": "Timing is precomputed in `STARTS` from `WORDS` (split from `LINES`), with `DURATION` and `ROW_STARTS`; a `requestAnimationFrame` `tick` advances `time` and `index` picks the current word. Replace them with real alignment data, drive `time` from your audio element and use real amplitudes for the bars."
+}

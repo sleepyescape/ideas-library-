@@ -1,0 +1,58 @@
+{
+  "slug": "issue-turn",
+  "title": "Odd one out",
+  "commonName": "Magazine cover page turn",
+  "category": "Animation & motion",
+  "description": "A cyan culture journal opens around its spine to reveal the first page.",
+  "useCase": "Offer a tactile preview of a publication, lookbook or small editorial collection before taking readers into the full content.",
+  "interaction": "Open the issue",
+  "tags": [
+    "book",
+    "magazine",
+    "editorial",
+    "cover",
+    "page turn",
+    "fold",
+    "CSS 3D",
+    "WAAPI",
+    "preview"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The cover changes to its open or closed pose immediately. Keyboard activation also skips the turn.",
+  "limitations": "A single rigid cover turn, not a deforming paper simulation or full reader. Native 3D transforms are required for the dimensional presentation.",
+  "surface": "#096df7",
+  "components": [
+    "card",
+    "disclosure"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "3d",
+    "rotate"
+  ],
+  "feel": [
+    "bold",
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "book cover flip",
+    "3D book opening",
+    "page flip animation",
+    "magazine preview",
+    "lookbook cover reveal"
+  ],
+  "look": "Bright cobalt-blue field with a tilted magazine, shown open: dark teal inside cover of rotated aqua type beside a cream page of heavy black type.",
+  "motion": "Pressing the toggle swings the cover open around its left spine from −12° to −152° over 640 ms with a strong ease-out; closing reverses from its current angle.",
+  "adapt": "`turn` animates `transform` with `element.animate` from the computed pose to `rotateY(-152deg)` or `rotateY(-12deg)` (640 ms, `cubic-bezier(.22,.8,.2,1)`); `sf-issue-front` and `sf-issue-back` are the backface-hidden faces. Replace the cover and page copy."
+}

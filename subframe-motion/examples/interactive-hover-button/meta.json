@@ -1,0 +1,58 @@
+{
+  "slug": "interactive-hover-button",
+  "title": "An invitation on hover",
+  "commonName": "Fill hover button",
+  "category": "Components & interactions",
+  "description": "A tiny dot fills the button as a second label and arrow arrive.",
+  "useCase": "Give a prominent occasional action an expressive pointer response.",
+  "interaction": "Hover, then click the invitation",
+  "tags": [
+    "button",
+    "hover",
+    "fill",
+    "expanding dot",
+    "arrow",
+    "label transition",
+    "click"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Magic UI",
+    "url": "https://magicui.design/docs/components/interactive-hover-button",
+    "code": "https://github.com/magicuidesign/magicui/blob/85f97fd27b053339af74ba9dd4ca428ee25989fb/apps/www/registry/magicui/interactive-hover-button.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The surface changes color immediately; labels do not slide.",
+  "limitations": "Hover enhancement applies only to fine pointers. Keyboard and touch preserve a usable standard button. The action toggles local state.",
+  "surface": "#f1e6d6",
+  "components": [
+    "button"
+  ],
+  "triggers": [
+    "hover",
+    "press"
+  ],
+  "techniques": [
+    "scale",
+    "slide",
+    "fade"
+  ],
+  "feel": [
+    "refined",
+    "playful"
+  ],
+  "contexts": [
+    "landing"
+  ],
+  "aka": [
+    "CTA hover effect",
+    "expanding dot button",
+    "arrow reveal button",
+    "circle fill hover",
+    "get started button hover"
+  ],
+  "look": "Warm sand-beige page with a single pale cream pill button outlined in tan, with a small brown dot beside a brown sans label.",
+  "motion": "Hovering scales the dot 80× to flood the pill (300 ms expo ease-out); the label slides right and fades while a cream label and arrow arrive from the right.",
+  "adapt": "All motion is CSS on hover: `.mg-hoverbutton-dot` scales to `scale(80)`, `.mg-hoverbutton-firsttext` translates and fades, `.mg-hoverbutton-second` slides in; tune the `cubic-bezier(.19,1,.22,1)` timings. Replace the label text and colours; keep the reduced-motion and focus-visible fallbacks."
+}

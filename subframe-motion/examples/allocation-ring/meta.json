@@ -1,0 +1,59 @@
+{
+  "slug": "allocation-ring",
+  "title": "Allocation ring",
+  "commonName": "Animated donut chart",
+  "category": "Components & interactions",
+  "description": "A sculpted portfolio ring redistributes across years while a selected holding keeps its identity.",
+  "useCase": "Inspect how an investment portfolio is divided, then compare the same holding across datasets.",
+  "interaction": "Choose a year; hover, focus or select a holding.",
+  "tags": [
+    "portfolio",
+    "investment",
+    "donut",
+    "allocation",
+    "data-transition",
+    "svg",
+    "legend",
+    "selection",
+    "finance"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Finite transitions become immediate under reduced motion and keyboard input. Host pause disables controls; any owned drag is cancelled.",
+  "limitations": "Fictional portfolio data; no market feed, performance projection or financial calculation beyond sums and shares. Four SVG segments, no chart runtime.",
+  "surface": "#0c100c",
+  "components": [
+    "chart"
+  ],
+  "triggers": [
+    "state",
+    "hover",
+    "press"
+  ],
+  "techniques": [
+    "morph",
+    "path",
+    "fade"
+  ],
+  "feel": [
+    "refined",
+    "technical"
+  ],
+  "contexts": [
+    "dashboard",
+    "app"
+  ],
+  "aka": [
+    "pie chart transition",
+    "portfolio breakdown ring",
+    "interactive ring chart",
+    "asset allocation chart"
+  ],
+  "look": "Near-black dashboard with a gradient donut of green, sand, steel-blue and grey segments inside a circle of ticks, a large balance figure and legend.",
+  "motion": "Changing year slides each arc's dash length and offset to its new share (460 ms ease-out); hovering or selecting a holding thickens its arc and dims the rest.",
+  "adapt": "Segments are SVG circles with `pathLength` 100 whose `strokeDasharray` and `strokeDashoffset` come from `segments`; the `.arc circle` rule transitions them over 460ms. Replace `HOLDINGS` and `PERIODS` with your data and keep `data-still` for keyboard and pause."
+}

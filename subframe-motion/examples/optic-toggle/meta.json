@@ -1,0 +1,55 @@
+{
+  "slug": "optic-toggle",
+  "title": "Optic toggle",
+  "commonName": "Glass toggle switch",
+  "category": "Components & interactions",
+  "description": "A glass light switch bends the patterned surface beneath its rounded edge.",
+  "useCase": "Give a familiar on/off control convincing optical depth while preserving native input behavior.",
+  "interaction": "Toggle the studio light.",
+  "tags": [
+    "glass",
+    "refraction",
+    "SVG displacement",
+    "backdrop filter",
+    "switch",
+    "optics"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The switch changes position and illumination immediately.",
+  "limitations": "Rounded-edge SVG backdrop displacement is enhanced in Chromium; other browsers use translucent blur. No optical ray tracing or capture of the page into an image.",
+  "surface": "#f76d25",
+  "components": [
+    "toggle"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "distortion",
+    "slide",
+    "blur"
+  ],
+  "feel": [
+    "refined",
+    "bold"
+  ],
+  "contexts": [
+    "app",
+    "landing"
+  ],
+  "aka": [
+    "liquid glass switch",
+    "refractive toggle",
+    "glassmorphism switch",
+    "light switch control"
+  ],
+  "look": "A clear glass pill switch with a lensed thumb and lime indicator dot over orange and black diagonal hazard stripes, darkened at the edges.",
+  "motion": "Clicking slides the glass thumb 72 px in 260 ms with an ease-out while its rim refracts the stripes beneath; the striped field brightens or dims over 240 ms.",
+  "adapt": "Thumb slide and field dimming are CSS on `.ot-thumb` and `.ot-field` keyed by `data-on`; refraction is an `feDisplacementMap` (tune `scale`) over the edge map `measure` draws, Chromium-only via `enhanced`. Replace the striped `.ot-field` backdrop and labels."
+}

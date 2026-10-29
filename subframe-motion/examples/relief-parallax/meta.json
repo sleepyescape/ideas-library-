@@ -1,0 +1,56 @@
+{
+  "slug": "relief-parallax",
+  "title": "Relief parallax",
+  "commonName": "Parallax relief shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Ivory crosses rise above deep blue recesses and occlude each other as the view shifts.",
+  "useCase": "Add perceived carved depth through view-dependent height traversal.",
+  "interaction": "Adjust view angle.",
+  "tags": [
+    "native webgl",
+    "parallax",
+    "occlusion",
+    "heightfield",
+    "relief",
+    "carved"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The elapsed-time clock stops. Parameter controls immediately update the static composition.",
+  "limitations": "Requires WebGL 1; a static CSS swatch appears if unavailable or after context loss. 42-step screen-space height traversal; no mesh geometry or arbitrary DOM refraction.",
+  "surface": "#e5e8eb",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "parallax",
+    "3d"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "parallax occlusion mapping",
+    "3D relief pattern",
+    "embossed pattern background",
+    "heightmap depth shader",
+    "carved tile background"
+  ],
+  "look": "Grid of pale ivory plus-shaped crosses raised over a deep navy ground, with soft grey shaded sides falling toward the lower right.",
+  "motion": "The viewpoint drifts vertically on a slow 42 s sine and a view-angle slider swings it sideways, so the raised crosses shift over and occlude the recesses.",
+  "adapt": "The relief is the `FRAGMENT` shader: `heightAt` builds the cross heightfield, a 42-step loop marches it along `view`, and `u_control` sets horizontal tilt. Tune the `.23` depth scale; swap `heightAt` and the `col` colours for your own pattern."
+}

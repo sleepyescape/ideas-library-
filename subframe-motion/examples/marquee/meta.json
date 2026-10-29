@@ -1,0 +1,57 @@
+{
+  "slug": "marquee",
+  "title": "Passing words",
+  "commonName": "Infinite text marquee",
+  "category": "Animation & motion",
+  "description": "Two strips of expressive type move in opposite directions.",
+  "useCase": "Introduce a short set of themes on an editorial or campaign page.",
+  "interaction": "Pause the movement or hover the strips",
+  "tags": [
+    "marquee",
+    "text",
+    "typography",
+    "continuous",
+    "opposing directions",
+    "loop",
+    "hover pause"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Magic UI",
+    "url": "https://magicui.design/docs/components/marquee",
+    "code": "https://github.com/magicuidesign/magicui/blob/85f97fd27b053339af74ba9dd4ca428ee25989fb/apps/www/registry/magicui/marquee.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Both rows become static wrapping text; decorative duplicates are removed.",
+  "limitations": "Use for supplemental copy. Continuous movement needs its pause control; repeated groups are hidden from assistive technology.",
+  "surface": "#dce4cf",
+  "components": [
+    "text"
+  ],
+  "triggers": [
+    "ambient",
+    "hover"
+  ],
+  "techniques": [
+    "loop",
+    "slide"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "scrolling text ticker",
+    "infinite scrolling banner",
+    "ticker tape",
+    "looping headline strip"
+  ],
+  "look": "Pale sage-green field with two full-width rows of dark olive uppercase type, tight sans-serif above italic serif, words divided by pale asterisks.",
+  "motion": "Two rows of repeated word groups scroll horizontally at constant linear speed in opposite directions, looping every 30 s; hovering with a fine pointer or the pause button stops them.",
+  "adapt": "Travel is the `mg-marquee-travel` keyframe (`translateX(calc(-100% - 24px))`, 30 s linear) on three `mg-marquee-group` copies per row, reversed by `mg-marquee-reverse`; keep the 24px gap in sync with the keyframe. Replace the `rows` word arrays."
+}

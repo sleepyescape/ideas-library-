@@ -1,0 +1,54 @@
+{
+  "slug": "pocket-player",
+  "title": "Pocket player",
+  "commonName": "Audio player",
+  "category": "Components & interactions",
+  "description": "A cobalt audio sleeve pairs an original soundmark with synchronized seek, transport and playback speed.",
+  "useCase": "Preview an audio artifact in a compact embedded card.",
+  "interaction": "Play the soundmark, seek, restart or change speed.",
+  "tags": [
+    "audio",
+    "player",
+    "media",
+    "seek",
+    "playback-rate",
+    "transport"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Media time and progress remain functional with no decorative animation.",
+  "limitations": "An original 12-second PCM soundmark generated in the component. Browser playback requires user activation.",
+  "surface": "#172da3",
+  "components": [
+    "media",
+    "slider"
+  ],
+  "triggers": [
+    "press",
+    "drag"
+  ],
+  "techniques": [
+    "slide"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app",
+    "editorial"
+  ],
+  "aka": [
+    "music player card",
+    "podcast player",
+    "audio embed",
+    "media controls",
+    "playback speed control"
+  ],
+  "look": "Cobalt-blue field with a square orange cover of curved blue lines, cream sans-serif title, thin seek bar and a round cream play button.",
+  "motion": "Nothing animates decoratively: during playback the audio's time updates advance the native range thumb and clock; play swaps to a pause glyph and speed cycles 1×, 1.5×, 0.75×.",
+  "adapt": "Playback is the native `audio` element driven by `toggle`, the range input and its event handlers; `makeAudio` synthesizes the 12-second WAV. Replace `makeAudio` with your file URL, update the range `max` and duration label, and swap the cover SVG and title."
+}

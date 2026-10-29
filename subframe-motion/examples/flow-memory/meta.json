@@ -1,0 +1,68 @@
+{
+  "slug": "flow-memory",
+  "title": "Flow memory",
+  "commonName": "Fluid simulation shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A metallic surface remembers the currents drawn across it as color and refraction.",
+  "useCase": "Explore a persistent fluid gesture whose velocity continues to transport the material.",
+  "interaction": "Move across the surface to stir it.",
+  "tags": [
+    "native webgl",
+    "fluid",
+    "advection",
+    "pressure projection",
+    "persistent state",
+    "refraction",
+    "image",
+    "brush",
+    "stroke",
+    "painting"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "silver-leather.webp",
+      "description": "Textured silver metallic leather",
+      "license": "Unsplash"
+    }
+  ],
+  "reducedMotion": "The simulation clock stops; deliberate pointer or keyboard input produces a finite still update.",
+  "limitations": "Requires WebGL 1; static fallback when unavailable. A bounded 64×64 CPU velocity/dye solver with 12 pressure iterations rendered through a WebGL texture, not GPU compute.",
+  "surface": "#18251f",
+  "components": [
+    "background",
+    "image"
+  ],
+  "triggers": [
+    "pointer"
+  ],
+  "techniques": [
+    "shader",
+    "distortion",
+    "physics"
+  ],
+  "feel": [
+    "refined",
+    "calm"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "fluid cursor effect",
+    "interactive fluid background",
+    "liquid distortion hover",
+    "WebGL fluid",
+    "smoke trail shader"
+  ],
+  "look": "Full-bleed silver-grey embossed leather texture with faint lime-green tinted swirls, above a dark green footer bar with a lime slider and outlined button.",
+  "motion": "Moving the pointer injects velocity and lime dye into a 64×64 fluid grid that keeps advecting, warping the leather texture as currents drift and dye fades at the set dissipation.",
+  "adapt": "The CPU solver `step` runs on a `GRID` × `GRID` field and `inject` adds pointer velocity and dye; the fragment shader displaces `u_image` by `u_flow` and mixes a lime tint. Swap `silver-leather.webp`, tune `decay` and the splat force, and keep `fm-fallback`."
+}

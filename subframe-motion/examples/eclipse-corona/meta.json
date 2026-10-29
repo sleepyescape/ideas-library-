@@ -1,0 +1,56 @@
+{
+  "slug": "eclipse-corona",
+  "title": "Eclipse corona",
+  "commonName": "Eclipse glow shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A dark lunar disk reveals a fine white corona and a warm crescent.",
+  "useCase": "A restrained celestial focal point for observatories, festivals, and launch moments.",
+  "interaction": "Adjust alignment",
+  "tags": [
+    "eclipse",
+    "corona",
+    "occlusion",
+    "celestial",
+    "astronomy",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "A representative frame remains still. Live system preference changes immediately stop the loop; the range control continues to update the still image.",
+  "limitations": "Requires WebGL 1. A static CSS fallback appears when unavailable or after context loss. An astronomical illustration, not an ephemeris or physically accurate solar-atmosphere model.",
+  "surface": "#111317",
+  "components": [
+    "background",
+    "scene"
+  ],
+  "triggers": [
+    "ambient",
+    "state"
+  ],
+  "techniques": [
+    "shader",
+    "glow"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "solar eclipse animation",
+    "corona glow background",
+    "dark hero light ring",
+    "eclipse hero visual"
+  ],
+  "look": "Near-black field with a centred black lunar disc ringed by soft white radial corona streaks and a thin warm-gold crescent along its lower edge.",
+  "motion": "Corona rays drift very slowly around the rim and the moon bobs slightly on a roughly 70 s sine; the alignment slider slides the moon sideways, moving the crescent.",
+  "adapt": "The `FRAGMENT` shader holds everything: `rays` sets corona streak count and drift, `corona` its falloff, and `shift` the moon offset driven by `u_control`. Recolour the crescent via `vec3(1.0,.67,.32)`; keep the context-loss and reduced-motion handling."
+}

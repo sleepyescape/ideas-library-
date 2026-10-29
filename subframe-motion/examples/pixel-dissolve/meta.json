@@ -1,0 +1,58 @@
+{
+  "slug": "pixel-dissolve",
+  "title": "Pixel dissolve",
+  "commonName": "Pixelated logo reveal",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "A sculptural monogram breaks into a precise, staggered field of square pixels.",
+  "useCase": "Reveal marks or section artwork with a controlled digital disintegration.",
+  "interaction": "Adjust dissolve",
+  "tags": [
+    "pixel",
+    "dissolve",
+    "threshold",
+    "stochastic",
+    "reveal",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "A representative frame remains still. Live system preference changes immediately stop the loop; the range control continues to update the still image.",
+  "limitations": "Requires WebGL 1. A static CSS fallback appears when unavailable or after context loss. No image is downloaded. The dissolve is a reversible ambient study rather than an entrance completion callback.",
+  "surface": "#dadfd9",
+  "components": [
+    "image",
+    "background"
+  ],
+  "triggers": [
+    "ambient",
+    "state"
+  ],
+  "techniques": [
+    "shader",
+    "noise",
+    "mask"
+  ],
+  "feel": [
+    "technical",
+    "bold"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "pixel disintegration",
+    "dissolve transition",
+    "pixelated fade",
+    "random pixel reveal",
+    "digital decay logo"
+  ],
+  "look": "Pale sage-grey field with a large X monogram of small dark-green square pixels, partly dissolved, with vermilion pixels marking the dissolving edge.",
+  "motion": "Mark pixels vanish bottom-first in a random stagger and return as a threshold cycles on a ~20 s sine; red pixels mark the front and the slider offsets it.",
+  "adapt": "The dissolve is the `FRAGMENT` shader: `70.0` sets the pixel grid, `mark` is the monogram mask, `cycle` the timing, and `rank` the random-plus-vertical ordering that `threshold` cuts. Replace `mark` with your logo's mask; keep the WebGL lifecycle and reduced-motion branch."
+}

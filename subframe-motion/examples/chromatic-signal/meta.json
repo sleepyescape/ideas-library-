@@ -1,0 +1,53 @@
+{
+  "slug": "chromatic-signal",
+  "title": "Chromatic signal",
+  "commonName": "Glitch text effect",
+  "category": "Animation & motion",
+  "description": "Cobalt and vermilion type briefly split into clipped, displaced channels before returning to a clean headline.",
+  "useCase": "A finite signal interruption for display typography.",
+  "interaction": "Press Disrupt signal.",
+  "tags": [
+    "text",
+    "glitch",
+    "chromatic",
+    "clip-path",
+    "overprint",
+    "finite",
+    "typography"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The control briefly changes color; the headline stays intact.",
+  "limitations": "An authored 480ms text effect; not a live audio signal.",
+  "surface": "#ffffff",
+  "components": [
+    "text"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "mask",
+    "distortion"
+  ],
+  "feel": [
+    "bold"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "RGB split text",
+    "chromatic aberration text",
+    "glitch headline",
+    "signal interference effect"
+  ],
+  "look": "Pure white page with heavy, tightly tracked sans-serif display type, a cobalt line over a much larger vermilion line, and a small underlined monospace button.",
+  "motion": "Pressing the button runs a 480 ms stepped glitch: cobalt and vermilion copies of each line flash in clipped horizontal slices, jumping sideways up to 11 px, then vanish.",
+  "adapt": "The glitch is `:before`/`:after` copies built from `data-text` that run `sf-cs-break-a` and `sf-cs-break-b` (480 ms, `steps(1,end)`, `clip-path` slices plus `translateX`) while `data-pulse` is true; `disrupt` re-keys and times it. Replace the words and their `data-text` copies together."
+}

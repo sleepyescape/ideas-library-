@@ -1,0 +1,60 @@
+{
+  "slug": "departure-board",
+  "title": "The night line",
+  "commonName": "Split-flap departure board",
+  "category": "Animation & motion",
+  "description": "A mechanical destination board turns a practical selection into a small moment of departure.",
+  "useCase": "Give travel, event schedules or destination choices a tactile identity while keeping the selected information readable.",
+  "interaction": "Choose a destination",
+  "tags": [
+    "departure",
+    "travel",
+    "split flap",
+    "flip",
+    "mechanical",
+    "destination",
+    "schedule",
+    "CSS 3D",
+    "state change"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The destination updates immediately without rotation. Keyboard selections are also immediate.",
+  "limitations": "A stylized single hinged tile turn, not an alphabet-by-alphabet physical simulation. Departure times and distances are fictional demonstration content.",
+  "surface": "#091622",
+  "components": [
+    "text",
+    "picker"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "rotate",
+    "3d",
+    "stagger",
+    "split-text"
+  ],
+  "feel": [
+    "refined",
+    "bold"
+  ],
+  "contexts": [
+    "landing",
+    "app"
+  ],
+  "aka": [
+    "flip board text",
+    "split flap display",
+    "airport board animation",
+    "flipping letter tiles"
+  ],
+  "look": "Dark navy board with six slate letter tiles split by a black seam, cream heavy capitals, orange accent square and active button, and monospace labels.",
+  "motion": "Choosing a destination turns each letter tile over on its horizontal axis from the old letter to the new, 440 ms with ease-in-out, staggered 45 ms left to right.",
+  "adapt": "Each `sf-departures-leaf` carries the previous and next letter on `sf-departures-front`/`sf-departures-back` and runs `sf-departures-turn` (440 ms) with a per-cell `animationDelay`; remounting on `selection.sequence` replays it. Replace `services`; the grid assumes six-letter names."
+}

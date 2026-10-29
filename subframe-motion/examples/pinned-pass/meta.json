@@ -1,0 +1,53 @@
+{
+  "slug": "pinned-pass",
+  "title": "Pinned pass",
+  "commonName": "Physics lanyard badge",
+  "category": "Animation & motion",
+  "description": "A numbered athletics pass swings from a constrained cord and keeps its weight when released.",
+  "useCase": "Add direct manipulation to a small event credential or collectible.",
+  "interaction": "Drag the pass and release.",
+  "tags": [
+    "lanyard",
+    "Verlet",
+    "constraints",
+    "drag",
+    "physics",
+    "badge"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The pass follows deliberate input without inertial playback; arrow keys place it immediately.",
+  "limitations": "A two-dimensional constrained cord and rigid card with approximate rotation; no cloth, collision or metal shading engine.",
+  "surface": "#c92720",
+  "components": [
+    "card",
+    "scene"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "techniques": [
+    "physics",
+    "rotate"
+  ],
+  "feel": [
+    "playful"
+  ],
+  "contexts": [
+    "landing"
+  ],
+  "aka": [
+    "lanyard card",
+    "hanging badge",
+    "swinging ID card",
+    "rope physics card"
+  ],
+  "look": "Bright red field with a dark cord hanging from a top rail to a cream event badge with grommet, huge condensed numeral and barcode stripes.",
+  "motion": "A nine-point Verlet cord with gravity and damping swings the badge, which tilts with the last segment (±42°); dragging pins the cord's end, and release lets it sway to rest.",
+  "adapt": "Physics is `simulate`: Verlet integration (0.973 damping, 0.22 gravity) and 12 constraint passes over nine `knots`, stepped at 60 Hz by `frame` for 220 steps after release; `draw` maps the last segment to the card's rotation. Replace the `.pp-inner` badge content."
+}

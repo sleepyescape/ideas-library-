@@ -1,0 +1,52 @@
+{
+  "slug": "elastic-artboard",
+  "title": "Pinned study",
+  "commonName": "Springy draggable card",
+  "category": "Animation & motion",
+  "description": "A suspended drawing moves within its frame and settles back into place.",
+  "useCase": "Give a movable preview a clear resting position and physical resistance.",
+  "interaction": "Drag the study or nudge it with arrow keys",
+  "tags": [
+    "drag",
+    "spring",
+    "constraints",
+    "artboard",
+    "pointer capture"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Live reduced-motion preferences remove interpolation and decorative playback. All content and native controls remain available. Keyboard changes settle immediately.",
+  "limitations": "Original demonstration content; adapt labels and state to the host product.",
+  "surface": "#777f7f",
+  "components": [
+    "card"
+  ],
+  "triggers": [
+    "drag"
+  ],
+  "techniques": [
+    "spring",
+    "rotate"
+  ],
+  "feel": [
+    "playful",
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "app"
+  ],
+  "aka": [
+    "rubber band drag",
+    "snap-back drag",
+    "elastic drag constraints",
+    "return to origin drag"
+  ],
+  "look": "Muted grey-green framed mat with one pinned cream sheet showing a fine geometric line drawing inside a thin red circle.",
+  "motion": "Dragging moves the sheet at 0.65× pointer speed within a small clamp, tilting slightly with horizontal offset; release returns it to rest over 650 ms on an overshooting cubic-bezier.",
+  "adapt": "Pointer handlers on the `drawing` button set `position`, clamped to ±45 by ±30 px with a `position.x * 0.06` degree tilt; `end` resets it, and the `drawing` CSS transition `cubic-bezier(.2,1.35,.3,1)` supplies the overshoot. Replace the SVG study and caption."
+}

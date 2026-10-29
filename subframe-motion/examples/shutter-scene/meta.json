@@ -1,0 +1,59 @@
+{
+  "slug": "shutter-scene",
+  "title": "A room for light",
+  "commonName": "Staggered shutter reveal",
+  "category": "Animation & motion",
+  "description": "Ultramarine shutters lift in sequence to reveal two architectural studies.",
+  "useCase": "Introduce a selected architectural project, an art direction study or a visual case study with a brief material reveal.",
+  "interaction": "Reveal the next study",
+  "tags": [
+    "architecture",
+    "portfolio",
+    "shutter",
+    "reveal",
+    "stagger",
+    "mask",
+    "case study",
+    "SVG",
+    "CSS"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The study and caption change immediately. Keyboard activation skips the shutter sequence.",
+  "limitations": "The seven-panel reveal is decorative and does not hide interactive controls. Replace both original SVG illustrations with equally sized artwork when adapting.",
+  "surface": "#d9d7cd",
+  "components": [
+    "image",
+    "gallery"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "stagger",
+    "scale",
+    "mask"
+  ],
+  "feel": [
+    "refined",
+    "bold"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "venetian blind transition",
+    "blinds wipe reveal",
+    "slideshow shutter transition",
+    "portfolio project reveal",
+    "image curtain wipe"
+  ],
+  "look": "Isometric building illustration in stone, grey and cobalt above a cream caption bar with blue sans type, monospace labels and a square blue button.",
+  "motion": "Clicking the arrow instantly covers the art with seven ultramarine panels that lift upward in a 45 ms stagger, 820 ms each with a strong ease-out, revealing the next study.",
+  "adapt": "The reveal is the `sf-shutters-open` keyframe (820 ms) on the `sf-shutters-blinds` panels, staggered by inline `animationDelay` (index × 45 ms) and replayed by remounting on `scene.sequence`. Replace `Architecture` and the captions; keep the `event.detail` check that skips it for keyboard."
+}

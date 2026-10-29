@@ -1,0 +1,58 @@
+{
+  "slug": "lunar-regolith",
+  "title": "Lunar regolith",
+  "commonName": "Moon surface shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Raking light reveals a rough mineral moon against an icy white field.",
+  "useCase": "Space, materials science, and quiet editorial illustrations.",
+  "interaction": "Adjust sun angle",
+  "tags": [
+    "moon",
+    "regolith",
+    "craters",
+    "planet",
+    "lighting",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "A representative frame remains still. Live system preference changes immediately stop the loop; the range control continues to update the still image.",
+  "limitations": "Requires WebGL 1. A static CSS fallback appears when unavailable or after context loss. Invented terrain and crater-like detail, not geographic or lunar scan data.",
+  "surface": "#dce6e8",
+  "components": [
+    "scene",
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "noise",
+    "3d",
+    "rotate"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "rotating planet shader",
+    "procedural moon",
+    "3D planet texture",
+    "spinning asteroid",
+    "planet hero"
+  ],
+  "look": "A rough grey-brown pitted sphere with bump-shaded mineral texture, lit from the upper left and fading to black, centred on a pale icy blue-grey field.",
+  "motion": "The sphere's procedural rock surface slowly rotates in longitude while raking light shades its bumps; a sun-angle slider swings the light horizontally across it.",
+  "adapt": "Terrain is `rock` (layered `grain` noise) in the `FRAGMENT` shader; `u_time*.025` sets spin speed, `radius` the size, and `light` maps `u_control` to the sun direction. Recolour the `vec3(.54,.51,.46)` rock tint and background `c`; keep the WebGL lifecycle."
+}

@@ -1,0 +1,58 @@
+{
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "components": [
+    "scene",
+    "slider"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "feel": [
+    "refined",
+    "technical"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "slug": "liquid-bridge",
+  "title": "Liquid bridge",
+  "commonName": "Interactive liquid coalescence shader",
+  "description": "Two unequal ink-red lacquer drops form and release a smooth neck as their separation changes.",
+  "useCase": "Show a fluid merge or split with a visible moment of attachment and reversible control.",
+  "interaction": "Drag horizontally or adjust Separation to join and part the drops.",
+  "tags": [
+    "liquid",
+    "coalescence",
+    "neck",
+    "metaball",
+    "merge",
+    "lacquer",
+    "native webgl"
+  ],
+  "reducedMotion": "Following is removed and each direct separation change renders immediately. The drops never move autonomously.",
+  "limitations": "A smooth analytic field between two authored volumes, not fluid dynamics or conserved-volume simulation. Follow lag describes interpolation, not viscosity. WebGL 1 with original SVG fallback and context restoration.",
+  "surface": "#eae6d7",
+  "techniques": [
+    "shader",
+    "3d",
+    "morph"
+  ],
+  "aka": [
+    "metaball merge",
+    "liquid neck formation",
+    "fluid union",
+    "drop separation"
+  ],
+  "look": "Two unequal dark-red glossy drops on a warm bone field, a crisp rectangular reflection and soft contact shadows.",
+  "motion": "Separation shifts two field centers; `merge` produces the neck. A finite exponential follow catches up to direct input and stops, freezing when inactive or hidden.",
+  "adapt": "Edit `DEFAULT_CONFIG` or pass `config` for field blend, follow lag and radius ratio. `drops` defines the analytic volumes, `merge` forms their neck, and `u_separation` is independent onstage state."
+}

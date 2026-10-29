@@ -1,0 +1,65 @@
+{
+  "slug": "frame-crop",
+  "title": "The changing frame",
+  "commonName": "Aspect ratio crop animation",
+  "category": "Animation & motion",
+  "description": "A moving aperture reframes a woodblock print while the artwork remains completely still.",
+  "useCase": "Compare publishing formats while preserving subject scale and showing which parts of an artwork will be cropped.",
+  "interaction": "Select a print format",
+  "tags": [
+    "crop",
+    "aspect-ratio",
+    "aperture",
+    "artwork",
+    "image",
+    "composition",
+    "format",
+    "reframe",
+    "radio"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "fuji-storm.webp",
+      "description": "Shower Below the Summit (Sanka hakuu), from Thirty-Six Views of Mount Fuji, Katsushika Hokusai",
+      "license": "CC0-1.0"
+    }
+  ],
+  "reducedMotion": "Format and crop position change immediately; the complete artwork remains visible as a faint context layer.",
+  "limitations": "Three authored crop positions, not automatic focal-point detection or a draggable/exporting image editor. Clip-path and bounded frame geometry animate; this is not a compositor-only effect. Sample artwork is a separately declared CC0 asset.",
+  "surface": "#f6f6f4",
+  "components": [
+    "image",
+    "tabs"
+  ],
+  "triggers": [
+    "state",
+    "press"
+  ],
+  "techniques": [
+    "mask",
+    "morph"
+  ],
+  "feel": [
+    "refined",
+    "subtle"
+  ],
+  "contexts": [
+    "app",
+    "editorial"
+  ],
+  "aka": [
+    "crop preview",
+    "image format switcher",
+    "reframing aperture",
+    "social format crop toggle"
+  ],
+  "look": "Off-white page with a Japanese woodblock print of a red mountain, vivid inside corner-marked crop bounds and faded beyond them, above a segmented control.",
+  "motion": "Choosing 4:5, 1:1 or 16:9 animates a clip-path aperture and its corner marks to the new crop over 620 ms with an ease-out, while the artwork stays still.",
+  "adapt": "The `fc-aperture` clip-path `inset(${y}px ${420 - x - format.width}px ${y}px ${x}px)` and the four fixed-size marks inside `fc-crop-edge` share `620ms cubic-bezier(.22,.8,.18,1)`. Each mark translates to its crop corner without resizing its box; the clip-path still has its own rendering cost. Crops come from `formats` in a fixed 420×278 stage. Replace `src` and `alt`, then match image dimensions and crop offsets."
+}

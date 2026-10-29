@@ -1,0 +1,73 @@
+{
+  "slug": "letter-collection",
+  "title": "Letter collection",
+  "commonName": "Envelope open reveal",
+  "category": "Components & interactions",
+  "description": "A sealed coastal envelope opens into a spread of photographs.",
+  "useCase": "Turn opening a small curated collection into a deliberate reveal.",
+  "interaction": "Open the envelope and browse the photographs.",
+  "tags": [
+    "envelope",
+    "fold",
+    "collection",
+    "reveal",
+    "CSS 3D"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "assets": [
+    {
+      "fileName": "blue-tide.webp",
+      "description": "Aerial view photography of ocean",
+      "license": "Unsplash"
+    },
+    {
+      "fileName": "coastal-break.webp",
+      "description": "Aerial photography of ocean",
+      "license": "Unsplash"
+    },
+    {
+      "fileName": "mediterranean-clouds.webp",
+      "description": "Cloudy Sky, Mediterranean Sea",
+      "license": "CC0-1.0"
+    }
+  ],
+  "reducedMotion": "The flap and photographs change pose immediately.",
+  "limitations": "Three sample photographs; the envelope and spread are authored transforms rather than paper collision simulation.",
+  "surface": "#b8cbd0",
+  "components": [
+    "gallery",
+    "dialog"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "3d",
+    "rotate",
+    "slide",
+    "scale"
+  ],
+  "feel": [
+    "refined",
+    "playful"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "envelope animation",
+    "open letter reveal",
+    "photo fan out",
+    "invitation reveal",
+    "photo stack spread"
+  ],
+  "look": "Flat cream paper envelope with a round dark green seal and soft shadow, centred on a dusty blue-grey field above a small letterspaced caption.",
+  "motion": "Opening flips the flap back in 3D, shrinks the envelope and fans three tilted photographs up and out over 420 ms ease-out; selecting a photo opens it full-frame.",
+  "adapt": "Poses are CSS: `.lc-flap` turns to `rotateX(180deg)` under `perspective:800px`, `.lc-envelope` scales to `.55`, and each `.lc-photo` gets an inline fan `transform` (`[-9, 3, 10]` degrees), eased by `420ms cubic-bezier(.22,1,.36,1)`. Replace `views` with your images."
+}

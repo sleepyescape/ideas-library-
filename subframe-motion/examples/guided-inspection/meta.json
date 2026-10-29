@@ -1,0 +1,55 @@
+{
+  "slug": "guided-inspection",
+  "title": "Guided inspection",
+  "commonName": "Product tour spotlight",
+  "category": "Components & interactions",
+  "description": "A library plan moves beneath a precisely aligned spotlight as a three-stop walkthrough explores its rooms.",
+  "useCase": "Guide inspection of a diagram, product or technical illustration through one shared camera transform.",
+  "interaction": "Start the walkthrough; advance through three points or use arrow keys. Escape exits.",
+  "tags": [
+    "tour",
+    "spotlight",
+    "camera",
+    "diagram",
+    "svg",
+    "onboarding",
+    "zoom"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Camera and spotlight update immediately; the three steps remain available.",
+  "limitations": "A local SVG floor plan, not a DOM element targeting or page-onboarding service.",
+  "surface": "#eff3e9",
+  "components": [
+    "tooltip",
+    "image"
+  ],
+  "triggers": [
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "scale",
+    "mask"
+  ],
+  "feel": [
+    "refined"
+  ],
+  "contexts": [
+    "app",
+    "editorial"
+  ],
+  "aka": [
+    "onboarding walkthrough",
+    "coach marks",
+    "zoom to hotspot",
+    "diagram spotlight tour"
+  ],
+  "look": "Pale sage floor plan with dark green walls, muted green furniture and round trees, orange numbered hotspots, and a dark green button below.",
+  "motion": "Each step pans and zooms the plan to a room while a dimming mask's cut-out follows, both over 550 ms ease-out; keyboard steps apply instantly, Escape exits.",
+  "adapt": "The camera is the `gi-camera` group transform and the spotlight the `gi-focus` mask rect, both transitioned with `.55s cubic-bezier(.22,.75,.22,1)`; `tx`, `ty` and `s` centre the stop. Replace the SVG plan and `STOPS` bounds, scales and notes."
+}

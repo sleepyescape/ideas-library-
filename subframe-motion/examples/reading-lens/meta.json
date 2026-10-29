@@ -1,0 +1,52 @@
+{
+  "slug": "reading-lens",
+  "title": "Reading lens",
+  "commonName": "Fisheye scroll text",
+  "category": "Animation & motion",
+  "description": "A native scrolling note preserves a readable center while compressing peripheral lines.",
+  "useCase": "Keep neighboring passages in view around a focused reading region.",
+  "interaction": "Scroll or advance a passage.",
+  "tags": [
+    "scroll",
+    "fisheye",
+    "typography",
+    "focus",
+    "native scroll"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The note becomes an ordinary native scrolling text column with no compression or animated scrolling.",
+  "limitations": "The authored line breaks use a fixed 26 px line height. Adapt the mapping for arbitrary wrapping text.",
+  "surface": "#191b1b",
+  "components": [
+    "text"
+  ],
+  "triggers": [
+    "scroll"
+  ],
+  "techniques": [
+    "distortion",
+    "scale",
+    "fade"
+  ],
+  "feel": [
+    "refined",
+    "calm"
+  ],
+  "contexts": [
+    "editorial"
+  ],
+  "aka": [
+    "fisheye list",
+    "magnified scroll text",
+    "focus reading mode",
+    "teleprompter scroll"
+  ],
+  "look": "Near-black page with a centred column of cream serif lines that flatten and dim toward the edges, monospace header and counter, and hairline rules.",
+  "motion": "Native scrolling re-maps every line: the five nearest the centre stay full size, farther lines squash vertically and fade with exponential falloff; the arrow smooth-scrolls six lines.",
+  "adapt": "The fisheye mapping is `update` in the effect keyed on `lens` and `reduced`: lines with `a <= 2` stay full size, then offset and `scaleY` decay exponentially (rate `0.32`). Replace the pre-broken `lines`, which assume a fixed `26` px line height."
+}

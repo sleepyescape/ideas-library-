@@ -1,0 +1,57 @@
+{
+  "slug": "spinning-text",
+  "title": "Words in orbit",
+  "commonName": "Circular rotating text",
+  "category": "Animation & motion",
+  "description": "A quiet circular label turns around a stationary center.",
+  "useCase": "Create a decorative seal, event identity or compact editorial accent.",
+  "interaction": "Play to turn the circular label",
+  "tags": [
+    "text",
+    "circular",
+    "ring",
+    "rotate",
+    "loop",
+    "CSS",
+    "seal",
+    "ambient"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Motion Primitives",
+    "url": "https://motion-primitives.com/docs/spinning-text",
+    "code": "https://github.com/ibelick/motion-primitives/blob/120f64f6ca60348e251f929e9c81f11ccbe45eda/components/core/spinning-text.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The full circular label remains in its authored position.",
+  "limitations": "Best for a short decorative phrase. Preserve the accessible full-text label and keep important copy in ordinary reading order.",
+  "surface": "#e9e3d2",
+  "components": [
+    "text"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "rotate",
+    "loop"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "rotating badge",
+    "text on a circle",
+    "spinning seal",
+    "circular text logo"
+  ],
+  "look": "Pale beige page with small, widely spaced olive capitals arranged in a ring around a thin line-drawn atom emblem.",
+  "motion": "The ring of letters rotates clockwise around the fixed centre emblem in a 28 s linear CSS loop, pausing when the host deactivates it.",
+  "adapt": "The spin is the `sf-spinning-text-turn` keyframe on `sf-spinning-text-ring` (28s linear); each letter of `text` is placed with a per-index `rotate` and `translateY(-80px)`, so retune that radius with the phrase length. Replace the phrase and atom SVG; keep the ring's `aria-label`."
+}

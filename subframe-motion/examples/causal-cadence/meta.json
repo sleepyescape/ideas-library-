@@ -1,0 +1,57 @@
+{
+  "slug": "causal-cadence",
+  "title": "Causal cadence",
+  "commonName": "Event-relative animation timing",
+  "category": "Animation & motion",
+  "description": "A white point crosses a black strip while a caption follows either its departure or its arrival.",
+  "useCase": "Specify whether a secondary animation should follow the start or the completion of an earlier action.",
+  "interaction": "Choose Departure or Arrival to start a sequence, then replay or pause it. Compare the displayed cue times.",
+  "tags": [
+    "sequence",
+    "choreography",
+    "timing",
+    "caption",
+    "event relative",
+    "finite animation",
+    "SVG"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Play and mode changes immediately display the final point and caption together with their event timestamps.",
+  "limitations": "An authored two-event sequence, not a timeline editor or dependency scheduler. Timing controls are captured on the next Play or mode selection; travel distance updates live.",
+  "surface": "#f09d81",
+  "components": [
+    "scene",
+    "text",
+    "button"
+  ],
+  "triggers": [
+    "press",
+    "keyboard"
+  ],
+  "techniques": [
+    "slide",
+    "fade"
+  ],
+  "feel": [
+    "bold",
+    "technical"
+  ],
+  "contexts": [
+    "app",
+    "editorial"
+  ],
+  "aka": [
+    "animation sequence offset",
+    "start versus finish timing",
+    "caption choreography",
+    "completion-relative delay"
+  ],
+  "look": "A large white point and a two-line white caption occupy a black strip on salmon, above a thin time rail and spare native sequence controls.",
+  "motion": "Play moves the point with a cubic ease-out. In Departure mode the caption begins after the chosen delay from zero; in Arrival mode it begins after travel completes plus that delay. Host pause and hidden documents freeze elapsed time.",
+  "adapt": "`cueAt` derives the caption start from the selected `mode`, `travelDuration`, and `captionOffset`; `paint` maps elapsed time to point position and caption opacity. Replace the caption artwork, and tune `travelDuration`, `captionDuration`, or `travelDistance` for your sequence."
+}

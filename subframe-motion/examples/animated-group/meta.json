@@ -1,0 +1,63 @@
+{
+  "slug": "animated-group",
+  "title": "A few things fall into place",
+  "commonName": "Staggered list entrance",
+  "category": "Animation & motion",
+  "description": "A small group of related items arrives in a short, measured stagger.",
+  "useCase": "Introduce a compact group of newly loaded or newly created items without delaying interaction.",
+  "interaction": "Replay the group entrance",
+  "tags": [
+    "list",
+    "stagger",
+    "group",
+    "entrance",
+    "reveal",
+    "blur",
+    "slide",
+    "cards"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Motion Primitives",
+    "url": "https://motion-primitives.com/docs/animated-group",
+    "code": "https://github.com/ibelick/motion-primitives/blob/120f64f6ca60348e251f929e9c81f11ccbe45eda/components/core/animated-group.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "All items are immediately visible without stagger, travel or blur.",
+  "limitations": "A short three-item entrance. Avoid repeating stagger animations on large lists or frequently used navigation.",
+  "surface": "#ecebe5",
+  "components": [
+    "list",
+    "card"
+  ],
+  "triggers": [
+    "enter"
+  ],
+  "techniques": [
+    "stagger",
+    "fade",
+    "slide",
+    "blur"
+  ],
+  "feel": [
+    "subtle",
+    "refined"
+  ],
+  "contexts": [
+    "app",
+    "landing"
+  ],
+  "aka": [
+    "staggered fade in",
+    "list reveal animation",
+    "cards stagger in",
+    "sequential entrance",
+    "blur slide up stagger"
+  ],
+  "look": "Warm off-white page with a small uppercase header over three cream rounded list cards, each holding a muted sage, tan or lilac shape and arrow.",
+  "motion": "On mount the three cards rise 12 px, fade in and unblur from 3 px, staggered 65 ms apart, each over 350 ms with an ease-out-quart curve.",
+  "adapt": "A `motion.ul` with `staggerChildren` (0.065 s) runs each `motion.li` through `variants` from `hidden` (`opacity` 0, `y` 12, `filter` blur 3 px) to `visible`; tune stagger, `duration` and `ease`. Replace `ideas`; changing the `key` replays it."
+}

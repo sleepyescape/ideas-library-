@@ -1,0 +1,53 @@
+{
+  "slug": "stereo-blend",
+  "title": "Stereo blend",
+  "commonName": "Audio crossfade control",
+  "category": "Components & interactions",
+  "description": "Two synthesized timbres blend through complementary gain curves drawn on a blue instrument surface.",
+  "useCase": "Compare or combine timbres without the center level collapsing.",
+  "interaction": "Enable sound and move the equal-power blend control.",
+  "tags": [
+    "audio",
+    "crossfade",
+    "equal-power",
+    "gain",
+    "synthesizer",
+    "curve"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Gain changes retain short audio ramps that prevent clicks; the diagram redraws directly.",
+  "limitations": "Two local oscillators, not uploaded tracks. Equal-power gain law does not guarantee equal perceived loudness for all timbres.",
+  "surface": "#244d97",
+  "components": [
+    "slider",
+    "media",
+    "chart"
+  ],
+  "triggers": [
+    "drag",
+    "state"
+  ],
+  "techniques": [
+    "path"
+  ],
+  "feel": [
+    "technical"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "DJ crossfader",
+    "equal-power crossfade",
+    "mix balance slider",
+    "gain curve visualizer"
+  ],
+  "look": "Saturated cobalt-blue panel with a thin white grid, crossing cream and pale-blue gain curves, a red vertical marker, a range slider and monospace percentages.",
+  "motion": "Dragging the blend slider moves a red marker and two dots along cosine and sine gain curves directly, while oscillator gains glide with a 25 ms time constant.",
+  "adapt": "Gains follow `Math.cos`/`Math.sin` of `blend` (scaled by 0.045) and ramp via `setTargetAtTime` with a 0.025 s constant; the SVG curves, marker and dots derive from the same `blend`. Swap the two `createOscillator` tones (220 and 330 Hz) for real audio sources."
+}

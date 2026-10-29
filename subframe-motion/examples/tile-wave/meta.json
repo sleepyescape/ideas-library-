@@ -1,0 +1,56 @@
+{
+  "slug": "tile-wave",
+  "title": "Tile wave",
+  "commonName": "Tile distortion text",
+  "category": "Animation & motion",
+  "description": "A magenta and yellow print breaks into displaced tiles while its type stays recognizable.",
+  "useCase": "Kinetic posters, animated image treatments, and graphic transition studies.",
+  "interaction": "Change warp amount, switch tile density, or pause",
+  "tags": [
+    "canvas",
+    "tiles",
+    "distortion",
+    "typography",
+    "print",
+    "wave",
+    "slices"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The tile field stays still. Warp and density controls redraw a static composition.",
+  "limitations": "Canvas 2D source slicing and sine offsets, not cloth physics or a WebGL shader.",
+  "surface": "#cf0754",
+  "components": [
+    "text",
+    "image"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "canvas",
+    "distortion"
+  ],
+  "feel": [
+    "bold",
+    "playful"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "glitch text effect",
+    "sliced image wave",
+    "tile displacement",
+    "kinetic poster",
+    "mosaic warp"
+  ],
+  "look": "Hot magenta poster with a yellow panel and heavy magenta sans-serif type, sliced into offset rectangular tiles, with dark magenta control chips along the bottom.",
+  "motion": "Each frame redraws the print as tiles offset by two slow crossing sine waves, rows shearing sideways and columns bobbing; a warp slider scales offsets and a toggle doubles density.",
+  "adapt": "`paintArt` draws the source print to an offscreen canvas and `draw` slices it into `cols` × `rows` tiles shifted by sines of `phase`; tune `amount`, the 0.55/0.3 multipliers and the 0.65 speed in `tick`. Replace `paintArt` with your own artwork."
+}

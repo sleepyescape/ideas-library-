@@ -1,0 +1,56 @@
+{
+  "slug": "responsive-creature",
+  "title": "Responsive creature",
+  "commonName": "Reactive character animation",
+  "category": "Animation & motion",
+  "description": "A violet network changes shape as it is fed, played with, or put to rest.",
+  "useCase": "A small character that communicates state through topology and cadence.",
+  "interaction": "Feed, play, and switch between rest and wake.",
+  "tags": [
+    "character",
+    "canvas",
+    "organism",
+    "network",
+    "state",
+    "topology",
+    "reactive"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Actions update a static state; breathing and connecting-line motion stop.",
+  "limitations": "An illustrative character with finite responses, not a pet game or health model.",
+  "surface": "#d1f63a",
+  "components": [
+    "scene"
+  ],
+  "triggers": [
+    "press",
+    "ambient",
+    "state"
+  ],
+  "techniques": [
+    "canvas",
+    "morph"
+  ],
+  "feel": [
+    "playful"
+  ],
+  "contexts": [
+    "landing",
+    "app"
+  ],
+  "aka": [
+    "animated mascot",
+    "generative creature",
+    "virtual pet animation",
+    "living blob character",
+    "state-driven character"
+  ],
+  "look": "Purple line-drawn network creature, a dotted outline with crossing chords, on a flat acid-lime field with an italic serif title and monospace buttons.",
+  "motion": "The outline wobbles and breathes continuously; feeding swells it with six shrinking satellite dots, play speeds the wobble, and rest eases it into a plain oval as chords fade.",
+  "adapt": "`draw` builds the 42-point body from `state` (`time`, `sleep`, `food`, `play`), and `tick` eases `sleep` and decays `food` and `play` each frame. Tune the harmonic terms in `points` and the decay rates; replace the labels and palette."
+}

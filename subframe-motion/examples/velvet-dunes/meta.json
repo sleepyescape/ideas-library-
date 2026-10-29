@@ -1,0 +1,56 @@
+{
+  "slug": "velvet-dunes",
+  "title": "Velvet dunes",
+  "commonName": "Velvet fabric shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Deep aubergine cloth catches a narrow silver-blue grazing light.",
+  "useCase": "Luxury fashion, music artwork, and material studies that need quiet depth.",
+  "interaction": "Adjust light",
+  "tags": [
+    "velvet",
+    "satin",
+    "fabric",
+    "cloth",
+    "folds",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "A representative frame remains still. Live system preference changes immediately stop the loop; the range control continues to update the still image.",
+  "limitations": "Requires WebGL 1. A static CSS fallback appears when unavailable or after context loss. A height-field material study; no cloth simulation or external fabric texture.",
+  "surface": "#241d31",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient",
+    "state"
+  ],
+  "techniques": [
+    "shader",
+    "glow"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "satin fabric background",
+    "silk shader",
+    "draped cloth backdrop",
+    "luxury fabric texture",
+    "sheen background"
+  ],
+  "look": "Full-bleed deep aubergine cloth with slanted folds, narrow lilac-silver highlights along the ridges and fine thread lines.",
+  "motion": "The folds undulate very slowly as sine terms in the cloth height drift with time, sliding the grazing sheen; the slider swings the light from left to right.",
+  "adapt": "The cloth is the `FRAGMENT` shader: `cloth` is the fold heightfield (frequencies and `u_time` rates), `sheen` the specular exponent `34.0`, and `threads` the weave lines; recolour the base and sheen `vec3` values. Keep the WebGL lifecycle and reduced-motion branch."
+}

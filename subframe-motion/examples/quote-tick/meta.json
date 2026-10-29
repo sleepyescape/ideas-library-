@@ -1,0 +1,56 @@
+{
+  "slug": "quote-tick",
+  "title": "Quote tick",
+  "commonName": "Stock price ticker",
+  "category": "Components & interactions",
+  "description": "A changing quote retains its previous value and emphasizes the direction of each update.",
+  "useCase": "Make metric changes legible without asking a user to remember the last number.",
+  "interaction": "Apply an up or down tick and compare the previous value and signed difference.",
+  "tags": [
+    "metric",
+    "delta",
+    "comparison",
+    "value-flash",
+    "direction",
+    "finance",
+    "number",
+    "update"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Numbers and signed differences update immediately without vertical motion or fading.",
+  "limitations": "Manually generated example values, not market data or an investment interface.",
+  "surface": "#111316",
+  "components": [
+    "number"
+  ],
+  "triggers": [
+    "state",
+    "press"
+  ],
+  "techniques": [
+    "slide",
+    "fade"
+  ],
+  "feel": [
+    "subtle",
+    "technical"
+  ],
+  "contexts": [
+    "dashboard",
+    "app"
+  ],
+  "aka": [
+    "price change flash",
+    "live quote update",
+    "value delta indicator",
+    "metric change highlight"
+  ],
+  "look": "Near-black panel with a large white tabular price, a monospace row comparing previous value and green delta, a tick-mark ruler and underlined text buttons.",
+  "motion": "Each update remounts the price, which fades in while sliding 8 px up (gain) or down (loss) over 220 ms ease-out, tinted green or red for 800 ms.",
+  "adapt": "The entrance is the `quote-w2` keyframes on `.number`, restarted by `key={quote.id}` with direction from `--tick-travel`; the colour flash is `data-flash`, cleared by an 800 ms `setTimeout`. Call `update` with deltas from your feed instead of the fixed `-0.37` and `0.52` buttons."
+}

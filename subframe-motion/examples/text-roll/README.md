@@ -1,0 +1,54 @@
+# A fresh turn of phrase
+
+![preview](preview.webp)
+
+> Two faces of each letter turn together in a compact dimensional reveal.
+
+- **Common name:** 3D text roll
+- **Category:** Animation & motion
+- **Live demo:** https://www.subframe.com/motion/text-roll
+- **Source:** Motion Primitives (adapted, MIT) — https://motion-primitives.com/docs/text-roll · [original code](https://github.com/ibelick/motion-primitives/blob/120f64f6ca60348e251f929e9c81f11ccbe45eda/components/core/text-roll.tsx)
+- **Dependencies:** motion@12.0.5
+
+## Use case
+
+Give a short launch statement a single moment of emphasis.
+
+## Interaction
+
+Replay the letter rotation
+
+## Look
+
+Pale lavender-grey page with a centred dark violet-grey sans headline, a light hooked-arrow glyph above and a small caption below.
+
+## Motion
+
+On mount, each letter tips away on the X axis while a copy hinges up from its bottom edge 120 ms behind, staggered 25 ms per letter with ease-out-quart timing.
+
+## How to adapt
+
+Each character renders two `motion.span` faces animating `rotateX` (0 to 90 out, 90 to 0 in) inside a `preserve-3d` wrapper; tune the `index * 0.025` stagger, the 0.32/0.36 s durations and `transformOrigin` values. Replace `text`; changing the `h3` `key` replays it.
+
+## Reduced motion
+
+The complete phrase is shown immediately without turning or stagger.
+
+## Limitations
+
+The demo is a single short line. Longer text needs wrapping and locale-specific character segmentation.
+
+## Taxonomy
+
+- **Components:** text
+- **Triggers:** enter
+- **Techniques:** split-text, roll, 3d, stagger
+- **Feel:** refined, subtle
+- **Contexts:** landing, editorial
+- **Tags:** text, letters, rotateX, 3D, flip, stagger, headline, entrance
+- **Also known as:** letter flip animation, rolling headline, 3D flip text reveal, staggered letter rotation, text flip entrance
+- **Surface color:** `#dedde7`
+
+## Code
+
+See [`component.tsx`](component.tsx).

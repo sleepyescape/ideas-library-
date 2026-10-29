@@ -1,0 +1,54 @@
+{
+  "slug": "sticker-gravity",
+  "title": "Sticker gravity",
+  "commonName": "Draggable physics stickers",
+  "category": "Animation & motion",
+  "description": "Eight graphic club seals tumble into a shallow tray and collide as individual draggable bodies.",
+  "useCase": "Turn a small set of circular badges into a playful physical arrangement.",
+  "interaction": "Drag and release a seal, or pause and arrange it with the keyboard.",
+  "tags": [
+    "physics",
+    "collision",
+    "drag",
+    "fixed timestep",
+    "canvas"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The simulation begins paused; badges can still be placed directly with pointer or keyboard controls.",
+  "limitations": "Eight bounded circular bodies with a fixed-step impulse solver. This is intentionally not general polygon physics.",
+  "surface": "#ecebe7",
+  "components": [
+    "scene"
+  ],
+  "triggers": [
+    "drag",
+    "enter",
+    "keyboard"
+  ],
+  "techniques": [
+    "physics",
+    "canvas",
+    "rotate"
+  ],
+  "feel": [
+    "playful"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "throwable badges",
+    "falling sticker pile",
+    "gravity toy",
+    "collision physics playground"
+  ],
+  "look": "Off-white sheet between header and footer rules, with eight flat circular stickers in orange, cobalt, yellow, navy, red, grey and cream piled on the floor.",
+  "motion": "On load the stickers drop under gravity at a fixed 120 Hz step, bouncing, spinning and colliding until they settle; dragging and releasing throws a sticker with its pointer velocity.",
+  "adapt": "Physics lives in `solve` (gravity 590, wall and floor restitution 0.62 and 0.47, collision factor 1.45), stepped at 1/120 s by `tick`; `draw` paints the canvas. Replace the `marks` colour and label triples; keep the `settledFrames` idle stop and pointer capture."
+}

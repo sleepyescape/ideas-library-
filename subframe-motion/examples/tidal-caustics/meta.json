@@ -1,0 +1,55 @@
+{
+  "slug": "tidal-caustics",
+  "title": "Tidal caustics",
+  "commonName": "Water caustics shader",
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "description": "Sunlit turquoise water casts a drifting lattice on pale pool tiles.",
+  "useCase": "Bring a sense of water and light to hospitality, swimwear, and aquatic identities.",
+  "interaction": "Adjust depth",
+  "tags": [
+    "water",
+    "caustics",
+    "pool",
+    "refraction",
+    "aquatic",
+    "native webgl"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "A representative frame remains still. Live system preference changes immediately stop the loop; the range control continues to update the still image.",
+  "limitations": "Requires WebGL 1. A static CSS fallback appears when unavailable or after context loss. Caustic-inspired screen-space light pattern; no physical water mesh or light transport solver.",
+  "surface": "#1d817f",
+  "components": [
+    "background"
+  ],
+  "triggers": [
+    "ambient"
+  ],
+  "techniques": [
+    "shader",
+    "glow",
+    "distortion"
+  ],
+  "feel": [
+    "calm",
+    "refined"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "aka": [
+    "pool water background",
+    "caustic light pattern",
+    "underwater light shader",
+    "swimming pool shader"
+  ],
+  "look": "Deep teal water filling the frame, crossed by glowing mint-cyan caustic light lines over faint dark pool-tile grid seams.",
+  "motion": "A WebGL fragment shader slowly drifts three warped sine layers into a shifting caustic lattice while tile seams wobble; the Depth slider brightens the light and a button pauses.",
+  "adapt": "The caustics are the `FRAGMENT` shader: its three-pass loop builds the lattice, `u_time` (scaled by .17) sets drift speed, `u_control` from the Depth range scales brightness; retint its `vec3` colours. Keep the canvas lifecycle, `sg-tidal-caustics-fallback` and reduced-motion branch."
+}

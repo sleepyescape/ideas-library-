@@ -1,0 +1,55 @@
+{
+  "slug": "pendulum-tempo",
+  "title": "Pendulum tempo",
+  "commonName": "Pendulum metronome",
+  "category": "Animation & motion",
+  "description": "A metal pendulum and sliding counterweight make an adjustable beat visible.",
+  "useCase": "A visual tempo reference for rehearsing timing or motion cadence.",
+  "interaction": "Start the pendulum and change its tempo",
+  "tags": [
+    "pendulum",
+    "tempo",
+    "beat",
+    "metronome",
+    "rhythm",
+    "metal",
+    "kinetic"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "The pendulum stays upright; tempo controls remain available.",
+  "limitations": "Visual-only tempo; no audio click or sample-accurate clock. Changing tempo retimes the CSS cycle and may shift its phase.",
+  "surface": "#f3f2ef",
+  "components": [
+    "media",
+    "scene"
+  ],
+  "triggers": [
+    "press",
+    "ambient"
+  ],
+  "techniques": [
+    "rotate",
+    "loop"
+  ],
+  "feel": [
+    "refined",
+    "calm"
+  ],
+  "contexts": [
+    "app"
+  ],
+  "aka": [
+    "metronome",
+    "BPM indicator",
+    "swinging pendulum",
+    "tempo visualizer"
+  ],
+  "look": "Skeuomorphic pale-metal device with soft bevels and a dark green recessed face holding a silver pendulum, tempo scale and counterweight, above round plus-minus buttons.",
+  "motion": "Pressing play swings the arm ±24° in an infinite ease-in-out loop, one swing per beat; the tempo buttons step 4 BPM, retiming the cycle and sliding the weight.",
+  "adapt": "The swing is the `sf-tempo-swing` keyframes on `sf-tempo-arm`, timed by `--period` (`120 / bpm` seconds) with `cubic-bezier(.37,0,.63,1)` and toggled via `data-running`; `--weight-position` maps `bpm` to the weight. Adjust the 40–180 range and tick labels together."
+}

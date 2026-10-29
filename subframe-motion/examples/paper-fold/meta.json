@@ -1,0 +1,56 @@
+{
+  "slug": "paper-fold",
+  "title": "Sine gatefold",
+  "commonName": "Paper unfold reveal",
+  "category": "Animation & motion",
+  "description": "Two printed cover flaps unfold around real hinges to reveal a continuous concert-edition artwork.",
+  "useCase": "Reveal an invitation, printed edition or product insert through its actual folded structure.",
+  "interaction": "Unfold the invitation",
+  "tags": [
+    "paper",
+    "fold",
+    "gatefold",
+    "invitation",
+    "3d",
+    "hinge",
+    "print",
+    "reveal",
+    "backface"
+  ],
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "reducedMotion": "Open and closed states change immediately, preserving the full printed artwork and native controls.",
+  "limitations": "Authored rigid CSS panels and paper shadows, not a soft-body paper simulation. Sine is an original fictional concert edition; the printed date is demo content.",
+  "surface": "#d7d6d2",
+  "components": [
+    "card",
+    "scene"
+  ],
+  "triggers": [
+    "press"
+  ],
+  "techniques": [
+    "3d",
+    "rotate"
+  ],
+  "feel": [
+    "refined"
+  ],
+  "contexts": [
+    "editorial",
+    "landing"
+  ],
+  "aka": [
+    "gatefold card",
+    "folding invitation",
+    "3D card unfold",
+    "fold-out brochure"
+  ],
+  "look": "Pale grey surface with a slightly tilted red-orange folded print bearing bold black type and overlapping line ellipses, above a pill-shaped grey button.",
+  "motion": "Pressing the print or button swings both cover flaps open on their hinges (rotateY ±180° to 0, 720 ms ease-out), revealing the inner spread as creases soften.",
+  "adapt": "The fold is CSS: `.pf-left` and `.pf-right` rotate on edge `transform-origin` inside a `preserve-3d` `.pf-print`, with `backface-visibility` showing `.pf-cover` or `.pf-inner`; timing is `720ms cubic-bezier(.25,.75,.2,1)`. Replace the `InnerPrint` and `CoverPrint` artwork, split across panels by `offset`."
+}

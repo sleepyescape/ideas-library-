@@ -1,0 +1,57 @@
+{
+  "slug": "sliding-tabs",
+  "title": "Sliding selection",
+  "commonName": "Sliding segmented control",
+  "category": "Components & interactions",
+  "description": "A shared highlight keeps its momentum as you move between options.",
+  "useCase": "Make a view selection feel connected without moving labels or adding unrelated content.",
+  "interaction": "Choose a different view",
+  "tags": [
+    "segmented control",
+    "layout",
+    "selection",
+    "spring",
+    "tabs"
+  ],
+  "source": {
+    "kind": "adapted",
+    "name": "Motion Primitives",
+    "url": "https://motion-primitives.com/docs/animated-background",
+    "code": "https://github.com/ibelick/motion-primitives/blob/120f64f6ca60348e251f929e9c81f11ccbe45eda/components/core/animated-background.tsx",
+    "license": "MIT"
+  },
+  "dependencies": [
+    "motion@12.0.5"
+  ],
+  "reducedMotion": "Keyboard selection and reduced-motion updates are immediate.",
+  "limitations": "An isolated accessible selection example with a visually hidden current-view panel; connect selection to real product content when installing.",
+  "surface": "#efefec",
+  "components": [
+    "tabs"
+  ],
+  "triggers": [
+    "press",
+    "state"
+  ],
+  "techniques": [
+    "layout",
+    "spring",
+    "slide"
+  ],
+  "feel": [
+    "subtle"
+  ],
+  "contexts": [
+    "app",
+    "dashboard"
+  ],
+  "aka": [
+    "animated tab indicator",
+    "sliding pill tabs",
+    "shared layout tab highlight",
+    "tab switcher animation"
+  ],
+  "look": "Light warm-grey page with a rounded grey track holding three sans-serif labels, the selected one on a white rounded pill with a faint shadow.",
+  "motion": "Clicking a tab slides the white highlight to it with a fairly stiff spring (stiffness 460, damping 34) via a shared layout animation; keyboard selection jumps instantly.",
+  "adapt": "The highlight is a `motion.span` with `layoutId`, rendered only inside the selected tab; tune its spring in `transition`. Replace `views` and the visually hidden `tabpanel` with real panels, keeping `canAnimate` and the roving `onKeyDown` focus."
+}

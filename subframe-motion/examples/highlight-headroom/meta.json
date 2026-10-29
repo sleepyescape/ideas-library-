@@ -1,0 +1,57 @@
+{
+  "category": "WebGL & shaders",
+  "webglVersion": 1,
+  "source": {
+    "kind": "original",
+    "name": "Subframe",
+    "license": "MIT"
+  },
+  "dependencies": [],
+  "components": [
+    "scene",
+    "slider"
+  ],
+  "triggers": [
+    "drag",
+    "keyboard"
+  ],
+  "feel": [
+    "refined",
+    "technical"
+  ],
+  "contexts": [
+    "landing",
+    "editorial"
+  ],
+  "slug": "highlight-headroom",
+  "title": "Highlight headroom",
+  "commonName": "Interactive highlight roll-off shader",
+  "description": "A blue-striped enamel loop compares controlled highlight compression with hard clipping under the same exposure.",
+  "useCase": "Art-direct bright material reflections while seeing what hard clipping removes.",
+  "interaction": "Drag horizontally or move Exposure from −2 to +2 EV; compare the roll-off region with the clipping sliver.",
+  "tags": [
+    "tone mapping",
+    "highlight",
+    "exposure",
+    "HDR signal",
+    "roll-off",
+    "clipping",
+    "enamel"
+  ],
+  "reducedMotion": "The scene has no autonomous motion. Exposure changes update immediately through pointer, touch or keyboard input.",
+  "limitations": "An SDR presentation of a procedural linear-radiance signal, not an HDR display test. The tone curve is an authored monotonic shoulder, not a certified reference operator. WebGL 1 with original SVG fallback and context restoration.",
+  "surface": "#10151f",
+  "techniques": [
+    "shader",
+    "3d"
+  ],
+  "aka": [
+    "highlight shoulder",
+    "tone mapping comparison",
+    "exposure compensation",
+    "HDR compression"
+  ],
+  "look": "White enamel ring with a cobalt stripe on near-black; a narrow right-hand clipping comparison and an exposure slider.",
+  "motion": "Exposure multiplies the same linear radiance on both sides before display encoding. `toneMap` compresses the left side through `shoulder`; the right side clamps channels to display white.",
+  "adapt": "`DEFAULT_CONFIG` and the `config` prop expose shoulder start, strength, light width and hue preservation. `shoulder` and `toneMap` operate on linear radiance; `u_exposure` is independent EV stage state and `encode` applies display gamma afterward."
+}
