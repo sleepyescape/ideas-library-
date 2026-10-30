@@ -1,0 +1,17 @@
+{
+  "name": "ideas-library",
+  "owner": {
+    "name": "sleepyescape"
+  },
+  "metadata": {
+    "description": "Плагины Claude Code из репозитория ideas-library"
+  },
+  "plugins": [
+    {
+      "name": "hello-ideas",
+      "source": "./plugins/hello-ideas",
+      "description": "Пример: подбирает идеи из библиотеки ideas-library под задачу пользователя",
+      "version": "0.1.0"
+    }
+  ]
+}

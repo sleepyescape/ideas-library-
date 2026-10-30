@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "ideas-library": {
+      "source": {
+        "source": "github",
+        "repo": "sleepyescape/ideas-library-"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "hello-ideas@ideas-library": true
+  }
+}
