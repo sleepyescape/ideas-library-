@@ -1,27 +1,37 @@
 # Плагины Claude Code в репозитории
 
-Плагины хранятся здесь, в `plugins/`, а не на компьютере. Репозиторий работает как
-маркетплейс плагинов: Claude Code сам подключает их, когда открывает этот репозиторий
-(в облаке на claude.ai/code или локально). Ставить что-то вручную не нужно.
+Плагины хранятся здесь, в `plugins/`, а не на компьютере. Их навыки, команды и агенты
+копируются в `.claude/skills/`, `.claude/commands/` и `.claude/agents/` — эти папки
+Claude Code читает сам, когда открывает репозиторий: и в облаке (claude.ai/code,
+приложение на телефоне), и на ПК. Ставить ничего не нужно.
+
+> Почему не обычные плагины: облачные сессии **не устанавливают** плагины, подключённые
+> через `enabledPlugins` в `.claude/settings.json`. Работают только навыки, команды,
+> агенты, хуки и MCP-серверы, лежащие в самом репозитории, плюс плагины и навыки,
+> включённые в вашем аккаунте claude.ai.
 
 ## Как это устроено
 
 | Файл | Что делает |
 |------|------------|
-| `plugins/<имя>/` | сам плагин: навыки, команды, агенты, хуки, MCP |
-| `.claude-plugin/marketplace.json` | список плагинов (генерируется автоматически) |
-| `.claude/settings.json` | подключает маркетплейс и включает плагины (генерируется автоматически) |
+| `plugins/<имя>/` | сам плагин: навыки, команды, агенты |
+| `.claude/skills/`, `.claude/commands/`, `.claude/agents/` | копии из `plugins/` (генерируются, руками не править) |
+| `.claude/plugins-mirror.json` | список скопированного, чтобы `sync` удалял устаревшее |
+| `.claude-plugin/marketplace.json` | маркетплейс для ручной установки (генерируется) |
+| `.claude/settings.json` | чужие плагины для ПК (см. ниже) |
 | `tools/plugins.py` | программа для управления плагинами |
-| `.github/workflows/sync-plugins.yml` | пересобирает списки после загрузки через сайт GitHub |
+| `.github/workflows/sync-plugins.yml` | пересобирает копии после загрузки через сайт GitHub |
+
+Хуки (`hooks/`) и MCP (`.mcp.json`) из плагинов автоматически не копируются —
+их нужно переносить в `.claude/settings.json` и `.mcp.json` вручную.
 
 ## Способ 1: загрузить через сайт GitHub (без компьютера)
 
 1. Откройте папку `plugins/` на GitHub → **Add file → Upload files**.
-2. Перетащите папку плагина (например, `my-plugin/` с `.claude-plugin/plugin.json` внутри).
+2. Перетащите папку плагина (например, `my-plugin/` со `skills/` внутри).
 3. Нажмите **Commit changes**.
 
-GitHub Actions сам обновит `marketplace.json` и `settings.json`, и при следующем
-запуске Claude Code плагин будет включён.
+GitHub Actions сам скопирует навыки в `.claude/`, и в следующей сессии они появятся.
 
 ## Способ 2: программой
 
@@ -31,32 +41,32 @@ python3 tools/plugins.py add ~/Downloads/some-plugin              # добави
 python3 tools/plugins.py add https://github.com/user/repo --subdir plugins/x   # из git
 python3 tools/plugins.py list                                     # список
 python3 tools/plugins.py remove my-plugin                         # удалить
-python3 tools/plugins.py sync                                     # пересобрать списки
+python3 tools/plugins.py sync                                     # пересобрать копии
 ```
 
 После этого сделайте коммит и пуш.
 
-Чтобы выключить плагин, не удаляя его, поставьте `false` у него в
-`.claude/settings.json` → `enabledPlugins`; `sync` это значение сохранит.
+## Что подключено
 
-## Подключённые сторонние плагины
+**Работает везде (в облаке и на ПК)** — лежит в `plugins/`:
 
-Они не лежат в `plugins/`, а подключены прямо из своих репозиториев через
-`.claude/settings.json` (`extraKnownMarketplaces` и `enabledPlugins`):
+| Плагин | Что делает |
+|--------|------------|
+| [`hello-ideas`](hello-ideas) | навык и команда `/hello-ideas` — подбирает референсы из этой библиотеки |
+| [`cartoon-reel`](cartoon-reel) | пошагово ведёт от идеи до готового мультика: герой, тема, план сцен, озвучка, субтитры, правки по номерам |
+| [`task-observer`](task-observer) | замечает ваши исправления и повторяющуюся работу, предлагает улучшить навыки. Копия навыка [rebelytics/one-skill-to-rule-them-all](https://github.com/rebelytics/one-skill-to-rule-them-all), CC BY 4.0 |
+
+**Только на ПК** — подключены через `.claude/settings.json` из маркетплейсов авторов.
+Claude Code на ПК предложит их установить, когда вы доверите папку проекта:
 
 | Плагин | Что делает | Источник |
 |--------|------------|----------|
-| `claude-code-setup` | читает проект и советует, какие хуки, навыки и MCP поставить | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) |
-| `claude-mem` | память между сессиями | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) |
-| `headroom` | сжимает логи и JSON перед отправкой модели, экономит токены | [headroomlabs-ai/headroom](https://github.com/headroomlabs-ai/headroom) |
-| `task-observer` | замечает ваши исправления и предлагает обновить навыки | [rebelytics/one-skill-to-rule-them-all](https://github.com/rebelytics/one-skill-to-rule-them-all) |
+| `claude-code-setup` | читает проект и советует, какие хуки, навыки и MCP поставить. В облаке доступен, если включён в аккаунте claude.ai | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) |
+| `claude-mem` | память между сессиями. Нужна программа: `npx claude-mem install` | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) |
+| `headroom` | сжимает логи и JSON перед отправкой модели. Нужна программа: `uv tool install headroom-ai` | [headroomlabs-ai/headroom](https://github.com/headroomlabs-ai/headroom) |
 
-`claude-mem` и `headroom` нужны свои программы. В облачных сессиях их ставит
-`tools/session-setup.sh` (хук SessionStart); на компьютере он ничего не делает.
-Учтите: облачный контейнер временный, поэтому память `claude-mem` в облаке
-не сохраняется между сессиями (только с их сервисом cmem.ai).
-
-Выключить любой плагин — поставить `false` у него в `enabledPlugins`.
+`claude-mem` и `headroom` в облаке бесполезны: облачная среда временная (память
+стирается), а соединение с API контролирует сама среда.
 
 ### OmniRoute (не плагин)
 
@@ -74,11 +84,5 @@ my-plugin/
 ├── .claude-plugin/plugin.json   # имя, описание, версия
 ├── skills/<навык>/SKILL.md      # навыки
 ├── commands/<команда>.md        # слэш-команды: /<команда>
-├── agents/<агент>.md            # субагенты (необязательно)
-├── hooks/hooks.json             # хуки (необязательно)
-└── .mcp.json                    # MCP-серверы (необязательно)
+└── agents/<агент>.md            # субагенты (необязательно)
 ```
-
-Примеры:
-- [`hello-ideas`](hello-ideas) — навык и команда `/hello-ideas`, подбирают референсы из этой библиотеки;
-- [`cartoon-reel`](cartoon-reel) — пошагово ведёт от идеи до готового мультика: герой, тема, план сцен, озвучка, субтитры, правки по номерам.

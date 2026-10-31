@@ -1,5 +1,5 @@
-# Плагин загрузили через сайт GitHub в папку plugins/ — маркетплейс и
-# настройки пересоберутся сами, ничего запускать не нужно.
+# Плагин загрузили через сайт GitHub в папку plugins/ — копии в .claude/
+# и маркетплейс пересоберутся сами, ничего запускать не нужно.
 name: Sync plugins
 
 on:
@@ -24,5 +24,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .claude-plugin/marketplace.json .claude/settings.json
+          git add -A .claude-plugin .claude
           git diff --cached --quiet || { git commit -m "Sync plugin marketplace" && git push; }
