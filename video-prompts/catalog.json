@@ -1,5 +1,5 @@
 {
-  "total": 180,
+  "total": 202,
   "categories": [
     {
       "file": "prompts/01-explainers.md",
@@ -2262,6 +2262,277 @@
           ],
           "prompt": "Style: technical blueprint — white thin lines on deep blue, dimension arrows, monospaced labels, grid paper, lines draw before parts move, isometric views.",
           "anchor": "чертёж-blueprint"
+        }
+      ]
+    },
+    {
+      "file": "prompts/16-claude-draws-with-code.md",
+      "category": "Claude рисует кодом: стили",
+      "intro": "Формат из роликов вида «Claude рисует кодом»: одни и те же герои путешествуют по стилям, и каждую сцену Claude рисует программой (Three.js, SVG, canvas, ASCII, p5.js), без генератора картинок. Работает прямо в чате Claude (артефакт), в Claude Code или в Claude Motion. Сначала зафиксируйте героев шаблоном «Карточка героев», потом подставляйте `[HEROES]` в любой стиль.",
+      "items": [
+        {
+          "title": "Карточка героев (делать первой)",
+          "tools": "чат Claude, Claude Code",
+          "format": "—",
+          "tags": [
+            "character-sheet",
+            "consistency",
+            "base"
+          ],
+          "prompt": "Define two characters as a reusable spec I will paste into every scene, so they look the same in every style:\n[HERO]: [e.g. a girl with long wavy ginger hair, freckles, big dark eyes, black hoodie with white drawstrings, black trousers, white sneakers].\n[SIDEKICK]: [e.g. \"Claude\" — a terracotta-orange box with four short square legs, two small ears on the sides, two vertical black rectangle eyes and a small mouth].\nWrite: proportions (head-to-body ratio), exact colour HEX codes for every part, silhouette notes, 3 typical poses and 3 expressions.\nThen draw both as a simple SVG turnaround (front, side, 3/4) so I can check them.",
+          "anchor": "карточка-героев-делать-первой"
+        },
+        {
+          "title": "Ролик «путешествие по стилям»",
+          "tools": "Claude Code + Remotion, Claude Motion",
+          "format": "60–90 с · 9:16",
+          "tags": [
+            "style-tour",
+            "dialogue",
+            "series"
+          ],
+          "prompt": "Make a 75-second vertical video where [HEROES] travel through [N, e.g. 8] visual styles, each drawn entirely in code.\nEvery scene is 6–10 seconds: the style changes with a quick transition (glitch, pixel dissolve, paper wipe), the characters stay recognisable.\nEach scene has one line of dialogue as a subtitle (top third, white with an orange key word) where they comment on the new style in a funny way.\nStyles in order: [STYLE 1], [STYLE 2], … (take descriptions from this file).\nEnding: they try to go back to the first style, but it comes back \"almost the same\" with a small glitch — punchline.\nLast 5 seconds: end card \"[CTA]\".",
+          "anchor": "ролик-путешествие-по-стилям"
+        },
+        {
+          "title": "Low-poly 3D (Three.js)",
+          "tools": "чат Claude (артефакт), Claude Code",
+          "format": "сцена 6–10 с · 9:16",
+          "tags": [
+            "threejs",
+            "3d",
+            "low-poly"
+          ],
+          "prompt": "Draw [HEROES] as a low-poly 3D scene in Three.js: a cosy living room at dusk — wooden floor, sofa, round rug, tall window with orange curtains and city lights outside, a plant.\nCharacters built from simple primitives (boxes, spheres, cylinders) with flat shading and soft shadows; [SIDEKICK] wags an ear and bounces, [HERO] waves.\nWarm key light from a lamp, cool fill from the window, slow orbiting camera. Render as an animated canvas, 1080×1920.",
+          "anchor": "low-poly-3d-threejs"
+        },
+        {
+          "title": "Плоский SVG (видно кривые)",
+          "tools": "чат Claude (артефакт)",
+          "format": "сцена 6–8 с · 9:16",
+          "tags": [
+            "svg",
+            "flat",
+            "vector"
+          ],
+          "prompt": "Draw [HEROES] as flat SVG illustration: muted teal wall, mustard armchair, a plant, an oval rug with dots, subtle paper grain.\nThen, in the middle of the animation, briefly show the \"construction view\": bezier handles, anchor points and bounding boxes appear over the shapes, then fade away.\nAnimate with CSS/SMIL only: blinking, a small hop, the plant swaying.",
+          "anchor": "плоский-svg-видно-кривые"
+        },
+        {
+          "title": "Пиксельная игра (играбельная)",
+          "tools": "чат Claude (артефакт)",
+          "format": "игра / запись 8 с · 9:16",
+          "tags": [
+            "pixel-art",
+            "game",
+            "canvas"
+          ],
+          "prompt": "Make a tiny playable pixel-art game in one HTML canvas: [HERO] runs and jumps around a cosy pixel room at night (lamp, bookshelf, sofa, window with city and moon), collecting coffee cups; [SIDEKICK] follows her.\n16-bit look, 32-colour palette, no smoothing, 3 hearts and \"SCORE 000\" in a pixel font at the top.\nArrow keys / tap to play. Also add an \"attract mode\" that plays itself so I can record it.",
+          "anchor": "пиксельная-игра-играбельная"
+        },
+        {
+          "title": "Пиксельный портрет",
+          "tools": "чат Claude (артефакт)",
+          "format": "кадр 4 с · 9:16",
+          "tags": [
+            "pixel-art",
+            "portrait",
+            "avatar"
+          ],
+          "prompt": "Draw a close-up pixel-art portrait of [HERO] on a 48×48 grid, scaled up crisply: framed like a game character select screen, blue background, white border.\nBig sparkly eyes, freckles as single pixels, hoodie drawstrings visible.\nAnimate: blink every 2 seconds and a surprised open-mouth expression on cue.",
+          "anchor": "пиксельный-портрет"
+        },
+        {
+          "title": "ASCII-арт в терминале",
+          "tools": "чат Claude (артефакт), Claude Code",
+          "format": "сцена 6–10 с · 9:16",
+          "tags": [
+            "ascii",
+            "terminal",
+            "text-art"
+          ],
+          "prompt": "Draw [HEROES] entirely in ASCII characters inside a fake terminal window (\"user@room:~$ cat room.txt\").\nUse dense characters (@#%*) for dark areas and light ones (.:-) for highlights; colour the characters (orange for [SIDEKICK] and hair, white for skin, dim green for the room).\nAnimate: the art prints line by line, then the characters blink; at one point [HERO] duplicates into three copies (copy-paste joke).\nCRT look: dark green glow, scanlines, slight curvature.",
+          "anchor": "ascii-арт-в-терминале"
+        },
+        {
+          "title": "Японская гравюра (укиё-э)",
+          "tools": "чат Claude (артефакт)",
+          "format": "кадр 6 с · 9:16",
+          "tags": [
+            "ukiyo-e",
+            "woodblock",
+            "japan"
+          ],
+          "prompt": "Draw [HEROES] as a Japanese woodblock print (ukiyo-e) in SVG: a snowy mountain, stylised waves with foam claws, a red sun, a pine branch, flat sky gradient, aged paper texture.\nA vertical cartouche with the title \"[TITLE]\" and a small red seal.\nLimited palette: Prussian blue, indigo, red, beige. Gentle motion: waves curl, birds drift.",
+          "anchor": "японская-гравюра-укиё-э"
+        },
+        {
+          "title": "Мультик 1930-х (резиновые руки)",
+          "tools": "чат Claude (артефакт), Remotion",
+          "format": "сцена 6–8 с · 9:16",
+          "tags": [
+            "1930s",
+            "rubber-hose",
+            "black-and-white"
+          ],
+          "prompt": "Draw [HEROES] in 1930s rubber-hose cartoon style: black-and-white with grey tones, big \"pie-cut\" eyes, white gloves, bendy limbs, everything (even the furniture and the sun in the window) bouncing to the same rhythm.\nAdd film grain, flicker, slight jitter and a vignette.",
+          "anchor": "мультик-1930-х-резиновые-руки"
+        },
+        {
+          "title": "Синтвейв / 80-е",
+          "tools": "чат Claude (артефакт), Remotion",
+          "format": "сцена 6 с · 9:16",
+          "tags": [
+            "synthwave",
+            "neon",
+            "80s"
+          ],
+          "prompt": "Put [HEROES] on a synthwave stage: neon magenta perspective grid scrolling to the horizon, striped setting sun, purple sky.\nCharacters get a neon rim light; floating lines of code drift past them like holograms.\nTransition in: the previous scene \"glitches\" into the grid with an orange electric arc.",
+          "anchor": "синтвейв--80-е"
+        },
+        {
+          "title": "Кубизм",
+          "tools": "чат Claude (артефакт)",
+          "format": "сцена 6–8 с · 9:16",
+          "tags": [
+            "cubism",
+            "picasso",
+            "painting"
+          ],
+          "prompt": "Redraw [HEROES] in Cubism: faces split into flat geometric planes seen from several angles at once (both eyes on one side, nose in profile), ochre-brown-grey palette, overlapping translucent shards in the background (a cup, a guitar, a window).\nShapes slide slightly as if the viewpoint keeps shifting. Visible brush texture.",
+          "anchor": "кубизм"
+        },
+        {
+          "title": "Герои из строк кода",
+          "tools": "Claude Code + Remotion, чат Claude",
+          "format": "сцена 8–10 с · 9:16",
+          "tags": [
+            "code-art",
+            "meta",
+            "typography"
+          ],
+          "prompt": "Render [HEROES] where every pixel is a character of the very code that draws them: dark editor background with faint scrolling source, the characters formed by coloured monospace text (orange for hair and [SIDEKICK], pale for skin, dark for the hoodie).\nCount the lines of code that draw each character and show the number as a caption (\"[HERO]: [N] lines, freckles: [N]\").\nZoom in until single characters of code are readable, then zoom out.",
+          "anchor": "герои-из-строк-кода"
+        },
+        {
+          "title": "Поп-арт комикс",
+          "tools": "чат Claude (артефакт)",
+          "format": "сцена 6 с · 9:16",
+          "tags": [
+            "comics",
+            "pop-art",
+            "halftone"
+          ],
+          "prompt": "Draw [HEROES] as a pop-art comic panel: bold black outlines, Ben-Day halftone dots, flat primary colours, a jagged \"WOW!\" burst and a speech balloon \"[LINE]\".\nPanel borders slam in one by one; the dots pulse slightly.",
+          "anchor": "поп-арт-комикс"
+        },
+        {
+          "title": "Конструктор из кубиков (воксели)",
+          "tools": "чат Claude (артефакт), Three.js",
+          "format": "сцена 8 с · 9:16",
+          "tags": [
+            "voxel",
+            "toy",
+            "building-blocks"
+          ],
+          "prompt": "Build [HEROES] from voxels / toy bricks in Three.js: each block falls from above and snaps into place with a tiny bounce until the characters are complete, then they wave.\nPlastic shading with glossy highlights, studs on top, bright toy colours, studio floor.",
+          "anchor": "конструктор-из-кубиков-воксели"
+        },
+        {
+          "title": "Витраж",
+          "tools": "чат Claude (артефакт)",
+          "format": "кадр 6 с · 9:16",
+          "tags": [
+            "stained-glass",
+            "svg",
+            "light"
+          ],
+          "prompt": "Draw [HEROES] as a stained-glass window in SVG: thick dark lead lines, translucent jewel-tone glass pieces, a gothic arch frame.\nAnimate sunlight sweeping across so the glass colours glow and cast coloured light on a stone floor below.",
+          "anchor": "витраж"
+        },
+        {
+          "title": "Акварель (SVG-фильтры)",
+          "tools": "чат Claude (артефакт)",
+          "format": "кадр 6 с · 9:16",
+          "tags": [
+            "watercolor",
+            "filters",
+            "soft"
+          ],
+          "prompt": "Paint [HEROES] in watercolour using SVG filters (turbulence + displacement for bleeding edges, paper texture, pigment pooling at edges).\nWashes appear one by one as if being painted, then pencil outlines draw on top. Soft pastel palette, lots of white paper.",
+          "anchor": "акварель-svg-фильтры"
+        },
+        {
+          "title": "Ван Гог (мазки по потоку)",
+          "tools": "p5.js, чат Claude (артефакт)",
+          "format": "сцена 8 с · 9:16",
+          "tags": [
+            "van-gogh",
+            "flow-field",
+            "painting"
+          ],
+          "prompt": "Paint [HEROES] at night under a swirling starry sky with thousands of short thick brush strokes that follow a flow field (p5.js).\nStrokes in the sky keep swirling slowly; the characters are painted with strokes along their forms. Deep blues, yellow stars, visible impasto texture.",
+          "anchor": "ван-гог-мазки-по-потоку"
+        },
+        {
+          "title": "Бумажная вырезка / коллаж Матисса",
+          "tools": "чат Claude (артефакт)",
+          "format": "сцена 6 с · 9:16",
+          "tags": [
+            "paper-cut",
+            "matisse",
+            "collage"
+          ],
+          "prompt": "Make [HEROES] from cut-paper shapes in the style of Matisse cut-outs: bold flat colours, organic leaf and seaweed shapes floating around, slightly uneven scissor edges, soft shadows between layers.\nShapes flutter in and assemble the characters.",
+          "anchor": "бумажная-вырезка--коллаж-матисса"
+        },
+        {
+          "title": "Чертёж (blueprint)",
+          "tools": "чат Claude (артефакт)",
+          "format": "сцена 6 с · 9:16",
+          "tags": [
+            "blueprint",
+            "technical",
+            "lines"
+          ],
+          "prompt": "Draw [HEROES] as a technical blueprint: white thin lines on deep blue grid paper, dimension arrows (\"height: 1 cube\"), part labels (\"ear, left\"), an exploded view of [SIDEKICK] showing how it is assembled.\nLines draw themselves before the characters move.",
+          "anchor": "чертёж-blueprint"
+        },
+        {
+          "title": "Светодиодная матрица / табло",
+          "tools": "чат Claude (артефакт)",
+          "format": "сцена 6 с · 9:16",
+          "tags": [
+            "led",
+            "matrix",
+            "scoreboard"
+          ],
+          "prompt": "Show [HEROES] on a big LED dot-matrix sign: round glowing dots with bloom, limited 8-colour palette, the image scrolls in from the right like a stadium board, then a scrolling message \"[TEXT]\".\nSlight dot flicker and dark gaps between LEDs.",
+          "anchor": "светодиодная-матрица--табло"
+        },
+        {
+          "title": "Эмодзи-мозаика",
+          "tools": "чат Claude (артефакт)",
+          "format": "кадр 6 с · 9:16",
+          "tags": [
+            "emoji",
+            "mosaic",
+            "fun"
+          ],
+          "prompt": "Build [HEROES] as a mosaic made only of emoji (🟧 for the cube, 🦰-like orange tones for hair, ⬛ for the hoodie, etc.) on a grid.\nAnimate: emoji pop in randomly until the picture is complete, then a few swap to make the characters blink and smile.",
+          "anchor": "эмодзи-мозаика"
+        },
+        {
+          "title": "Оригами",
+          "tools": "Three.js, чат Claude (артефакт)",
+          "format": "сцена 8 с · 9:16",
+          "tags": [
+            "origami",
+            "paper",
+            "3d"
+          ],
+          "prompt": "Fold [HEROES] as origami in Three.js: flat paper squares fold along crease lines step by step into the characters, with paper shading and visible creases.\nSoft daylight, white table, finish with [SIDEKICK] hopping like a paper frog.",
+          "anchor": "оригами"
         }
       ]
     }

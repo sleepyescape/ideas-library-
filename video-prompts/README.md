@@ -39,7 +39,7 @@
 
 <!-- index:start -->
 
-**Всего шаблонов: 180** в 15 разделах.
+**Всего шаблонов: 202** в 16 разделах.
 
 ### [Объясняющие ролики](prompts/01-explainers.md) — 12
 
@@ -295,5 +295,32 @@
 | [Изометрия low-poly](prompts/15-style-modifiers.md#изометрия-low-poly) | любой | — |
 | [Брутализм / громкий](prompts/15-style-modifiers.md#брутализм--громкий) | любой | — |
 | [Чертёж (blueprint)](prompts/15-style-modifiers.md#чертёж-blueprint) | любой | — |
+
+### [Claude рисует кодом: стили](prompts/16-claude-draws-with-code.md) — 22
+
+| Шаблон | Где | Формат |
+|---|---|---|
+| [Карточка героев (делать первой)](prompts/16-claude-draws-with-code.md#карточка-героев-делать-первой) | чат Claude, Claude Code | — |
+| [Ролик «путешествие по стилям»](prompts/16-claude-draws-with-code.md#ролик-путешествие-по-стилям) | Claude Code + Remotion, Claude Motion | 60–90 с · 9:16 |
+| [Low-poly 3D (Three.js)](prompts/16-claude-draws-with-code.md#low-poly-3d-threejs) | чат Claude (артефакт), Claude Code | сцена 6–10 с · 9:16 |
+| [Плоский SVG (видно кривые)](prompts/16-claude-draws-with-code.md#плоский-svg-видно-кривые) | чат Claude (артефакт) | сцена 6–8 с · 9:16 |
+| [Пиксельная игра (играбельная)](prompts/16-claude-draws-with-code.md#пиксельная-игра-играбельная) | чат Claude (артефакт) | игра / запись 8 с · 9:16 |
+| [Пиксельный портрет](prompts/16-claude-draws-with-code.md#пиксельный-портрет) | чат Claude (артефакт) | кадр 4 с · 9:16 |
+| [ASCII-арт в терминале](prompts/16-claude-draws-with-code.md#ascii-арт-в-терминале) | чат Claude (артефакт), Claude Code | сцена 6–10 с · 9:16 |
+| [Японская гравюра (укиё-э)](prompts/16-claude-draws-with-code.md#японская-гравюра-укиё-э) | чат Claude (артефакт) | кадр 6 с · 9:16 |
+| [Мультик 1930-х (резиновые руки)](prompts/16-claude-draws-with-code.md#мультик-1930-х-резиновые-руки) | чат Claude (артефакт), Remotion | сцена 6–8 с · 9:16 |
+| [Синтвейв / 80-е](prompts/16-claude-draws-with-code.md#синтвейв--80-е) | чат Claude (артефакт), Remotion | сцена 6 с · 9:16 |
+| [Кубизм](prompts/16-claude-draws-with-code.md#кубизм) | чат Claude (артефакт) | сцена 6–8 с · 9:16 |
+| [Герои из строк кода](prompts/16-claude-draws-with-code.md#герои-из-строк-кода) | Claude Code + Remotion, чат Claude | сцена 8–10 с · 9:16 |
+| [Поп-арт комикс](prompts/16-claude-draws-with-code.md#поп-арт-комикс) | чат Claude (артефакт) | сцена 6 с · 9:16 |
+| [Конструктор из кубиков (воксели)](prompts/16-claude-draws-with-code.md#конструктор-из-кубиков-воксели) | чат Claude (артефакт), Three.js | сцена 8 с · 9:16 |
+| [Витраж](prompts/16-claude-draws-with-code.md#витраж) | чат Claude (артефакт) | кадр 6 с · 9:16 |
+| [Акварель (SVG-фильтры)](prompts/16-claude-draws-with-code.md#акварель-svg-фильтры) | чат Claude (артефакт) | кадр 6 с · 9:16 |
+| [Ван Гог (мазки по потоку)](prompts/16-claude-draws-with-code.md#ван-гог-мазки-по-потоку) | p5.js, чат Claude (артефакт) | сцена 8 с · 9:16 |
+| [Бумажная вырезка / коллаж Матисса](prompts/16-claude-draws-with-code.md#бумажная-вырезка--коллаж-матисса) | чат Claude (артефакт) | сцена 6 с · 9:16 |
+| [Чертёж (blueprint)](prompts/16-claude-draws-with-code.md#чертёж-blueprint) | чат Claude (артефакт) | сцена 6 с · 9:16 |
+| [Светодиодная матрица / табло](prompts/16-claude-draws-with-code.md#светодиодная-матрица--табло) | чат Claude (артефакт) | сцена 6 с · 9:16 |
+| [Эмодзи-мозаика](prompts/16-claude-draws-with-code.md#эмодзи-мозаика) | чат Claude (артефакт) | кадр 6 с · 9:16 |
+| [Оригами](prompts/16-claude-draws-with-code.md#оригами) | Three.js, чат Claude (артефакт) | сцена 8 с · 9:16 |
 
 <!-- index:end -->
