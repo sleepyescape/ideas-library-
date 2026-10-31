@@ -1,0 +1,23 @@
+{
+  "name": "ideas-library",
+  "owner": {
+    "name": "sleepyescape"
+  },
+  "metadata": {
+    "description": "Плагины Claude Code из репозитория ideas-library"
+  },
+  "plugins": [
+    {
+      "name": "cartoon-reel",
+      "source": "./plugins/cartoon-reel",
+      "description": "Пошагово ведёт от идеи до готового короткого мультика: герой, тема, план сцен, озвучка, субтитры и правки по номерам клипов",
+      "version": "0.1.0"
+    },
+    {
+      "name": "hello-ideas",
+      "source": "./plugins/hello-ideas",
+      "description": "Пример: подбирает идеи из библиотеки ideas-library под задачу пользователя",
+      "version": "0.1.0"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "hello-ideas",
+  "description": "Пример: подбирает идеи из библиотеки ideas-library под задачу пользователя",
+  "version": "0.1.0",
+  "author": {
+    "name": "sleepyescape"
+  }
+}
