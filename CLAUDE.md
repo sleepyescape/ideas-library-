@@ -34,6 +34,8 @@
 
 ## Устройство
 
+- `video-prompts/` — шаблоны промптов для роликов. Правишь `prompts/*.md` → `python3 tools/video_prompts.py`
+  (пересобирает `catalog.json` и список в `video-prompts/README.md`).
 - `plugins/` — свои плагины; `plugins/README.md` — инструкция и список всех подключённых.
 - `.claude-plugin/marketplace.json` — генерируется `tools/plugins.py sync`, руками не править.
 - `.claude/settings.json` — маркетплейсы, включённые плагины, хук SessionStart.

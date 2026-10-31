@@ -1,0 +1,2269 @@
+{
+  "total": 180,
+  "categories": [
+    {
+      "file": "prompts/01-explainers.md",
+      "category": "Объясняющие ролики",
+      "intro": "Сложная идея за 20–90 секунд: метафора, схема, пошаговый разбор. Лучше всего делаются в Claude Motion или кодом (Remotion, HyperFrames): текст, схемы, иконки.",
+      "items": [
+        {
+          "title": "Сложное через простую метафору",
+          "tools": "Claude Motion, Remotion",
+          "format": "45 с · 9:16 или 16:9",
+          "tags": [
+            "explainer",
+            "metaphor",
+            "shorts"
+          ],
+          "prompt": "Make a 45-second animated explainer of [CONCEPT] for [AUDIENCE] using one metaphor: [CONCEPT] is like [EVERYDAY THING].\nOpen with a hook question in big type in the first 2 seconds: \"[HOOK QUESTION]?\".\nAct 1 (0–10s): show the everyday thing with simple flat shapes and label each part.\nAct 2 (10–35s): morph each part of the metaphor into the matching part of [CONCEPT], one at a time, with a short caption per step.\nAct 3 (35–45s): pull back to show the whole system working, then a one-line takeaway: \"[TAKEAWAY]\".\nStyle: flat 2D, two colours plus one accent ([ACCENT COLOUR]), rounded shapes, soft easing, no stock icons.",
+          "anchor": "сложное-через-простую-метафору"
+        },
+        {
+          "title": "Как это работает: процесс по шагам",
+          "tools": "Claude Motion, Remotion",
+          "format": "30–60 с · 16:9",
+          "tags": [
+            "explainer",
+            "process",
+            "diagram"
+          ],
+          "prompt": "Animate how [PROCESS] works in [N] steps for [AUDIENCE].\nEach step gets its own beat of about 5 seconds: a numbered label slides in, a simple diagram builds itself, and an arrow carries the result into the next step.\nKeep one persistent object (a dot, a document, a package) travelling through every step so the viewer can follow it.\nEnd on the full pipeline visible at once, with the object arriving at \"[FINAL RESULT]\".\nClean white background, thin 2px lines, one brand colour [HEX], monospaced labels, ease-in-out on every move.",
+          "anchor": "как-это-работает-процесс-по-шагам"
+        },
+        {
+          "title": "«Было → стало»",
+          "tools": "Claude Motion, Remotion",
+          "format": "20 с · 1:1 или 9:16",
+          "tags": [
+            "explainer",
+            "before-after",
+            "social"
+          ],
+          "prompt": "A 20-second before/after explainer. Split the frame vertically.\nLeft side, labelled \"Before\": [OLD WAY], shown as a cluttered, slow, grey animation (things piling up, a clock ticking, a progress bar stalling).\nRight side, labelled \"After\": [NEW WAY], the same task done in colour, fast and tidy, finishing first.\nAt 15 seconds the divider slides left and the \"After\" side takes the whole frame, with the line \"[RESULT, e.g. 3 hours → 10 minutes]\".\nBold sans-serif type, high contrast, snappy cuts.",
+          "anchor": "было--стало"
+        },
+        {
+          "title": "Разбор научной статьи",
+          "tools": "Claude Motion, Remotion",
+          "format": "60–90 с · 16:9",
+          "tags": [
+            "explainer",
+            "research",
+            "paper"
+          ],
+          "prompt": "Turn this paper into a 75-second animated explainer for a smart non-expert: [PASTE ABSTRACT OR LINK].\nStructure: the question (why it matters) → what people believed before → the method in one diagram → the key result as an animated chart → one limitation → what it changes.\nShow the main number from the paper large and let it count up.\nUse a calm editorial look: off-white paper texture, serif headings, sans-serif labels, ink-blue accent, gentle camera drift.\nPut a small citation in the corner of every scene.",
+          "anchor": "разбор-научной-статьи"
+        },
+        {
+          "title": "Термин за 15 секунд",
+          "tools": "Claude Motion",
+          "format": "15 с · 9:16",
+          "tags": [
+            "explainer",
+            "glossary",
+            "series"
+          ],
+          "prompt": "A 15-second vertical \"word of the day\" clip that defines [TERM].\n0–3s: the term types itself in huge letters, with the pronunciation underneath.\n3–10s: a one-sentence definition appears word by word while a tiny animated example plays above it.\n10–15s: \"Example: [EXAMPLE SENTENCE]\" and a series logo \"[SERIES NAME] #[NUMBER]\".\nMake it work as a series template: keep the layout fixed, only text and the example change.",
+          "anchor": "термин-за-15-секунд"
+        },
+        {
+          "title": "Почему это происходит",
+          "tools": "Claude Motion, Remotion",
+          "format": "40 с · 9:16",
+          "tags": [
+            "explainer",
+            "curiosity",
+            "science"
+          ],
+          "prompt": "Answer \"Why [EVERYDAY PHENOMENON]?\" in a 40-second vertical explainer.\nStart with the phenomenon as a simple looping illustration and the question in bold.\nZoom in three levels (everyday scale → small scale → tiny scale), each with a one-line caption explaining what happens there.\nZoom back out and replay the opening loop, now with labels showing the cause.\nBright, friendly palette, chunky outlines, playful bounce easing, captions centred in the safe area.",
+          "anchor": "почему-это-происходит"
+        },
+        {
+          "title": "Сравнение двух вариантов",
+          "tools": "Claude Motion, Remotion",
+          "format": "30 с · 16:9",
+          "tags": [
+            "explainer",
+            "comparison",
+            "versus"
+          ],
+          "prompt": "A 30-second comparison of [OPTION A] vs [OPTION B] for [AUDIENCE].\nTwo cards face each other like opponents. For each of [N] criteria ([CRITERION 1], [CRITERION 2], [CRITERION 3]) a row appears and a meter fills on each side.\nKeep it fair: show where each one wins.\nFinish with \"Pick [A] if… / Pick [B] if…\" side by side.\nNeutral dark background, A in [COLOUR A], B in [COLOUR B], scoreboard-style numbers.",
+          "anchor": "сравнение-двух-вариантов"
+        },
+        {
+          "title": "Ошибка, которую делают все",
+          "tools": "Claude Motion",
+          "format": "30 с · 9:16",
+          "tags": [
+            "explainer",
+            "mistake",
+            "hook"
+          ],
+          "prompt": "A 30-second vertical clip: \"The [TOPIC] mistake almost everyone makes\".\nHook: the mistake shown as a quick animation that ends with a big red cross.\nThen: why it happens (one diagram), what to do instead (three short animated steps), and the result compared side by side.\nClose with \"Save this for later\" and a bookmark icon that pops.\nHigh-contrast black and yellow, heavy condensed type, cuts on every sentence.",
+          "anchor": "ошибка-которую-делают-все"
+        },
+        {
+          "title": "Объяснение кода/алгоритма",
+          "tools": "Claude Motion, Remotion",
+          "format": "45 с · 16:9",
+          "tags": [
+            "explainer",
+            "code",
+            "algorithm"
+          ],
+          "prompt": "Animate how [ALGORITHM / CODE CONCEPT] works, for junior developers.\nLeft half: the code ([LANGUAGE], max 12 lines), with the current line highlighted as it runs.\nRight half: the data structure it changes ([ARRAY / TREE / QUEUE]), animated step by step in sync with the highlighted line.\nRun one small example ([INPUT]) all the way to the output ([OUTPUT]).\nEnd with the Big-O written large and a one-line intuition.\nDark editor theme, monospace font, cyan highlight, smooth 300ms transitions.",
+          "anchor": "объяснение-кодаалгоритма"
+        },
+        {
+          "title": "Миф или правда",
+          "tools": "Claude Motion",
+          "format": "25 с · 9:16",
+          "tags": [
+            "explainer",
+            "myth",
+            "social"
+          ],
+          "prompt": "A 25-second vertical \"Myth or fact?\" clip about [TOPIC].\nShow the claim \"[CLAIM]\" on a card. A stamp hovers between MYTH and FACT for 2 seconds of suspense, then slams down on [ANSWER].\nExplain why in three quick animated captions with one simple illustration each.\nFinish with the true statement and \"Follow for more myths\".\nStamp-and-paper look, kraft background, red and green ink, slight paper shake on the stamp.",
+          "anchor": "миф-или-правда"
+        },
+        {
+          "title": "Путь пользователя",
+          "tools": "Claude Motion, Remotion",
+          "format": "45 с · 16:9",
+          "tags": [
+            "explainer",
+            "journey",
+            "ux"
+          ],
+          "prompt": "Animate the journey of [PERSONA] through [PRODUCT / SERVICE / PROCESS], from [START] to [GOAL].\nA small character walks along a winding path; each stop is a touchpoint ([STEP 1], [STEP 2], [STEP 3], [STEP 4]) with a mood emoji that shows how they feel there.\nHighlight the pain point at [STEP] in red and the fix in green.\nEnd with an overview map of the whole path.\nIsometric flat illustration, pastel palette, gentle camera follow.",
+          "anchor": "путь-пользователя"
+        },
+        {
+          "title": "Цифры, которые трудно представить",
+          "tools": "Claude Motion, Remotion",
+          "format": "40 с · 16:9 или 9:16",
+          "tags": [
+            "explainer",
+            "scale",
+            "numbers"
+          ],
+          "prompt": "Make [BIG NUMBER / SCALE, e.g. \"a billion seconds\"] feel real in 40 seconds.\nStart with something countable (one dot = [UNIT]). Keep zooming out and multiplying the dots, comparing them to familiar things at each step ([COMPARISON 1], [COMPARISON 2], [COMPARISON 3]).\nShow a counter in the corner the whole time.\nEnd with the full number spelled out and one surprising line: \"[PUNCHLINE]\".\nBlack background, white dots, one warm accent colour, slow, deliberate zooms.",
+          "anchor": "цифры-которые-трудно-представить"
+        }
+      ]
+    },
+    {
+      "file": "prompts/02-product-launch.md",
+      "category": "Запуски продуктов и приложений",
+      "intro": "Ролики для лендинга, X/Twitter, Product Hunt и магазинов приложений: интерфейс, фичи, логотип в финале. Делаются в Claude Motion или кодом; скриншоты и брендбук прикладывайте к промпту.",
+      "items": [
+        {
+          "title": "Запуск SaaS за 30 секунд",
+          "tools": "Claude Motion, Remotion",
+          "format": "30 с · 16:9",
+          "tags": [
+            "launch",
+            "saas",
+            "ui"
+          ],
+          "prompt": "A 30-second launch video for [PRODUCT], a [ONE-LINE DESCRIPTION] for [AUDIENCE].\n0–5s: the problem in one bold line: \"[PROBLEM]\".\n5–22s: three features, about 5 seconds each: [FEATURE 1], [FEATURE 2], [FEATURE 3]. Rebuild each as a clean UI card (not a screenshot) that animates the action a user would take.\n22–30s: the logo assembles on the beat, then the URL \"[URL]\" and \"[CTA]\".\nBrand colours [HEX 1] and [HEX 2], font [FONT], cuts synced to a 120 BPM track.",
+          "anchor": "запуск-saas-за-30-секунд"
+        },
+        {
+          "title": "Одна фигура — весь интерфейс",
+          "tools": "Claude Motion, Remotion",
+          "format": "20 с · 16:9",
+          "tags": [
+            "launch",
+            "morph",
+            "ui",
+            "minimal"
+          ],
+          "prompt": "A 20-second product film where one shape morphs continuously into every key UI element of [PRODUCT]: a button, then [ELEMENT 2], [ELEMENT 3], [ELEMENT 4], and finally the logo.\nA cursor drives every change, clicking, dragging and scrolling.\nNever cut: one continuous take.\nBlack and white only, with a single accent colour on the final logo. Spring easing with a slight overshoot.",
+          "anchor": "одна-фигура--весь-интерфейс"
+        },
+        {
+          "title": "Тизер новой функции",
+          "tools": "Claude Motion",
+          "format": "15 с · 9:16 и 16:9",
+          "tags": [
+            "teaser",
+            "feature",
+            "date"
+          ],
+          "prompt": "A 15-second teaser for [FEATURE NAME], coming to [PRODUCT] on [DATE].\nShow only glimpses: blurred UI fragments, a cropped close-up of [KEY ELEMENT], a cursor hovering but never clicking.\nText beats: \"Something new\" → \"[HINT]\" → the date revealed with a mask wipe.\nDark background, glowing edges, low hum building to a hit at the date.\nExport both 9:16 and 16:9.",
+          "anchor": "тизер-новой-функции"
+        },
+        {
+          "title": "Промо приложения для App Store",
+          "tools": "Claude Motion, Remotion",
+          "format": "25 с · 9:16 (886×1920)",
+          "tags": [
+            "app-store",
+            "mobile",
+            "preview"
+          ],
+          "prompt": "A 25-second App Store preview for [APP NAME] ([CATEGORY]).\nA phone mockup sits centre frame; the screen walks through [SCREEN 1] → [SCREEN 2] → [SCREEN 3] with real taps and swipes (show touch ripples).\nAbove the phone, one short benefit line per screen: \"[BENEFIT 1]\", \"[BENEFIT 2]\", \"[BENEFIT 3]\".\nNo text in the last 3 seconds, just the app icon growing.\nBackground: soft gradient in [BRAND COLOURS].",
+          "anchor": "промо-приложения-для-app-store"
+        },
+        {
+          "title": "Продукт из одной точки",
+          "tools": "Claude Motion, Remotion",
+          "format": "25 с · 16:9",
+          "tags": [
+            "reveal",
+            "cinematic",
+            "ui"
+          ],
+          "prompt": "Product reveal for [PRODUCT]: a single dot on a black screen pulses, then grows lines that become [MAIN CHART / MAIN SCREEN].\nPanels unfold around it one by one ([PANEL 1], [PANEL 2], [PANEL 3]) until the full dashboard is built.\nFinal move: the camera pulls back fast until the dashboard is a star in space, then the logo.\nNeon-on-black, thin lines, subtle glow, deep bass hits on each panel.",
+          "anchor": "продукт-из-одной-точки"
+        },
+        {
+          "title": "Чейнджлог → видео релиза",
+          "tools": "Claude Code + Remotion",
+          "format": "30 с · 16:9",
+          "tags": [
+            "release",
+            "changelog",
+            "devtools"
+          ],
+          "prompt": "Turn this changelog into a 30-second release video: [PASTE CHANGELOG].\nPick the 3–4 most user-visible changes. For each: a version tag, a short headline, and a small animated UI demo of the change.\nOpen with \"[PRODUCT] v[VERSION]\" and close with \"Update now\" + [URL].\nDeveloper aesthetic: dark theme, monospace accents, terminal cursor blink transitions, green highlights.",
+          "anchor": "чейнджлог--видео-релиза"
+        },
+        {
+          "title": "Продукт за один непрерывный кадр",
+          "tools": "Claude Motion, Remotion",
+          "format": "20 с · 16:9",
+          "tags": [
+            "one-take",
+            "launch",
+            "flow"
+          ],
+          "prompt": "A launch film for [PRODUCT] in one continuous take: photos, UI and type flow into each other with no cuts.\nStart with [INPUT, e.g. a photo / a messy note], which slides into the app, gets transformed by [KEY ACTION], and comes out as [OUTPUT].\nEach transformation is a match move (the shape of one thing becomes the next).\nWarm off-white canvas, soft shadows, rounded corners, calm piano.",
+          "anchor": "продукт-за-один-непрерывный-кадр"
+        },
+        {
+          "title": "Product Hunt: «Мы запустились!»",
+          "tools": "Claude Motion",
+          "format": "20 с · 1:1",
+          "tags": [
+            "product-hunt",
+            "launch-day",
+            "social"
+          ],
+          "prompt": "A 20-second square \"We're live on Product Hunt\" clip for [PRODUCT].\nOpen with confetti bursting from the logo, then the tagline \"[TAGLINE]\".\nShow three tiny looping feature demos in a row.\nFinish with an upvote arrow that bounces, the text \"Support us today\" and [LINK].\nBright, celebratory, [BRAND COLOUR] with orange accents, bouncy easing.",
+          "anchor": "product-hunt-мы-запустились"
+        },
+        {
+          "title": "Демо в стиле «напиши → получи»",
+          "tools": "Claude Motion, Remotion",
+          "format": "12 с · 1:1",
+          "tags": [
+            "ai-product",
+            "prompt",
+            "sting"
+          ],
+          "prompt": "A 12-second square product sting for [AI PRODUCT].\nA user types \"[EXAMPLE PROMPT]\" into an input field (realistic typing speed, a few corrections).\nOn enter, the answer [PAGE / IMAGE / TABLE] builds itself block by block.\nTwo feature cards stack in from the bottom: \"[FEATURE 1]\" and \"[FEATURE 2]\".\nEnd on the logo. Light UI, rounded cards, subtle depth.",
+          "anchor": "демо-в-стиле-напиши--получи"
+        },
+        {
+          "title": "Сравнение тарифов",
+          "tools": "Claude Motion",
+          "format": "30 с · 16:9",
+          "tags": [
+            "pricing",
+            "sales",
+            "plans"
+          ],
+          "prompt": "Animate how our pricing plans compare for [OCCASION, e.g. the sales kickoff].\nPlans: [PLAN 1 – PRICE – KEY FEATURES], [PLAN 2 – …], [PLAN 3 – …].\nCards rise one by one; features tick in as checkmarks; the recommended plan lifts higher and glows.\nEnd with \"[CTA]\".\nCorporate but friendly: white cards, brand colour [HEX], subtle shadows.",
+          "anchor": "сравнение-тарифов"
+        },
+        {
+          "title": "Запуск в бумажном стиле",
+          "tools": "Claude Motion, Remotion",
+          "format": "15 с · 16:9",
+          "tags": [
+            "launch",
+            "paper",
+            "craft"
+          ],
+          "prompt": "A 15-second launch film for [PRODUCT] in a light paper style.\nUI cards are cut-out paper pieces with torn edges and soft drop shadows; they slide, fold and stack as if moved by hand (slight stop-motion jitter at 12 fps).\nThree beats: \"[PROBLEM]\" → \"[SOLUTION]\" → logo stamped like a rubber stamp.\nCream paper, pencil-line details, one ink colour.",
+          "anchor": "запуск-в-бумажном-стиле"
+        },
+        {
+          "title": "Ролик-милестоун",
+          "tools": "Claude Motion, Remotion",
+          "format": "15 с · 16:9 или 1:1",
+          "tags": [
+            "milestone",
+            "numbers",
+            "celebration"
+          ],
+          "prompt": "Celebrate [MILESTONE, e.g. 1,000,000 users] for [PRODUCT] in 15 seconds.\nA counter ticks up from 0 with accelerating speed while a growth chart draws itself behind it.\nAt the target number, the counter freezes, the digits explode into particles that reform as \"Thank you\".\nFinish with the logo.\nGold-on-black, sparkles on the peak, a drum roll that ends on a hit.",
+          "anchor": "ролик-милестоун"
+        }
+      ]
+    },
+    {
+      "file": "prompts/03-ads-ugc.md",
+      "category": "Реклама, промо и UGC",
+      "intro": "Короткая реклама товаров и услуг: проблема → решение → призыв. Часть шаблонов — для видеогенераторов (Veo, Sora, Kling, Seedance, Runway), часть — для анимации (Claude Motion).",
+      "items": [
+        {
+          "title": "Проблема → решение → CTA (15 с)",
+          "tools": "Claude Motion, Remotion",
+          "format": "15 с · 9:16",
+          "tags": [
+            "ad",
+            "direct-response",
+            "cta"
+          ],
+          "prompt": "A 15-second vertical ad for [PRODUCT].\n0–3s hook: \"[PAINFUL QUESTION]?\" in huge type, shaking slightly.\n3–9s: the pain, shown as 2 quick animated scenes ([PAIN 1], [PAIN 2]).\n9–13s: [PRODUCT] appears and fixes it; show the result as a number or a happy visual.\n13–15s: \"[OFFER]\" + \"[CTA]\" button that pulses.\nCaptions always on, safe area respected, brand colour [HEX].",
+          "anchor": "проблема--решение--cta-15-с"
+        },
+        {
+          "title": "UGC-отзыв «как будто снято на телефон»",
+          "tools": "Veo, Sora, Kling, Seedance",
+          "format": "8–10 с · 9:16",
+          "tags": [
+            "ugc",
+            "testimonial",
+            "ai-video"
+          ],
+          "prompt": "Handheld vertical selfie video, shot on a phone. A [AGE]-year-old [PERSON DESCRIPTION] sits in [PLACE, e.g. their car / kitchen], natural window light, slightly messy background.\nThey hold up [PRODUCT] to the camera and say, enthusiastic but casual: \"[LINE, max 20 words]\".\nSmall natural camera shake, quick glance away and back, authentic smile.\nAudio: their voice only, room tone, no music.",
+          "anchor": "ugc-отзыв-как-будто-снято-на-телефон"
+        },
+        {
+          "title": "Товар на столе: «распаковка»",
+          "tools": "Veo, Sora, Kling",
+          "format": "8 с · 9:16 или 1:1",
+          "tags": [
+            "unboxing",
+            "product",
+            "ai-video"
+          ],
+          "prompt": "Top-down shot of a wooden table. Two hands open a [PACKAGING] and lift out [PRODUCT], turning it slowly to catch the light.\nSoft daylight from the left, shallow depth of field, crisp detail on [KEY DETAIL].\nSatisfying sounds: paper rustle, box lid, a soft click.\nCamera: static, then a slow push-in on the product in the last 2 seconds.",
+          "anchor": "товар-на-столе-распаковка"
+        },
+        {
+          "title": "Продуктовый «герой-кадр»",
+          "tools": "Veo, Sora, Kling, Runway",
+          "format": "6–8 с · 16:9",
+          "tags": [
+            "hero-shot",
+            "commercial",
+            "cinematic"
+          ],
+          "prompt": "Premium commercial hero shot of [PRODUCT] on [SURFACE: wet black stone / marble / sand].\n[ELEMENT: water splash / falling petals / slow smoke] moves around it in slow motion (120 fps look).\nCamera: slow 180° orbit at product height, macro lens, f/2.8.\nLighting: dark studio, rim light in [COLOUR], one soft key from above.\nNo text, no people. Ends on a clean frame with space on the right for a logo.",
+          "anchor": "продуктовый-герой-кадр"
+        },
+        {
+          "title": "Еда: аппетитный крупный план",
+          "tools": "Veo, Sora, Kling",
+          "format": "6 с · 9:16",
+          "tags": [
+            "food",
+            "macro",
+            "ai-video"
+          ],
+          "prompt": "Macro close-up of [DISH], freshly made. [ACTION: cheese stretching / syrup pouring / steam rising / a knife slicing through].\nWarm tungsten light, dark background, shallow depth of field, slow motion.\nCamera slowly pushes in. Rich sizzling and pouring sounds.\nStyle: high-end food commercial.",
+          "anchor": "еда-аппетитный-крупный-план"
+        },
+        {
+          "title": "Акция / распродажа",
+          "tools": "Claude Motion",
+          "format": "10 с · 9:16 и 1:1",
+          "tags": [
+            "sale",
+            "promo",
+            "discount"
+          ],
+          "prompt": "A 10-second promo for [STORE]'s [SALE NAME].\nThe discount \"-[N]%\" smashes into frame, cracks the screen, and product cards ([PRODUCT 1], [PRODUCT 2], [PRODUCT 3]) fly through the cracks with old prices crossed out.\nA countdown \"Ends [DATE]\" ticks in the corner.\nFinal card: \"[PROMO CODE]\" + \"[CTA]\".\nLoud, bold, red and yellow, beat-synced hits.",
+          "anchor": "акция--распродажа"
+        },
+        {
+          "title": "Отзывы клиентов каруселью",
+          "tools": "Claude Motion, Remotion",
+          "format": "20 с · 1:1",
+          "tags": [
+            "testimonials",
+            "social-proof"
+          ],
+          "prompt": "A 20-second social-proof video for [BUSINESS].\nFive review cards (name, star rating, one sentence) slide in one after another, each staying 3 seconds: [REVIEW 1] … [REVIEW 5].\nStars fill one by one; the rating total counts up to \"[AVERAGE] ★ from [N] reviews\".\nEnd with the logo and \"[CTA]\".\nClean white cards on a soft [BRAND COLOUR] background.",
+          "anchor": "отзывы-клиентов-каруселью"
+        },
+        {
+          "title": "Местный бизнес: «зайдите к нам»",
+          "tools": "Veo, Sora, Kling",
+          "format": "8 с · 9:16",
+          "tags": [
+            "local",
+            "cafe",
+            "small-business"
+          ],
+          "prompt": "Cosy cinematic shot inside [BUSINESS TYPE: a small coffee shop / bakery / barbershop] at [TIME OF DAY].\n[ACTION: a barista pours latte art / bread comes out of the oven / a stylist finishes a cut] in the foreground; a few customers chat softly in the blurred background.\nWarm golden light, slight film grain, slow dolly-in.\nNatural ambient sound, gentle acoustic guitar.",
+          "anchor": "местный-бизнес-зайдите-к-нам"
+        },
+        {
+          "title": "Реклама в стиле гравюры",
+          "tools": "Claude Motion, Remotion",
+          "format": "20 с · 16:9",
+          "tags": [
+            "ad",
+            "engraving",
+            "vintage"
+          ],
+          "prompt": "A 20-second brand ad for [BRAND] in the style of an old engraving: crosshatched black ink on aged paper.\nThe illustration of [PRODUCT / SYMBOL] draws itself line by line, then the lines begin to move (gears turn, steam rises, leaves sway).\nOrnamental frame and Victorian-style type: \"[HEADLINE]\".\nFinal beat: a wax seal stamps the logo.",
+          "anchor": "реклама-в-стиле-гравюры"
+        },
+        {
+          "title": "Сериал из трёх коротких реклам",
+          "tools": "Claude Motion",
+          "format": "3 × 6 с · 9:16",
+          "tags": [
+            "ad",
+            "series",
+            "bumper"
+          ],
+          "prompt": "Make three 6-second bumper ads for [PRODUCT] that work as a series.\nEach one: a single relatable situation ([SITUATION 1], [SITUATION 2], [SITUATION 3]) in 4 seconds, then the same end card \"[TAGLINE]\" + logo.\nSame layout, font and end card across all three, a different accent colour per ad.\nNo voice-over; captions carry the joke.",
+          "anchor": "сериал-из-трёх-коротких-реклам"
+        },
+        {
+          "title": "Анти-реклама (самоирония)",
+          "tools": "Claude Motion",
+          "format": "20 с · 9:16",
+          "tags": [
+            "ad",
+            "humor",
+            "honest"
+          ],
+          "prompt": "A 20-second \"honest ad\" for [PRODUCT] that pokes fun at itself.\nClassic ad clichés appear (a lens flare, \"revolutionary!\", a stock-photo smile) and are crossed out one by one by a hand-drawn red pen.\nThen plain honest lines: \"[HONEST LINE 1]\", \"[HONEST LINE 2]\", \"It just [WHAT IT DOES].\"\nEnd: logo + \"[CTA]\". Deadpan timing, white background, black type, red marker.",
+          "anchor": "анти-реклама-самоирония"
+        },
+        {
+          "title": "Продукт в руке — реалистичный демо-кадр",
+          "tools": "Veo, Sora, Kling, Seedance",
+          "format": "8 с · 9:16",
+          "tags": [
+            "product-demo",
+            "hands",
+            "ai-video"
+          ],
+          "prompt": "Close-up POV shot: a hand holds [PRODUCT] and demonstrates [ONE ACTION] in [SETTING].\nShow the result clearly: [RESULT].\nBright natural daylight, realistic skin and reflections, handheld micro-movements.\nKeep the product shape and logo consistent with the reference image [ATTACH IMAGE].\nAmbient sound of the room plus the product's own sound.",
+          "anchor": "продукт-в-руке--реалистичный-демо-кадр"
+        }
+      ]
+    },
+    {
+      "file": "prompts/04-social-shorts.md",
+      "category": "Короткие ролики: Reels, TikTok, Shorts",
+      "intro": "Вертикальные 9:16, 7–60 секунд. Главное — крючок в первые 2 секунды и субтитры. Шаблоны форматов, которые хорошо смотрятся сериями.",
+      "items": [
+        {
+          "title": "Топ-5",
+          "tools": "Claude Motion, Remotion",
+          "format": "30 с · 9:16",
+          "tags": [
+            "list",
+            "top",
+            "countdown"
+          ],
+          "prompt": "A 30-second vertical countdown: \"Top 5 [TOPIC]\".\nHook (0–2s): \"#1 will surprise you\" over a blurred preview of #1.\nEach item gets 5 seconds: a big rank number flips in, the name, one visual, one fact.\nProgress dots at the top show where we are.\nEnd: \"Which one did you know? 👇\".\nEnergetic, bold numbers, colour changes per item, whoosh on each transition.",
+          "anchor": "топ-5"
+        },
+        {
+          "title": "«POV:» ситуация",
+          "tools": "Veo, Sora, Kling, Seedance",
+          "format": "8 с · 9:16",
+          "tags": [
+            "pov",
+            "relatable",
+            "ai-video"
+          ],
+          "prompt": "First-person POV vertical video: you are [ROLE] at [PLACE] when [SITUATION].\nCamera at eye level, natural head movement, hands visible at the bottom of the frame.\n[WHAT HAPPENS in 2–3 beats].\nRealistic lighting, ambient sound.\nOn-screen caption at the top: \"POV: [CAPTION]\".",
+          "anchor": "pov-ситуация"
+        },
+        {
+          "title": "Факт, который взрывает мозг",
+          "tools": "Claude Motion",
+          "format": "15 с · 9:16",
+          "tags": [
+            "fact",
+            "curiosity",
+            "loop"
+          ],
+          "prompt": "A 15-second vertical clip with one mind-blowing fact about [TOPIC]: \"[FACT]\".\nReveal the fact in three parts so each line raises curiosity.\nIllustrate it with one simple, looping animation.\nMake the last frame match the first so the video loops seamlessly.\nDark background, glowing type, one sound hit per line.",
+          "anchor": "факт-который-взрывает-мозг"
+        },
+        {
+          "title": "Мини-туториал «3 шага»",
+          "tools": "Claude Motion",
+          "format": "25 с · 9:16",
+          "tags": [
+            "tutorial",
+            "how-to",
+            "steps"
+          ],
+          "prompt": "A 25-second vertical tutorial: \"How to [RESULT] in 3 steps\".\nShow the final result for 2 seconds first, then rewind effect.\nSteps 1–3: big step number, a short instruction, an animated demo of the action.\nEnd: the result again + \"Save for later\".\nClean, bright, big captions in the middle third, tick sound on each step.",
+          "anchor": "мини-туториал-3-шага"
+        },
+        {
+          "title": "Сторителлинг «я сделал X за Y дней»",
+          "tools": "Claude Motion, Remotion",
+          "format": "40 с · 9:16",
+          "tags": [
+            "challenge",
+            "story",
+            "progress"
+          ],
+          "prompt": "A 40-second vertical story: \"I tried [CHALLENGE] for [N] days\".\nDay counter in the corner advances fast; progress bar fills.\nHighlights: Day 1 ([FEELING]), Day [X] ([PROBLEM]), Day [Y] ([BREAKTHROUGH]), Day [N] ([RESULT]).\nEach highlight is a 6-second card with a doodle illustration.\nEnd with the before/after and \"Would you try it?\".\nNotebook / diary aesthetic, handwritten font, marker highlights.",
+          "anchor": "сторителлинг-я-сделал-x-за-y-дней"
+        },
+        {
+          "title": "Вопрос → ответ (для комментариев)",
+          "tools": "Claude Motion",
+          "format": "20 с · 9:16",
+          "tags": [
+            "reply",
+            "comment",
+            "engagement"
+          ],
+          "prompt": "A 20-second vertical \"reply to comment\" video.\nShow a comment bubble from @[USERNAME]: \"[QUESTION]\".\nThe bubble flies to the top, and the answer builds below in 3 animated points with tiny icons.\nEnd: \"Ask the next question in the comments\".\nSocial-app look: rounded bubbles, system font, soft shadows.",
+          "anchor": "вопрос--ответ-для-комментариев"
+        },
+        {
+          "title": "Ожидание vs реальность",
+          "tools": "Claude Motion, Veo, Kling",
+          "format": "12 с · 9:16",
+          "tags": [
+            "humor",
+            "expectation-reality",
+            "split"
+          ],
+          "prompt": "A 12-second vertical split-screen: top half \"Expectation\", bottom half \"Reality\", about [TOPIC].\nTop: [IDEAL VERSION], polished, glossy, slow motion.\nBottom: [REAL VERSION], chaotic, funny, plays at the same time.\nAt 9 seconds the top half glitches and collapses into the bottom one.\nLabels in bold white with black outline.",
+          "anchor": "ожидание-vs-реальность"
+        },
+        {
+          "title": "Залипательный луп",
+          "tools": "Claude Motion, Remotion",
+          "format": "8 с · 9:16 (бесшовный)",
+          "tags": [
+            "satisfying",
+            "loop",
+            "abstract"
+          ],
+          "prompt": "An 8-second perfectly seamless loop that is oddly satisfying: [OBJECTS, e.g. coloured balls] [ACTION, e.g. drop into slots, sort themselves by colour, and reset].\nPhysics should feel weighty and exact. The last frame must equal the first.\nPastel colours, soft shadows, top-down view, satisfying click sounds.",
+          "anchor": "залипательный-луп"
+        },
+        {
+          "title": "Таймлапс «из ничего в готовое»",
+          "tools": "Veo, Sora, Kling",
+          "format": "8 с · 9:16",
+          "tags": [
+            "timelapse",
+            "transformation",
+            "ai-video"
+          ],
+          "prompt": "Timelapse vertical video: [EMPTY THING, e.g. an empty room / bare plot / blank canvas] transforms into [FINISHED THING] over 8 seconds.\nStatic camera on a tripod, light changes from morning to evening across the clip.\nWorkers / brush strokes / growth appear as fast motion blur.\nFinal second holds on the finished result.",
+          "anchor": "таймлапс-из-ничего-в-готовое"
+        },
+        {
+          "title": "Тренд-шаблон «вещи, которые…»",
+          "tools": "Claude Motion",
+          "format": "20 с · 9:16",
+          "tags": [
+            "list",
+            "trend",
+            "relatable"
+          ],
+          "prompt": "A 20-second vertical list: \"Things only [GROUP OF PEOPLE] understand\".\nSix quick items, 3 seconds each, each with a tiny looping illustration and one line of text.\nEach card slides up like a story.\nEnd with \"Tag someone who…\".\nPlayful sticker style, thick outlines, bright flat colours.",
+          "anchor": "тренд-шаблон-вещи-которые"
+        },
+        {
+          "title": "Хук-заставка для начала ролика",
+          "tools": "Claude Motion, Remotion",
+          "format": "3 с · 9:16",
+          "tags": [
+            "hook",
+            "intro",
+            "template"
+          ],
+          "prompt": "Design a 3-second hook intro for my vertical videos about [NICHE].\nThe hook line \"[HOOK]\" slams in word by word with screen shake; a short whoosh-hit sound.\nLeave the bottom third empty so it can be layered over talking-head footage.\nTransparent background (export with alpha), white type with black stroke, [ACCENT] highlight on the key word.",
+          "anchor": "хук-заставка-для-начала-ролика"
+        },
+        {
+          "title": "Субтитры «как у блогеров»",
+          "tools": "Remotion, Claude Code",
+          "format": "любой · 9:16",
+          "tags": [
+            "captions",
+            "talking-head",
+            "edit"
+          ],
+          "prompt": "Add word-by-word animated captions to my talking-head video [FILE].\nTranscribe with timestamps, show 1–3 words at a time in the centre-lower third.\nThe current word pops (scale 1.15) and turns [ACCENT COLOUR]; key words get an emoji.\nFont: heavy rounded sans, white with black stroke and soft shadow.\nAlso cut silences longer than 0.4 s and add a subtle zoom-in on punchlines.",
+          "anchor": "субтитры-как-у-блогеров"
+        }
+      ]
+    },
+    {
+      "file": "prompts/05-kinetic-typography.md",
+      "category": "Кинетическая типографика",
+      "intro": "Ролики, где главный герой — текст: цитаты, манифесты, лирик-видео, титры. Идеально для Claude Motion и кода.",
+      "items": [
+        {
+          "title": "Цитата крупным шрифтом",
+          "tools": "Claude Motion, Remotion",
+          "format": "15 с · 9:16 или 1:1",
+          "tags": [
+            "quote",
+            "typography",
+            "minimal"
+          ],
+          "prompt": "A 15-second kinetic typography piece for the quote: \"[QUOTE]\" — [AUTHOR].\nWords arrive in rhythm with natural speech; the 2–3 key words are larger and in [ACCENT COLOUR].\nUse scale, weight and position changes rather than fades. Each line clears with a sharp mask wipe.\nHold the full quote for the last 3 seconds, then the author name.\nBlack background, white grotesque type, no other elements.",
+          "anchor": "цитата-крупным-шрифтом"
+        },
+        {
+          "title": "Манифест бренда",
+          "tools": "Claude Motion, Remotion",
+          "format": "45 с · 16:9",
+          "tags": [
+            "manifesto",
+            "brand",
+            "typography"
+          ],
+          "prompt": "A 45-second manifesto film for [BRAND] made only of type.\nText: [PASTE MANIFESTO, 6–10 short lines].\nEach line gets its own treatment: one stretches, one stacks, one is cut by a moving bar, one fills the whole frame letter by letter.\nBuild tension towards the final line, then silence and the logo.\nTwo colours only: [COLOUR 1] and [COLOUR 2], swapping background/foreground on key lines.",
+          "anchor": "манифест-бренда"
+        },
+        {
+          "title": "Лирик-видео под трек",
+          "tools": "Claude Code + Remotion",
+          "format": "длина трека · 16:9 или 9:16",
+          "tags": [
+            "lyrics",
+            "music",
+            "sync"
+          ],
+          "prompt": "Make a lyric video for [SONG FILE] with these lyrics: [PASTE LYRICS].\nDetect beats and align every line to its timestamp; words appear exactly when sung.\nVerses: calm, small type, lower third. Chorus: huge full-screen type that pulses on the kick.\nChange the colour palette at each new section. Background: slow abstract gradient reacting to volume.",
+          "anchor": "лирик-видео-под-трек"
+        },
+        {
+          "title": "Хромовая типографика на бит",
+          "tools": "Claude Motion, Remotion",
+          "format": "15 с · 16:9",
+          "tags": [
+            "chrome",
+            "showreel",
+            "loud"
+          ],
+          "prompt": "A 15-second showreel of loud kinetic typography in chrome and black.\nWords: [WORD 1], [WORD 2], [WORD 3], [WORD 4], [BRAND].\nEvery word lands on a beat with a hard cut, metallic reflections sliding across the letters.\nMix extreme scales: one letter fills the screen, the next word is tiny in the corner.\nFinal: the brand name in chrome with a light sweep.",
+          "anchor": "хромовая-типографика-на-бит"
+        },
+        {
+          "title": "Швейцарский стиль",
+          "tools": "Claude Motion, Remotion",
+          "format": "15 с · 16:9",
+          "tags": [
+            "swiss",
+            "grid",
+            "editorial"
+          ],
+          "prompt": "A 15-second Swiss-style motion piece about [SUBJECT].\nStrict 12-column grid visible as faint lines; red (#E30613) and black on white.\nHelvetica-like type moves only along grid lines; blocks slide and snap.\nUse numbers and arrows as graphic elements. Ends with a perfectly balanced poster frame.",
+          "anchor": "швейцарский-стиль"
+        },
+        {
+          "title": "Слово меняет смысл",
+          "tools": "Claude Motion",
+          "format": "10 с · 1:1",
+          "tags": [
+            "wordplay",
+            "morph",
+            "typography"
+          ],
+          "prompt": "A 10-second typographic animation where the word \"[WORD 1]\" morphs letter by letter into \"[WORD 2]\", and then into \"[WORD 3]\", telling a tiny story ([e.g. \"dream\" → \"draft\" → \"done\"]).\nLetters that stay move smoothly to new positions; letters that change flip like a split-flap display.\nCentred, large serif, cream background, dark ink.",
+          "anchor": "слово-меняет-смысл"
+        },
+        {
+          "title": "Титры фильма",
+          "tools": "Claude Motion, Remotion",
+          "format": "60 с · 16:9 (2.39:1 кашетированный)",
+          "tags": [
+            "titles",
+            "credits",
+            "cinematic"
+          ],
+          "prompt": "An opening title sequence for a film called \"[TITLE]\", genre: [GENRE].\nCredits ([NAMES AND ROLES]) appear one by one, integrated with abstract imagery that hints at the story ([MOTIF]).\nPacing: slow and moody; each credit holds ~3 seconds.\nTypography in [STYLE, e.g. condensed serif], letterboxed 2.39:1, film grain, the title last and largest.",
+          "anchor": "титры-фильма"
+        },
+        {
+          "title": "Текст набирается в терминале",
+          "tools": "Claude Motion, Remotion",
+          "format": "20 с · 16:9",
+          "tags": [
+            "terminal",
+            "hacker",
+            "typing"
+          ],
+          "prompt": "A 20-second terminal animation. A prompt \"$\" blinks, then types: [COMMANDS / MESSAGE].\nOutput lines stream fast after each command, with realistic delays.\nAt the end the screen clears and ASCII art of \"[NAME / LOGO]\" draws itself line by line.\nGreen-on-black CRT look with scanlines and slight glow.",
+          "anchor": "текст-набирается-в-терминале"
+        },
+        {
+          "title": "Цифры и статистика типографикой",
+          "tools": "Claude Motion",
+          "format": "20 с · 9:16",
+          "tags": [
+            "stats",
+            "numbers",
+            "typography"
+          ],
+          "prompt": "A 20-second vertical typographic piece built around 4 numbers about [TOPIC]: [NUMBER 1 – meaning], [NUMBER 2 – …], [NUMBER 3 – …], [NUMBER 4 – …].\nEach number counts up huge, then shrinks to the top as its meaning types under it.\nEnd with all four arranged as a poster.\nBold condensed sans, [COLOUR] on off-white.",
+          "anchor": "цифры-и-статистика-типографикой"
+        },
+        {
+          "title": "Поэма, проявляющаяся строками",
+          "tools": "Claude Motion, Remotion",
+          "format": "40 с · 16:9 или 9:16",
+          "tags": [
+            "poem",
+            "slow",
+            "editorial"
+          ],
+          "prompt": "Animate this short poem: [PASTE POEM].\nEach line becomes legible slowly, as if ink soaks into paper; previous lines dim but stay.\nGentle camera drift; one small illustrated motif ([MOTIF]) grows in the margin as the poem progresses.\nPaper texture, serif type, muted palette, calm ambient pad.",
+          "anchor": "поэма-проявляющаяся-строками"
+        },
+        {
+          "title": "Типографика из реальных предметов",
+          "tools": "Veo, Sora, Kling",
+          "format": "6 с · 16:9",
+          "tags": [
+            "typography",
+            "3d",
+            "ai-video"
+          ],
+          "prompt": "Cinematic macro shot: the word \"[WORD]\" is formed by [MATERIAL, e.g. flowing honey / stacked books / neon tubes / sand] on [SURFACE].\nThe letters assemble themselves over 4 seconds, then the camera slowly pulls back.\nPhotorealistic, studio lighting, shallow depth of field. The spelling must be exactly \"[WORD]\".",
+          "anchor": "типографика-из-реальных-предметов"
+        },
+        {
+          "title": "Глитч-заголовок",
+          "tools": "Claude Motion, Remotion",
+          "format": "5 с · 16:9",
+          "tags": [
+            "glitch",
+            "title",
+            "cyber"
+          ],
+          "prompt": "A 5-second glitch title for \"[TITLE]\".\nThe headline splits into RGB channels, slices displace horizontally, scanline noise flickers, then it snaps back clean.\nRepeat the glitch twice briefly, the second time revealing a subtitle \"[SUBTITLE]\".\nBlack background, cobalt and vermilion channel offsets, digital crackle sound.",
+          "anchor": "глитч-заголовок"
+        }
+      ]
+    },
+    {
+      "file": "prompts/06-data-viz.md",
+      "category": "Данные, графики, отчёты",
+      "intro": "Оживить цифры: квартальный отчёт, гонка графиков, карта, инфографика. Прикладывайте таблицу (CSV/Excel) — Claude построит графики из реальных данных.",
+      "items": [
+        {
+          "title": "Квартальный отчёт за 30 секунд",
+          "tools": "Claude Motion",
+          "format": "30 с · 16:9",
+          "tags": [
+            "report",
+            "all-hands",
+            "kpi"
+          ],
+          "prompt": "Turn our Q[N] report into a 30-second explainer for the all-hands. [ATTACH REPORT / DATA].\nPick the 4 most important numbers. For each: the metric name, the number counting up, the change vs last quarter with a green/red arrow, and one sentence of context.\nOpen with \"Q[N] in 30 seconds\", close with \"What's next: [PRIORITY]\".\nCompany colours [HEX], clean charts, no 3D.",
+          "anchor": "квартальный-отчёт-за-30-секунд"
+        },
+        {
+          "title": "Гонка графиков (bar chart race)",
+          "tools": "Claude Code + Remotion",
+          "format": "30–60 с · 16:9",
+          "tags": [
+            "bar-chart-race",
+            "data",
+            "history"
+          ],
+          "prompt": "Make a bar chart race from [DATA FILE / DATA DESCRIPTION]: [ENTITIES] by [METRIC] from [YEAR START] to [YEAR END].\nBars reorder smoothly, each with a logo or flag and a value label; a big year counter in the bottom right.\nAnnotate 2–3 key moments with short captions (\"[EVENT]\").\nHold the final ranking for 3 seconds.\nReadable at phone size: max 10 bars, thick labels.",
+          "anchor": "гонка-графиков-bar-chart-race"
+        },
+        {
+          "title": "График, который рисуется сам",
+          "tools": "Claude Motion",
+          "format": "15 с · 16:9",
+          "tags": [
+            "chart",
+            "board-deck",
+            "animation"
+          ],
+          "prompt": "Add motion to this chart for the board deck: [ATTACH CHART / DATA].\nThe axes draw first, then the line draws left to right while a dot rides its tip and a value label updates.\nAt [POINT OF INTEREST] the line pauses, a callout appears: \"[ANNOTATION]\".\nFinish with the final value highlighted. Minimal, corporate, brand colour [HEX].",
+          "anchor": "график-который-рисуется-сам"
+        },
+        {
+          "title": "Карта с маршрутом / распространением",
+          "tools": "Claude Motion, Remotion",
+          "format": "30 с · 16:9",
+          "tags": [
+            "map",
+            "route",
+            "geography"
+          ],
+          "prompt": "An animated map showing [WHAT: our expansion / a trip / the spread of something] across [REGION].\nStart zoomed on [START LOCATION]; lines arc to [LOCATION 2], [LOCATION 3], [LOCATION 4] in order, with dates appearing next to each.\nCities pulse when reached; a counter tracks [METRIC].\nFlat muted map, bright accent lines, smooth camera pans between points.",
+          "anchor": "карта-с-маршрутом--распространением"
+        },
+        {
+          "title": "Инфографика «один человек из 100»",
+          "tools": "Claude Motion",
+          "format": "25 с · 9:16 или 1:1",
+          "tags": [
+            "infographic",
+            "people",
+            "percentage"
+          ],
+          "prompt": "Show [STATISTIC, e.g. \"If the world were 100 people…\"] as a 10×10 grid of tiny person icons.\nFor each fact ([FACT 1 – N%], [FACT 2 – N%], [FACT 3 – N%]), the matching number of icons changes colour and a caption appears.\nReset between facts with a quick ripple.\nClean flat icons, warm palette, calm music.",
+          "anchor": "инфографика-один-человек-из-100"
+        },
+        {
+          "title": "Дашборд оживает",
+          "tools": "Claude Motion, Remotion",
+          "format": "20 с · 16:9",
+          "tags": [
+            "dashboard",
+            "kpi",
+            "ui"
+          ],
+          "prompt": "A 20-second animation of a [COMPANY] dashboard coming alive.\nTiles drop in on a grid: [KPI 1], [KPI 2], [KPI 3], a line chart, a donut chart, a table.\nNumbers tick up, charts draw, a live dot pulses on \"Real-time\".\nCamera slowly glides across the dashboard at a slight 3D angle, then flattens to front view.\nDark mode UI, neon accents.",
+          "anchor": "дашборд-оживает"
+        },
+        {
+          "title": "Год в цифрах",
+          "tools": "Claude Motion",
+          "format": "45 с · 9:16 и 16:9",
+          "tags": [
+            "year-in-review",
+            "numbers",
+            "recap"
+          ],
+          "prompt": "\"[YEAR] in numbers\" for [COMPANY / TEAM / PERSONAL].\n8 numbers, one per beat: [NUMBER – LABEL] × 8. Each with a matching mini-animation (a plane for trips, a coffee cup for coffees, etc.).\nAccelerate pacing towards the end, finish with \"Thank you / See you in [NEXT YEAR]\".\nFestive but clean: dark navy, gold accents, confetti at the end.",
+          "anchor": "год-в-цифрах"
+        },
+        {
+          "title": "Сравнение долей (пирог → столбцы)",
+          "tools": "Claude Motion",
+          "format": "15 с · 1:1",
+          "tags": [
+            "pie",
+            "morph",
+            "chart"
+          ],
+          "prompt": "Show how [BUDGET / TIME / MARKET] is split: [CATEGORY – %] × 4–5.\nStart as a donut chart that fills segment by segment with labels, then morph the segments into a ranked bar chart so the differences are easier to compare.\nFinal: highlight [CATEGORY] with a callout \"[INSIGHT]\".",
+          "anchor": "сравнение-долей-пирог--столбцы"
+        },
+        {
+          "title": "Временная шкала (таймлайн)",
+          "tools": "Claude Motion, Remotion",
+          "format": "45 с · 16:9",
+          "tags": [
+            "timeline",
+            "history",
+            "milestones"
+          ],
+          "prompt": "An animated timeline of [SUBJECT] from [START] to [END].\nA horizontal line draws itself; the camera tracks along it.\nMilestones ([DATE – EVENT] × 6–8) pop up above/below alternately, each with a small icon or image.\nSpeed up through quiet periods, slow down on the big ones.\nEnd with \"Today\" and a glowing dot.",
+          "anchor": "временная-шкала-таймлайн"
+        },
+        {
+          "title": "Воронка продаж",
+          "tools": "Claude Motion",
+          "format": "20 с · 16:9",
+          "tags": [
+            "funnel",
+            "sales",
+            "marketing"
+          ],
+          "prompt": "Animate our sales funnel: [STAGE 1 – N], [STAGE 2 – N], [STAGE 3 – N], [STAGE 4 – N].\nParticles pour into the top and fall through; at each stage some drop off to the side, and the conversion % appears.\nHighlight the biggest drop-off in red: \"[INSIGHT]\".\nClean isometric funnel, brand colours.",
+          "anchor": "воронка-продаж"
+        },
+        {
+          "title": "Данные о погоде/природе как арт",
+          "tools": "Claude Code + Remotion, p5.js",
+          "format": "30 с · 1:1",
+          "tags": [
+            "generative",
+            "data-art",
+            "climate"
+          ],
+          "prompt": "Turn [DATASET, e.g. daily temperatures in [CITY] over 50 years] into a 30-second generative data-art animation.\nEach data point becomes a [stripe / ring / particle] coloured on a blue-to-red scale.\nThe piece builds over time; the year counter shows in small type.\nEnd with a single sentence about what the pattern shows.\nMinimal, gallery-like, black background.",
+          "anchor": "данные-о-погодеприроде-как-арт"
+        },
+        {
+          "title": "Отчёт инвесторам",
+          "tools": "Claude Motion",
+          "format": "60 с · 16:9",
+          "tags": [
+            "investors",
+            "update",
+            "startup"
+          ],
+          "prompt": "A 60-second investor update video for [STARTUP], [MONTH].\nSections: headline metric (big number + MoM growth), revenue chart, key wins (3 bullets with icons), challenges (1–2, honest), asks (\"We're looking for: [ASK]\").\nCalm confident pace, clean charts, founder photo optional in the intro.\nBrand colours [HEX], subtle background music.",
+          "anchor": "отчёт-инвесторам"
+        }
+      ]
+    },
+    {
+      "file": "prompts/07-logo-intros.md",
+      "category": "Логотипы, интро и заставки",
+      "intro": "Короткие 3–10-секундные ролики: появление логотипа, интро канала, аутро, переходы.",
+      "items": [
+        {
+          "title": "Медленная сборка логотипа",
+          "tools": "Claude Motion, Remotion",
+          "format": "8 с · 16:9",
+          "tags": [
+            "logo",
+            "reveal",
+            "slow"
+          ],
+          "prompt": "An impressive 8-second slow-reveal motion design that assembles and finally reveals the [BRAND] logo [ATTACH SVG].\nStart with abstract fragments of the logo's shapes drifting in darkness; they find each other, align and lock with satisfying precision.\nLast 2 seconds: light sweep across the finished logo, then the tagline \"[TAGLINE]\" fades in.",
+          "anchor": "медленная-сборка-логотипа"
+        },
+        {
+          "title": "Логотип из частиц",
+          "tools": "Claude Motion, Remotion, Three.js",
+          "format": "6 с · 16:9",
+          "tags": [
+            "logo",
+            "particles",
+            "tech"
+          ],
+          "prompt": "A 6-second logo reveal: thousands of tiny particles swirl like a galaxy, then are pulled into the shape of the [BRAND] logo [ATTACH SVG].\nOnce formed, the logo glows briefly and the particles settle into solid fill.\nDark background, particles in [BRAND COLOUR], deep whoosh into a soft hit.",
+          "anchor": "логотип-из-частиц"
+        },
+        {
+          "title": "Интро YouTube-канала",
+          "tools": "Claude Motion, Remotion",
+          "format": "5 с · 16:9",
+          "tags": [
+            "intro",
+            "youtube",
+            "channel"
+          ],
+          "prompt": "A 5-second YouTube intro for the channel \"[CHANNEL NAME]\" about [TOPIC].\nQuick montage of 4 animated icons representing the topic ([ICON 1], [ICON 2], [ICON 3], [ICON 4]), each on a beat, then the channel name slams in with a sticker-like bounce.\nBright, punchy, [COLOUR] palette. Leave sound slots for a 4-beat jingle.",
+          "anchor": "интро-youtube-канала"
+        },
+        {
+          "title": "Аутро с подпиской",
+          "tools": "Claude Motion, Remotion",
+          "format": "15 с · 16:9",
+          "tags": [
+            "outro",
+            "end-screen",
+            "youtube"
+          ],
+          "prompt": "A 15-second YouTube end screen for [CHANNEL].\nLeft: two empty rounded rectangles for recommended videos (placeholder frames). Right: a circle for the subscribe button with the avatar.\nBackground: slow looping animation in channel colours [HEX].\nText: \"Thanks for watching\" fades in at the top. Everything settles by second 2 and stays still.",
+          "anchor": "аутро-с-подпиской"
+        },
+        {
+          "title": "Стикер-штамп логотипа",
+          "tools": "Claude Motion",
+          "format": "3 с · 1:1",
+          "tags": [
+            "logo",
+            "sting",
+            "social"
+          ],
+          "prompt": "A 3-second logo sting: the [BRAND] logo is stamped onto the screen like a rubber stamp — slight ink spread, a tiny bounce, a thud sound.\nUse as an end card for social videos. Transparent background, export with alpha.",
+          "anchor": "стикер-штамп-логотипа"
+        },
+        {
+          "title": "Логотип из жидкости",
+          "tools": "Veo, Sora, Kling, Runway",
+          "format": "6 с · 16:9",
+          "tags": [
+            "logo",
+            "liquid",
+            "cinematic"
+          ],
+          "prompt": "Photorealistic macro shot: glossy [LIQUID: ink / paint / molten gold] flows across a dark surface, swirls, and settles into the exact shape of the logo in the reference image [ATTACH LOGO].\nSlow motion, studio lighting with soft reflections, camera slowly rising to a top-down view by the end.\nKeep the logo geometry exact.",
+          "anchor": "логотип-из-жидкости"
+        },
+        {
+          "title": "Переход-шторка для видео",
+          "tools": "Claude Motion, Remotion",
+          "format": "1 с · 16:9 и 9:16",
+          "tags": [
+            "transition",
+            "wipe",
+            "pack"
+          ],
+          "prompt": "Make a pack of 6 one-second transitions in my brand colours ([HEX 1], [HEX 2], [HEX 3]): diagonal wipe, circle iris, stacked bars, liquid blob, pixel dissolve, shape zoom.\nEach must fully cover the frame at the midpoint (frame 12 of 24) so I can cut underneath.\nExport with alpha.",
+          "anchor": "переход-шторка-для-видео"
+        },
+        {
+          "title": "Лоуэр-тёрд (подпись спикера)",
+          "tools": "Claude Motion, Remotion",
+          "format": "5 с · 16:9",
+          "tags": [
+            "lower-third",
+            "name",
+            "interview"
+          ],
+          "prompt": "An animated lower third for interviews: name \"[NAME]\" and title \"[TITLE]\".\nA thin accent line draws from the left, the name slides up from behind it, then the title fades in smaller.\nHolds 3 seconds, then animates out in reverse.\nClean sans-serif, white text on a semi-transparent dark bar, accent [HEX]. Export with alpha.",
+          "anchor": "лоуэр-тёрд-подпись-спикера"
+        },
+        {
+          "title": "Интро подкаста",
+          "tools": "Claude Motion, Remotion",
+          "format": "10 с · 16:9 и 1:1",
+          "tags": [
+            "podcast",
+            "intro",
+            "audio"
+          ],
+          "prompt": "A 10-second intro for the podcast \"[PODCAST NAME]\" with hosts [HOST NAMES].\nAn audio waveform grows from the centre and reacts to the jingle [ATTACH AUDIO]; host avatars pop up on the left and right.\nThe show name forms from the waveform peaks. Episode number \"[EP #]\" in the corner.\nWarm retro radio vibe: orange and cream, rounded type.",
+          "anchor": "интро-подкаста"
+        },
+        {
+          "title": "Заставка мероприятия",
+          "tools": "Claude Motion",
+          "format": "15 с · 16:9 (экран сцены)",
+          "tags": [
+            "event",
+            "stage",
+            "countdown"
+          ],
+          "prompt": "A 15-second stage opener for [EVENT NAME] [YEAR] at [VENUE].\nA giant countdown 10 → 0, each number built from a different abstract shape in event colours.\nAt zero, everything explodes into the event logo and the theme line \"[THEME]\".\nDesigned for an LED wall (high contrast, no fine details), loud hits on each number.",
+          "anchor": "заставка-мероприятия"
+        },
+        {
+          "title": "Логотип в стиле 3D-глины",
+          "tools": "Veo, Kling, Runway",
+          "format": "5 с · 1:1",
+          "tags": [
+            "logo",
+            "clay",
+            "playful"
+          ],
+          "prompt": "Claymation-style 3D shot: lumps of colourful plasticine roll onto a pastel table and squish themselves into the [BRAND] logo [ATTACH LOGO].\nVisible fingerprints in the clay, stop-motion frame rate (12 fps), soft daylight.\nFinal pose holds for 1 second with a tiny happy bounce.",
+          "anchor": "логотип-в-стиле-3d-глины"
+        },
+        {
+          "title": "Неоновая вывеска",
+          "tools": "Claude Motion, Veo, Kling",
+          "format": "5 с · 16:9",
+          "tags": [
+            "neon",
+            "logo",
+            "night"
+          ],
+          "prompt": "The [BRAND] logo as a neon sign on a dark brick wall at night.\nIt flickers on tube by tube with electric buzz, one letter stutters, then all stay lit with a soft glow on the wall and a reflection in a wet pavement below.\nColours: [NEON COLOURS]. Slight camera drift.",
+          "anchor": "неоновая-вывеска"
+        }
+      ]
+    },
+    {
+      "file": "prompts/08-education.md",
+      "category": "Обучение, история, наука",
+      "intro": "Уроки, история за минуту, математика и физика, «как устроено». Хорошо работают сериями.",
+      "items": [
+        {
+          "title": "История за 60 секунд",
+          "tools": "Claude Motion, Remotion",
+          "format": "60 с · 9:16 или 16:9",
+          "tags": [
+            "history",
+            "timeline",
+            "story"
+          ],
+          "prompt": "The history of [SUBJECT] in 60 seconds.\nFive eras, 12 seconds each: [ERA 1], [ERA 2], [ERA 3], [ERA 4], [ERA 5].\nEach era has its own visual style that matches the period (cave painting → manuscript → engraving → poster → digital), with the date large and one key event illustrated.\nA thin timeline at the bottom fills up as we go.\nEnd: \"And now: [TODAY]\".",
+          "anchor": "история-за-60-секунд"
+        },
+        {
+          "title": "Математика рисует себя",
+          "tools": "Claude Code + Manim / Remotion",
+          "format": "30 с · 16:9",
+          "tags": [
+            "math",
+            "geometry",
+            "manim"
+          ],
+          "prompt": "Visually prove/explain [MATH IDEA, e.g. why the sum of angles in a triangle is 180°] in 30 seconds.\nShapes draw themselves with chalk-like strokes; pieces move, rotate and rearrange to make the idea obvious without words.\nShow the formula only at the end, building term by term.\nDark slate background, chalk-white lines, one yellow highlight, Manim-like smooth motion.",
+          "anchor": "математика-рисует-себя"
+        },
+        {
+          "title": "Физика на доске",
+          "tools": "Claude Motion, Remotion",
+          "format": "40 с · 16:9",
+          "tags": [
+            "physics",
+            "whiteboard",
+            "simulation"
+          ],
+          "prompt": "Explain [PHYSICS CONCEPT] on an animated whiteboard.\nA hand-drawn diagram ([SETUP]) comes alive: objects move with correct physics, force arrows appear and change length in real time, a graph of [QUANTITY] vs time plots alongside.\nShort handwritten captions appear next to each phase.\nWhite board, blue and red markers, slight marker squeak sounds.",
+          "anchor": "физика-на-доске"
+        },
+        {
+          "title": "Путешествие частицы",
+          "tools": "Claude Motion, Remotion",
+          "format": "45 с · 16:9",
+          "tags": [
+            "science",
+            "journey",
+            "scale"
+          ],
+          "prompt": "Follow [A PHOTON / A DROP OF WATER / A RED BLOOD CELL / A DATA PACKET] on its journey from [START] to [END].\nCamera stays locked on it; the world around it changes scale and scenery at each stage ([STAGE 1], [STAGE 2], [STAGE 3]).\nA distance/time counter in the corner.\nEnd where it arrives: \"[FINAL FACT]\".\nCinematic, glowing particle, rich backgrounds.",
+          "anchor": "путешествие-частицы"
+        },
+        {
+          "title": "Урок-слайд с анимацией",
+          "tools": "Claude Motion",
+          "format": "60–90 с · 16:9",
+          "tags": [
+            "lesson",
+            "school",
+            "teacher"
+          ],
+          "prompt": "An animated lesson for [GRADE / AGE] on [TOPIC].\nStructure: hook question → 3 key ideas, each with a simple animated illustration → a quick quiz question with a 3-second pause → the answer → a one-line summary.\nFriendly, clear, large text; never more than 12 words on screen at once.\nClassroom-poster style: bright flat colours, rounded shapes.",
+          "anchor": "урок-слайд-с-анимацией"
+        },
+        {
+          "title": "Как устроено изнутри",
+          "tools": "Claude Motion, Remotion",
+          "format": "45 с · 16:9",
+          "tags": [
+            "how-it-works",
+            "exploded-view",
+            "engineering"
+          ],
+          "prompt": "Show how [DEVICE / MACHINE, e.g. a mechanical watch / an electric car / a toilet] works inside.\nStart with the object whole; it separates into an exploded view, parts labelled.\nThen reassemble and run it, highlighting the flow of [ENERGY / WATER / FORCE] through the parts in colour.\nTechnical-illustration style: blueprint lines, isometric view, smooth rotations.",
+          "anchor": "как-устроено-изнутри"
+        },
+        {
+          "title": "Язык: слово в контексте",
+          "tools": "Claude Motion",
+          "format": "20 с · 9:16",
+          "tags": [
+            "language",
+            "vocabulary",
+            "learning"
+          ],
+          "prompt": "A 20-second vertical lesson for learners of [LANGUAGE]: the word \"[WORD]\".\nShow the word, transcription and translation; then 3 example sentences, each illustrated with a tiny animated scene, and the key word highlighted.\nFinish with a mini-quiz: \"How would you say: [PHRASE]?\" and the answer after 3 seconds.\nCheerful flat style, consistent template for a series.",
+          "anchor": "язык-слово-в-контексте"
+        },
+        {
+          "title": "Один день из жизни в прошлом",
+          "tools": "Veo, Sora, Kling",
+          "format": "8 с × 6 сцен · 16:9",
+          "tags": [
+            "history",
+            "reenactment",
+            "ai-video"
+          ],
+          "prompt": "Scene [N] of 6 of \"A day in the life of a [PERSON] in [PLACE], [YEAR]\".\n[SCENE DESCRIPTION: e.g. dawn, the baker lights the clay oven in a narrow stone street].\nHistorically accurate clothing, architecture and tools; natural light of the period (candles, fire, daylight).\nCamera: slow handheld documentary style. Ambient sounds of the era, no music.\nKeep the main character consistent: [CHARACTER DESCRIPTION].",
+          "anchor": "один-день-из-жизни-в-прошлом"
+        },
+        {
+          "title": "Рекурсия/идея во всех стилях",
+          "tools": "Claude Motion, Remotion",
+          "format": "30 с · 16:9",
+          "tags": [
+            "concept",
+            "styles",
+            "showcase"
+          ],
+          "prompt": "Explain [CONCEPT] five times in 30 seconds, each time in a different visual style: hand-drawn sketch, Swiss poster, 8-bit pixel art, blueprint, and claymation.\nThe explanation is the same; only the style changes, with a quick wipe between them.\nLabel each style in the corner.",
+          "anchor": "рекурсияидея-во-всех-стилях"
+        },
+        {
+          "title": "Жизненный цикл",
+          "tools": "Claude Motion",
+          "format": "30 с · 1:1",
+          "tags": [
+            "cycle",
+            "biology",
+            "loop"
+          ],
+          "prompt": "Animate the life cycle of [ORGANISM / PROCESS, e.g. a butterfly / water / a star] as a seamless loop.\nStages arranged in a circle: [STAGE 1] → [STAGE 2] → [STAGE 3] → [STAGE 4]; the camera rotates around the circle as each one transforms into the next.\nSmall labels, natural palette, soft lighting. The loop restarts invisibly.",
+          "anchor": "жизненный-цикл"
+        },
+        {
+          "title": "Что происходит за одну секунду",
+          "tools": "Claude Motion, Remotion",
+          "format": "30 с · 9:16",
+          "tags": [
+            "numbers",
+            "world",
+            "per-second"
+          ],
+          "prompt": "\"What happens on Earth in one second?\"\nA large 1-second timer is frozen while facts appear one by one: [N] babies born, [N] emails sent, [N] lightning strikes, [N] searches, [your own facts].\nEach fact has a mini animated icon swarm of the right density.\nAt the end the timer finally ticks: 0.00 → 1.00.",
+          "anchor": "что-происходит-за-одну-секунду"
+        },
+        {
+          "title": "Шпаргалка-экзамен",
+          "tools": "Claude Motion",
+          "format": "45 с · 9:16",
+          "tags": [
+            "cheat-sheet",
+            "exam",
+            "revision"
+          ],
+          "prompt": "A 45-second revision video for [EXAM / TOPIC]: the 7 things you must remember.\nEach item: a big number, a keyword, a one-line rule, and a memorable visual hook (mnemonic).\nRecap screen at the end shows all 7 as a cheat sheet to screenshot.\nNotebook grid paper look, highlighter colours.",
+          "anchor": "шпаргалка-экзамен"
+        }
+      ]
+    },
+    {
+      "file": "prompts/09-stories-cartoons.md",
+      "category": "Истории и мультики",
+      "intro": "Персонажи, короткие сюжеты, сказки, скетчи. Для стабильного героя держите одно описание внешности и вставляйте его дословно в каждый промпт (см. плагин `cartoon-reel`).",
+      "items": [
+        {
+          "title": "Мини-мультик с двумя героями",
+          "tools": "Veo, Kling, Seedance, Sora",
+          "format": "6–10 планов по 5 с · 9:16",
+          "tags": [
+            "cartoon",
+            "dialogue",
+            "series"
+          ],
+          "prompt": "Shot [N] of [TOTAL]. Style: [STYLE, e.g. 3D Pixar-like / flat 2D / claymation], consistent across all shots.\nCharacters: [HERO: one-line appearance], [SIDEKICK: one-line appearance].\nSetting: [PLACE].\nAction: [WHAT HAPPENS in this shot].\nDialogue: [CHARACTER]: \"[LINE, max 12 words]\".\nCamera: [wide / medium / close-up], [static / slow push-in].\nMood: [MOOD]. Keep faces, colours and proportions identical to previous shots.",
+          "anchor": "мини-мультик-с-двумя-героями"
+        },
+        {
+          "title": "Немое кино: смотритель маяка",
+          "tools": "Claude Motion, Veo, Kling",
+          "format": "60 с · 16:9",
+          "tags": [
+            "silent",
+            "short-film",
+            "emotional"
+          ],
+          "prompt": "A 60-second silent short film with no dialogue: [CHARACTER] who [SITUATION, e.g. keeps a lighthouse alone] and [SMALL EVENT that changes their day].\nTell it in 6 scenes through action and expression only: routine → disruption → attempt → failure → small kindness → new routine.\nMuted palette with one warm colour that grows across the film. Piano score, ambient sounds.",
+          "anchor": "немое-кино-смотритель-маяка"
+        },
+        {
+          "title": "Сказка на ночь",
+          "tools": "Claude Motion, Veo, Kling",
+          "format": "90 с · 16:9",
+          "tags": [
+            "kids",
+            "bedtime",
+            "storybook"
+          ],
+          "prompt": "A 90-second bedtime story for [AGE]-year-olds about [CHARACTER] who [GOAL].\nPicture-book style: watercolour textures, soft edges, pages that turn between scenes.\n8 scenes, each with one sentence of narration (calm, warm voice).\nGentle ending where the character falls asleep; the last frame dims to a starry sky.",
+          "anchor": "сказка-на-ночь"
+        },
+        {
+          "title": "Скетч-комедия в офисе",
+          "tools": "Veo, Sora, Kling",
+          "format": "3 плана по 8 с · 9:16",
+          "tags": [
+            "comedy",
+            "office",
+            "sketch"
+          ],
+          "prompt": "Three-shot comedy sketch set in an office.\nShot 1: [CHARACTER A] confidently explains [IDEA] to [CHARACTER B] at a whiteboard.\nShot 2: [UNEXPECTED THING HAPPENS].\nShot 3: reaction close-up on [CHARACTER B] — deadpan stare into camera, 2 seconds of silence.\nRealistic sitcom lighting, handheld mockumentary camera.",
+          "anchor": "скетч-комедия-в-офисе"
+        },
+        {
+          "title": "Ожившие рисунки из скетчбука",
+          "tools": "Claude Motion, Veo, Kling",
+          "format": "20 с · 9:16",
+          "tags": [
+            "sketchbook",
+            "hand-drawn",
+            "magic"
+          ],
+          "prompt": "Top-down shot of an open sketchbook with pencil drawings of [ANIMALS / CHARACTERS].\nOne by one they come alive: they blink, stretch, and step off the page onto the desk, staying pencil-drawn.\n[ONE OF THEM] pushes the pencil and draws a door; they all walk through it.\nNatural desk lighting, paper texture, gentle music box melody.",
+          "anchor": "ожившие-рисунки-из-скетчбука"
+        },
+        {
+          "title": "Ретро-мультфильм 80-х",
+          "tools": "Claude Motion, Veo, Kling",
+          "format": "30 с · 4:3",
+          "tags": [
+            "retro",
+            "80s",
+            "cartoon"
+          ],
+          "prompt": "A 30-second opening of an 80s Saturday-morning space cartoon called \"[TITLE]\".\nCel-animation look: thick outlines, limited animation, painted backgrounds, VHS colour bleed and slight tracking noise.\nHeroes [TEAM] pose one by one with name cards; a big ship launches; the title zooms in with a starburst.\nSynth theme song energy, 4:3 frame.",
+          "anchor": "ретро-мультфильм-80-х"
+        },
+        {
+          "title": "Театр теней",
+          "tools": "Claude Motion, Remotion",
+          "format": "45 с · 16:9",
+          "tags": [
+            "shadow-puppet",
+            "folk",
+            "story"
+          ],
+          "prompt": "Tell [STORY / FABLE] as a shadow-puppet play.\nBlack silhouettes of jointed paper puppets move against a warm orange backlit screen; slight flicker of a candle light source.\nScenery pieces slide in from the sides. Narrator voice-over, one line per scene.\nFinal scene: the puppeteer's hands appear briefly, then the light goes out.",
+          "anchor": "театр-теней"
+        },
+        {
+          "title": "Пластилиновый клип",
+          "tools": "Veo, Kling, Runway",
+          "format": "8 с · 16:9",
+          "tags": [
+            "claymation",
+            "stop-motion",
+            "music"
+          ],
+          "prompt": "Claymation stop-motion shot (12 fps): a plasticine [CHARACTER] [ACTION, e.g. plays a tiny guitar on a rooftop] in a handmade miniature [SETTING].\nVisible fingerprints and imperfections, felt and cardboard props, warm practical lights.\nCamera: slow dolly sideways, like a real miniature set.",
+          "anchor": "пластилиновый-клип"
+        },
+        {
+          "title": "Пиксель-арт история",
+          "tools": "Claude Motion, Remotion",
+          "format": "30 с · 16:9",
+          "tags": [
+            "pixel-art",
+            "retro-game",
+            "story"
+          ],
+          "prompt": "A 30-second pixel-art story in the style of a 16-bit adventure game: [HERO] [QUEST in one line].\nSide-scrolling scenes, dialogue boxes with typewriter text, chiptune music, HP bar in the corner.\nThree scenes: setup → obstacle → victory with a \"LEVEL COMPLETE\" banner.\nLimited 32-colour palette, crisp pixels, no smoothing.",
+          "anchor": "пиксель-арт-история"
+        },
+        {
+          "title": "История от лица предмета",
+          "tools": "Claude Motion, Veo, Kling",
+          "format": "40 с · 9:16",
+          "tags": [
+            "pov",
+            "object",
+            "emotional"
+          ],
+          "prompt": "The life of [OBJECT, e.g. an old umbrella / a coffee mug / a bicycle] told from its point of view in 40 seconds.\nFive moments with five owners or uses over the years: [MOMENT 1] … [MOMENT 5].\nFirst-person narration as the object (\"I was bought on a rainy Tuesday…\").\nEach moment in a slightly different colour grade showing the passing years.",
+          "anchor": "история-от-лица-предмета"
+        },
+        {
+          "title": "Персонаж-маскот бренда",
+          "tools": "Veo, Kling, Seedance",
+          "format": "8 с · 9:16",
+          "tags": [
+            "mascot",
+            "brand",
+            "character"
+          ],
+          "prompt": "Brand mascot shot: [MASCOT: one-line appearance, e.g. a round orange cube with tiny legs and big eyes] in [SETTING].\nIt [ACTION, e.g. waves, trips over a cable, gets up proudly] and points to the empty space on the right for a logo.\nStyle: [3D toy-like / flat vector], soft studio light, bright pastel background.\nExpressive face, bouncy animation, short cute vocal sound.",
+          "anchor": "персонаж-маскот-бренда"
+        },
+        {
+          "title": "Сериал «маленький робот»",
+          "tools": "Veo, Kling, Sora",
+          "format": "8 с · 16:9",
+          "tags": [
+            "robot",
+            "series",
+            "wholesome"
+          ],
+          "prompt": "Episode beat: a small rusty robot with one antenna and round blue eyes [ACTION, e.g. tries to water a single flower growing through cracked concrete] in [SETTING, e.g. an abandoned city at sunset].\nCinematic, warm backlight, dust particles, shallow depth of field.\nNo dialogue, only small beeps and the wind.\nKeep the robot's design identical in every episode.",
+          "anchor": "сериал-маленький-робот"
+        }
+      ]
+    },
+    {
+      "file": "prompts/10-cinematic-ai-video.md",
+      "category": "Кинематографичные кадры (видеогенераторы)",
+      "intro": "Шаблоны для Veo, Sora, Kling, Seedance, Runway, Luma, Hailuo. Формула: **объект + действие + место + камера + свет + стиль + звук.** Один кадр — одна мысль, 5–10 секунд.",
+      "items": [
+        {
+          "title": "Универсальная формула кадра",
+          "tools": "Veo, Sora, Kling, Seedance, Runway",
+          "format": "5–10 с · любой",
+          "tags": [
+            "formula",
+            "base",
+            "cinematic"
+          ],
+          "prompt": "[SHOT TYPE: wide / medium / close-up / extreme close-up] of [SUBJECT with 2–3 visual details] [ACTION] in [LOCATION], [TIME OF DAY / WEATHER].\nCamera: [MOVE: static / slow dolly-in / tracking / orbit / crane up / handheld], [LENS: 24mm / 50mm / 85mm], [DEPTH OF FIELD].\nLighting: [KEY LIGHT], [COLOUR PALETTE].\nStyle: [FILM LOOK, e.g. 35mm film, Kodak Portra, anamorphic].\nAudio: [AMBIENT SOUNDS], [MUSIC or none], [DIALOGUE in quotes if any].",
+          "anchor": "универсальная-формула-кадра"
+        },
+        {
+          "title": "Эпичный пейзаж с дрона",
+          "tools": "Veo, Sora, Kling, Runway",
+          "format": "8 с · 16:9",
+          "tags": [
+            "drone",
+            "landscape",
+            "epic"
+          ],
+          "prompt": "Aerial drone shot flying low over [LANDSCAPE: fjord / desert dunes / rice terraces / volcanic coast] at [golden hour / blue hour], then rising slowly to reveal [REVEAL: a lone tower / the ocean / a city].\nVolumetric light, mist in the valleys, ultra-detailed, smooth gimbal motion.\nSound: wind and distant birds, swelling orchestral note at the reveal.",
+          "anchor": "эпичный-пейзаж-с-дрона"
+        },
+        {
+          "title": "Трейлер: героический кадр",
+          "tools": "Veo, Sora, Kling",
+          "format": "6 с · 2.39:1",
+          "tags": [
+            "trailer",
+            "hero",
+            "epic"
+          ],
+          "prompt": "Low-angle slow-motion shot of [CHARACTER: appearance, costume] walking towards camera through [ENVIRONMENT: smoke / rain / falling ash], [ACTION: drawing a sword / taking off a helmet].\nBacklit by [LIGHT SOURCE], rim light on the silhouette, anamorphic lens flare.\nLetterboxed 2.39:1, teal-and-orange grade, deep trailer boom on the last step.",
+          "anchor": "трейлер-героический-кадр"
+        },
+        {
+          "title": "Нуар в дождь",
+          "tools": "Veo, Sora, Kling, Runway",
+          "format": "8 с · 16:9",
+          "tags": [
+            "noir",
+            "rain",
+            "moody"
+          ],
+          "prompt": "Black-and-white film-noir shot: a detective in a trench coat lights a cigarette under a streetlamp on a rain-soaked street at night, [YEAR]-era city.\nHard side light through venetian blinds shadow pattern on the wall, reflections in puddles, steam from a grate.\nCamera: slow push-in from medium to close-up. Sound: rain, distant jazz saxophone, the lighter click.",
+          "anchor": "нуар-в-дождь"
+        },
+        {
+          "title": "Киберпанк-город",
+          "tools": "Veo, Sora, Kling, Seedance",
+          "format": "8 с · 16:9",
+          "tags": [
+            "cyberpunk",
+            "neon",
+            "city"
+          ],
+          "prompt": "Tracking shot following [CHARACTER] through a dense cyberpunk market at night: holographic signs in [LANGUAGE], steam, crowds with umbrellas, flying vehicles overhead.\nNeon magenta and cyan reflections on wet asphalt, shallow depth of field, slight handheld.\nSound: rain on umbrellas, chatter, synth bass hum.",
+          "anchor": "киберпанк-город"
+        },
+        {
+          "title": "Природа: макро",
+          "tools": "Veo, Sora, Kling",
+          "format": "6 с · 16:9",
+          "tags": [
+            "nature",
+            "macro",
+            "documentary"
+          ],
+          "prompt": "Extreme macro nature documentary shot: [SUBJECT: a dew drop on a spider web / a bee landing on lavender / a snail on moss] at sunrise.\nRazor-thin depth of field, soft bokeh, natural light, ultra-sharp detail.\nCamera barely moves (slow focus pull from background to subject).\nSound: quiet morning forest ambience.",
+          "anchor": "природа-макро"
+        },
+        {
+          "title": "Ностальгия на плёнку",
+          "tools": "Veo, Sora, Kling",
+          "format": "8 с · 4:3",
+          "tags": [
+            "vintage",
+            "8mm",
+            "nostalgia"
+          ],
+          "prompt": "Super 8 home-movie footage from [DECADE]: [SCENE: kids running through a sprinkler / a family picnic / a road trip in an old car].\nWarm faded colours, heavy grain, light leaks, slight gate weave and flicker, 4:3 frame with rounded corners.\nHandheld, a bit overexposed. Sound: projector whir, muffled laughter.",
+          "anchor": "ностальгия-на-плёнку"
+        },
+        {
+          "title": "Сюрреализм",
+          "tools": "Veo, Sora, Kling, Runway",
+          "format": "8 с · 16:9",
+          "tags": [
+            "surreal",
+            "dreamlike",
+            "art"
+          ],
+          "prompt": "Surreal dreamlike shot: [IMPOSSIBLE SCENE, e.g. a whale swims slowly through clouds above a quiet village / a staircase descends into the ocean / a room fills with floating oranges].\nCalm, matter-of-fact atmosphere, pastel palette, soft diffuse light, like a Magritte painting come to life.\nSlow steady camera, no cuts. Sound: soft ambient pad and distant bells.",
+          "anchor": "сюрреализм"
+        },
+        {
+          "title": "Пролёт сквозь объекты (FPV)",
+          "tools": "Veo, Kling, Seedance",
+          "format": "8 с · 16:9 или 9:16",
+          "tags": [
+            "fpv",
+            "flythrough",
+            "dynamic"
+          ],
+          "prompt": "One continuous FPV drone shot: start outside [BUILDING / PLACE], fly through an open window, weave through [ROOMS / CROWD / KITCHEN], dive through [GAP] and burst out into [FINAL VIEW].\nFast, smooth, close to surfaces, motion blur, no cuts.\nBright realistic lighting. Sound: drone buzz and environment noises changing with each space.",
+          "anchor": "пролёт-сквозь-объекты-fpv"
+        },
+        {
+          "title": "Модный фэшн-кадр",
+          "tools": "Veo, Sora, Kling",
+          "format": "6 с · 9:16",
+          "tags": [
+            "fashion",
+            "editorial",
+            "model"
+          ],
+          "prompt": "High-fashion editorial video: a model in [OUTFIT with details] walks towards camera on [LOCATION: a salt flat / brutalist rooftop / empty runway], wind moving the fabric.\nCamera: slow-motion, 85mm, tracking backwards at eye level.\nLighting: [hard midday sun with deep shadows / soft overcast]. Colour grade: [STYLE].\nSound: minimal techno beat.",
+          "anchor": "модный-фэшн-кадр"
+        },
+        {
+          "title": "Изображение → видео (оживить фото)",
+          "tools": "Kling, Runway, Veo, Luma",
+          "format": "5 с · как у фото",
+          "tags": [
+            "image-to-video",
+            "animate-photo"
+          ],
+          "prompt": "[ATTACH IMAGE]. Animate this image subtly and realistically.\nMotion: [WHAT MOVES: hair and clothes in a light breeze / clouds drift / water ripples / the person turns their head and smiles].\nCamera: [slow push-in / gentle parallax / static].\nKeep the face, composition and colours exactly as in the image; no new objects.",
+          "anchor": "изображение--видео-оживить-фото"
+        },
+        {
+          "title": "Первый и последний кадр (переход)",
+          "tools": "Kling, Veo, Luma, Runway",
+          "format": "5 с · любой",
+          "tags": [
+            "keyframes",
+            "transition",
+            "morph"
+          ],
+          "prompt": "Start frame: [ATTACH IMAGE A]. End frame: [ATTACH IMAGE B].\nCreate a smooth, physically plausible transition between them: [HOW: the camera flies forward through / the object transforms / day turns into night].\nKeep everything that exists in both frames stable; no flicker.",
+          "anchor": "первый-и-последний-кадр-переход"
+        },
+        {
+          "title": "Многокадровая сцена с диалогом",
+          "tools": "Veo, Sora, Seedance",
+          "format": "10–15 с · 16:9",
+          "tags": [
+            "multishot",
+            "dialogue",
+            "scene"
+          ],
+          "prompt": "A short scene in [N] shots, consistent characters and lighting.\nCharacters: [A: appearance, voice], [B: appearance, voice]. Location: [PLACE], [TIME].\nShot 1 (wide, 3s): [ESTABLISHING ACTION].\nShot 2 (over-the-shoulder on A, 4s): A says \"[LINE]\".\nShot 3 (close-up on B, 4s): B reacts and says \"[LINE]\".\nShot 4 (wide, 3s): [ENDING ACTION].\nStyle: [FILM LOOK]. Ambient sound: [SOUNDS]. No music.",
+          "anchor": "многокадровая-сцена-с-диалогом"
+        }
+      ]
+    },
+    {
+      "file": "prompts/11-music-visuals.md",
+      "category": "Музыка и визуалы",
+      "intro": "Клипы, визуализаторы, обложки-анимации (Spotify Canvas), фоны для диджей-сетов.",
+      "items": [
+        {
+          "title": "Аудиовизуализатор под трек",
+          "tools": "Claude Code + Remotion",
+          "format": "длина трека · 16:9 или 1:1",
+          "tags": [
+            "visualizer",
+            "audio-reactive",
+            "music"
+          ],
+          "prompt": "Build an audio-reactive visualizer for [TRACK FILE].\nAnalyse the audio: kick drives a central shape's scale, hi-hats spawn small particles, bass moves a slow background gradient.\nIn the centre: the cover art [ATTACH COVER] in a circle that rotates slowly.\nArtist name and track title in the lower third. Colours taken from the cover.",
+          "anchor": "аудиовизуализатор-под-трек"
+        },
+        {
+          "title": "Spotify Canvas (луп 8 с)",
+          "tools": "Claude Motion, Veo, Kling",
+          "format": "8 с · 9:16 (бесшовный)",
+          "tags": [
+            "spotify-canvas",
+            "loop",
+            "cover"
+          ],
+          "prompt": "An 8-second seamless vertical loop for Spotify Canvas, based on the cover art [ATTACH COVER] of \"[TRACK]\" by [ARTIST].\nSubtle motion only: [WHAT MOVES, e.g. the sky drifts, hair moves, light flickers].\nNo text, no hard cuts. Leave the lower third calm (the app overlays UI there). The last frame must match the first.",
+          "anchor": "spotify-canvas-луп-8-с"
+        },
+        {
+          "title": "Клип из одного промпта",
+          "tools": "Claude Code + Remotion",
+          "format": "2–3 мин · 16:9",
+          "tags": [
+            "music-video",
+            "generative",
+            "full"
+          ],
+          "prompt": "Make a full music video for [TRACK FILE] entirely in code.\nSplit the song into sections (intro, verses, chorus, bridge, outro) by energy; give each section its own visual world built from [THEME].\nCuts land on downbeats; the chorus brings the biggest, brightest visuals; the bridge strips everything back to one element.\nLyrics optional as kinetic type: [LYRICS].",
+          "anchor": "клип-из-одного-промпта"
+        },
+        {
+          "title": "Пластилиновый музыкальный клип",
+          "tools": "Claude Motion, Veo, Kling",
+          "format": "30 с · 16:9",
+          "tags": [
+            "claymation",
+            "music-video",
+            "playful"
+          ],
+          "prompt": "A 30-second claymation-style music video for [TRACK].\nPlasticine characters [DESCRIPTION] play instruments in a tiny handmade room; objects squash and bounce on every beat.\nStop-motion frame rate (12 fps), visible fingerprints, warm practical lighting, bright colours.",
+          "anchor": "пластилиновый-музыкальный-клип"
+        },
+        {
+          "title": "Машина, которая играет музыку",
+          "tools": "Claude Code + Remotion, Three.js",
+          "format": "30 с · 16:9",
+          "tags": [
+            "music-machine",
+            "physics",
+            "satisfying"
+          ],
+          "prompt": "A Rube Goldberg-style machine that plays [MELODY / TRACK]: marbles roll down rails and hit xylophone bars, drums and bells exactly on the notes.\nGenerate the MIDI timing first, then build the track layout so physics matches the music.\nClean 3D, wood and brass materials, camera following the marbles.",
+          "anchor": "машина-которая-играет-музыку"
+        },
+        {
+          "title": "Фон для диджей-сета",
+          "tools": "Claude Code + Remotion, TouchDesigner",
+          "format": "60 с луп · 16:9 (LED)",
+          "tags": [
+            "vj",
+            "loop",
+            "club"
+          ],
+          "prompt": "A 60-second seamless VJ loop for a [GENRE] DJ set.\nAbstract geometry in [COLOURS]: tunnels, strobing grids, morphing polygons; tempo [BPM] BPM with visual hits every 4 beats.\nHigh contrast, no fine text, works on LED walls. Export as a looping MP4.",
+          "anchor": "фон-для-диджей-сета"
+        },
+        {
+          "title": "Анонс релиза",
+          "tools": "Claude Motion",
+          "format": "15 с · 9:16 и 1:1",
+          "tags": [
+            "release",
+            "single",
+            "announcement"
+          ],
+          "prompt": "A 15-second release announcement for \"[TRACK / ALBUM]\" by [ARTIST], out [DATE] on all platforms.\nThe cover art [ATTACH] assembles from shards, a 5-second preview of the track plays, the date flips like an airport board.\nPlatform icons line up at the bottom. Colours sampled from the cover.",
+          "anchor": "анонс-релиза"
+        },
+        {
+          "title": "Визуал «вода и звук»",
+          "tools": "Veo, Sora, Kling",
+          "format": "8 с · 9:16",
+          "tags": [
+            "cymatics",
+            "abstract",
+            "music"
+          ],
+          "prompt": "Macro shot of a shallow dish of water on a speaker, forming intricate cymatic patterns that change with a deep bass tone.\nDark background, a single coloured light reflecting in the water ([COLOUR]), crisp detail, slow motion.\nSound: the bass tone sweeping slowly up in pitch.",
+          "anchor": "визуал-вода-и-звук"
+        },
+        {
+          "title": "Сингл в стиле лоу-фай",
+          "tools": "Claude Motion, Veo, Kling",
+          "format": "10 с луп · 16:9",
+          "tags": [
+            "lofi",
+            "loop",
+            "cozy"
+          ],
+          "prompt": "A cozy lo-fi loop: [CHARACTER] studying at a desk by a window at night, rain on the glass, a cat sleeping on the books, desk lamp glow.\nOnly small movements: pen writing, steam from tea, rain, cat breathing.\nAnime-inspired painted style, warm and purple tones. Seamless 10-second loop.",
+          "anchor": "сингл-в-стиле-лоу-фай"
+        },
+        {
+          "title": "Концертный хайлайт",
+          "tools": "Veo, Sora, Kling",
+          "format": "6 с · 9:16",
+          "tags": [
+            "concert",
+            "live",
+            "energy"
+          ],
+          "prompt": "Shot from the crowd at a [GENRE] concert: the artist on stage [ACTION, e.g. jumps as the beat drops], confetti cannons fire, phone lights in the air.\nHandheld, slight shake, lens flares from stage lights, hazy atmosphere.\nSound: roaring crowd and a heavy drop.",
+          "anchor": "концертный-хайлайт"
+        }
+      ]
+    },
+    {
+      "file": "prompts/12-personal-events.md",
+      "category": "Личное: резюме, поздравления, события",
+      "intro": "Видео о себе, приглашения, поздравления, итоги года, путешествия.",
+      "items": [
+        {
+          "title": "Видео-резюме для рекрутера",
+          "tools": "Claude Motion",
+          "format": "20 с · 16:9 и 9:16",
+          "tags": [
+            "resume",
+            "recruiter",
+            "personal"
+          ],
+          "prompt": "A 20-second motion self-introduction for recruiters.\nName: [NAME]. Role: [ROLE]. 3 skills: [SKILL 1], [SKILL 2], [SKILL 3]. 2 achievements with numbers: [ACHIEVEMENT 1], [ACHIEVEMENT 2].\nEnd with a contact card: [EMAIL] · [LINKEDIN].\nConfident, clean, modern; my photo [ATTACH] in a circle at the start.",
+          "anchor": "видео-резюме-для-рекрутера"
+        },
+        {
+          "title": "Портфолио-шоурил",
+          "tools": "Claude Motion, Remotion",
+          "format": "30 с · 16:9",
+          "tags": [
+            "portfolio",
+            "showreel",
+            "designer"
+          ],
+          "prompt": "A 30-second showreel of my work: [ATTACH 6–10 IMAGES / PROJECT LINKS].\nEach project gets 2–3 seconds with a smart transition that matches shapes or colours between projects.\nOpening card: \"[NAME] — [DISCIPLINE]\". Closing: \"[WEBSITE]\".\nCut to an upbeat track at 110 BPM, project names small in the corner.",
+          "anchor": "портфолио-шоурил"
+        },
+        {
+          "title": "Приглашение на свадьбу/праздник",
+          "tools": "Claude Motion",
+          "format": "20 с · 9:16",
+          "tags": [
+            "invitation",
+            "wedding",
+            "party"
+          ],
+          "prompt": "A 20-second animated invitation to [EVENT: our wedding / birthday / housewarming].\n[NAMES] invite you on [DATE] at [TIME], [VENUE, address].\nElegant style: [STYLE, e.g. watercolour florals / gold foil / minimalist]. Botanical illustrations grow along the edges, text appears with handwriting animation.\nEnd: \"RSVP by [DATE]: [CONTACT]\" and a small map pin.",
+          "anchor": "приглашение-на-свадьбупраздник"
+        },
+        {
+          "title": "Поздравление с днём рождения",
+          "tools": "Claude Motion, Veo, Kling",
+          "format": "15 с · 9:16",
+          "tags": [
+            "birthday",
+            "greeting",
+            "fun"
+          ],
+          "prompt": "A 15-second birthday greeting for [NAME], who loves [HOBBY / THING].\nTheir favourite thing becomes the decoration: [e.g. cats carry the cake, a guitar plays \"Happy birthday\"].\nCandles count their age \"[AGE]\", then blow out and become confetti.\nMessage: \"[PERSONAL MESSAGE]\". Bright, cheerful, silly.",
+          "anchor": "поздравление-с-днём-рождения"
+        },
+        {
+          "title": "Итоги года (личные)",
+          "tools": "Claude Motion",
+          "format": "45 с · 9:16",
+          "tags": [
+            "year-in-review",
+            "personal",
+            "recap"
+          ],
+          "prompt": "My [YEAR] in 45 seconds. Month by month, one highlight each: [JAN – …], [FEB – …], … [DEC – …].\nEach month is a photo [ATTACH] in a polaroid frame with a handwritten caption, flipping like a calendar.\nFinish with \"Best part: [THING]\" and \"Hello, [NEXT YEAR]\".\nWarm film-photo look, pastel tape, soft acoustic music.",
+          "anchor": "итоги-года-личные"
+        },
+        {
+          "title": "Карта путешествия",
+          "tools": "Claude Motion, Remotion",
+          "format": "30 с · 9:16",
+          "tags": [
+            "travel",
+            "map",
+            "route"
+          ],
+          "prompt": "An animated travel map of my trip: [CITY 1] → [CITY 2] → [CITY 3] → [CITY 4], [DATES].\nA small plane / car / train icon travels along a dotted route; at each stop a photo [ATTACH] pops up as a postcard with the city name and a stamp.\nTotal distance counter at the end: \"[N] km, [N] days\".\nVintage paper map style.",
+          "anchor": "карта-путешествия"
+        },
+        {
+          "title": "Объявление о рождении/помолвке",
+          "tools": "Claude Motion",
+          "format": "15 с · 1:1",
+          "tags": [
+            "announcement",
+            "family",
+            "celebration"
+          ],
+          "prompt": "A 15-second announcement: \"[NEWS]\".\nSoft and tender: an envelope opens, a card slides out, details appear ([NAME], [DATE], [WEIGHT / RING / PHOTO]).\nPastel palette, gentle sparkles, lullaby-like music.",
+          "anchor": "объявление-о-рождениипомолвке"
+        },
+        {
+          "title": "Трибьют / «спасибо» команде или учителю",
+          "tools": "Claude Motion",
+          "format": "40 с · 16:9",
+          "tags": [
+            "tribute",
+            "thank-you",
+            "emotional"
+          ],
+          "prompt": "A 40-second thank-you video for [PERSON / TEAM] from [WHO].\nCollage of photos [ATTACH] that drift slowly with Ken Burns motion; short quotes from people appear between them ([QUOTE 1], [QUOTE 2], [QUOTE 3]).\nEnd: \"Thank you, [NAME]\" in large warm type.\nSoft piano, warm colour grade.",
+          "anchor": "трибьют--спасибо-команде-или-учителю"
+        },
+        {
+          "title": "Обратный отсчёт до события",
+          "tools": "Claude Motion",
+          "format": "10 с · 9:16 (серия)",
+          "tags": [
+            "countdown",
+            "event",
+            "series"
+          ],
+          "prompt": "A template for a daily countdown story: \"[N] days until [EVENT]\".\nThe number is huge and made of [THEMED OBJECTS], it shatters into the next number at the end.\nKeep the layout identical so I can generate one per day by changing only N.",
+          "anchor": "обратный-отсчёт-до-события"
+        },
+        {
+          "title": "Видео-открытка с праздником",
+          "tools": "Claude Motion, Veo, Kling",
+          "format": "15 с · 9:16",
+          "tags": [
+            "holiday",
+            "greeting",
+            "seasonal"
+          ],
+          "prompt": "A 15-second greeting card for [HOLIDAY] from [SENDER].\nA small [SEASONAL SCENE: snowy village / spring garden / lantern-lit street] comes alive: lights turn on one by one, [ANIMATION].\nMessage appears in handwritten type: \"[MESSAGE]\".\nCozy, magical, soft bells.",
+          "anchor": "видео-открытка-с-праздником"
+        }
+      ]
+    },
+    {
+      "file": "prompts/13-business-internal.md",
+      "category": "Бизнес и внутренние ролики",
+      "intro": "То, для чего Anthropic и придумали Claude Motion: объяснить свою работу — отчёт, план, онбординг, обучение сотрудников. Прикладывайте документы — Claude соберёт ролик из них.",
+      "items": [
+        {
+          "title": "Онбординг новых клиентов",
+          "tools": "Claude Motion",
+          "format": "60 с · 16:9",
+          "tags": [
+            "onboarding",
+            "walkthrough",
+            "customers"
+          ],
+          "prompt": "A product walkthrough for onboarding new customers of [PRODUCT]. [ATTACH SCREENSHOTS / DOCS].\nShow the first 4 things a new customer should do: [STEP 1], [STEP 2], [STEP 3], [STEP 4].\nFor each: an animated cursor performs the action on a clean UI mock, with a short caption and step number.\nEnd with \"Need help? [SUPPORT LINK]\". Friendly, calm pace, brand colours.",
+          "anchor": "онбординг-новых-клиентов"
+        },
+        {
+          "title": "Стратегия компании за минуту",
+          "tools": "Claude Motion",
+          "format": "60 с · 16:9",
+          "tags": [
+            "strategy",
+            "all-hands",
+            "plan"
+          ],
+          "prompt": "Explain our [YEAR] strategy in 60 seconds for the all-hands. [ATTACH STRATEGY DOC].\nStructure: where we are (one number) → where we're going (the goal) → 3 bets that get us there → what it means for each team.\nVisual metaphor: a path up a mountain with 3 camps (the bets).\nInspiring but clear, brand colours.",
+          "anchor": "стратегия-компании-за-минуту"
+        },
+        {
+          "title": "Новый сотрудник: первый день",
+          "tools": "Claude Motion",
+          "format": "45 с · 16:9",
+          "tags": [
+            "hr",
+            "welcome",
+            "onboarding"
+          ],
+          "prompt": "A welcome video for new hires at [COMPANY].\n\"Welcome, [NAME]!\" → our mission in one line → 3 values as animated icons ([VALUE 1], [VALUE 2], [VALUE 3]) → what happens in week one (timeline) → who to ask ([BUDDY]).\nWarm, human, illustrated people of different backgrounds.",
+          "anchor": "новый-сотрудник-первый-день"
+        },
+        {
+          "title": "Объяснение процесса/регламента",
+          "tools": "Claude Motion",
+          "format": "40 с · 16:9",
+          "tags": [
+            "process",
+            "policy",
+            "training"
+          ],
+          "prompt": "Explain our [PROCESS: expense reimbursement / incident response / code review] in 40 seconds. [ATTACH POLICY].\nShow it as a flowchart that builds step by step, with who is responsible at each step (role icons) and the time limit.\nHighlight the 1 most common mistake in red.\nEnd with \"Questions? → [CHANNEL]\".",
+          "anchor": "объяснение-процессарегламента"
+        },
+        {
+          "title": "Обучение безопасности",
+          "tools": "Claude Motion",
+          "format": "45 с · 16:9",
+          "tags": [
+            "security",
+            "training",
+            "phishing"
+          ],
+          "prompt": "A 45-second security awareness clip: how to spot a phishing email.\nAn email appears on screen; a magnifying glass highlights 5 red flags one by one ([SENDER], [URGENCY], [LINK], [ATTACHMENT], [GREETING]).\nThen \"What to do\": report it with [BUTTON / CHANNEL].\nCalm, not scary; flat illustration style.",
+          "anchor": "обучение-безопасности"
+        },
+        {
+          "title": "Кейс клиента",
+          "tools": "Claude Motion",
+          "format": "45 с · 16:9",
+          "tags": [
+            "case-study",
+            "sales",
+            "customer"
+          ],
+          "prompt": "A 45-second customer case study: how [CLIENT] used [PRODUCT] to [RESULT].\nChallenge → solution → results (3 big numbers with count-up) → a quote from [PERSON, ROLE].\nClient logo at the start, our logo at the end.\nProfessional, clean, charts drawn in brand colours.",
+          "anchor": "кейс-клиента"
+        },
+        {
+          "title": "Продажи: «зачем вам это»",
+          "tools": "Claude Motion",
+          "format": "30 с · 16:9",
+          "tags": [
+            "sales",
+            "pitch",
+            "value"
+          ],
+          "prompt": "A 30-second sales video for [TARGET CUSTOMER] about why [PRODUCT] earns its place.\nShow the cost of the problem (time/money counter running up), then the product stopping the counter, then the ROI: \"[N]x return in [PERIOD]\".\nEnd with \"Book a demo: [LINK]\".",
+          "anchor": "продажи-зачем-вам-это"
+        },
+        {
+          "title": "Питч стартапа",
+          "tools": "Claude Motion",
+          "format": "60 с · 16:9",
+          "tags": [
+            "pitch",
+            "startup",
+            "investors"
+          ],
+          "prompt": "A 60-second animated pitch for [STARTUP].\nProblem (with a striking stat) → solution (product in one visual) → market size (TAM/SAM/SOM as nested circles) → traction (chart) → team (photos) → the ask (\"Raising [AMOUNT]\").\nConfident pacing, one idea per scene.",
+          "anchor": "питч-стартапа"
+        },
+        {
+          "title": "Обновление роадмапа",
+          "tools": "Claude Motion",
+          "format": "30 с · 16:9",
+          "tags": [
+            "roadmap",
+            "product",
+            "update"
+          ],
+          "prompt": "Animate our product roadmap for [PERIOD]: Now: [ITEMS], Next: [ITEMS], Later: [ITEMS].\nThree columns; cards slide in; items that shipped since last update get a \"Shipped ✓\" stamp.\nClean kanban look, brand colours.",
+          "anchor": "обновление-роадмапа"
+        },
+        {
+          "title": "Объяснение договора/условий простыми словами",
+          "tools": "Claude Motion",
+          "format": "45 с · 9:16",
+          "tags": [
+            "legal",
+            "plain-language",
+            "customers"
+          ],
+          "prompt": "Explain the key terms of [DOCUMENT: our subscription terms / rental agreement] in plain language. [ATTACH DOCUMENT].\nPick the 5 things a customer must know (price, cancellation, refunds, data, obligations) and show each as a card with an icon and one plain sentence.\nFriendly, trustworthy, no legalese.",
+          "anchor": "объяснение-договораусловий-простыми-словами"
+        },
+        {
+          "title": "Отчёт об инциденте (постмортем)",
+          "tools": "Claude Motion",
+          "format": "45 с · 16:9",
+          "tags": [
+            "postmortem",
+            "engineering",
+            "incident"
+          ],
+          "prompt": "A 45-second blameless postmortem summary of [INCIDENT]. [ATTACH POSTMORTEM].\nTimeline of the incident (detection → mitigation → resolution) on a horizontal bar with timestamps.\nRoot cause as a simple diagram, impact as numbers, and 3 action items with owners.\nCalm, factual tone; neutral palette with red only for the outage window.",
+          "anchor": "отчёт-об-инциденте-постмортем"
+        },
+        {
+          "title": "Анонс внутреннего события",
+          "tools": "Claude Motion",
+          "format": "15 с · 16:9 и 9:16",
+          "tags": [
+            "internal",
+            "event",
+            "hackathon"
+          ],
+          "prompt": "A 15-second announcement for [EVENT: hackathon / offsite / demo day] on [DATE].\nEnergetic: the event name builds from pixel blocks, the date and place appear, three things to expect pop as stickers ([THING 1], [THING 2], [THING 3]).\n\"Sign up: [LINK]\". Playful, bright, internal-brand colours.",
+          "anchor": "анонс-внутреннего-события"
+        }
+      ]
+    },
+    {
+      "file": "prompts/14-loops-backgrounds.md",
+      "category": "Лупы, фоны, абстракция",
+      "intro": "Бесшовные фоны для сайтов, презентаций, стримов, сцен; генеративное искусство.",
+      "items": [
+        {
+          "title": "Градиентный «живой» фон для сайта",
+          "tools": "Claude Motion, Remotion, WebGL",
+          "format": "20 с луп · 16:9",
+          "tags": [
+            "background",
+            "gradient",
+            "website"
+          ],
+          "prompt": "A 20-second seamless background loop for a website hero: soft mesh gradient of [COLOURS] slowly flowing, like lava lamp blobs, with subtle film grain.\nVery calm motion, low contrast so text stays readable on top. Export as a small looping MP4 and a WebM.",
+          "anchor": "градиентный-живой-фон-для-сайта"
+        },
+        {
+          "title": "Ретро-сетка (synthwave)",
+          "tools": "Claude Motion, Remotion",
+          "format": "10 с луп · 16:9",
+          "tags": [
+            "synthwave",
+            "grid",
+            "retro"
+          ],
+          "prompt": "A seamless synthwave loop: a neon pink perspective grid scrolls towards the viewer, a striped sun sets on the horizon, distant wireframe mountains, stars twinkling.\nMagenta, purple, cyan; scanlines; seamless at 10 seconds.",
+          "anchor": "ретро-сетка-synthwave"
+        },
+        {
+          "title": "Мяч в кольцах (физика)",
+          "tools": "Claude Code + p5.js / Remotion",
+          "format": "30 с · 9:16",
+          "tags": [
+            "physics",
+            "satisfying",
+            "rings"
+          ],
+          "prompt": "A satisfying physics clip: a ball bounces inside [N] concentric rotating rings, each with a gap. When the ball escapes a ring, the ring shatters into particles and a note plays (rising scale).\nBall grows slightly with each escape. Black background, rainbow rings, accurate collisions.",
+          "anchor": "мяч-в-кольцах-физика"
+        },
+        {
+          "title": "Генеративные потоки",
+          "tools": "Claude Code + p5.js",
+          "format": "30 с · 1:1",
+          "tags": [
+            "generative",
+            "flow-field",
+            "art"
+          ],
+          "prompt": "A 30-second generative art animation: thousands of thin lines follow a Perlin-noise flow field, leaving trails that slowly build an image of [SHAPE / ABSTRACT].\nPalette: [PALETTE]. Seed it so the result is reproducible. Calm, meditative, gallery quality.",
+          "anchor": "генеративные-потоки"
+        },
+        {
+          "title": "Космос/звёзды",
+          "tools": "Veo, Kling, Claude Motion",
+          "format": "15 с луп · 16:9",
+          "tags": [
+            "space",
+            "stars",
+            "ambient"
+          ],
+          "prompt": "A slow seamless loop of drifting through deep space: layered nebula clouds in [COLOURS], parallax star fields, a faint galaxy rotating in the distance.\nExtremely slow motion, cinematic, no planets or text. Perfect for a stream \"starting soon\" screen.",
+          "anchor": "космосзвёзды"
+        },
+        {
+          "title": "Экран «скоро начнём» для стрима",
+          "tools": "Claude Motion",
+          "format": "60 с луп · 16:9",
+          "tags": [
+            "stream",
+            "starting-soon",
+            "twitch"
+          ],
+          "prompt": "A looping \"Starting soon\" screen for my stream [CHANNEL].\nCenter: \"Starting soon\" with a gentle breathing animation; below: a spinning [MASCOT / ICON].\nBackground: slow looping pattern in [COLOURS]. A space at the bottom for a chat overlay.",
+          "anchor": "экран-скоро-начнём-для-стрима"
+        },
+        {
+          "title": "Изометрический мини-мир",
+          "tools": "Claude Motion, Three.js, Veo",
+          "format": "15 с луп · 1:1",
+          "tags": [
+            "isometric",
+            "diorama",
+            "cozy"
+          ],
+          "prompt": "A tiny isometric diorama of [PLACE: a cozy island / a city block / a workshop] that loops: day turns to night and back, windows light up, a tiny car drives around, clouds pass.\nLow-poly, soft pastel colours, gentle rotation of the whole scene. Seamless 15-second loop.",
+          "anchor": "изометрический-мини-мир"
+        },
+        {
+          "title": "Жидкие формы (3D)",
+          "tools": "Veo, Kling, Runway",
+          "format": "8 с · 1:1",
+          "tags": [
+            "3d",
+            "abstract",
+            "liquid"
+          ],
+          "prompt": "Abstract 3D render: glossy iridescent liquid metal blobs merge and separate in zero gravity against a [COLOUR] background.\nSoft studio lighting, reflections, slow motion, seamless loop feel. No text.",
+          "anchor": "жидкие-формы-3d"
+        },
+        {
+          "title": "Бумажные слои (паралакс)",
+          "tools": "Claude Motion, Remotion",
+          "format": "12 с луп · 16:9",
+          "tags": [
+            "paper-cut",
+            "parallax",
+            "layers"
+          ],
+          "prompt": "A paper-cut landscape of [SCENE] built from 6 layered sheets with soft shadows between them; the layers sway slightly at different speeds (parallax), birds cross occasionally.\nColour palette: [COLOURS]. Seamless 12-second loop.",
+          "anchor": "бумажные-слои-паралакс"
+        },
+        {
+          "title": "Анимированный узор (паттерн)",
+          "tools": "Claude Motion, Remotion",
+          "format": "6 с луп · 1:1",
+          "tags": [
+            "pattern",
+            "tiles",
+            "geometric"
+          ],
+          "prompt": "A seamless tiling pattern animation: [SHAPES] rotate and swap places in a grid in a choreographed sequence, returning to the start.\nTwo colours: [COLOUR 1] / [COLOUR 2]. Precise, Bauhaus-inspired. 6-second loop.",
+          "anchor": "анимированный-узор-паттерн"
+        },
+        {
+          "title": "Природа-луп для медитации",
+          "tools": "Veo, Sora, Kling",
+          "format": "10 с · 16:9",
+          "tags": [
+            "meditation",
+            "nature",
+            "calm"
+          ],
+          "prompt": "A calm static shot of [SCENE: a forest stream / waves on a beach at dawn / a candle in a dark room / snow falling in a pine forest].\nOnly natural movement. Soft light. Steady tripod camera. Sound: natural ambience only.\nDesigned to loop; avoid any moving objects entering or leaving frame.",
+          "anchor": "природа-луп-для-медитации"
+        }
+      ]
+    },
+    {
+      "file": "prompts/15-style-modifiers.md",
+      "category": "Стили-модификаторы",
+      "intro": "Готовые описания стиля. Допишите любой из них в конец любого шаблона, чтобы сменить внешний вид ролика без переписывания сюжета.",
+      "items": [
+        {
+          "title": "Плоская 2D-иллюстрация",
+          "tools": "любой",
+          "format": "—",
+          "tags": [
+            "style",
+            "flat",
+            "2d"
+          ],
+          "prompt": "Style: flat 2D vector illustration, 3–4 colour palette, no gradients, rounded shapes, thick consistent outlines, soft ease-in-out motion, subtle drop shadows.",
+          "anchor": "плоская-2d-иллюстрация"
+        },
+        {
+          "title": "Швейцарский / интернациональный",
+          "tools": "любой",
+          "format": "—",
+          "tags": [
+            "style",
+            "swiss",
+            "grid"
+          ],
+          "prompt": "Style: International Typographic Style — strict grid, asymmetric layouts, Helvetica-like grotesque, black/white with one red accent, motion only along grid axes, hard snaps.",
+          "anchor": "швейцарский--интернациональный"
+        },
+        {
+          "title": "Бумага и коллаж",
+          "tools": "любой",
+          "format": "—",
+          "tags": [
+            "style",
+            "paper",
+            "collage"
+          ],
+          "prompt": "Style: handmade paper collage — torn edges, visible paper texture, cut-out photos, masking tape, stop-motion at 12 fps with slight jitter, warm natural light.",
+          "anchor": "бумага-и-коллаж"
+        },
+        {
+          "title": "Пиксель-арт 16 бит",
+          "tools": "любой",
+          "format": "—",
+          "tags": [
+            "style",
+            "pixel",
+            "retro"
+          ],
+          "prompt": "Style: 16-bit pixel art, limited 32-colour palette, nearest-neighbour scaling (no smoothing), stepped animation, chiptune-friendly pacing, CRT scanlines optional.",
+          "anchor": "пиксель-арт-16-бит"
+        },
+        {
+          "title": "Глина (claymation)",
+          "tools": "любой",
+          "format": "—",
+          "tags": [
+            "style",
+            "clay",
+            "stop-motion"
+          ],
+          "prompt": "Style: claymation stop-motion — plasticine characters with fingerprints, miniature handmade sets, 12 fps, warm practical lights, slightly imperfect movements.",
+          "anchor": "глина-claymation"
+        },
+        {
+          "title": "Аниме / сёл-шейдинг",
+          "tools": "видеогенераторы",
+          "format": "—",
+          "tags": [
+            "style",
+            "anime",
+            "cel"
+          ],
+          "prompt": "Style: hand-painted anime look, cel shading, soft painted backgrounds, dramatic sky, expressive eyes, wind-blown hair, warm golden light, gentle camera pans.",
+          "anchor": "аниме--сёл-шейдинг"
+        },
+        {
+          "title": "Неон и киберпанк",
+          "tools": "любой",
+          "format": "—",
+          "tags": [
+            "style",
+            "neon",
+            "cyberpunk"
+          ],
+          "prompt": "Style: neon cyberpunk — black background, magenta and cyan glow, chromatic aberration, scanlines, glitch transitions, synth-bass sound design.",
+          "anchor": "неон-и-киберпанк"
+        },
+        {
+          "title": "Документальное кино",
+          "tools": "видеогенераторы",
+          "format": "—",
+          "tags": [
+            "style",
+            "documentary",
+            "realistic"
+          ],
+          "prompt": "Style: documentary realism — natural light, handheld camera with subtle shake, 35mm lens, muted natural grade, real textures, ambient sound, no music.",
+          "anchor": "документальное-кино"
+        },
+        {
+          "title": "Плёнка 35 мм",
+          "tools": "видеогенераторы",
+          "format": "—",
+          "tags": [
+            "style",
+            "film",
+            "analog"
+          ],
+          "prompt": "Style: shot on 35mm film, Kodak Portra colours, fine grain, soft halation around highlights, slight gate weave, anamorphic bokeh.",
+          "anchor": "плёнка-35-мм"
+        },
+        {
+          "title": "Минимализм Apple-стиля",
+          "tools": "любой",
+          "format": "—",
+          "tags": [
+            "style",
+            "minimal",
+            "premium"
+          ],
+          "prompt": "Style: premium minimalism — lots of white space, one object at a time, soft studio shadows, large thin sans-serif type, slow precise easing, no more than two colours.",
+          "anchor": "минимализм-apple-стиля"
+        },
+        {
+          "title": "Мел на доске",
+          "tools": "любой",
+          "format": "—",
+          "tags": [
+            "style",
+            "chalk",
+            "education"
+          ],
+          "prompt": "Style: chalk on a dark green/slate board — hand-drawn strokes that draw themselves, chalk dust, slight wobble in lines, handwritten labels, yellow highlights.",
+          "anchor": "мел-на-доске"
+        },
+        {
+          "title": "Гравюра / линогравюра",
+          "tools": "любой",
+          "format": "—",
+          "tags": [
+            "style",
+            "engraving",
+            "vintage"
+          ],
+          "prompt": "Style: vintage engraving — crosshatched black ink lines on aged cream paper, ornamental frames, Victorian serif type, lines draw themselves before moving.",
+          "anchor": "гравюра--линогравюра"
+        },
+        {
+          "title": "Акварель / книжка с картинками",
+          "tools": "любой",
+          "format": "—",
+          "tags": [
+            "style",
+            "watercolor",
+            "storybook"
+          ],
+          "prompt": "Style: children's picture book — soft watercolour washes, pencil outlines, paper grain, pastel colours, page-turn transitions, gentle and slow.",
+          "anchor": "акварель--книжка-с-картинками"
+        },
+        {
+          "title": "Изометрия low-poly",
+          "tools": "любой",
+          "format": "—",
+          "tags": [
+            "style",
+            "isometric",
+            "3d"
+          ],
+          "prompt": "Style: isometric low-poly 3D — orthographic camera at 30°, flat-shaded faces, pastel palette, soft ambient occlusion, toy-like scale.",
+          "anchor": "изометрия-low-poly"
+        },
+        {
+          "title": "Брутализм / громкий",
+          "tools": "любой",
+          "format": "—",
+          "tags": [
+            "style",
+            "brutalist",
+            "loud"
+          ],
+          "prompt": "Style: brutalist and loud — raw black/white/acid-green, oversized condensed type that overflows the frame, hard cuts on every beat, no easing, deliberate roughness.",
+          "anchor": "брутализм--громкий"
+        },
+        {
+          "title": "Чертёж (blueprint)",
+          "tools": "любой",
+          "format": "—",
+          "tags": [
+            "style",
+            "blueprint",
+            "technical"
+          ],
+          "prompt": "Style: technical blueprint — white thin lines on deep blue, dimension arrows, monospaced labels, grid paper, lines draw before parts move, isometric views.",
+          "anchor": "чертёж-blueprint"
+        }
+      ]
+    }
+  ]
+}
