@@ -18,6 +18,12 @@
       "source": "./plugins/hello-ideas",
       "description": "Пример: подбирает идеи из библиотеки ideas-library под задачу пользователя",
       "version": "0.1.0"
+    },
+    {
+      "name": "task-observer",
+      "source": "./plugins/task-observer",
+      "description": "Замечает ваши исправления и повторяющуюся работу и предлагает улучшить навыки (автор — Eoghan Henn, CC BY 4.0)",
+      "version": "3.8.1"
     }
   ]
 }

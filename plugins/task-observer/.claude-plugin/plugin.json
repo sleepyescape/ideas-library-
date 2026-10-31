@@ -1,0 +1,7 @@
+{
+  "name": "task-observer",
+  "description": "Замечает ваши исправления и повторяющуюся работу и предлагает улучшить навыки (автор — Eoghan Henn, CC BY 4.0)",
+  "version": "3.8.1",
+  "author": {"name": "Eoghan Henn and contributors", "url": "https://github.com/rebelytics/one-skill-to-rule-them-all"},
+  "license": "CC-BY-4.0"
+}

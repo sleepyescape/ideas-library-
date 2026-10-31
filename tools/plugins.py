@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 """Менеджер плагинов Claude Code, которые хранятся прямо в этом репозитории.
 
-Плагины лежат в plugins/<имя>/. Скрипт собирает из них маркетплейс
-(.claude-plugin/marketplace.json) и включает их в .claude/settings.json,
-поэтому Claude Code подхватывает их сам — ставить ничего на ПК не нужно.
+Плагины лежат в plugins/<имя>/. Скрипт копирует их навыки, команды и агентов
+в .claude/skills, .claude/commands и .claude/agents — эти папки Claude Code
+читает сам и на ПК, и в облаке, поэтому ставить ничего не нужно. Заодно
+собирается маркетплейс .claude-plugin/marketplace.json для ручной установки.
 
 Команды:
   python3 tools/plugins.py new <имя> [-d "описание"]   создать заготовку плагина
   python3 tools/plugins.py add <папка | git-url>       скопировать готовый плагин
   python3 tools/plugins.py remove <имя>                удалить плагин
   python3 tools/plugins.py list                        показать плагины
-  python3 tools/plugins.py sync                        пересобрать маркетплейс и настройки
+  python3 tools/plugins.py sync                        пересобрать копии в .claude/ и маркетплейс
 """
 import argparse
 import json
@@ -24,10 +25,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PLUGINS_DIR = ROOT / "plugins"
 MARKETPLACE_FILE = ROOT / ".claude-plugin" / "marketplace.json"
-SETTINGS_FILE = ROOT / ".claude" / "settings.json"
+CLAUDE_DIR = ROOT / ".claude"
+SETTINGS_FILE = CLAUDE_DIR / "settings.json"
+MIRROR_FILE = CLAUDE_DIR / "plugins-mirror.json"
+MIRRORED = ("skills", "commands", "agents")
 
 MARKETPLACE_NAME = "ideas-library"
-GITHUB_REPO = "sleepyescape/ideas-library-"
 OWNER = "sleepyescape"
 
 NAME_RE = re.compile(r"^[a-z0-9][a-z0-9-]*$")
@@ -67,6 +70,45 @@ def find_plugins():
     return plugins
 
 
+def mirror(plugins):
+    """Копирует навыки, команды и агентов плагинов в .claude/.
+
+    Облачные сессии не устанавливают плагины из settings.json, но читают
+    .claude/skills, .claude/commands и .claude/agents из клона репозитория.
+    Список скопированного хранится в MIRROR_FILE, чтобы удалять устаревшее.
+    """
+    for rel in read_json(MIRROR_FILE, []):
+        path = CLAUDE_DIR / rel
+        if path.is_dir():
+            shutil.rmtree(path)
+        elif path.exists():
+            path.unlink()
+
+    copied, owners = [], {}
+    for p in plugins:
+        folder = ROOT / p["source"]
+        for kind in MIRRORED:
+            src_dir = folder / kind
+            if not src_dir.is_dir():
+                continue
+            for item in sorted(src_dir.iterdir()):
+                rel = f"{kind}/{item.name}"
+                dest = CLAUDE_DIR / rel
+                if dest.exists():
+                    who = owners.get(rel, "файл вне plugins/")
+                    print(f"Пропущено {p['name']}/{rel}: уже есть ({who})", file=sys.stderr)
+                    continue
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                if item.is_dir():
+                    shutil.copytree(item, dest)
+                else:
+                    shutil.copy2(item, dest)
+                copied.append(rel)
+                owners[rel] = p["name"]
+    write_json(MIRROR_FILE, copied)
+    return copied
+
+
 def sync():
     plugins = find_plugins()
 
@@ -77,21 +119,18 @@ def sync():
         "plugins": plugins,
     })
 
-    # Сохраняем чужие настройки и плагины, выключенные вручную (значение false).
+    # Свои плагины работают через копии в .claude/, поэтому свой маркетплейс
+    # не включаем: иначе на ПК навыки загрузились бы дважды. Чужие сохраняем.
     settings = read_json(SETTINGS_FILE, {})
-    settings.setdefault("extraKnownMarketplaces", {})[MARKETPLACE_NAME] = {
-        "source": {"source": "github", "repo": GITHUB_REPO}
-    }
-    old = settings.get("enabledPlugins", {})
+    settings.get("extraKnownMarketplaces", {}).pop(MARKETPLACE_NAME, None)
     suffix = f"@{MARKETPLACE_NAME}"
-    enabled = {k: v for k, v in old.items() if not k.endswith(suffix)}
-    for p in plugins:
-        key = p["name"] + suffix
-        enabled[key] = old.get(key, True)
-    settings["enabledPlugins"] = enabled
+    settings["enabledPlugins"] = {
+        k: v for k, v in settings.get("enabledPlugins", {}).items() if not k.endswith(suffix)
+    }
     write_json(SETTINGS_FILE, settings)
 
-    print(f"Готово: {len(plugins)} плагин(ов) в маркетплейсе '{MARKETPLACE_NAME}'.")
+    copied = mirror(plugins)
+    print(f"Готово: {len(plugins)} плагин(ов), в .claude/ скопировано {len(copied)}.")
 
 
 def cmd_new(args):
@@ -165,10 +204,8 @@ def cmd_list(_args):
     plugins = find_plugins()
     if not plugins:
         print("Плагинов пока нет. Создайте: python3 tools/plugins.py new my-plugin")
-    enabled = read_json(SETTINGS_FILE, {}).get("enabledPlugins", {})
     for p in plugins:
-        on = enabled.get(f"{p['name']}@{MARKETPLACE_NAME}", False)
-        print(f"[{'вкл' if on else 'выкл'}] {p['name']} {p['version']} — {p['description']}")
+        print(f"{p['name']} {p['version']} — {p['description']}")
 
 
 def main():
@@ -192,7 +229,7 @@ def main():
     p.set_defaults(func=cmd_remove)
 
     sub.add_parser("list", help="показать плагины").set_defaults(func=cmd_list)
-    sub.add_parser("sync", help="пересобрать маркетплейс и настройки").set_defaults(func=lambda _a: sync())
+    sub.add_parser("sync", help="пересобрать копии в .claude/ и маркетплейс").set_defaults(func=lambda _a: sync())
 
     args = parser.parse_args()
     args.func(args)
