@@ -39,6 +39,34 @@ python3 tools/plugins.py sync                                     # пересо
 Чтобы выключить плагин, не удаляя его, поставьте `false` у него в
 `.claude/settings.json` → `enabledPlugins`; `sync` это значение сохранит.
 
+## Подключённые сторонние плагины
+
+Они не лежат в `plugins/`, а подключены прямо из своих репозиториев через
+`.claude/settings.json` (`extraKnownMarketplaces` и `enabledPlugins`):
+
+| Плагин | Что делает | Источник |
+|--------|------------|----------|
+| `claude-code-setup` | читает проект и советует, какие хуки, навыки и MCP поставить | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) |
+| `claude-mem` | память между сессиями | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) |
+| `headroom` | сжимает логи и JSON перед отправкой модели, экономит токены | [headroomlabs-ai/headroom](https://github.com/headroomlabs-ai/headroom) |
+| `task-observer` | замечает ваши исправления и предлагает обновить навыки | [rebelytics/one-skill-to-rule-them-all](https://github.com/rebelytics/one-skill-to-rule-them-all) |
+
+`claude-mem` и `headroom` нужны свои программы. В облачных сессиях их ставит
+`tools/session-setup.sh` (хук SessionStart); на компьютере он ничего не делает.
+Учтите: облачный контейнер временный, поэтому память `claude-mem` в облаке
+не сохраняется между сессиями (только с их сервисом cmem.ai).
+
+Выключить любой плагин — поставить `false` у него в `enabledPlugins`.
+
+### OmniRoute (не плагин)
+
+[OmniRoute](https://github.com/diegosouzapw/OmniRoute) — шлюз: один адрес вместо
+ключей ко многим моделям, с переключением на другую модель при исчерпании лимита.
+Это отдельный сервер с вашими аккаунтами, поэтому в репозиторий его не положить.
+Запустите его у себя или на сервере и направьте Claude Code на него переменной
+`ANTHROPIC_BASE_URL` (подробности — в их README). При этом действуют правила
+каждого провайдера, к которому идут запросы.
+
 ## Структура плагина
 
 ```
@@ -51,5 +79,6 @@ my-plugin/
 └── .mcp.json                    # MCP-серверы (необязательно)
 ```
 
-Пример — [`hello-ideas`](hello-ideas): навык и команда `/hello-ideas`, которые подбирают
-референсы из этой библиотеки.
+Примеры:
+- [`hello-ideas`](hello-ideas) — навык и команда `/hello-ideas`, подбирают референсы из этой библиотеки;
+- [`cartoon-reel`](cartoon-reel) — пошагово ведёт от идеи до готового мультика: герой, тема, план сцен, озвучка, субтитры, правки по номерам.
