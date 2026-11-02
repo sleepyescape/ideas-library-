@@ -8,6 +8,12 @@
   },
   "plugins": [
     {
+      "name": "audio-transcribe",
+      "source": "./plugins/audio-transcribe",
+      "description": "Расшифровка аудио и видео в текст (Whisper, без ключей и облачных API)",
+      "version": "0.1.0"
+    },
+    {
       "name": "cartoon-reel",
       "source": "./plugins/cartoon-reel",
       "description": "Пошагово ведёт от идеи до готового короткого мультика: герой, тема, план сцен, озвучка, субтитры и правки по номерам клипов",

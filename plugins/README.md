@@ -82,3 +82,7 @@ my-plugin/
 Примеры:
 - [`hello-ideas`](hello-ideas) — навык и команда `/hello-ideas`, подбирают референсы из этой библиотеки;
 - [`cartoon-reel`](cartoon-reel) — пошагово ведёт от идеи до готового мультика: герой, тема, план сцен, озвучка, субтитры, правки по номерам.
+- [`audio-transcribe`](audio-transcribe) — расшифровка аудио и видео в текст и субтитры: `/transcribe файл`
+  или просто «расшифруй». Whisper работает прямо в сессии, без ключей; запись никуда не уходит.
+  Нужна библиотека `faster-whisper` (в облаке её ставит `tools/session-setup.sh`,
+  на компьютере — `python3 -m pip install --user faster-whisper`) и желательно `ffmpeg`.
