@@ -1,0 +1,8 @@
+{
+  "name": "audio-transcribe",
+  "description": "Расшифровка аудио и видео в текст (Whisper, без ключей и облачных API)",
+  "version": "0.1.0",
+  "author": {
+    "name": "sleepyescape"
+  }
+}
