@@ -204,9 +204,22 @@ def api_video(vid, key):
     return items[0]
 
 
+def download(url, dst):
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0",
+                                               "Referer": "https://vk.com/"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r, open(dst + ".part", "wb") as f:
+            shutil.copyfileobj(r, f, 1 << 20)
+    except Exception as e:
+        print(f"  загрузка не удалась: {e}", file=sys.stderr)
+        return None
+    os.replace(dst + ".part", dst)
+    return dst
+
+
 def direct_url(v):
     files = v.get("files") or {}
-    for k in ("mp4_480", "mp4_360", "mp4_720", "mp4_240", "hls", "dash_sep", "mp4_1080"):
+    for k in ("mp4_480", "mp4_360", "mp4_720", "mp4_240", "mp4_1080", "hls", "dash_sep"):
         if files.get(k):
             return files[k]
     return None
@@ -260,7 +273,11 @@ def fetch_one(link, a):
             hint = f" (это ролик с {ext} — пришлите ссылку туда)" if ext else ""
             die(f"VK не отдал файл видео {vid}{hint}. "
                 "Нужен токен с доступом к файлам видео или cookies — см. «Вход» в навыке.")
-        path, err = ytdlp(src, tmpl, need_video, referer="https://vk.com/")
+        if ".mp4" in src.split("?")[0] or "type=" in src:
+            # прямой mp4: yt-dlp на таких ссылках получает 400, качаем сами
+            path, err = download(src, os.path.join(a.out, stem + ".mp4")), ["ошибка загрузки"]
+        else:
+            path, err = ytdlp(src, tmpl, need_video, referer="https://vk.com/")
     if not path:
         die(f"не удалось скачать {link}: {err[0]}")
     if vid and "title" not in meta:
