@@ -38,7 +38,8 @@
     "task-observer@one-skill-to-rule-them-all": true,
     "audio-transcribe@ideas-library": true,
     "cartoon-reel@ideas-library": true,
-    "hello-ideas@ideas-library": true
+    "hello-ideas@ideas-library": true,
+    "vk-video@ideas-library": true
   },
   "hooks": {
     "SessionStart": [

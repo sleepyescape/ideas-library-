@@ -47,4 +47,4 @@
 ## Подключено сейчас
 
 claude-code-setup (Anthropic), claude-mem, headroom, task-observer — из своих маркетплейсов;
-hello-ideas, cartoon-reel, audio-transcribe — свои, в `plugins/`. OmniRoute — только описан (это сервер).
+hello-ideas, cartoon-reel, audio-transcribe, vk-video — свои, в `plugins/`. OmniRoute — только описан (это сервер).

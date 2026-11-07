@@ -1,5 +1,5 @@
 #!/bin/sh
-# Ставит программы, без которых не работают плагины claude-mem, Headroom и audio-transcribe.
+# Ставит программы, без которых не работают плагины claude-mem, Headroom, audio-transcribe и vk-video.
 # Запускается хуком SessionStart только в облачных сессиях Claude Code,
 # чтобы ничего не устанавливалось на ваш компьютер без спроса.
 [ "${CLAUDE_CODE_REMOTE:-}" = "true" ] || exit 0
@@ -20,6 +20,11 @@ fi
 if ! python3 -c "import faster_whisper" >/dev/null 2>&1; then
     python3 -m pip install --user -q faster-whisper >/dev/null 2>&1 \
         || echo "session-setup: не удалось установить faster-whisper" >&2
+fi
+
+if ! command -v yt-dlp >/dev/null 2>&1 && ! python3 -c "import yt_dlp" >/dev/null 2>&1; then
+    python3 -m pip install --user -q -U yt-dlp >/dev/null 2>&1 \
+        || echo "session-setup: не удалось установить yt-dlp" >&2
 fi
 
 exit 0

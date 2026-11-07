@@ -1,0 +1,8 @@
+{
+  "name": "vk-video",
+  "description": "Видео ВКонтакте: вход по токену из секретов облака, список, раскадровка и расшифровка (yt-dlp + Whisper)",
+  "version": "0.1.0",
+  "author": {
+    "name": "sleepyescape"
+  }
+}
