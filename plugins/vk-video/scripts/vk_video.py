@@ -113,6 +113,38 @@ def cmd_auth(_a):
     print(f"Вход выполнен: {u.get('first_name')} {u.get('last_name')} (id{u.get('id')})")
 
 
+def resolve_group(ref):
+    """'https://vk.com/name' / 'club123' / 'public123' / 'name' / '-123' -> -id."""
+    ref = ref.strip().rstrip("/")
+    name = urllib.parse.urlparse(ref).path.strip("/") if "://" in ref else ref
+    name = name.split("/")[0].split("?")[0]
+    m = re.fullmatch(r"-?(\d+)", name) or re.fullmatch(r"(?:club|public|event)(\d+)", name)
+    if m:
+        return -int(m.group(1))
+    g = api("groups.getById", group_id=name)
+    groups = g.get("groups", g) if isinstance(g, dict) else g
+    if not groups:
+        die(f"сообщество {ref} не найдено")
+    gr = groups[0]
+    if gr.get("is_closed") and not gr.get("is_member"):
+        print(f"Внимание: «{gr.get('name')}» закрытое, а этот аккаунт в нём не состоит.",
+              file=sys.stderr)
+    return -int(gr["id"])
+
+
+def cmd_groups(a):
+    r = api("groups.get", extended=1, count=1000)
+    items = r.get("items", [])
+    if a.find:
+        items = [g for g in items if a.find.lower() in g.get("name", "").lower()]
+    kinds = {0: "открытое", 1: "закрытое", 2: "частное"}
+    for g in items:
+        print(f"{g.get('name')} — {kinds.get(g.get('is_closed'), '')}\n"
+              f"     list --group club{g.get('id')}")
+    if not items:
+        print("Ничего не найдено.")
+
+
 def cmd_list(a):
     if a.search:
         r = api("video.search", q=a.search, count=a.count, sort=2, adult=0)
@@ -121,6 +153,8 @@ def cmd_list(a):
         r = {"items": [x.get("video") for x in r.get("items", []) if x.get("video")]}
     else:
         owner = a.owner
+        if a.group:
+            owner = resolve_group(a.group)
         if a.mine or owner is None:
             owner = api("users.get")[0]["id"]
         r = api("video.get", owner_id=owner, album_id=a.album, count=a.count, offset=a.offset)
@@ -291,6 +325,9 @@ def main():
     ls = sub.add_parser("list", help="список видео")
     ls.add_argument("--mine", action="store_true")
     ls.add_argument("--owner", type=int, help="id владельца (сообщество — с минусом)")
+    ls.add_argument("--group", help="сообщество: ссылка vk.com/имя, club123 или имя")
+    gr = sub.add_parser("groups", help="мои сообщества (найти закрытое по названию)")
+    gr.add_argument("--find", help="часть названия")
     ls.add_argument("--album", type=int)
     ls.add_argument("--search")
     ls.add_argument("--faves", action="store_true")
@@ -309,7 +346,7 @@ def main():
             g.add_argument("--transcripts", default="transcripts")
 
     a = p.parse_args()
-    {"auth": cmd_auth, "list": cmd_list, "get": cmd_get, "transcribe": cmd_transcribe}[a.cmd](a)
+    {"auth": cmd_auth, "groups": cmd_groups, "list": cmd_list, "get": cmd_get, "transcribe": cmd_transcribe}[a.cmd](a)
 
 
 if __name__ == "__main__":
