@@ -14,9 +14,9 @@
 | # | Время | Кадр | Звук / реплика |
 |---|-------|------|----------------|
 | 1 | 0–3 c | Утро, коридор вуза. Трое студентов у двери аудитории, сонные, с кофе. Средний план. | Гул коридора. |
-| 2 | 3–5 c | Крупно: телефон у Зары в руке, вибрирует. На экране (вставка в монтаже) — «Пары не будет. Перенос на четверг». | Звук уведомления. |
-| 3 | 5–8 c | Зара поднимает глаза на друзей. Пауза. Карим медленно опускает стакан кофе. | Зара: «Пары не будет». |
-| 4 | 8–11 c | Все трое переглядываются, Карим разводит руками. | Карим: «Омагад… и чё делать?» Аля: «Куда идти вообще?» |
+| 2 | 3–5 c | Крупно: телефон у Камили в руке, вибрирует. На экране (вставка в монтаже) — «Пары не будет. Перенос на четверг». | Звук уведомления. |
+| 3 | 5–8 c | Камиля поднимает глаза на друзей. Пауза. Эмиль медленно опускает стакан кофе. | Камиля: «Пары не будет». |
+| 4 | 8–11 c | Все трое переглядываются, Эмиль разводит руками. | Эмиль: «Омагад… и чё делать?» Аля: «Куда идти вообще?» |
 | 5 | 11–13 c | Аля с хитрой улыбкой достаёт телефон: «Щас». | Аля: «Щас, в Спейсе гляну». |
 | 6 | 13–17 c | Экран телефона на весь кадр (запись экрана прототипа): цель «Спокойно посидеть», карта, «Бульвар Кофе», зелёный столик → «Забронировать» → «Забронировано!». | Тапы, мягкий «дзынь». |
 | 7 | 17–20 c | Улица Казани, пасмурная поздняя осень. Трое бодро идут, камера едет перед ними. | Музыка заходит. |
@@ -37,11 +37,11 @@
 
 ## 2. Герои (одни и те же во всех кадрах)
 
-- **Зара** — 19 лет, татарская внешность, тёмные волосы в низком хвосте, бежевый оверсайз-свитер,
+- **Камиля** — 19 лет, татарская внешность, тёмные волосы в низком хвосте, бежевый оверсайз-свитер,
   светлые джинсы, холщовый шопер. Получает уведомление.
 - **Аля** — 20 лет, светло-русое каре до подбородка, очки в тонкой металлической оправе,
   серое худи, длинное тёмно-зелёное пальто. Открывает Спейс.
-- **Карим** — 20 лет, короткая тёмная стрижка, лёгкая щетина, чёрный бомбер, белая футболка,
+- **Эмиль** — 20 лет, короткая тёмная стрижка, лёгкая щетина, чёрный бомбер, белая футболка,
   наушники на шее, бумажный стакан кофе. Главный «омагад».
 
 ---
@@ -60,7 +60,7 @@
 
 ### Листы персонажей
 
-**1. Зара**
+**1. Камиля**
 ```
 character reference sheet, the same young woman shown three times side by side: front view, three-quarter view, profile, 19 years old, Tatar features, dark brown hair in a low ponytail, natural makeup, beige oversized knit sweater, light blue jeans, canvas tote bag, plain light grey studio background, soft even daylight, realistic skin texture with pores, candid photo, shot on Sony A7 III 50mm --ar 16:9 --style raw --v 7 --s 50
 ```
@@ -70,7 +70,7 @@ character reference sheet, the same young woman shown three times side by side: 
 character reference sheet, the same young woman shown three times side by side: front view, three-quarter view, profile, 20 years old, chin-length ash-blonde bob, thin round metal-frame glasses, grey hoodie under a long dark green wool coat, plain light grey studio background, soft even daylight, realistic skin texture, candid photo, shot on Sony A7 III 50mm --ar 16:9 --style raw --v 7 --s 50
 ```
 
-**3. Карим**
+**3. Эмиль**
 ```
 character reference sheet, the same young man shown three times side by side: front view, three-quarter view, profile, 20 years old, short dark hair, light stubble, black bomber jacket over white t-shirt, wired headphones around his neck, holding a paper coffee cup, plain light grey studio background, soft even daylight, realistic skin texture, candid photo, shot on Sony A7 III 50mm --ar 16:9 --style raw --v 7 --s 50
 ```
