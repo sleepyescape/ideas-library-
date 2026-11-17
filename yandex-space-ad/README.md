@@ -15,8 +15,8 @@
 |---|-------|------|----------------|
 | 1 | 0–3 c | Утро, коридор вуза. Трое студентов у двери аудитории, сонные, с кофе. Средний план. | Гул коридора. |
 | 2 | 3–5 c | Крупно: телефон у Зары в руке, вибрирует. На экране (вставка в монтаже) — «Пары не будет. Перенос на четверг». | Звук уведомления. |
-| 3 | 5–8 c | Зара поднимает глаза на друзей. Пауза. Тимур медленно опускает стакан кофе. | Зара: «Пары не будет». |
-| 4 | 8–11 c | Все трое переглядываются, Тимур разводит руками. | Тимур: «Омагад… и чё делать?» Аля: «Куда идти вообще?» |
+| 3 | 5–8 c | Зара поднимает глаза на друзей. Пауза. Карим медленно опускает стакан кофе. | Зара: «Пары не будет». |
+| 4 | 8–11 c | Все трое переглядываются, Карим разводит руками. | Карим: «Омагад… и чё делать?» Аля: «Куда идти вообще?» |
 | 5 | 11–13 c | Аля с хитрой улыбкой достаёт телефон: «Щас». | Аля: «Щас, в Спейсе гляну». |
 | 6 | 13–17 c | Экран телефона на весь кадр (запись экрана прототипа): цель «Спокойно посидеть», карта, «Бульвар Кофе», зелёный столик → «Забронировать» → «Забронировано!». | Тапы, мягкий «дзынь». |
 | 7 | 17–20 c | Улица Казани, пасмурная поздняя осень. Трое бодро идут, камера едет перед ними. | Музыка заходит. |
@@ -41,7 +41,7 @@
   светлые джинсы, холщовый шопер. Получает уведомление.
 - **Аля** — 20 лет, светло-русое каре до подбородка, очки в тонкой металлической оправе,
   серое худи, длинное тёмно-зелёное пальто. Открывает Спейс.
-- **Тимур** — 20 лет, короткая тёмная стрижка, лёгкая щетина, чёрный бомбер, белая футболка,
+- **Карим** — 20 лет, короткая тёмная стрижка, лёгкая щетина, чёрный бомбер, белая футболка,
   наушники на шее, бумажный стакан кофе. Главный «омагад».
 
 ---
@@ -70,7 +70,7 @@ character reference sheet, the same young woman shown three times side by side: 
 character reference sheet, the same young woman shown three times side by side: front view, three-quarter view, profile, 20 years old, chin-length ash-blonde bob, thin round metal-frame glasses, grey hoodie under a long dark green wool coat, plain light grey studio background, soft even daylight, realistic skin texture, candid photo, shot on Sony A7 III 50mm --ar 16:9 --style raw --v 7 --s 50
 ```
 
-**3. Тимур**
+**3. Карим**
 ```
 character reference sheet, the same young man shown three times side by side: front view, three-quarter view, profile, 20 years old, short dark hair, light stubble, black bomber jacket over white t-shirt, wired headphones around his neck, holding a paper coffee cup, plain light grey studio background, soft even daylight, realistic skin texture, candid photo, shot on Sony A7 III 50mm --ar 16:9 --style raw --v 7 --s 50
 ```
