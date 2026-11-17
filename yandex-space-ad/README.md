@@ -216,3 +216,33 @@ three young friends sitting at a wooden table by the window in a cozy coffee sho
 3. Общая цветокоррекция на все клипы (одна LUT), лёгкое зерно и чуть смягчённая резкость.
 4. Реальный звук окружения важнее картинки — он «продаёт» реализм.
 5. Если герой «поплыл» между клипами — перегенерируйте с Subject Reference, а не прячьте монтажом.
+
+---
+
+## 8. Вариант: Hailuo по 12 секунд (4 клипа)
+
+Каждый клип — непрерывное действие по таймингу; в монтаже режем лучшие куски и перебиваем
+вставками (уведомление, экран приложения). Итог ~30 сек из 48 сек исходников.
+
+**Клип 1 ← кадр 1 (коридор). Subject Reference: Л1, Л2, Л3**
+```
+[Static shot, slight handheld] Three sleepy students wait by a classroom door in an old university corridor. 0-3s: the young man sips coffee, the girl in glasses yawns. 3-6s: the phone of the girl in the beige sweater vibrates, she reads the screen and freezes. 6-9s: she slowly looks up at her friends with a blank surprised face; the young man lowers his coffee cup and throws up both hands in a confused shrug. 9-12s: the two girls exchange a look and laugh nervously. Natural comedic timing, overcast window light, realistic documentary footage, no text on screen.
+```
+
+**Клип 2 ← кадр 5 (Аля с телефоном). Subject Reference: Л2**
+```
+[Slow push in] 0-4s: the girl in round glasses smiles slyly and takes her phone out of her coat pocket. 4-8s: she taps on the screen, her two friends lean in to look over her shoulders. 8-12s: all three light up with smiles, the young man nods "let's go", they grab their bags and start walking away down the corridor. Handheld, overcast window light, realistic documentary footage, no text on screen.
+```
+
+**Клип 3 ← кадр 6 (улица)**
+```
+[Tracking shot] Three friends walk briskly toward the camera along a wet cobblestone street in autumn Kazan. The camera moves backward in front of them at walking pace the whole time. 0-6s: they laugh and talk, their breath slightly visible in the cold air. 6-12s: the girl in glasses points ahead to a cafe, the others nod and speed up. Overcast light, natural motion, realistic street footage, no text on screen.
+```
+
+**Клип 4 ← кадр 7 (вход в кафе)**
+```
+[Slow pan right] 0-4s: the friends step into a warm cozy coffee shop from the cold street and unwrap their scarves. 4-8s: they walk to a free table by the window and sit down. 8-12s: cappuccinos on the table, one opens a laptop, they laugh together, steam rises from the cups. Warm tungsten light, shallow depth of field, realistic lifestyle footage, no text on screen.
+```
+
+Монтаж: Клип 1 (0–12) с вставкой уведомления на 3–6 с → Клип 2 (0–8) → запись экрана Спейса
+(4 с) → Клип 2 (8–12) → Клип 3 (5–6 с) → Клип 4 (8–9 с) → пэкшот (3 с).
