@@ -200,6 +200,81 @@ body{font-family:IT,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact
 .p8 .disc{color:#7d93b8;margin-top:2.4mm}
 .p5 .warn{margin-top:6mm;font-size:10.5pt;font-weight:600;color:var(--y);text-align:center;line-height:1.35}
 .tk .cut{margin:-.3mm 0}
+
+/* ---------- 9. Меню-доска ---------- */
+.p9{background:#7A5230;padding:5mm}
+.board{flex:1;background:#24302A;border-radius:2mm;color:#F3EEDF;padding:9mm 9mm 7mm;display:flex;flex-direction:column}
+.p9 .mt{text-align:center;font-family:FS,serif;font-style:italic;font-size:58pt;line-height:1}
+.p9 .ms{text-align:center;font-size:8.4pt;letter-spacing:3pt;text-transform:uppercase;color:#C9D3C9;margin-top:2mm}
+.p9 .ms b{color:var(--y)}
+.p9 .sep{border-top:.35mm dashed #6E7D73;margin:5mm 0 1mm}
+.p9 h4{font-family:FS,serif;font-style:italic;font-weight:400;font-size:17pt;color:var(--y);margin-top:5mm}
+.p9 .it{display:flex;align-items:baseline;font-size:11pt;line-height:1.65}
+.p9 .it .d{flex:1;border-bottom:.35mm dotted #8E9A92;margin:0 1.6mm;transform:translateY(-1mm)}
+.p9 .it b{font-weight:700;white-space:nowrap}
+.p9 .it small{display:block;font-size:8.2pt;color:#AEB9B1;line-height:1.3}
+.p9 .bt{margin-top:auto;display:flex;align-items:center;gap:4mm}
+.p9 .bt .qr{width:24mm;height:24mm}
+.p9 .bt .t{font-size:8.4pt;line-height:1.4;color:#C9D3C9}
+.p9 .bt .t b{display:block;font-size:11pt;color:#F3EEDF}
+.p9 .disc{color:#8E9A92;margin-top:2.4mm}
+
+/* ---------- 10. Печенье с предсказанием ---------- */
+.p10{background:#C8372D;color:#fff;padding:10mm;align-items:center;text-align:center}
+.p10 .brand{align-self:flex-start}
+.p10 .brand b{color:#fff}
+.p10 .k{margin-top:14mm;font-size:9pt;letter-spacing:3pt;text-transform:uppercase;color:#FFD9C9;font-weight:600}
+.p10 h1{font-family:FS,serif;font-style:italic;font-weight:400;font-size:46pt;line-height:1.05;margin-top:2mm}
+.p10 .ck{width:100mm;margin-top:6mm;display:block}
+.strip{background:#fff;color:#2a2418;width:124mm;padding:10mm 8mm 8mm;margin-top:16mm;border-radius:.6mm;position:relative;transform:rotate(-2.5deg)}
+.strip:before,.strip:after{content:"";position:absolute;top:0;bottom:0;width:2.4mm;background:repeating-linear-gradient(#fff 0 1.6mm,#C8372D 1.6mm 3.2mm)}
+.strip:before{left:-1.2mm}.strip:after{right:-1.2mm}
+.strip p{font-family:FS,serif;font-size:21pt;line-height:1.35}
+.strip .ln{display:flex;justify-content:center;gap:4mm;margin-top:4mm;font-size:8.6pt;color:#8a7a66;font-weight:600;letter-spacing:.4pt}
+.strip .ln b{color:#C8372D}
+.p10 .end{margin-top:auto;display:flex;align-items:center;gap:4mm;text-align:left;align-self:stretch}
+.p10 .end .qr{width:23mm;height:23mm}
+.p10 .end .t{font-size:8.6pt;line-height:1.4;color:#FFE3D8}
+.p10 .end .t b{display:block;font-size:12pt;color:#fff;margin-bottom:.6mm}
+.p10 .disc{color:#F1A99A;margin-top:2.4mm;align-self:stretch;text-align:center}
+
+/* ---------- 11. Объявление с отрывными ---------- */
+.p11{background:#9AA3AE;padding:9mm 8mm 0}
+.ad{flex:1;background:#FBFAF5;position:relative;display:flex;flex-direction:column;padding:12mm 9mm 0}
+.ad .tape{position:absolute;top:-4mm;left:50%;width:34mm;height:9mm;background:#EFE2A6;transform:translateX(-50%) rotate(-3deg)}
+.ad h1{font-size:34pt;font-weight:900;line-height:1;letter-spacing:-.8pt;text-align:center;text-transform:uppercase}
+.ad h1 span{display:block;font-size:13pt;letter-spacing:4pt;color:var(--r);margin-bottom:2mm}
+.ad .tx{font-size:12.6pt;line-height:1.5;margin-top:8mm;color:#33322f}
+.ad .tx b{font-weight:700}
+.ad .found{margin-top:8mm;display:flex;gap:4mm;align-items:center;border:.5mm solid var(--ink);border-radius:3mm;padding:3.4mm}
+.ad .found .qr{width:27mm;height:27mm;padding:0}
+.ad .found .t{font-size:9.6pt;line-height:1.42}
+.ad .found .t b{display:block;font-size:13.5pt;margin-bottom:.6mm}
+.ad .found .t u{text-decoration:none;background:var(--y);padding:0 1mm;font-weight:700}
+.ad .disc{color:#a3a09a;margin-top:3mm;text-align:center}
+.tabs{display:flex;margin:auto -9mm 0;border-top:.4mm dashed #9a978f;height:44mm}
+.tabs div{flex:1;border-right:.4mm dashed #9a978f;display:flex;align-items:center;justify-content:center}
+.tabs div:last-child{border-right:0}
+.tabs div span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:8.6pt;line-height:1.25;font-weight:600;white-space:nowrap}
+.tabs div span b{font-weight:800}
+.tabs div.gone{background:#9AA3AE;border-right:.4mm dashed #9a978f}
+
+/* ---------- 12. Схема метро ---------- */
+.p12{padding:10mm;background:#fff}
+.p12 .k{margin-top:7mm;font-size:8.4pt;font-weight:700;letter-spacing:1pt;color:#6F6E6B;text-transform:uppercase}
+.p12 h1{font-size:25pt;font-weight:800;line-height:1.06;letter-spacing:-.6pt;margin-top:1.6mm}
+.p12 .map{margin-top:4mm;flex:1}
+.p12 .map svg{width:100%;height:100%;display:block}
+.p12 .lg{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-top:3mm}
+.p12 .lg div{border-radius:3.4mm;padding:3mm 3.4mm;font-size:7.8pt;line-height:1.35;color:#4a4946}
+.p12 .lg div b{display:flex;align-items:center;gap:1.6mm;font-size:10pt;color:var(--ink);margin-bottom:.8mm}
+.p12 .lg div b i{width:6mm;height:2mm;border-radius:1mm;display:inline-block}
+.p12 .end{display:flex;align-items:center;gap:4mm;margin-top:4mm}
+.p12 .end .qr{width:21mm;height:21mm;border:.3mm solid var(--line)}
+.p12 .end .t{font-size:8.4pt;line-height:1.4;color:#4a4946}
+.p12 .end .t b{display:block;font-size:11pt;color:var(--ink)}
+.p12 .disc{color:#a3a09a;margin-top:2.4mm}
+.p10 .crumb{margin-top:14mm;font-size:10.5pt;line-height:1.4;color:#FFE3D8;max-width:110mm}
 </style>
 </head>
 <body>
@@ -423,6 +498,122 @@ body{font-family:IT,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact
   <div class="end">
     <div class="qr"><img src="qr.svg" alt=""></div>
     <div class="t"><b>Смотрите прогноз перед выходом</b>Загруженность каждого кафе по часам и свободные столики — прямо сейчас.</div>
+  </div>
+  <div class="disc">Учебный проект по дисциплине «Маркетинг и рыночная аналитика». Заведения и цифры в прототипе вымышленные.</div>
+</section>
+
+<!-- ========== 9. МЕНЮ-ДОСКА ========== -->
+<section class="page p9">
+  <div class="board">
+    <div class="mt">Меню</div>
+    <div class="ms">от <b>Яндекс Спейса</b> · подаём каждый день</div>
+    <div class="sep"></div>
+    <h4>Для тех, кто спешит</h4>
+    <div class="it"><span>Свободный столик рядом, прямо сейчас</span><span class="d"></span><b>0 ₽</b></div>
+    <div class="it"><span>Бронь без звонка, за 10 секунд</span><span class="d"></span><b>0 ₽</b></div>
+    <h4>Для большой компании</h4>
+    <div class="it"><span>Стол до 12 гостей одним запросом</span><span class="d"></span><b>0 ₽</b></div>
+    <h4>Для работы</h4>
+    <div class="it"><span>Тихий угол с розеткой и Wi-Fi</span><span class="d"></span><b>0 ₽</b></div>
+    <h4>Если мест нет</h4>
+    <div class="it"><span>Push «столик освободился»<small>придёт, как только место появится</small></span><span class="d"></span><b>49 ₽</b></div>
+    <h4>Десерт</h4>
+    <div class="it"><span>Спокойствие и никаких очередей</span><span class="d"></span><b>в подарок</b></div>
+    <div class="bt">
+      <div class="qr"><img src="qr.svg" alt=""></div>
+      <div class="t"><b>Заказ — по QR-коду</b>Наведите камеру: откроется карта свободных столиков в кафе Казани.</div>
+    </div>
+    <div class="disc">Учебный проект по дисциплине «Маркетинг и рыночная аналитика». Заведения и цифры в прототипе вымышленные.</div>
+  </div>
+</section>
+
+<!-- ========== 10. ПЕЧЕНЬЕ С ПРЕДСКАЗАНИЕМ ========== -->
+<section class="page p10">
+  <div class="brand"><img src="icon.png" alt=""><b>Яндекс <span style="color:var(--y)">Спейс</span></b></div>
+  <div class="k">ваше предсказание на сегодня</div>
+  <h1>Печенье<br>с предсказанием</h1>
+  
+  <div class="strip">
+    <p>Сегодня вас ждёт<br>свободный столик у окна.<br>Не звоните — он уже ваш.</p>
+    <div class="ln"><span>Счастливые числа:</span><span>столик <b>№ 5</b></span><span>время <b>19:30</b></span><span>бронь <b>10 сек</b></span></div>
+  </div>
+  <div class="crumb">Если предсказание не сбылось — откройте Спейс, и оно сбудется за 10 секунд.</div>
+  <div class="end">
+    <div class="qr"><img src="qr.svg" alt=""></div>
+    <div class="t"><b>Сбудется, если открыть Спейс</b>Свободные столики в кафе рядом — в реальном времени. Бронь в пару касаний.</div>
+  </div>
+  <div class="disc">Учебный проект по дисциплине «Маркетинг и рыночная аналитика». Заведения и цифры в прототипе вымышленные.</div>
+</section>
+
+<!-- ========== 11. ОБЪЯВЛЕНИЕ С ОТРЫВНЫМИ ========== -->
+<section class="page p11">
+  <div class="ad">
+    <div class="tape"></div>
+    <h1><span>срочно</span>Ищу свободный<br>столик</h1>
+    <p class="tx">В центре Казани. Желательно <b>у окна</b> и с розеткой. Сегодня, на 19:30, на двоих.<br>Звонить не предлагать — <b>не дозвонюсь</b>. Обходить кафе наугад — тоже.</p>
+    <div class="found">
+      <div class="qr"><img src="qr.svg" alt=""></div>
+      <div class="t"><b>UPD: нашёл за 10 секунд!</b>Помог <u>Яндекс Спейс</u> — показывает свободные столики в реальном времени и бронирует без звонка.</div>
+    </div>
+    <div class="disc">Учебный проект по дисциплине «Маркетинг и рыночная аналитика». Заведения и цифры в прототипе вымышленные.</div>
+    <div class="tabs">
+      <div><span><b>Яндекс Спейс</b><br>свободные столики<br>без звонка</span></div>
+      <div class="gone"></div>
+      <div><span><b>Яндекс Спейс</b><br>свободные столики<br>без звонка</span></div>
+      <div class="gone"></div>
+      <div class="gone"></div>
+      <div><span><b>Яндекс Спейс</b><br>свободные столики<br>без звонка</span></div>
+      <div><span><b>Яндекс Спейс</b><br>свободные столики<br>без звонка</span></div>
+      <div><span><b>Яндекс Спейс</b><br>свободные столики<br>без звонка</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 12. СХЕМА МЕТРО ========== -->
+<section class="page p12">
+  <div class="brand"><img src="icon.png" alt=""><b>Яндекс <span>Спейс</span></b></div>
+  <div class="k">Схема линий</div>
+  <h1>Как добраться<br>до свободного столика</h1>
+  <div class="map">
+    <svg viewBox="0 0 400 300" font-family="IT">
+      <!-- red line: long way -->
+      <path d="M40 40 H150 Q170 40 170 60 V120 Q170 140 190 140 H330 Q350 140 350 160 V210 Q350 230 330 230 H230" fill="none" stroke="#FC3F1D" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- yellow line: direct -->
+      <path d="M40 40 V230 H70" fill="none" stroke="#FFC21A" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- interchange -->
+      <circle cx="40" cy="40" r="11" fill="#fff" stroke="#21201F" stroke-width="4"/>
+      <text x="58" y="24" font-size="12.5" font-weight="800" fill="#21201F">Пару отменили</text>
+      <!-- red stations -->
+      <g fill="#fff" stroke="#FC3F1D" stroke-width="4">
+        <circle cx="105" cy="40" r="6"/><circle cx="170" cy="90" r="6"/><circle cx="250" cy="140" r="6"/><circle cx="350" cy="185" r="6"/><circle cx="280" cy="230" r="6"/>
+      </g>
+      <circle cx="230" cy="230" r="9" fill="#fff" stroke="#21201F" stroke-width="4"/>
+      <g font-size="10.5" fill="#4a4946" font-weight="600">
+        <text x="105" y="62" text-anchor="middle">Позвонить</text>
+        <text x="182" y="94">Не дозвониться</text>
+        <text x="250" y="126" text-anchor="middle">Пойти наугад</text>
+        <text x="340" y="189" text-anchor="end">«Мест нет»</text>
+        <text x="280" y="252" text-anchor="middle">Следующее кафе</text>
+      </g>
+      <text x="230" y="276" font-size="12" font-weight="800" fill="#21201F" text-anchor="middle">Домой ни с чем</text>
+      <!-- yellow stations -->
+      <g fill="#fff" stroke="#E5A800" stroke-width="4"><circle cx="40" cy="110" r="6"/><circle cx="40" cy="170" r="6"/></g>
+      <circle cx="70" cy="230" r="11" fill="#FFDB4D" stroke="#21201F" stroke-width="4"/>
+      <g font-size="10.5" fill="#4a4946" font-weight="600">
+        <text x="54" y="114">Открыть Спейс</text>
+        <text x="54" y="174">Выбрать столик</text>
+      </g>
+      <text x="70" y="262" font-size="13" font-weight="800" fill="#21201F" text-anchor="middle">Столик у окна</text>
+      <text x="70" y="277" font-size="9.5" font-weight="600" fill="#1C8C38" text-anchor="middle">конечная · вы на месте</text>
+    </svg>
+  </div>
+  <div class="lg">
+    <div style="background:#FFF6CC"><b><i style="background:#FFC21A"></i>Жёлтая ветка</b>2 станции, 10 секунд. Бронь без звонка, столик ждёт вас.</div>
+    <div style="background:#FFEDE8"><b><i style="background:#FC3F1D"></i>Красная ветка</b>5 станций, около 40 минут. Конечная — «Домой ни с чем».</div>
+  </div>
+  <div class="end">
+    <div class="qr"><img src="qr.svg" alt=""></div>
+    <div class="t"><b>Пересадка на жёлтую ветку — здесь</b>Наведите камеру на код: Спейс покажет свободные столики рядом.</div>
   </div>
   <div class="disc">Учебный проект по дисциплине «Маркетинг и рыночная аналитика». Заведения и цифры в прототипе вымышленные.</div>
 </section>
