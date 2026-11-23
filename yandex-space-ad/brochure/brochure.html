@@ -79,6 +79,12 @@ h2{font-size:15pt;font-weight:700;letter-spacing:-.3pt;line-height:1.1}
 .box.k li{font-size:7.4pt;line-height:1.45;list-style:none;display:flex;justify-content:space-between;gap:2mm;color:#e8e6e1;margin-top:.9mm}
 .box.k li b{color:#fff;white-space:nowrap}
 .disc{margin-top:auto;padding-top:3mm;font-size:6.4pt;color:#9a9893;line-height:1.4;display:flex;justify-content:space-between;gap:4mm;border-top:.3mm solid var(--line)}
+.stage.baked{background:none;border-radius:0}
+.stage.baked:before{display:none}
+.stage.baked img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.mini{height:80.07mm}
+.steps,.row{position:relative;z-index:1}
+.minib{position:absolute;left:-7.938mm;top:-7.938mm;width:calc(100% + 15.875mm);display:block}
 </style>
 </head>
 <body>
@@ -96,12 +102,7 @@ h2{font-size:15pt;font-weight:700;letter-spacing:-.3pt;line-height:1.1}
     <span class="chip" data-i="walk">Места рядом с вами</span>
   </div>
 
-  <div class="stage">
-    <div class="phone ph1"><img src="map.png" alt=""></div>
-    <div class="phone ph2"><img src="picked.png" alt=""></div>
-    <div class="badge bd1"><span class="dot" style="background:var(--gs);color:var(--gt)" data-i="check" data-s="15"></span><span><b>Свободно 5 из 11</b>обновлено минуту назад</span></div>
-    <div class="badge bd2"><span class="dot" style="background:var(--ys);color:#a07400" data-i="clock" data-s="15"></span><span><b>Столик №5 у окна</b>бронь за 10 секунд</span></div>
-  </div>
+  <div class="stage baked"><img src="stage.png" alt=""></div>
 
   <div class="foot">
     <div class="qr"><img src="qr.svg" alt=""></div>
@@ -127,7 +128,7 @@ h2{font-size:15pt;font-weight:700;letter-spacing:-.3pt;line-height:1.1}
       <div class="step"><span class="n">2</span><div><b>Выбирайте столик на схеме</b><p>Зелёные — свободны. Видно, где окно, розетки и бар, и когда в кафе людно.</p></div></div>
       <div class="step"><span class="n">3</span><div><b>Бронируйте в одно касание</b><p>Заведение подтвердит бронь, а столик будет ждать вас к нужному времени.</p></div></div>
     </div>
-    <div class="mini"><div class="phone"><img src="card.png" alt=""></div></div>
+    <div class="mini"><img class="minib" src="mini.png" alt=""></div>
   </div>
 
   <div class="row">
