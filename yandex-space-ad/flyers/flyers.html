@@ -105,6 +105,101 @@ body{font-family:IT,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact
 .p4 .foot .t{flex:1;font-size:8pt;line-height:1.4;color:#4a4946}
 .p4 .foot .t b{display:block;color:var(--ink);font-size:9.6pt}
 .p4 .disc{color:#8a8d93;margin-top:2.4mm;text-align:center}
+@font-face{font-family:FS;src:url(fonts/FreeSerifItalic.ttf);font-style:italic}
+@font-face{font-family:FS;src:url(fonts/FreeSerif.ttf);font-style:normal}
+
+/* ---------- 5. Посадочный талон ---------- */
+.p5{background:#1E3A8A;color:#fff;padding:10mm 11mm 9mm;align-items:center}
+.p5 .brand{align-self:flex-start}
+.p5 .brand b{color:#fff}
+.p5 .hd{align-self:flex-start;font-size:31pt;font-weight:800;line-height:1.05;letter-spacing:-.6pt;margin-top:7mm}
+.p5 .hd span{color:var(--y)}
+.tk{width:100%;margin-top:9mm;color:var(--ink)}
+.tk .a{background:#fff;border-radius:6mm 6mm 0 0;padding:6.5mm 7mm 6mm}
+.tk .b{background:#fff;border-radius:0 0 6mm 6mm;padding:5mm 7mm 6mm;display:flex;gap:5mm;align-items:center}
+.tk .cut{height:8mm;background:#fff;position:relative}
+.tk .cut:before,.tk .cut:after{content:"";position:absolute;top:0;width:8mm;height:8mm;border-radius:50%;background:#1E3A8A}
+.tk .cut:before{left:-4mm}.tk .cut:after{right:-4mm}
+.tk .cut i{position:absolute;left:6mm;right:6mm;top:50%;border-top:.5mm dashed #C9CED8}
+.tk .ttl{display:flex;justify-content:space-between;font-size:8pt;font-weight:700;letter-spacing:1pt;color:#7b8190}
+.tk .ttl b{color:var(--b)}
+.tk .route{display:flex;align-items:center;margin-top:3.6mm}
+.tk .route .pt{flex:none}
+.tk .route .pt b{display:block;font-size:38pt;font-weight:900;letter-spacing:-1pt;line-height:1}
+.tk .route .pt span{font-size:8.4pt;color:#6b7080}
+.tk .route .pt.r{text-align:right}
+.tk .route .mid{flex:1;margin:0 3mm;position:relative;height:8mm;display:flex;align-items:center;justify-content:center}
+.tk .route .mid:before{content:"";position:absolute;left:0;right:0;top:50%;border-top:.5mm dashed #9aa1b0}
+.tk .route .mid span{position:relative;background:#fff;padding:0 1.6mm;font-size:8pt;font-weight:600;color:#6b7080;display:flex;gap:1mm;align-items:center}
+.tk .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4.6mm 3mm;margin-top:6mm}
+.tk .grid div{font-size:7.4pt;color:#7b8190;font-weight:600;letter-spacing:.3pt;text-transform:uppercase}
+.tk .grid b{display:block;font-size:12pt;color:var(--ink);text-transform:none;letter-spacing:0;margin-top:.6mm;font-weight:700}
+.tk .grid b.g{color:var(--gt)}
+.tk .b .qr{width:28mm;height:28mm;padding:0;border-radius:0}
+.tk .b .t{font-size:9pt;line-height:1.4;color:#4a4f5c}
+.tk .b .t b{display:block;font-size:11.5pt;color:var(--ink);margin-bottom:.6mm}
+.p5 .disc{color:#9fb0dc;margin-top:auto;text-align:center}
+
+/* ---------- 6. Зарезервировано ---------- */
+.p6{background:#F6EFE2;padding:8mm}
+.frm{flex:1;border:.6mm solid #B8913E;border-radius:3mm;padding:1.6mm;display:flex}
+.frm .in{flex:1;border:.25mm solid #B8913E;border-radius:2mm;display:flex;flex-direction:column;align-items:center;text-align:center;padding:10mm 9mm 7mm}
+.p6 .no{font-size:8.5pt;letter-spacing:3pt;font-weight:600;color:#8a6d2c;text-transform:uppercase}
+.p6 .orn{width:34mm;margin:4mm 0}
+.p6 .rs{font-family:FS,serif;font-style:italic;font-size:42pt;white-space:nowrap;line-height:1;color:#2a2418;margin-top:1mm}
+.p6 .tm{font-size:9pt;letter-spacing:2pt;font-weight:600;color:#8a6d2c;margin-top:3mm;text-transform:uppercase}
+.p6 .story{font-family:FS,serif;font-size:19pt;line-height:1.4;color:#3a3226;margin-top:16mm}
+.p6 .story b{font-style:normal;font-family:IT,sans-serif;font-weight:700;font-size:15pt;background:#FFDB4D;padding:.3mm 1.6mm;border-radius:1mm}
+.p6 .q{font-size:13pt;font-weight:700;color:#2a2418;margin-top:12mm;letter-spacing:.3pt}
+.p6 .bt{margin-top:auto;display:flex;align-items:center;gap:4mm;text-align:left}
+.p6 .bt .qr{width:25mm;height:25mm;background:transparent;padding:0}
+.p6 .bt .t{font-size:8.6pt;line-height:1.42;color:#5e523c}
+.p6 .bt .t b{display:block;font-size:9.5pt;color:#2a2418}
+.p6 .disc{color:#a39579;margin-top:3mm}
+
+/* ---------- 7. Бинго ---------- */
+.p7{padding:10mm;background:#fff}
+.p7 h1{font-size:40pt;font-weight:900;letter-spacing:-1.5pt;line-height:.95;margin-top:6mm}
+.p7 h1 span{color:var(--r)}
+.p7 .lead{font-size:10pt;color:#4a4946;margin-top:2.4mm}
+.bingo{margin-top:6mm;display:grid;grid-template-columns:repeat(3,1fr);border:.7mm solid var(--ink);border-radius:3mm;overflow:hidden;position:relative}
+.bingo div{aspect-ratio:1/0.9;border-right:.4mm solid var(--ink);border-bottom:.4mm solid var(--ink);display:flex;align-items:center;justify-content:center;text-align:center;padding:2.6mm;font-size:11pt;font-weight:700;line-height:1.18;position:relative}
+.bingo div:nth-child(3n){border-right:0}
+.bingo div:nth-child(n+7){border-bottom:0}
+.bingo div.free{background:var(--y);flex-direction:column;gap:1mm;font-size:10pt}
+.bingo div.free img{width:10mm;height:10mm}
+.bingo div.free small{font-size:7.4pt;font-weight:600;color:#6b5a00}
+.bingo svg.mk{position:absolute;inset:1.4mm;width:calc(100% - 2.8mm);height:calc(100% - 2.8mm);pointer-events:none}
+.p7 .end{margin-top:6mm;display:flex;align-items:center;gap:4mm}
+.p7 .end .qr{width:25mm;height:25mm;border:.3mm solid var(--line)}
+.p7 .end .t{font-size:9.2pt;line-height:1.4;color:#4a4946;flex:1}
+.p7 .end .t b{display:block;font-size:15pt;color:var(--ink);line-height:1.15;margin-bottom:1mm}
+.p7 .disc{color:#a3a09a;margin-top:auto}
+
+/* ---------- 8. Прогноз ---------- */
+.p8{background:#DCEBFF;padding:10mm}
+.p8 .loc{margin-top:7mm;font-size:9pt;font-weight:600;color:#3d5a8a}
+.p8 .loc b{display:block;font-size:19pt;color:var(--ink);font-weight:800;letter-spacing:-.3pt;margin-top:.6mm}
+.now{display:flex;align-items:center;gap:4mm;margin-top:4mm}
+.now .big{font-size:66pt;font-weight:800;letter-spacing:-3pt;line-height:1}
+.now .d{font-size:11pt;font-weight:700;line-height:1.3}
+.now .d span{display:block;font-size:8.6pt;font-weight:500;color:#3d5a8a}
+.hours{margin-top:7mm;background:#fff;border-radius:5mm;padding:5.5mm 3mm;display:grid;grid-template-columns:repeat(6,1fr);text-align:center}
+.hours div{font-size:8.6pt;color:#5a6a85;font-weight:600}
+.hours div svg{display:block;margin:2.4mm auto;width:12mm;height:12mm}
+.hours div b{display:block;font-size:12.5pt;color:var(--ink)}
+.hours div.hot b{color:var(--r)}
+.hours div.ok b{color:var(--gt)}
+.facts{margin-top:4mm;display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.facts div{background:#fff;border-radius:3.6mm;padding:4mm 4.2mm;font-size:8.2pt;color:#5a6a85;font-weight:600}
+.facts div b{display:block;font-size:12pt;color:var(--ink);margin-top:.6mm}
+.p8 .end{margin-top:auto;display:flex;gap:4mm;align-items:center}
+.p8 .end .qr{width:25mm;height:25mm}
+.p8 .end .t{font-size:9.2pt;line-height:1.4;color:#3d5a8a;flex:1}
+.p8 .end .t b{display:block;font-size:13.5pt;color:var(--ink);margin-bottom:.8mm}
+.p8 .disc{color:#7d93b8;margin-top:2.4mm}
+.p5 .warn{margin-top:6mm;font-size:10.5pt;font-weight:600;color:var(--y);text-align:center;line-height:1.35}
+.tk .cut{margin:-.3mm 0}
 </style>
 </head>
 <body>
@@ -226,6 +321,108 @@ body{font-family:IT,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact
   <div class="foot">
     <div class="qr"><img src="qr.svg" alt=""></div>
     <div class="t"><b>Окно в расписании? Есть место.</b>Наведите камеру на код — откроется карта свободных столиков рядом.</div>
+  </div>
+  <div class="disc">Учебный проект по дисциплине «Маркетинг и рыночная аналитика». Заведения и цифры в прототипе вымышленные.</div>
+</section>
+
+<!-- ========== 5. ПОСАДОЧНЫЙ ТАЛОН ========== -->
+<section class="page p5">
+  <div class="brand"><img src="icon.png" alt=""><b>Яндекс <span style="color:var(--y)">Спейс</span></b></div>
+  <div class="hd">Пару отменили?<br>Ваш рейс — <span>в кафе.</span></div>
+  <div class="tk">
+    <div class="a">
+      <div class="ttl"><span>ПОСАДОЧНЫЙ ТАЛОН</span><b>РЕЙС SP-0840</b></div>
+      <div class="route">
+        <div class="pt"><b>305</b><span>Аудитория 305</span></div>
+        <div class="mid"><span data-i="walk" data-s="11">5 мин пешком</span></div>
+        <div class="pt r"><b>БКФ</b><span>«Бульвар Кофе»</span></div>
+      </div>
+      <div class="grid">
+        <div>Пассажир<b>Студент, 1</b></div>
+        <div>Место<b>5A · у окна</b></div>
+        <div>Посадка<b class="g">сейчас</b></div>
+        <div>Класс<b>с розеткой</b></div>
+        <div>Багаж<b>ноутбук</b></div>
+        <div>Регистрация<b>без звонка</b></div>
+      </div>
+    </div>
+    <div class="cut"><i></i></div>
+    <div class="b">
+      <div class="qr"><img src="qr.svg" alt=""></div>
+      <div class="t"><b>Онлайн-регистрация на столик</b>Наведите камеру — Спейс покажет свободные места в кафе рядом прямо сейчас.</div>
+    </div>
+  </div>
+  <div class="warn">Регистрация закрывается, когда занят последний свободный столик.</div>
+  <div class="disc">Учебный проект по дисциплине «Маркетинг и рыночная аналитика». Заведения и цифры в прототипе вымышленные.</div>
+</section>
+
+<!-- ========== 6. ЗАРЕЗЕРВИРОВАНО ========== -->
+<section class="page p6">
+  <div class="frm"><div class="in">
+    <div class="no">Столик № 5</div>
+    <svg class="orn" viewBox="0 0 120 10"><path d="M0 5h48M72 5h48" stroke="#B8913E" stroke-width="1"/><path d="M60 0l5 5-5 5-5-5z" fill="#B8913E"/><circle cx="50" cy="5" r="1.5" fill="#B8913E"/><circle cx="70" cy="5" r="1.5" fill="#B8913E"/></svg>
+    <div class="rs">Зарезервировано</div>
+    <div class="tm">сегодня · 19:30</div>
+    <svg class="orn" viewBox="0 0 120 10"><path d="M0 5h48M72 5h48" stroke="#B8913E" stroke-width="1"/><path d="M60 0l5 5-5 5-5-5z" fill="#B8913E"/><circle cx="50" cy="5" r="1.5" fill="#B8913E"/><circle cx="70" cy="5" r="1.5" fill="#B8913E"/></svg>
+    <div class="story">Этот столик забронировали<br>за <b>10 секунд</b> —<br>и ни разу не позвонили.</div>
+    <div class="q">Хотите так же?</div>
+    <div class="bt">
+      <div class="qr"><img src="qr.svg" alt=""></div>
+      <div class="t"><b>Яндекс Спейс</b>Свободные столики в кафе Казани в реальном времени. Бронь в пару касаний.</div>
+    </div>
+    <div class="disc">Учебный проект по дисциплине «Маркетинг и рыночная аналитика». Заведения и цифры в прототипе вымышленные.</div>
+  </div></div>
+</section>
+
+<!-- ========== 7. БИНГО ========== -->
+<section class="page p7">
+  <div class="brand"><img src="icon.png" alt=""><b>Яндекс <span>Спейс</span></b></div>
+  <h1>Кафе-<span>бинго</span></h1>
+  <p class="lead">Отметьте всё, что с вами уже случалось.</p>
+  <div class="bingo">
+    <div>Позвонил — не взяли трубку<svg class="mk" viewBox="0 0 100 90" preserveAspectRatio="none"><path d="M50 7 C80 5 96 22 95 44 C94 70 72 85 47 84 C20 83 4 66 5 43 C6 20 26 6 55 9" fill="none" stroke="#FC3F1D" stroke-width="3.2" stroke-linecap="round"/></svg></div>
+    <div>Обошли 3 кафе подряд</div>
+    <div>«Перезвоните позже»</div>
+    <div>Компания из 8 не влезла</div>
+    <div class="free"><img src="icon.png" alt="">Свободный столик<small>бесплатная клетка</small></div>
+    <div>Нет розетки, ноутбук сел</div>
+    <div>Ждали у входа 20 минут</div>
+    <div>Слишком шумно, чтобы работать</div>
+    <div>Сели у двери на сквозняке<svg class="mk" viewBox="0 0 100 90" preserveAspectRatio="none"><path d="M50 7 C80 5 96 22 95 44 C94 70 72 85 47 84 C20 83 4 66 5 43 C6 20 26 6 55 9" fill="none" stroke="#FC3F1D" stroke-width="3.2" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="end">
+    <div class="qr"><img src="qr.svg" alt=""></div>
+    <div class="t"><b>Собрали линию?<br>Значит, пора в Спейс.</b>Свободные столики рядом — в реальном времени, бронь без звонка.</div>
+  </div>
+  <div class="disc">Учебный проект по дисциплине «Маркетинг и рыночная аналитика». Заведения и цифры в прототипе вымышленные.</div>
+</section>
+
+<!-- ========== 8. ПРОГНОЗ ========== -->
+<section class="page p8">
+  <div class="brand"><img src="icon.png" alt=""><b>Яндекс <span>Спейс</span></b></div>
+  <div class="loc">Прогноз загруженности на сегодня<b>«Бульвар Кофе», ул. Профсоюзная</b></div>
+  <div class="now">
+    <svg width="34mm" height="26mm" viewBox="0 0 68 52"><circle cx="24" cy="20" r="12" fill="#FFC21A"/><g stroke="#FFC21A" stroke-width="3" stroke-linecap="round"><path d="M24 1v4M5 20h4M10.5 6.5l3 3M37.5 6.5l-3 3M10.5 33.5l3-3"/></g><path d="M24 48h34a10 10 0 0 0 0-20 14 14 0 0 0-27 3 9 9 0 0 0-7 17z" fill="#fff"/></svg>
+    <div class="big">55%</div>
+    <div class="d">Переменная<br>загруженность<span>занято 6 из 11 столиков</span></div>
+  </div>
+  <div class="hours">
+    <div class="ok">9:00<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5.5" fill="#FFC21A"/><g stroke="#FFC21A" stroke-width="2" stroke-linecap="round"><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2 2M17.4 17.4l2 2M4.6 19.4l2-2M17.4 6.6l2-2"/></g></svg><b>25%</b></div>
+    <div>12:00<svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="5" fill="#FFC21A"/><path d="M8 20h12a4 4 0 0 0 0-8 5.5 5.5 0 0 0-10.5 1.5A3.3 3.3 0 0 0 8 20z" fill="#B9C6DA"/></svg><b>55%</b></div>
+    <div class="hot">14:00<svg viewBox="0 0 24 24"><path d="M5 18h14a4.5 4.5 0 0 0 0-9 6.5 6.5 0 0 0-12.5 2A3.5 3.5 0 0 0 5 18z" fill="#8FA0BA"/></svg><b>70%</b></div>
+    <div>16:00<svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="5" fill="#FFC21A"/><path d="M8 20h12a4 4 0 0 0 0-8 5.5 5.5 0 0 0-10.5 1.5A3.3 3.3 0 0 0 8 20z" fill="#B9C6DA"/></svg><b>45%</b></div>
+    <div class="hot">19:00<svg viewBox="0 0 24 24"><path d="M5 14h14a4.5 4.5 0 0 0 0-9 6.5 6.5 0 0 0-12.5 2A3.5 3.5 0 0 0 5 14z" fill="#6F82A0"/><g stroke="#2C6CF6" stroke-width="2" stroke-linecap="round"><path d="M8 17l-1.5 4M13 17l-1.5 4M18 17l-1.5 4"/></g></svg><b>75%</b></div>
+    <div class="ok">22:00<svg viewBox="0 0 24 24"><path d="M15 3a9 9 0 1 0 6 15.5A7.5 7.5 0 0 1 15 3z" fill="#5B6E92"/></svg><b>30%</b></div>
+  </div>
+  <div class="facts">
+    <div>Осадки<b>ливень гостей к 19:00</b></div>
+    <div>Ветер<b>сквозняк у двери, 2 м/с</b></div>
+    <div>Видимость<b>все свободные столики</b></div>
+    <div>Совет дня<b>бронируйте до 18:30</b></div>
+  </div>
+  <div class="end">
+    <div class="qr"><img src="qr.svg" alt=""></div>
+    <div class="t"><b>Смотрите прогноз перед выходом</b>Загруженность каждого кафе по часам и свободные столики — прямо сейчас.</div>
   </div>
   <div class="disc">Учебный проект по дисциплине «Маркетинг и рыночная аналитика». Заведения и цифры в прототипе вымышленные.</div>
 </section>
