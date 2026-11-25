@@ -59,7 +59,7 @@ const ss=x=>{x=cl(x);return x*x*(3-2*x)};
 function spr(s,w=10,z=.75){if(s<=0)return 0;const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*s)*(Math.cos(wd*s)+z*w/wd*Math.sin(wd*s))}
 const vis=(e,on)=>e.style.visibility=on?'visible':'hidden';
 // mode 'g': banner over the girl shot (local t from shot start, banner at BT). mode 'd': demo (t from cut).
-const BT=1.05;
+const BT=0.12;
 window.seek=(t,mode)=>{
   if(mode==='g'){
     const a=spr(t-BT,9,.72);ban.style.transform=`translateY(${lerp(-230,0,a)}px)`;ban.style.opacity=cl((t-BT)*5);
