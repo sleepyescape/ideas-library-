@@ -27,11 +27,11 @@ ${L({bg:'rgba(225,226,232,.55)',beam:'#FFC21A',hi:'#FFD964',fur:'#fff'},'lg abs'
 
 /* 2 pixel */
 (()=>{const d=T('background:#050505','<canvas id="px" width="34" height="34" style="width:182px;height:182px;image-rendering:pixelated"></canvas>');
-const img=new Image();img.onload=()=>{const c=document.getElementById('px'),x=c.getContext('2d');x.imageSmoothingEnabled=true;x.drawImage(img,0,0,34,34);
+const img=new Image();img.onload=()=>{const c=document.getElementById('px'),x=c.getContext('2d');x.imageSmoothingEnabled=true;x.fillStyle='#050505';x.fillRect(0,0,34,34);x.fillStyle='#FBF8F0';x.beginPath();x.arc(17,17,17,0,7);x.fill();x.drawImage(img,2.2,2.2,29.6,29.6);
 const im=x.getImageData(0,0,34,34),p=im.data;const pal=[[5,5,5],[255,194,26],[251,248,240]];
 for(let i=0;i<p.length;i+=4){if(p[i+3]<110){p[i]=5;p[i+1]=5;p[i+2]=5;p[i+3]=255;continue}let best=0,bd=1e9;pal.forEach((c,k)=>{const dd=(p[i]-c[0])**2+(p[i+1]-c[1])**2+(p[i+2]-c[2])**2;if(dd<bd){bd=dd;best=k}});[p[i],p[i+1],p[i+2]]=pal[best];p[i+3]=255}
 x.putImageData(im,0,0);window.px=1};
-img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(LOGO({ring:'#FBF8F0',ringW:44,hi:'#FFC21A'}).replace('<svg ','<svg width="512" height="512" '))})();
+img.src='icon.png';})();
 
 /* 3 sketch */
 T('background:#F3EEE3',`
@@ -106,12 +106,9 @@ T('background:#F4F1EA',`
 <svg width="384" height="256" class="abs" style="left:0;top:0">
 <path d="M110 70 C130 30 210 26 250 42 C300 60 330 90 320 140 C312 186 270 220 214 214 C170 210 150 222 118 206 C80 188 70 150 82 118 C88 100 98 92 110 70Z" fill="${Y}"/>
 <circle cx="74" cy="206" r="9" fill="${Y}"/>
-<g transform="translate(128 58) scale(.27)"><clipPath id="c11"><circle cx="256" cy="256" r="250"/></clipPath>
-<g clip-path="url(#c11)"><path d="M338 0 L118 222 L-60 222 L-60 -60 Z" fill="${K}"/></g>
-<g fill="${K}"><ellipse cx="252" cy="240" rx="142" ry="44"/>
-<path d="M238 276 L266 276 L268 396 C270 418 300 426 316 432 C324 436 322 446 312 446 L192 446 C182 446 180 436 188 432 C204 426 234 418 236 396 Z"/>
-<path id="ch11" d="M44 238 C30 238 26 250 28 262 L50 356 C53 368 62 374 74 374 L176 374 C190 374 196 366 193 354 L190 344 C187 334 180 330 168 330 L110 330 C99 330 93 324 91 313 L79 256 C76 244 66 238 52 238 Z"/>
-<use href="#ch11" transform="translate(512 0) scale(-1 1)"/></g></g></svg>`);
+<g transform="translate(128 58) scale(.27)"><clipPath id="c11"><polygon points="0,0 341,0 117,224 0,240"/></clipPath>
+<path d="${LP.circle}" fill="${K}" clip-path="url(#c11)"/><path d="${LP.beam}" fill="${Y}" stroke="${Y}" stroke-width="5"/>
+<path d="${LP.fur}" fill="${K}" stroke="${Y}" stroke-width="10" stroke-linejoin="round" paint-order="stroke"/></g></svg>`);
 
 /* 12 concrete */
 T('background:#8f8f8c',`
