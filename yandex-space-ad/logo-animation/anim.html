@@ -53,6 +53,7 @@ for(let i=0;i<N;i++){const d=document.createElement('div');d.className='card';
 const disc=document.createElement('div');disc.id='disc';cam.appendChild(disc);
 const r1=document.createElement('div');r1.id='ring1';cam.appendChild(r1);
 const r2=document.createElement('div');r2.id='ring2';cam.appendChild(r2);
+const inr=[0,1,2].map(()=>{const e=document.createElement('div');e.style.cssText='position:absolute;left:0;top:0;border-radius:50%';cam.appendChild(e);return e});
 const logo=document.createElement('div');logo.id='logo';logo.innerHTML=LOGO();cam.appendChild(logo);
 const word=document.createElement('div');word.id='word';
 const W1='Яндекс',W2='Спейс';
@@ -77,16 +78,16 @@ function cardPose(i,t){
     const from=P({z:-2600,ry:540*(i%2?1:-1),rx:40,s:1,o:0});const a=spr(t-t0,12,.5);p=mix(from,g,a);p.o=cl((t-t0)*5);}
   // C: flip wave 7.5..8.73
   const col=i%4,row=Math.floor(i/4),dd=col+row;
-  const fl=eIO((t-7.45-dd*0.075)/0.42);p.ry+=360*fl;
+  const fl=eIO((t-7.45-dd*0.075)/0.42)+eIO((t-8.70-(6-dd)*0.06)/0.40);p.ry+=360*fl;p.rx+=Math.sin(cl((t-8.7-(6-dd)*0.06)/0.4)*Math.PI)*25;
   // D: implode 8.73..9.33
-  const dist=Math.hypot(g.x,g.y)/900;const pi=eInBack((t-8.72-(0.14-dist*0.12))/0.42);
+  const dist=Math.hypot(g.x,g.y)/900;const pi=eInBack((t-9.30-(0.14-dist*0.12))/0.42);
   if(pi>0){p=mix(p,P({x:0,y:0,z:-300,rz:(i%2?1:-1)*220,s:0.05,o:0}),pi);}
   // E: burst 9.30..10.3
-  const tb=t-9.30;
+  const tb=t-10.55;
   if(tb>=0){const ang=i/N*Math.PI*2+rnd(i)*0.4,R=1500+rnd(i+3)*500;const q=eOut(tb/1.0);
     p=P({x:Math.cos(ang)*R*q,y:Math.sin(ang)*R*0.62*q,z:300*q-100,rz:(rnd(i+7)-.5)*240*q,ry:(rnd(i+9)-.5)*200*q,s:lerp(.15,1.15,eOut(tb/.35)),o:1-eIn((tb-.55)/.4)});}
   // F: carousel 11.19..17.32
-  const tf=t-11.19;
+  const tf=t-999;
   if(tf>=0){let steps=0;for(let k=18;k<=28;k++)if(t>=B[k])steps+=eOutBack((t-B[k])/0.45)-1+1; // integer + overshoot tail
     let ang=i/N*Math.PI*2+steps*(Math.PI*2/N)+tf*0.12;
     const R=860,RZ=420;const ring=P({x:Math.sin(ang)*R,y:Math.cos(ang)*40-40,z:Math.cos(ang)*RZ,ry:ang*180/Math.PI,s:.95});
@@ -118,29 +119,29 @@ const camA=t=>1-eIO((t-3.6)/3.0);
 // ---------- camera ----------
 function camPose(t){
   let s=lerp(1.32,1,eIO((t-3.6)/3.0));
-  let rx=lerp(0,16,eIO((t-7.0)/1.4)),rz=lerp(0,-5,eIO((t-7.0)/1.4)),ry=lerp(0,-10,eIO((t-7.0)/1.4));
-  s*=lerp(1,1.1,eIO((t-7.4)/1.3));
-  const back=eIO((t-8.75)/0.5);rx*=1-back;rz*=1-back;ry*=1-back;s=lerp(s,1,back);
+  let rx=lerp(0,16,eIO((t-7.0)/1.4)),rz=lerp(0,-5,eIO((t-7.0)/1.4))+lerp(0,9,eIO((t-8.6)/0.7)),ry=lerp(0,-10,eIO((t-7.0)/1.4))+lerp(0,20,eIO((t-8.6)/0.7));
+  s*=lerp(1,1.12,eIO((t-7.4)/1.9));
+  const back=eIO((t-9.33)/0.45);rx*=1-back;rz*=1-back;ry*=1-back;s=lerp(s,1,back);
   // F tilt
-  rx+=lerp(0,-14,eIO((t-11.0)/1.0))*(1-eIO((t-17.2)/0.8));
+  rx+=lerp(0,-14,eIO((t-999)/1.0))*(1-eIO((t-17.2)/0.8));
   // G diagonal
   rz+=lerp(0,-9,eIO((t-17.3)/0.9))*(1-eIO((t-23.3)/0.8));
   // H orbit
   const h=cl((t-23.6)/6);rx+=Math.sin(h*Math.PI)*12*(t>23.6&&t<29.6?1:0);ry+=lerp(-12,12,eIO(h))*(t>23.6&&t<29.6?Math.sin(h*Math.PI):0);
   // beat punch
   const k=beatIdx(t);if(k>=0&&t>11){s*=1+0.012*Math.exp(-(t-B[k])*9)}
-  return {s,rx,ry,rz,ty:246*camA(t)*s};
+  return {s,rx,ry,rz,ty:246*camA(t)*s+lerp(0,70,eIO((t-7.0)/1.4))*(1-eIO((t-9.33)/0.45))};
 }
 // ---------- logo & word ----------
 function logoPose(t){
   let p=P({o:0});
-  const t0=9.14;
+  const t0=10.45;
   if(t>=t0&&t<23.8){const a=spr(t-t0,14,.36);p=P({z:lerp(-900,0,cl(a,0,1.2)),rz:lerp(-200,0,a),s:a,o:1});const k=sq(t-t0,14,.36,.16);p.sx=k;p.sy=2-k;
-    const mv=spr(t-9.62,12,.55);p.x=lerp(0,-470,mv);p.s*=lerp(1,0.9,mv);
-    const f=spr(t-11.19,11,.55);p.x=lerp(p.x,0,f);p.y=lerp(0,-70,f);p.s=lerp(p.s,1,f);
+    const mv=spr(t-10.80,12,.55);p.x=lerp(0,-470,mv);p.s*=lerp(1,0.9,mv);
+    const f=spr(t-999,11,.55);p.x=lerp(p.x,0,f);p.y=lerp(0,-70,f);p.s=lerp(p.s,1,f);
     const g=spr(t-17.32,11,.55);p.s*=lerp(1,1.08,g);p.z=lerp(p.z,250,g);
-    const k2=beatIdx(t);if(k2>=0&&t>11.19)p.s*=1+0.035*Math.exp(-(t-B[k2])*8);
-    p.ry=t>11.19?Math.sin((t-11.19)*1.3)*10:0;
+    const k2=beatIdx(t);if(k2>=0&&t>11.1)p.s*=1+0.035*Math.exp(-(t-B[k2])*8);
+    p.ry=0;
     const h=eInBack((t-23.43)/0.38);p.s*=1-h;p.rz+=h*180;
   }
   if(t>=33.9){const a=spr(t-33.9,15,.34);p=P({z:lerp(-700,0,cl(a,0,1.2)),rz:lerp(220,0,a),s:a,o:1});const k=sq(t-33.9,15,.34,.18);p.sx=k;p.sy=2-k;
@@ -150,7 +151,7 @@ function logoPose(t){
 function wordState(t){ // returns per-letter progress
   const res=letters.map(()=>({o:0,y:60,s:1,r:0}));
   const show=(t0,t1)=>t>=t0&&t<t1;
-  const phases=[[9.60,23.45,10.26,{x:-235,y:0,size:1}],[34.44,99,34.75,{x:-235,y:0,size:1}]];
+  const phases=[[10.82,23.45,11.19,{x:-235,y:0,size:1}],[34.44,99,34.75,{x:-235,y:0,size:1}]];
   let ph=null;for(const q of phases)if(show(q[0],q[1]))ph=q;
   if(!ph)return {res,g:null};
   const [t0,t1,t2,base]=ph;
@@ -158,7 +159,7 @@ function wordState(t){ // returns per-letter progress
     const a=isY?spr(t-st,15,.35):spr(t-st,13,.5);res[j]={o:cl((t-st)*8),y:isY?0:lerp(70,0,a),s:isY?a:1,r:isY?lerp(-25,0,cl(a)):0}});
   // move under logo during F/G
   let g={x:base.x,y:base.y,s:1,z:40};
-  const f=spr(t-11.19,11,.55);if(t<23.5&&t>=11.19){g.x=lerp(base.x,-385,f);g.y=lerp(0,190,f);g.z=lerp(40,470,f);g.s=lerp(1,0.62,f)*(1600-g.z)/1600}
+  const f=spr(t-999,11,.55);if(t<23.5&&t>=999){g.x=lerp(base.x,-385,f);g.y=lerp(0,190,f);g.z=lerp(40,470,f);g.s=lerp(1,0.62,f)*(1600-g.z)/1600}
   const out=eInBack((t-23.30)/0.35);if(t<30)g.s*=1-out;
   return {res,g};
 }
@@ -168,12 +169,14 @@ window.seek=(t)=>{
   cards.forEach((el,i)=>{const p=cardPose(i,t);T(el,p)});
   const lp=logoPose(t);T(logo,lp);
   // yellow disc before logo
-  const dp=cl((t-8.95)/0.25),dq=eIn((t-9.18)/0.12);const dr=lerp(0,340,eOut(dp))*(1-dq);
+  const dp=cl((t-9.55)/0.35),dq=eIn((t-10.50)/0.08);const ch=cl((t-9.9)/0.55);let dr=lerp(0,300,eOut(dp))*(1+0.05*ch*Math.sin(t*55))*(1-0.18*eIO((t-10.30)/0.18));dr*=1-dq;
   disc.style.cssText=`width:${dr}px;height:${dr}px;margin:${-dr/2}px 0 0 ${-dr/2}px;transform:translateZ(-50px);opacity:${dr>1?1:0}`;
   // shockwaves at 9.33 and 34.44
-  const rings=[[9.30,r1,'#FFC21A',10],[9.40,r2,'#ffffff',4],[34.44,r1,'#FFC21A',10],[34.52,r2,'#ffffff',4]];
+  const rings=[[10.55,r1,'#FFC21A',10],[10.65,r2,'#ffffff',4],[34.44,r1,'#FFC21A',10],[34.52,r2,'#ffffff',4]];
   r1.style.opacity=0;r2.style.opacity=0;
   for(const [t0,el,col,w] of rings){const q=(t-t0)/0.8;if(q>=0&&q<=1){const R=lerp(320,2300,eOut(q));el.style.cssText=`width:${R}px;height:${R}px;margin:${-R/2}px 0 0 ${-R/2}px;border:${w*(1-q)+1}px solid ${col};opacity:${1-q};transform:translateZ(-20px)`;}}
+  // inward charge rings during the pause
+  [9.80,10.06,10.30].forEach((t0,j)=>{const el=inr[j];const q=(t-t0)/0.32;if(q>=0&&q<=1){const R=lerp(1500,300,eIn(q));el.style.cssText=`position:absolute;left:0;top:0;border-radius:50%;width:${R}px;height:${R}px;margin:${-R/2}px 0 0 ${-R/2}px;border:${2+6*q}px solid ${j%2?'#fff':'#FFC21A'};opacity:${Math.sin(q*Math.PI)};transform:translateZ(-30px)`}else el.style.opacity=0});
   // word
   const {res,g}=wordState(t);
   if(g){word.style.opacity=1;word.style.transform=`translate3d(${g.x}px,${g.y-68}px,${g.z}px) scale(${g.s})`;word.style.transformOrigin='0 50%';
@@ -181,10 +184,10 @@ window.seek=(t)=>{
   else word.style.opacity=0;
   // glow & flash
   const k=beatIdx(t);let gl=0.10+(k>=0?0.22*Math.exp(-(t-B[k])*5):0);
-  gl+=0.6*Math.exp(-Math.abs(t-9.33)*4)*(t>8.9?1:0)+0.6*Math.exp(-Math.abs(t-34.44)*4)*(t>34?1:0);
+  gl+=0.6*Math.exp(-Math.abs(t-10.57)*4)*(t>10.0?1:0)-0.12*cl((t-9.7)/0.3)*(t<10.5?1:0)+0.6*Math.exp(-Math.abs(t-34.44)*4)*(t>34?1:0);
   if(t<0.21)gl*=t/0.21;
   glow.style.opacity=cl(gl);glow.style.transform=`scale(${1+0.08*(k>=0?Math.exp(-(t-B[k])*6):0)})`;
-  let fo=0;for(const tf of [9.30,33.86])fo=Math.max(fo,(t>=tf?Math.exp(-(t-tf)*14):0)*0.85);
+  let fo=0;for(const tf of [10.54])fo=Math.max(fo,(t>=tf?Math.exp(-(t-tf)*14):0)*0.85);
   flash.style.opacity=fo*(1);
   document.body.style.filter=t>35.3?`brightness(${1-cl((t-35.3)/0.33)})`:'none';
 };

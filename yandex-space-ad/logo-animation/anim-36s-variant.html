@@ -1,0 +1,192 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#09090A}
+#bg{position:absolute;inset:0;background:#09090A}
+#glow{position:absolute;left:50%;top:50%;width:1800px;height:1800px;margin:-900px 0 0 -900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,194,26,.55) 0,rgba(255,194,26,.18) 25%,rgba(255,194,26,0) 55%)}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 45%,rgba(0,0,0,.65) 100%);z-index:50;pointer-events:none}
+#stage{position:absolute;left:50%;top:50%;width:0;height:0;perspective:1600px}
+#cam{position:absolute;left:0;top:0;transform-style:preserve-3d}
+.card{position:absolute;left:0;top:0;width:345px;height:230px;margin:-115px 0 0 -172.5px;transform-style:preserve-3d}
+.face{position:absolute;inset:0;border-radius:20px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.face img{width:100%;height:100%;display:block}
+.back{transform:rotateY(180deg);background:linear-gradient(150deg,#1d1d1f,#0b0b0c);border:2px solid rgba(255,194,26,.35);display:flex;align-items:center;justify-content:center}
+.back svg{width:150px;height:150px}
+#logo{position:absolute;left:0;top:0;width:340px;height:340px;margin:-170px 0 0 -170px;transform-style:preserve-3d}
+#logo svg{width:100%;height:100%;display:block}
+#ring1,#ring2{position:absolute;left:0;top:0;border-radius:50%;}
+#flash{position:absolute;inset:0;background:#FFE9A6;opacity:0;z-index:60}
+#disc{position:absolute;left:0;top:0;border-radius:50%;background:#FFC21A}
+#word{text-shadow:0 8px 40px rgba(0,0,0,.85),0 0 12px rgba(0,0,0,.6);position:absolute;left:0;top:0;white-space:nowrap;font-family:Inter;font-weight:800;letter-spacing:-4px;color:#fff;font-size:136px;line-height:1}
+#word span{display:inline-block;transform-origin:50% 80%}
+#word .y{color:#FFC21A}
+</style></head><body>
+<div id="bg"></div><div id="glow"></div>
+<div id="stage"><div id="cam"></div></div>
+<div id="vig"></div><div id="flash"></div>
+<script src="logo.js"></script>
+<script>
+const B=[0.21,0.79,1.39,2.02,2.6,3.23,3.83,4.46,5.06,5.69,6.29,6.9,7.5,8.13,8.73,9.33,9.96,10.57,11.19,11.82,12.42,13.03,13.63,14.26,14.86,15.46,16.07,16.72,17.32,17.93,18.53,19.13,19.76,20.39,20.99,21.59,22.22,22.83,23.43,24.06,24.66,25.26,25.87,26.49,27.12,27.72,28.33,28.93,29.56,30.16,30.77,31.39,32.0,32.62,33.23,33.83,34.44];
+const BEAT=0.605, N=16, CW=345, CH=230, GAP=16;
+const cam=document.getElementById('cam'), glow=document.getElementById('glow'), flash=document.getElementById('flash');
+// ---------- helpers ----------
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,p)=>a+(b-a)*p;
+const eOut=x=>1-Math.pow(1-cl(x),3), eIn=x=>Math.pow(cl(x),3), eIO=x=>{x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const eInBack=x=>{x=cl(x);const c=1.9;return (c+1)*x*x*x-c*x*x};
+const eOutBack=x=>{x=cl(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+function spr(s,w=15,z=.42){if(s<=0)return 0;const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*s)*(Math.cos(wd*s)+z*w/wd*Math.sin(wd*s))}
+const P=(o={})=>Object.assign({x:0,y:0,z:0,rx:0,ry:0,rz:0,s:1,o:1,sx:1,sy:1},o);
+const mix=(a,b,p)=>{const r={};for(const k in a)r[k]=lerp(a[k],b[k],p);return r};
+const beatIdx=t=>{let k=-1;for(let i=0;i<B.length;i++)if(B[i]<=t)k=i;return k};
+const grid=i=>{const c=i%4,r=Math.floor(i/4);return P({x:(c-1.5)*(CW+GAP),y:(r-1.5)*(CH+GAP)})};
+const rnd=i=>{const x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x)};
+// squash & stretch from velocity of a spring
+const sq=(s,w=15,z=.42,amt=.18)=>{const v=(spr(s+0.004,w,z)-spr(s,w,z))/0.004/w;return 1+cl(v,-1,1)*amt};
+
+// ---------- build ----------
+const cards=[];
+for(let i=0;i<N;i++){const d=document.createElement('div');d.className='card';
+  d.innerHTML=`<div class="face"><img src="cards/c${String(i).padStart(2,'0')}.jpg"></div><div class="face back">${LOGO()}</div>`;
+  cam.appendChild(d);cards.push(d)}
+const disc=document.createElement('div');disc.id='disc';cam.appendChild(disc);
+const r1=document.createElement('div');r1.id='ring1';cam.appendChild(r1);
+const r2=document.createElement('div');r2.id='ring2';cam.appendChild(r2);
+const logo=document.createElement('div');logo.id='logo';logo.innerHTML=LOGO();cam.appendChild(logo);
+const word=document.createElement('div');word.id='word';
+const W1='Яндекс',W2='Спейс';
+word.innerHTML=[...W1].map(c=>`<span>${c}</span>`).join('')+'<span style="width:34px"></span>'+[...W2].map(c=>`<span class="y">${c}</span>`).join('');
+cam.appendChild(word);
+const letters=[...word.querySelectorAll('span')];
+
+const T=(el,p,extra='')=>{el.style.transform=`translate3d(${p.x}px,${p.y}px,${p.z}px) rotateX(${p.rx}deg) rotateY(${p.ry}deg) rotateZ(${p.rz}deg) scale(${p.s*p.sx},${p.s*p.sy})${extra}`;el.style.opacity=cl(p.o);el.style.visibility=p.o<=0.001?'hidden':'visible'};
+
+// ---------- card choreography ----------
+const dirs=[[-1,0,-25],[1,0,25],[0,-1,15],[0,1,-15],[-1,-1,-30],[1,1,30],[1,-1,20],[-1,1,-20]];
+function cardPose(i,t){
+  const g=grid(i);
+  // A: cards 0..7 one per beat: hero then to grid
+  let p;
+  if(i<8){const t0=B[i],t1=B[i+1];const d=dirs[i];
+    const cy=-246*camA(t);const off=P({x:d[0]*1500,y:d[1]*900+cy,rz:d[2]*3,s:1.6,o:1}), hero=P({y:cy,s:2.05,rz:(i%2?2:-2)});
+    if(t<t0)return P({o:0});
+    const a=spr(t-t0,14,.62);p=mix(off,hero,a);const k=sq(t-t0,14,.62,.22);p.sx=k;p.sy=2-k;
+    if(t>=t1){const b=spr(t-t1,14,.48);p=mix(hero,g,b);const kk=sq(t-t1,14,.48,.12);p.sx=kk;p.sy=2-kk}
+  } else {const t0=B[8]+(i-8)*BEAT/2;if(t<t0)return P({o:0});
+    const from=P({z:-2600,ry:540*(i%2?1:-1),rx:40,s:1,o:0});const a=spr(t-t0,12,.5);p=mix(from,g,a);p.o=cl((t-t0)*5);}
+  // C: flip wave 7.5..8.73
+  const col=i%4,row=Math.floor(i/4),dd=col+row;
+  const fl=eIO((t-7.45-dd*0.075)/0.42);p.ry+=360*fl;
+  // D: implode 8.73..9.33
+  const dist=Math.hypot(g.x,g.y)/900;const pi=eInBack((t-8.72-(0.14-dist*0.12))/0.42);
+  if(pi>0){p=mix(p,P({x:0,y:0,z:-300,rz:(i%2?1:-1)*220,s:0.05,o:0}),pi);}
+  // E: burst 9.30..10.3
+  const tb=t-9.30;
+  if(tb>=0){const ang=i/N*Math.PI*2+rnd(i)*0.4,R=1500+rnd(i+3)*500;const q=eOut(tb/1.0);
+    p=P({x:Math.cos(ang)*R*q,y:Math.sin(ang)*R*0.62*q,z:300*q-100,rz:(rnd(i+7)-.5)*240*q,ry:(rnd(i+9)-.5)*200*q,s:lerp(.15,1.15,eOut(tb/.35)),o:1-eIn((tb-.55)/.4)});}
+  // F: carousel 11.19..17.32
+  const tf=t-11.19;
+  if(tf>=0){let steps=0;for(let k=18;k<=28;k++)if(t>=B[k])steps+=eOutBack((t-B[k])/0.45)-1+1; // integer + overshoot tail
+    let ang=i/N*Math.PI*2+steps*(Math.PI*2/N)+tf*0.12;
+    const R=860,RZ=420;const ring=P({x:Math.sin(ang)*R,y:Math.cos(ang)*40-40,z:Math.cos(ang)*RZ,ry:ang*180/Math.PI,s:.95});
+    const ain=spr(tf-(i*0.025),9,.55);const out=P({x:Math.cos(i/N*6.283)*2200,y:Math.sin(i/N*6.283)*1300,z:200,s:1.1,o:0});
+    p=mix(out,ring,ain);p.o=cl(ain*1.5);
+    // G: rows 17.32..23.43
+    const tg=t-17.32;
+    if(tg>=0){const row=i%3,k=Math.floor(i/3),n=[6,5,5][row],sp=530,L=n*sp,dir=row===1?-1:1;
+      let bump=0;for(let kk=28;kk<=38;kk++)if(t>=B[kk])bump+=eOut((t-B[kk])/0.4);
+      let xx=k*sp+dir*(tg*160+bump*90);xx=((xx%L)+L)%L-L/2;
+      const rowP=P({x:xx,y:(row-1)*300,z:-150,s:.92});
+      p=mix(p,rowP,spr(tg-(row*0.06),10,.6));p.o=1;
+      // H: grid + flips 23.43..29.56
+      const th=t-23.43;
+      if(th>=0){const g2=grid(i);g2.z=0;p=mix(p,g2,spr(th-dd*0.03,11,.55));
+        const fk=24.06+dd*BEAT;const f=spr(t-fk,13,.38);p.ry+=180*cl(f,0,1.25);
+        let pulse=0;for(let kk=46;kk<=48;kk++)if(t>=B[kk])pulse+=Math.exp(-(t-B[kk])*7)*(1-Math.exp(-(t-B[kk])*40));p.s*=1+0.05*pulse;
+        // I: vortex 29.56..33.83
+        const ti=(t-29.56)/(33.83-29.56);
+        if(ti>=0){const r0=Math.hypot(g2.x,g2.y)+60,a0=Math.atan2(g2.y,g2.x);const e=eIn(cl(ti));
+          const a=a0+e*Math.PI*3.2,rr=r0*(1-e)+0*e;
+          p=P({x:Math.cos(a)*rr,y:Math.sin(a)*rr,z:-e*500,ry:180,rz:e*540,s:lerp(1,0.15,e),o:1-cl((ti-.92)/.08)});}
+      }
+    }
+  }
+  return p;
+}
+const camA=t=>1-eIO((t-3.6)/3.0);
+// ---------- camera ----------
+function camPose(t){
+  let s=lerp(1.32,1,eIO((t-3.6)/3.0));
+  let rx=lerp(0,16,eIO((t-7.0)/1.4)),rz=lerp(0,-5,eIO((t-7.0)/1.4)),ry=lerp(0,-10,eIO((t-7.0)/1.4));
+  s*=lerp(1,1.1,eIO((t-7.4)/1.3));
+  const back=eIO((t-8.75)/0.5);rx*=1-back;rz*=1-back;ry*=1-back;s=lerp(s,1,back);
+  // F tilt
+  rx+=lerp(0,-14,eIO((t-11.0)/1.0))*(1-eIO((t-17.2)/0.8));
+  // G diagonal
+  rz+=lerp(0,-9,eIO((t-17.3)/0.9))*(1-eIO((t-23.3)/0.8));
+  // H orbit
+  const h=cl((t-23.6)/6);rx+=Math.sin(h*Math.PI)*12*(t>23.6&&t<29.6?1:0);ry+=lerp(-12,12,eIO(h))*(t>23.6&&t<29.6?Math.sin(h*Math.PI):0);
+  // beat punch
+  const k=beatIdx(t);if(k>=0&&t>11){s*=1+0.012*Math.exp(-(t-B[k])*9)}
+  return {s,rx,ry,rz,ty:246*camA(t)*s};
+}
+// ---------- logo & word ----------
+function logoPose(t){
+  let p=P({o:0});
+  const t0=9.14;
+  if(t>=t0&&t<23.8){const a=spr(t-t0,14,.36);p=P({z:lerp(-900,0,cl(a,0,1.2)),rz:lerp(-200,0,a),s:a,o:1});const k=sq(t-t0,14,.36,.16);p.sx=k;p.sy=2-k;
+    const mv=spr(t-9.62,12,.55);p.x=lerp(0,-470,mv);p.s*=lerp(1,0.9,mv);
+    const f=spr(t-11.19,11,.55);p.x=lerp(p.x,0,f);p.y=lerp(0,-70,f);p.s=lerp(p.s,1,f);
+    const g=spr(t-17.32,11,.55);p.s*=lerp(1,1.08,g);p.z=lerp(p.z,250,g);
+    const k2=beatIdx(t);if(k2>=0&&t>11.19)p.s*=1+0.035*Math.exp(-(t-B[k2])*8);
+    p.ry=t>11.19?Math.sin((t-11.19)*1.3)*10:0;
+    const h=eInBack((t-23.43)/0.38);p.s*=1-h;p.rz+=h*180;
+  }
+  if(t>=33.9){const a=spr(t-33.9,15,.34);p=P({z:lerp(-700,0,cl(a,0,1.2)),rz:lerp(220,0,a),s:a,o:1});const k=sq(t-33.9,15,.34,.18);p.sx=k;p.sy=2-k;
+    const mv=spr(t-34.44,13,.5);p.x=lerp(0,-470,mv);p.s*=lerp(1,.9,mv);p.s*=lerp(1,1.03,cl((t-34.6)/1.0));}
+  return p;
+}
+function wordState(t){ // returns per-letter progress
+  const res=letters.map(()=>({o:0,y:60,s:1,r:0}));
+  const show=(t0,t1)=>t>=t0&&t<t1;
+  const phases=[[9.60,23.45,10.26,{x:-235,y:0,size:1}],[34.44,99,34.75,{x:-235,y:0,size:1}]];
+  let ph=null;for(const q of phases)if(show(q[0],q[1]))ph=q;
+  if(!ph)return {res,g:null};
+  const [t0,t1,t2,base]=ph;
+  letters.forEach((el,j)=>{const isY=j>W1.length;const st=isY?t2+(j-W1.length-1)*0.055:t0+j*0.045;
+    const a=isY?spr(t-st,15,.35):spr(t-st,13,.5);res[j]={o:cl((t-st)*8),y:isY?0:lerp(70,0,a),s:isY?a:1,r:isY?lerp(-25,0,cl(a)):0}});
+  // move under logo during F/G
+  let g={x:base.x,y:base.y,s:1,z:40};
+  const f=spr(t-11.19,11,.55);if(t<23.5&&t>=11.19){g.x=lerp(base.x,-385,f);g.y=lerp(0,190,f);g.z=lerp(40,470,f);g.s=lerp(1,0.62,f)*(1600-g.z)/1600}
+  const out=eInBack((t-23.30)/0.35);if(t<30)g.s*=1-out;
+  return {res,g};
+}
+// ---------- seek ----------
+window.seek=(t)=>{
+  const c=camPose(t);cam.style.transform=`translateY(${c.ty}px) scale(${c.s}) rotateX(${c.rx}deg) rotateY(${c.ry}deg) rotateZ(${c.rz}deg)`;
+  cards.forEach((el,i)=>{const p=cardPose(i,t);T(el,p)});
+  const lp=logoPose(t);T(logo,lp);
+  // yellow disc before logo
+  const dp=cl((t-8.95)/0.25),dq=eIn((t-9.18)/0.12);const dr=lerp(0,340,eOut(dp))*(1-dq);
+  disc.style.cssText=`width:${dr}px;height:${dr}px;margin:${-dr/2}px 0 0 ${-dr/2}px;transform:translateZ(-50px);opacity:${dr>1?1:0}`;
+  // shockwaves at 9.33 and 34.44
+  const rings=[[9.30,r1,'#FFC21A',10],[9.40,r2,'#ffffff',4],[34.44,r1,'#FFC21A',10],[34.52,r2,'#ffffff',4]];
+  r1.style.opacity=0;r2.style.opacity=0;
+  for(const [t0,el,col,w] of rings){const q=(t-t0)/0.8;if(q>=0&&q<=1){const R=lerp(320,2300,eOut(q));el.style.cssText=`width:${R}px;height:${R}px;margin:${-R/2}px 0 0 ${-R/2}px;border:${w*(1-q)+1}px solid ${col};opacity:${1-q};transform:translateZ(-20px)`;}}
+  // word
+  const {res,g}=wordState(t);
+  if(g){word.style.opacity=1;word.style.transform=`translate3d(${g.x}px,${g.y-68}px,${g.z}px) scale(${g.s})`;word.style.transformOrigin='0 50%';
+    letters.forEach((el,j)=>{const r=res[j];el.style.opacity=r.o;el.style.transform=`translateY(${r.y}px) scale(${r.s}) rotate(${r.r}deg)`})}
+  else word.style.opacity=0;
+  // glow & flash
+  const k=beatIdx(t);let gl=0.10+(k>=0?0.22*Math.exp(-(t-B[k])*5):0);
+  gl+=0.6*Math.exp(-Math.abs(t-9.33)*4)*(t>8.9?1:0)+0.6*Math.exp(-Math.abs(t-34.44)*4)*(t>34?1:0);
+  if(t<0.21)gl*=t/0.21;
+  glow.style.opacity=cl(gl);glow.style.transform=`scale(${1+0.08*(k>=0?Math.exp(-(t-B[k])*6):0)})`;
+  let fo=0;for(const tf of [9.30,33.86])fo=Math.max(fo,(t>=tf?Math.exp(-(t-tf)*14):0)*0.85);
+  flash.style.opacity=fo*(1);
+  document.body.style.filter=t>35.3?`brightness(${1-cl((t-35.3)/0.33)})`:'none';
+};
+window.seek(0);window.ready=true;
+</script></body></html>
