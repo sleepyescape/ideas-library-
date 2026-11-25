@@ -1,0 +1,49 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:800px;height:1060px;background:transparent;overflow:hidden;font-family:Inter,sans-serif}
+#dim{position:absolute;inset:0;background:#000}
+#card{position:absolute;left:34px;right:34px;top:60px;color:#fff}
+#hdr{display:flex;align-items:center;gap:22px}
+#ic{width:118px;height:118px;flex:none}
+#ic svg{width:100%;height:100%}
+#app{font-size:34px;font-weight:600;letter-spacing:1px;color:#FFC21A;text-transform:uppercase;line-height:1.15}
+#app small{display:block;font-size:30px;color:#8d8d93;text-transform:none;letter-spacing:0;font-weight:500}
+#ttl{font-size:76px;font-weight:800;line-height:1.02;letter-spacing:-1.5px;margin-top:40px}
+#body{font-size:40px;line-height:1.28;color:#b9b9bf;margin-top:22px;font-weight:500}
+#body b{color:#fff;font-weight:700}
+.btn{position:absolute;left:34px;right:34px;height:118px;border-radius:59px;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:700}
+#b1{top:690px;background:#FFC21A;color:#111}
+#b2{top:830px;background:#2b2b2e;color:#fff}
+#ok{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;color:#fff;font-size:62px;font-weight:800;text-align:center;line-height:1.1}
+#ok .c{width:230px;height:230px;border-radius:50%;background:#2DB84D;display:flex;align-items:center;justify-content:center}
+#ok small{font-size:40px;color:#b9b9bf;font-weight:500}
+</style></head><body>
+<div id="dim"></div>
+<div id="card"><div id="hdr"><div id="ic"></div><div id="app">Яндекс Спейс<small>сейчас</small></div></div>
+<div id="ttl">Столик освободился!</div>
+<div id="body"><b>«Бульвар Кофе»</b>, №5 у окна.<br>Держим для вас 5 минут.</div></div>
+<div class="btn" id="b1">Забронировать</div><div class="btn" id="b2">Позже</div>
+<div id="ok"><div class="c"><svg width="130" height="130" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Забронировано<small>«Бульвар Кофе» · №5</small></div>
+<script src="logo.js"></script><script>
+ic.innerHTML=LOGO();
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+function spr(s,w=16,z=.5){if(s<=0)return 0;const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*s)*(Math.cos(wd*s)+z*w/wd*Math.sin(wd*s))}
+const eo=x=>1-Math.pow(1-cl(x),3);
+const set=(el,o,ty=0,s=1)=>{el.style.opacity=cl(o);el.style.transform=`translateY(${ty}px) scale(${s})`};
+window.seek=t=>{
+  const T0=0.55;
+  dim.style.opacity=cl((t-T0)/0.25)*0.97;
+  const a=spr(t-T0-0.05,15,.45);set(ic,cl((t-T0)*6),0,a*1.0);
+  set(app,cl((t-T0-0.12)*5),40*(1-eo((t-T0-0.12)/0.35)));
+  set(ttl,cl((t-T0-0.2)*5),70*(1-eo((t-T0-0.2)/0.4)));
+  set(body,cl((t-T0-0.3)*5),70*(1-eo((t-T0-0.3)/0.4)));
+  set(b1,cl((t-T0-0.42)*5),90*(1-spr(t-T0-0.42,14,.55)));
+  set(b2,cl((t-T0-0.5)*5),90*(1-spr(t-T0-0.5,14,.55)));
+  // tap at 2.05
+  const tp=t-2.05;let s=1;if(tp>0)s=1-0.06*Math.sin(cl(tp/0.18)*Math.PI);b1.style.transform+=` scale(${s})`;
+  const done=t-2.28;const fade=cl(done/0.15);
+  card.style.opacity=1-fade;[b1,b2].forEach(e=>e.style.opacity=Math.min(+e.style.opacity,1-fade));
+  ok.style.opacity=fade;ok.style.transform=`scale(${0.7+0.3*spr(done,14,.45)})`;
+};
+seek(0);window.ready=true;
+</script></body></html>
