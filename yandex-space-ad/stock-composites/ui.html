@@ -1,8 +1,8 @@
 <!doctype html><html><head><meta charset="utf-8"><style>
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:800px;height:1060px;background:transparent;overflow:hidden;font-family:Inter,sans-serif}
+html,body{width:800px;height:1160px;background:transparent;overflow:hidden;font-family:Inter,sans-serif}
 #dim{position:absolute;inset:0;background:#000}
-#card{position:absolute;left:34px;right:34px;top:60px;color:#fff}
+#card{position:absolute;left:34px;right:34px;top:80px;color:#fff}
 #hdr{display:flex;align-items:center;gap:22px}
 #ic{width:118px;height:118px;flex:none}
 #ic svg{width:100%;height:100%}
@@ -12,8 +12,8 @@ html,body{width:800px;height:1060px;background:transparent;overflow:hidden;font-
 #body{font-size:40px;line-height:1.28;color:#b9b9bf;margin-top:22px;font-weight:500}
 #body b{color:#fff;font-weight:700}
 .btn{position:absolute;left:34px;right:34px;height:118px;border-radius:59px;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:700}
-#b1{top:690px;background:#FFC21A;color:#111}
-#b2{top:830px;background:#2b2b2e;color:#fff}
+#b1{top:770px;background:#FFC21A;color:#111}
+#b2{top:910px;background:#2b2b2e;color:#fff}
 #ok{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;color:#fff;font-size:62px;font-weight:800;text-align:center;line-height:1.1}
 #ok .c{width:230px;height:230px;border-radius:50%;background:#2DB84D;display:flex;align-items:center;justify-content:center}
 #ok small{font-size:40px;color:#b9b9bf;font-weight:500}
@@ -31,7 +31,7 @@ function spr(s,w=16,z=.5){if(s<=0)return 0;const wd=w*Math.sqrt(1-z*z);return 1-
 const eo=x=>1-Math.pow(1-cl(x),3);
 const set=(el,o,ty=0,s=1)=>{el.style.opacity=cl(o);el.style.transform=`translateY(${ty}px) scale(${s})`};
 window.seek=t=>{
-  const T0=0.55;
+  const T0=0.30;
   dim.style.opacity=cl((t-T0)/0.25)*0.97;
   const a=spr(t-T0-0.05,15,.45);set(ic,cl((t-T0)*6),0,a*1.0);
   set(app,cl((t-T0-0.12)*5),40*(1-eo((t-T0-0.12)/0.35)));
@@ -40,8 +40,8 @@ window.seek=t=>{
   set(b1,cl((t-T0-0.42)*5),90*(1-spr(t-T0-0.42,14,.55)));
   set(b2,cl((t-T0-0.5)*5),90*(1-spr(t-T0-0.5,14,.55)));
   // tap at 2.05
-  const tp=t-2.05;let s=1;if(tp>0)s=1-0.06*Math.sin(cl(tp/0.18)*Math.PI);b1.style.transform+=` scale(${s})`;
-  const done=t-2.28;const fade=cl(done/0.15);
+  const tp=t-1.55;let s=1;if(tp>0)s=1-0.06*Math.sin(cl(tp/0.18)*Math.PI);b1.style.transform+=` scale(${s})`;
+  const done=t-1.76;const fade=cl(done/0.15);
   card.style.opacity=1-fade;[b1,b2].forEach(e=>e.style.opacity=Math.min(+e.style.opacity,1-fade));
   ok.style.opacity=fade;ok.style.transform=`scale(${0.7+0.3*spr(done,14,.45)})`;
 };
