@@ -1,0 +1,162 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1536px;height:1024px;overflow:hidden;background:#000}
+.g{display:grid;grid-template-columns:repeat(4,384px);grid-template-rows:repeat(4,256px)}
+.t{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.t svg{display:block}
+.abs{position:absolute}
+.lg{width:150px;height:150px}
+.sq{border-radius:46px}
+</style></head><body>
+<div class="g" id="g"></div>
+<script src="logo.js"></script>
+<script>
+const g=document.getElementById('g');
+const T=(css,html)=>{const d=document.createElement('div');d.className='t';d.style.cssText=css;d.innerHTML=html;g.appendChild(d);return d};
+const L=(o,cls='lg',style='')=>`<div class="${cls}" style="${style}">${LOGO(o).replace('<svg ','<svg width="100%" height="100%" ')}</div>`;
+const Y='#FFC21A', K='#1B1B1B', W='#FBF8F0';
+const sqPath=(s)=>{const r=s*0.28;return `M${r} 0 H${s-r} C${s-r*0.2} 0 ${s} ${r*0.2} ${s} ${r} V${s-r} C${s} ${s-r*0.2} ${s-r*0.2} ${s} ${s-r} ${s} H${r} C${r*0.2} ${s} 0 ${s-r*0.2} 0 ${s-r} V${r} C0 ${r*0.2} ${r*0.2} 0 ${r} 0Z`};
+
+/* 1 glass squircle */
+T('background:radial-gradient(circle at 50% 40%,#f1f1f4,#c8c9d0)',`
+<div class="abs sq" style="width:178px;height:178px;background:linear-gradient(140deg,rgba(255,255,255,.85),rgba(255,255,255,.28) 55%,rgba(255,255,255,.55));border:2px solid rgba(255,255,255,.95);box-shadow:0 24px 40px rgba(60,60,80,.22),inset 0 3px 8px #fff,inset 0 -14px 26px rgba(120,120,140,.18)"></div>
+${L({bg:'rgba(225,226,232,.55)',beam:'#FFC21A',hi:'#FFD964',fur:'#fff'},'lg abs','width:124px;height:124px;filter:drop-shadow(0 6px 8px rgba(0,0,0,.18))')}
+<div class="abs" style="width:150px;height:60px;border-radius:40px;top:46px;background:linear-gradient(rgba(255,255,255,.75),rgba(255,255,255,0));"></div>`);
+
+/* 2 pixel */
+(()=>{const d=T('background:#050505','<canvas id="px" width="34" height="34" style="width:182px;height:182px;image-rendering:pixelated"></canvas>');
+const img=new Image();img.onload=()=>{const c=document.getElementById('px'),x=c.getContext('2d');x.imageSmoothingEnabled=true;x.drawImage(img,0,0,34,34);
+const im=x.getImageData(0,0,34,34),p=im.data;const pal=[[5,5,5],[255,194,26],[251,248,240]];
+for(let i=0;i<p.length;i+=4){if(p[i+3]<110){p[i]=5;p[i+1]=5;p[i+2]=5;p[i+3]=255;continue}let best=0,bd=1e9;pal.forEach((c,k)=>{const dd=(p[i]-c[0])**2+(p[i+1]-c[1])**2+(p[i+2]-c[2])**2;if(dd<bd){bd=dd;best=k}});[p[i],p[i+1],p[i+2]]=pal[best];p[i+3]=255}
+x.putImageData(im,0,0);window.px=1};
+img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(LOGO({ring:'#FBF8F0',ringW:44,hi:'#FFC21A'}).replace('<svg ','<svg width="512" height="512" '))})();
+
+/* 3 sketch */
+T('background:#F3EEE3',`
+<svg width="384" height="256" class="abs" style="left:0;top:0">
+<defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="7"/></filter>
+<filter id="rough2"><feTurbulence type="fractalNoise" baseFrequency=".09" numOctaves="2" seed="8"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+<pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="7" height="7" fill="#151515"/><line x1="0" y1="0" x2="0" y2="7" stroke="#3a3a3a" stroke-width="1.2"/></pattern></defs>
+<g transform="translate(116 52) scale(.297)" filter="url(#rough)">${LOGO({bg:'url(#hatch)',beam:'#FFC21A',hi:'#FFC21A'}).replace(/<\/?svg[^>]*>/g,'')}</g>
+<g fill="none" stroke="#111" stroke-linecap="round" filter="url(#rough2)">
+<ellipse cx="192" cy="128" rx="78" ry="75" stroke-width="2.6"/><ellipse cx="193" cy="127" rx="75" ry="78" stroke-width="1.6"/>
+<path d="M118 40 L130 62 M134 30 L140 56 M100 56 L120 70" stroke-width="3"/>
+<path d="M270 196 l5 -12 l5 12 l12 1 l-9 8 l3 12 l-11 -7 l-11 7 l3 -12 l-9 -8z" stroke-width="2"/></g></svg>`);
+
+/* 4 glass sphere */
+T('background:radial-gradient(circle at 60% 40%,#5d5d5d,#1a1a1a 70%)',`
+<div class="abs" style="width:196px;height:196px;border-radius:50%;background:radial-gradient(circle at 38% 30%,#4a4a4a,#0a0a0a 58%,#000 75%);box-shadow:0 18px 40px rgba(0,0,0,.6),inset -14px -18px 34px rgba(255,190,30,.55),inset 6px 8px 18px rgba(255,255,255,.12),0 0 30px rgba(255,194,26,.22)"></div>
+${L({bg:'none',beam:'rgba(255,194,26,.95)',hi:'rgba(255,225,120,.95)',fur:'#fff'},'lg abs','width:150px;height:150px;clip-path:circle(46%);filter:drop-shadow(0 0 6px rgba(255,255,255,.25))')}
+<div class="abs" style="width:120px;height:58px;top:46px;left:118px;border-radius:50%;background:linear-gradient(rgba(255,255,255,.55),rgba(255,255,255,0));transform:rotate(-18deg)"></div>`);
+
+/* 5 camo squircle */
+T('background:linear-gradient(#d6d7dc,#b9bbc3)',`
+<svg width="190" height="190" viewBox="0 0 190 190" style="filter:drop-shadow(0 16px 18px rgba(0,0,0,.25))"><defs><clipPath id="sq5"><path d="${sqPath(190)}"/></clipPath></defs>
+<g clip-path="url(#sq5)"><rect width="190" height="190" fill="#F4F2EC"/>
+<path d="M-10 -10 H120 C110 20 70 30 60 58 C48 90 10 80 -10 96Z" fill="${Y}"/>
+<path d="M200 -10 V70 C170 62 160 30 130 22 C122 10 140 -6 150 -10Z" fill="${K}"/>
+<path d="M-10 96 C20 86 40 110 70 112 C110 116 140 90 200 104 V150 C150 140 120 170 80 160 C40 150 20 170 -10 168Z" fill="${K}"/>
+<path d="M200 150 V200 H90 C110 180 150 170 200 150Z" fill="${Y}"/>
+<path d="M-10 168 C20 170 40 180 60 200 H-10Z" fill="#F4F2EC"/>
+<path d="M140 40 C170 50 190 70 200 80 V100 C170 96 150 80 140 60Z" fill="${Y}"/></g>
+<path d="${sqPath(190)}" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="2"/>
+<g transform="translate(32 30) scale(.246)">${LOGO({bg:'none',beam:Y,hi:'#FFD45A',fur:W,furStroke:K,furStrokeW:16}).replace(/<\/?svg[^>]*>/g,'')}</g></svg>`);
+
+/* 6 clay deboss */
+T('background:linear-gradient(#ecebe7,#d9d7d1)',`
+<div class="abs sq" style="width:180px;height:180px;background:linear-gradient(145deg,#fbfaf7,#e6e4df);box-shadow:16px 18px 32px rgba(150,146,138,.45),-10px -10px 26px rgba(255,255,255,.9),inset 2px 2px 3px #fff"></div>
+<div class="abs" style="width:126px;height:126px;border-radius:50%;background:radial-gradient(circle at 60% 30%,#FFD24A,#F2AE0C);box-shadow:inset 9px 12px 16px rgba(110,70,0,.55),inset -4px -4px 8px rgba(255,255,255,.4),0 1px 1px #fff"></div>
+${L({bg:'none',beam:'none',hi:'none',fur:'#F7F5F0'},'lg abs','width:126px;height:126px;clip-path:circle(50%);filter:drop-shadow(3px 4px 3px rgba(120,80,0,.55))')}`);
+
+/* 7 window decal */
+T('background:#2b2a24',`
+<div class="abs" style="inset:-30px;filter:blur(14px);background:radial-gradient(circle at 15% 30%,#6f8a4c 0,transparent 22%),radial-gradient(circle at 80% 25%,#d7d3c4 0,transparent 18%),radial-gradient(circle at 70% 70%,#3c3a33 0,transparent 30%),radial-gradient(circle at 30% 80%,#8a6d4b 0,transparent 25%),radial-gradient(circle at 92% 60%,#a9b48a 0,transparent 15%),linear-gradient(#4b4c3c,#26251f)"></div>
+<div class="abs" style="width:186px;height:186px;border-radius:50%;border:6px solid #fff;box-shadow:0 0 8px rgba(0,0,0,.25)"></div>
+${L({bg:'rgba(10,10,10,.62)',beam:Y,hi:'#FFD45A',fur:'#fff'},'lg abs','width:164px;height:164px')}`);
+
+/* 8 sticker */
+T('background-color:#fbfbfc;background-image:repeating-linear-gradient(0deg,#e3e7ee 0 1px,transparent 1px 22px),repeating-linear-gradient(90deg,#e3e7ee 0 1px,transparent 1px 22px)',`
+<svg width="230" height="230" viewBox="0 0 230 230" style="transform:rotate(-4deg);filter:drop-shadow(2px 6px 6px rgba(0,0,0,.22))">
+<defs><clipPath id="peel"><path d="M0 0 H230 V170 L170 230 H0Z"/></clipPath></defs>
+<g clip-path="url(#peel)"><circle cx="115" cy="115" r="102" fill="#fff"/>
+<g transform="translate(25 25) scale(.352)">${LOGO({ring:'#111',ringW:26}).replace(/<\/?svg[^>]*>/g,'')}</g></g>
+<path d="M200 168 C186 176 176 190 172 210 C186 200 200 196 214 192 C206 186 202 178 200 168Z" fill="#f1f1f1" stroke="#ddd" stroke-width="1"/></svg>`);
+
+/* 9 black squircle sparkle */
+T('background:radial-gradient(circle at 50% 60%,#2a2a2a,#060606 70%)',`
+<div class="abs sq" style="width:182px;height:182px;background:linear-gradient(160deg,#3a3a3a,#0b0b0b 45%,#000);border:1.5px solid rgba(255,255,255,.18);box-shadow:0 0 40px rgba(255,194,26,.18),0 22px 40px rgba(0,0,0,.7),inset 0 2px 2px rgba(255,255,255,.25)"></div>
+<div class="abs" style="width:124px;height:124px;border-radius:50%;background:radial-gradient(circle,#151515,#0a0a0a)"></div>
+${L({bg:'none',beam:'none',hi:'none',fur:'#fff'},'lg abs','width:124px;height:124px;filter:drop-shadow(0 0 6px rgba(255,255,255,.35))')}
+<svg class="abs" width="70" height="70" viewBox="-35 -35 70 70" style="left:196px;top:62px;filter:drop-shadow(0 0 8px rgba(255,194,26,.9)) drop-shadow(0 0 18px rgba(255,194,26,.6))"><path d="M0 -32 C3 -8 8 -3 32 0 C8 3 3 8 0 32 C-3 8 -8 3 -32 0 C-8 -3 -3 -8 0 -32Z" fill="#FFC21A"/></svg>`);
+
+/* 10 construction */
+T('background:#F4F0E6',`
+<svg width="384" height="256" class="abs" style="left:0;top:0"><g stroke="#8d8a82" stroke-width=".7" fill="none" opacity=".75">
+<line x1="40" y1="128" x2="344" y2="128"/><line x1="192" y1="14" x2="192" y2="242"/>
+<circle cx="192" cy="128" r="96"/><circle cx="192" cy="128" r="76" stroke-dasharray="3 3"/>
+<line x1="96" y1="20" x2="96" y2="236"/><line x1="288" y1="20" x2="288" y2="236"/><line x1="60" y1="32" x2="324" y2="32"/><line x1="60" y1="224" x2="324" y2="224"/>
+<line x1="110" y1="46" x2="274" y2="210"/></g>
+<g fill="#8d8a82"><circle cx="192" cy="128" r="2"/><circle cx="96" cy="32" r="2"/><circle cx="288" cy="224" r="2"/></g>
+<g transform="translate(116 52) scale(.297)">${LOGO().replace(/<\/?svg[^>]*>/g,'')}</g></svg>`);
+
+/* 11 yellow blob */
+T('background:#F4F1EA',`
+<svg width="384" height="256" class="abs" style="left:0;top:0">
+<path d="M110 70 C130 30 210 26 250 42 C300 60 330 90 320 140 C312 186 270 220 214 214 C170 210 150 222 118 206 C80 188 70 150 82 118 C88 100 98 92 110 70Z" fill="${Y}"/>
+<circle cx="74" cy="206" r="9" fill="${Y}"/>
+<g transform="translate(128 58) scale(.27)"><clipPath id="c11"><circle cx="256" cy="256" r="250"/></clipPath>
+<g clip-path="url(#c11)"><path d="M338 0 L118 222 L-60 222 L-60 -60 Z" fill="${K}"/></g>
+<g fill="${K}"><ellipse cx="252" cy="240" rx="142" ry="44"/>
+<path d="M238 276 L266 276 L268 396 C270 418 300 426 316 432 C324 436 322 446 312 446 L192 446 C182 446 180 436 188 432 C204 426 234 418 236 396 Z"/>
+<path id="ch11" d="M44 238 C30 238 26 250 28 262 L50 356 C53 368 62 374 74 374 L176 374 C190 374 196 366 193 354 L190 344 C187 334 180 330 168 330 L110 330 C99 330 93 324 91 313 L79 256 C76 244 66 238 52 238 Z"/>
+<use href="#ch11" transform="translate(512 0) scale(-1 1)"/></g></g></svg>`);
+
+/* 12 concrete */
+T('background:#8f8f8c',`
+<svg width="384" height="256" class="abs" style="left:0;top:0">
+<defs><filter id="conc" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="2" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 .55  0 0 0 0 .55  0 0 0 0 .53  0 0 0 -1.3 1.1"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+<filter id="conc2"><feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="4" seed="9"/><feColorMatrix type="matrix" values="0 0 0 0 .78 0 0 0 0 .78 0 0 0 0 .76 0 0 0 -.9 1"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+<filter id="worn"><feTurbulence type="fractalNoise" baseFrequency=".06" numOctaves="4" seed="5" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7 4.9" result="m"/><feComposite in="SourceGraphic" in2="m" operator="in"/></filter>
+<filter id="sh12"><feDropShadow dx="6" dy="12" stdDeviation="9" flood-opacity=".45"/></filter></defs>
+<rect width="384" height="256" fill="#9a9a96"/><rect width="384" height="256" fill="#000" filter="url(#conc)" opacity=".35"/>
+<g transform="translate(97 33)" filter="url(#sh12)"><path d="${sqPath(190)}" fill="#c4c3bf"/></g>
+<g transform="translate(97 33)"><path d="${sqPath(190)}" fill="#fff" filter="url(#conc2)" opacity=".7"/><path d="${sqPath(190)}" fill="#000" filter="url(#conc)" opacity=".25"/></g>
+<g transform="translate(128 64) scale(.25)" filter="url(#worn)" opacity=".93">${LOGO({bg:'#141414',beam:'#F5BF1E',hi:'#F5BF1E',fur:'#e9e7e1'}).replace(/<\/?svg[^>]*>/g,'')}</g></svg>`);
+
+/* 13 neon */
+T('background:radial-gradient(circle,#141414,#000 70%)',`
+<svg width="384" height="256" class="abs" style="left:0;top:0"><defs><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feGaussianBlur stdDeviation="16" in="SourceGraphic" result="b2"/><feMerge><feMergeNode in="b2"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<circle cx="192" cy="128" r="98" fill="none" stroke="#FFC21A" stroke-width="6" filter="url(#glow)"/><circle cx="192" cy="128" r="98" fill="none" stroke="#FFF3C4" stroke-width="2"/>
+<g transform="translate(114 50) scale(.305)">${LOGO({bg:'#050505'}).replace(/<\/?svg[^>]*>/g,'')}</g></svg>`);
+
+/* 14 glass cube */
+T('background:radial-gradient(circle at 50% 40%,#2a2a2a,#050505 70%)',`
+<div class="abs" style="width:220px;height:40px;bottom:24px;border-radius:50%;background:radial-gradient(rgba(255,194,26,.55),rgba(255,194,26,0) 70%);filter:blur(4px)"></div>
+<div style="perspective:700px"><div id="cube" style="width:150px;height:150px;position:relative;transform-style:preserve-3d;transform:rotateX(-16deg) rotateY(-28deg)">
+${['rotateY(0deg)','rotateY(90deg)','rotateY(180deg)','rotateY(-90deg)','rotateX(90deg)','rotateX(-90deg)'].map((r,i)=>`<div style="position:absolute;inset:0;border-radius:14px;transform:${r} translateZ(75px);background:linear-gradient(${135+i*30}deg,rgba(255,230,160,.30),rgba(255,200,60,.08) 60%,rgba(255,240,200,.22));border:1.5px solid rgba(255,236,180,.75);box-shadow:inset 0 0 18px rgba(255,210,90,.35)"></div>`).join('')}
+<div style="position:absolute;inset:6px;transform:translateZ(0)">${LOGO().replace('<svg ','<svg width="100%" height="100%" ')}</div>
+</div></div>`);
+
+/* 15 sky */
+T('background:linear-gradient(#2f6fc9,#8ab9ec 70%,#cfe2f6)',`
+<svg width="384" height="256" class="abs" style="left:0;top:0"><defs><filter id="cl" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".012 .02" numOctaves="5" seed="11"/><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 2.6 -1.15"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+<linearGradient id="clm" x1="0" y1="0" x2="0" y2="1"><stop offset=".25" stop-color="#fff" stop-opacity="0"/><stop offset=".7" stop-color="#fff"/></linearGradient>
+<mask id="mk15"><rect width="384" height="256" fill="url(#clm)"/></mask></defs>
+<g mask="url(#mk15)"><rect width="384" height="256" fill="#fff" filter="url(#cl)"/></g>
+<rect x="-60" y="-40" width="520" height="340" fill="#fff" filter="url(#cl)" opacity=".35"/></svg>
+<div class="abs" style="width:186px;height:186px;border-radius:50%;background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.7);backdrop-filter:blur(8px);box-shadow:inset 0 0 30px rgba(255,255,255,.35)"></div>
+${L({bg:'none',beam:'rgba(255,246,214,.78)',hi:'rgba(255,255,255,.9)',fur:'rgba(255,255,255,.96)'},'lg abs','width:156px;height:156px;clip-path:circle(48%)')}`);
+
+/* 16 liquid chrome */
+T('background:#111',`
+<svg width="384" height="256" class="abs" style="left:0;top:0"><defs>
+<filter id="liq" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".004 .009" numOctaves="1" seed="4" result="t"/><feDisplacementMap in="SourceGraphic" in2="t" scale="190" xChannelSelector="R" yChannelSelector="G" result="d"/><feGaussianBlur in="d" stdDeviation="1.6"/></filter>
+<linearGradient id="chr" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#050505"/><stop offset=".12" stop-color="#f4f4f4"/><stop offset=".18" stop-color="#3a3a3a"/><stop offset=".26" stop-color="#FFC21A"/><stop offset=".31" stop-color="#fff3c0"/><stop offset=".36" stop-color="#0a0a0a"/><stop offset=".5" stop-color="#e8e8e8"/><stop offset=".56" stop-color="#151515"/><stop offset=".66" stop-color="#FFC21A"/><stop offset=".7" stop-color="#fff"/><stop offset=".76" stop-color="#080808"/><stop offset=".88" stop-color="#d8d8d8"/><stop offset="1" stop-color="#050505"/></linearGradient></defs>
+<rect x="-60" y="-60" width="504" height="376" fill="url(#chr)" filter="url(#liq)"/>
+<circle cx="192" cy="128" r="104" fill="#fff"/><circle cx="192" cy="128" r="104" fill="none" stroke="#111" stroke-width="2"/>
+<g transform="translate(96 32) scale(.375)">${LOGO().replace(/<\/?svg[^>]*>/g,'')}</g></svg>`);
+window.ready=false;setTimeout(()=>window.ready=true,800);
+</script></body></html>
